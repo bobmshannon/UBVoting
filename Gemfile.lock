@@ -18,15 +18,22 @@ GEM
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     ffi (1.9.10)
+    json (1.8.3)
     multi_json (1.11.2)
+    rainbow (2.0.0)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     sass (3.4.18)
     sassy-maps (0.4.0)
       sass (~> 3.3)
+    scss_lint (0.41.0)
+      rainbow (~> 2.0)
+      sass (~> 3.4.15)
     susy (2.2.6)
       sass (>= 3.3.0, < 3.5)
+    travis-lint (2.0.0)
+      json
 
 PLATFORMS
   ruby
@@ -35,4 +42,6 @@ DEPENDENCIES
   breakpoint (~> 2)
   compass (~> 1)
   sass (~> 3.4)
+  scss_lint
   susy (~> 2)
+  travis-lint
