@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 	config.vm.box = "puphpet/centos65-x64"
 
 	# Shell script to run after provisioning VM
-	config.vm.provision :shell, path: "bootstrap.sh"
+	config.vm.provision :shell, path: "provision.sh"
 
 	# Create a forwarded port mapping which allows access to a specific port
 	# within the machine from a port on the host machine. In the example below,

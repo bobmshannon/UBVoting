@@ -13,7 +13,7 @@ yum -y remove httpd
 yum -y install nginx
 if ! [ -L /usr/share/nginx/html ]; then
   rm -rf /usr/share/nginx/html
-  ln -fs /vagrant /usr/share/nginx/html
+  ln -fs /vagrant/webroot /usr/share/nginx/html
 fi
 chmod 0777 /usr/share/nginx/html
 cd /vagrant && find . -exec touch {} \; 
