@@ -2,6 +2,7 @@
 
 Running locally
 ---------------
+0. If you have not done so already, install both [Vagrant](http://www.vagrantup.com) and [VirtualBox](http://www.virtualbox.org).
 
 1. Clone this repo:
 	```sh

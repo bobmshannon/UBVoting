@@ -4,7 +4,7 @@ echo 'Provisioning UBVoting Development Machine...'
 
 # Update
 echo 'Updating packages...'
-#yum -y update
+yum -y update
 yum -y install epel-release
 
 # Install Nginx Web Server
@@ -69,6 +69,9 @@ if [ -f /vagrant/Gruntfile.js ]; then
 	echo -e "\tRunning 'grunt'..."
 	cd /vagrant && grunt clean default > /dev/null
 fi
+
+# Update default git editor
+git config --global core.editor "nano"
 
 # Provision Complete
 echo -e '\nFinished provisioning:\n'
