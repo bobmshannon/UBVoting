@@ -1,12 +1,6 @@
-language: node_js
+language: bash
 node_js:
   - "0.10.36"
 before_install: npm install -g grunt-cli
 install: npm install
 before_script: bundle install
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: scripts/deploy.sh
-  on:
-     branch: master
