@@ -1,5 +1,8 @@
 # UBVoting
 
+[![Build Status](https://magnum.travis-ci.com/bobmshannon/UBVoting.svg?token=qEZPqxG9wUaU2LNL3KZU&branch=master)](https://magnum.travis-ci.com/bobmshannon/UBVoting)
+[![Dependency Status](https://www.versioneye.com/user/projects/55f747db3ed89400170004f2/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55f747db3ed89400170004f2)
+
 Running locally
 ---------------
 0. If you have not done so already, install both [Vagrant](http://www.vagrantup.com) and [VirtualBox](http://www.virtualbox.org).
