@@ -1,0 +1,20 @@
+{
+  "name": "ubvoting",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-clean": "~0.6",
+    "grunt-contrib-cssmin": "~0.12",
+    "grunt-contrib-uglify": "~0.9",
+    "grunt-log-headers": "~1",
+    "grunt-newer": "~1",
+    "load-grunt-tasks": "~3",
+    "grunt-contrib-jshint": "~0.11",
+    "jshint-stylish": "~2",
+    "grunt-jscs": "~2",
+    "grunt-run": "~0.3",
+    "grunt-contrib-compass": "~1",
+    "grunt-contrib-watch": "~0.6"
+  }
+}
