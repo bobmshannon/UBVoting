@@ -1,0 +1,5 @@
+source 'http://rubygems.org'
+gem 'compass', '~>1'
+gem 'sass', '~>3.4'
+gem 'susy', '~>2'
+gem 'breakpoint', '~>2'
