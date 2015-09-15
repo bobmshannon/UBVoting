@@ -34,6 +34,9 @@ npm install -g grunt-cli
 echo 'Installing Bower...'
 npm install -g bower
 
+# Install Java
+yum -y install java
+
 # Firewall rules
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp --dport 22 -j ACCEPT
