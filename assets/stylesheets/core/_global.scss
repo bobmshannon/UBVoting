@@ -1,0 +1,15 @@
+// ===================================== //
+// Description: UBVoting Global Styles
+// ===================================== //
+
+@include establish-baseline;
+@include border-box-sizing;
+
+body, 
+html 
+{
+	background: $white;
+	font-family: $primary-font;
+	font-size: 100%;
+	color: $black;
+}

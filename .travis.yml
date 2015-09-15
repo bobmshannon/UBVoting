@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "0.10.36"
+<<<<<<< HEAD
 before_install: 
   - npm install -g grunt-cli
   - gem update --system
@@ -10,3 +11,8 @@ before_install:
   - gem install susy
   - gem install breakpoint 
 install: npm install
+=======
+before_install: npm install -g grunt-cli
+install: npm install
+before_script: bundle install
+>>>>>>> dev
