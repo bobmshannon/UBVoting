@@ -1,64 +1,64 @@
-module.exports = function(grunt) {
-  require('time-grunt')(grunt);
+module.exports = function( grunt ) {
+  require( "time-grunt" )( grunt );
 
-  require('load-grunt-tasks')(grunt, {
-    pattern: ['grunt-*', '!grunt-log-headers']
-  });
+  require( "load-grunt-tasks" )( grunt, {
+    pattern: [ "grunt-*", "!grunt-log-headers" ]
+  } );
 
-  require('grunt-log-headers')(grunt);
+  require( "grunt-log-headers" )( grunt );
 
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+  grunt.initConfig( {
+    pkg: grunt.file.readJSON( "package.json" ),
     newer: {
       options: {
         gruntLogHeader: false
       }
     },
-    'newer-postrun': {
+    "newer-postrun": {
       options: {
         gruntLogHeader: false
       }
     },
     clean: {
       src: [
-      'webroot/css/**/*.css',
-      'webroot/js/**/*.js',
-      '.sass-cache/',
-      'tmp/debug_kit.sqlite'
+      "webroot/css/**/*.css",
+      "webroot/js/**/*.js",
+      ".sass-cache/",
+      "tmp/debug_kit.sqlite"
       ]
     },
     scsslint: {
       files: [
-      'assets/stylesheets/**/*.scss',
+      "assets/stylesheets/**/*.scss"
       ],
       options: {
         bundleExec: true,
-        config: '.scss-lint.yml',
-        reporterOutput: 'scss-lint-report.xml',
+        config: ".scss-lint.yml",
+        reporterOutput: "scss-lint-report.xml",
         colorizeOutput: true
-      },
+      }
     },
     jshint: {
       options: {
-        reporter: require('jshint-stylish'),
+        reporter: require( "jshint-stylish" ),
         globals: {
           jQuery: true,
           console: true
         }
       },
       src: [
-      '*.js',
-      'assets/js/**/*.js',
+      "*.js",
+      "assets/js/**/*.js"
       ]
     },
     jscs: {
       src: [
-      '*.js',
-      'assets/js/**/*.js',
+      "*.js",
+      "assets/js/**/*.js"
       ],
       options: {
-        preset: 'google',	// Enforce google JS code style guidelines
-        fix: true			// Auto fix code style errors
+        preset: "jquery",		// Enforce jQuery code style guidelines (see: https://contribute.jquery.org/style-guide/js/)
+        //fix: true			// Auto fix code style errors
       }
     },
     uglify: {
@@ -70,19 +70,19 @@ module.exports = function(grunt) {
       },
       base: {
         files: {
-          'webroot/js/base.js': [
-          'bower_components/jquery/dist/jquery.js',
-          'bower_components/jquery-ui/jquery-ui.js'
+          "webroot/js/base.js": [
+          "bower_components/jquery/dist/jquery.js",
+          "bower_components/jquery-ui/jquery-ui.js"
           ]
         }
       },
       homepage: {
         files: {
-          'webroot/js/homepage.js': [
-          'assets/js/homepage.js',
+          "webroot/js/homepage.js": [
+          "assets/js/homepage.js"
           ]
         }
-      },
+      }
     },
     cssmin: {
       options: {
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
     compass: {
       dev: {
         options: {
-          require: ['susy', 'breakpoint'],
+          require: [ 'susy', 'breakpoint' ],
           sassDir: 'assets/stylesheets/',
           cssDir: 'webroot/css/',
           imagesDir: 'webroot/img/',
@@ -114,40 +114,40 @@ module.exports = function(grunt) {
           noLineComments: false,
           raw: 'preferred_syntax = :sass\n'
         }
-      },
+      }
     },
     watch: {
       styles: {
-        files: ['assets/stylesheets/**/**/*.scss'],
-        tasks: ['compass'],
+        files: [ 'assets/stylesheets/**/**/*.scss' ],
+        tasks: [ 'compass' ],
         options: {
-          spawn: false,
-        },
-      },
-    },
-  });
+          spawn: false
+        }
+      }
+    }
+  } );
 
-  grunt.registerTask('default', [
+  grunt.registerTask( 'default', [
   'compass',
   'newer:uglify',
-  'newer:cssmin',
-  ]);
+  'newer:cssmin'
+  ] );
 
-  grunt.registerTask('lint', [
+  grunt.registerTask( 'lint', [
   'jshint',
   'jscs',
   'scsslint'
-  ]);
+  ] );
 
-  grunt.registerTask('compile', [
+  grunt.registerTask( 'compile', [
   'compass'
-  ]);
+  ] );
 
-  grunt.registerTask('watch', [
+  grunt.registerTask( 'watch', [
   'watch'
-  ]);
+  ] );
 
-  grunt.registerTask('test', [
+  grunt.registerTask( 'test', [
   'compass', 'jshint', 'jscs', 'scsslint'
-  ]);
+  ] );
 };
