@@ -2,24 +2,24 @@
   "name": "ubvoting",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "grunt": "~0.4",
     "grunt-contrib-clean": "~0.6",
+    "grunt-contrib-compass": "~1",
     "grunt-contrib-cssmin": "~0.12",
+    "grunt-contrib-jshint": "~0.11",
     "grunt-contrib-uglify": "~0.9",
+    "grunt-contrib-watch": "~0.6",
+    "grunt-html": "^5.0.0",
+    "grunt-html-validation": "^0.1.18",
+    "grunt-jscs": "~2",
     "grunt-log-headers": "~1",
     "grunt-newer": "~1",
-    "time-grunt": "~1",
-    "load-grunt-tasks": "~3",
-    "grunt-contrib-jshint": "~0.11",
-    "jshint-stylish": "~2",
-    "grunt-jscs": "~2",
     "grunt-run": "~0.3",
-    "grunt-contrib-compass": "~1",
-    "grunt-contrib-watch": "~0.6"
-  },
-  "devDependencies": {
-    "grunt-scss-lint": "^0.3.8"
+    "grunt-scss-lint": "^0.3.8",
+    "jshint-stylish": "~2",
+    "load-grunt-tasks": "~3",
+    "time-grunt": "~1"
   },
   "scripts": {
     "test": "grunt test"
