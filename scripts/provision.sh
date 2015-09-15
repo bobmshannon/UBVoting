@@ -73,6 +73,9 @@ fi
 # Update default git editor
 git config --global core.editor "nano"
 
+# Update vagrant directory permissions
+chown -R vagrant /home/vagrant
+
 # Provision Complete
 echo -e '\nFinished provisioning:\n'
 printf '\tNginx v%s' $(2>&1 nginx -v | cut -d'/' -f2)
