@@ -16,13 +16,7 @@
     "grunt-jscs": "~2",
     "grunt-run": "~0.3",
     "grunt-contrib-compass": "~1",
-<<<<<<< HEAD
     "grunt-contrib-watch": "~0.6",
-=======
-    "grunt-contrib-watch": "~0.6"
-  },
-  "devDependencies": {
->>>>>>> dev
     "grunt-scss-lint": "^0.3.8"
   },
   "scripts": {

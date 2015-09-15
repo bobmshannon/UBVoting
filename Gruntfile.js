@@ -35,12 +35,8 @@ module.exports = function(grunt) {
         bundleExec: true,
         config: '.scss-lint.yml',
         reporterOutput: 'scss-lint-report.xml',
-<<<<<<< HEAD
         colorizeOutput: true,
         exclude: 'node_modules/'
-=======
-        colorizeOutput: true
->>>>>>> dev
       },
     },
     jshint: {
