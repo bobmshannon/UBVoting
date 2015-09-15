@@ -1,64 +1,65 @@
 module.exports = function( grunt ) {
-  require( "time-grunt" )( grunt );
+  require( 'time-grunt' )( grunt );
 
-  require( "load-grunt-tasks" )( grunt, {
-    pattern: [ "grunt-*", "!grunt-log-headers" ]
+  require( 'load-grunt-tasks' )( grunt, {
+    pattern: [ 'grunt-*', '!grunt-log-headers' ]
   } );
 
-  require( "grunt-log-headers" )( grunt );
+  require( 'grunt-log-headers' )( grunt );
 
   grunt.initConfig( {
-    pkg: grunt.file.readJSON( "package.json" ),
+    pkg: grunt.file.readJSON( 'package.json' ),
     newer: {
       options: {
         gruntLogHeader: false
       }
     },
-    "newer-postrun": {
+    'newer-postrun': {
       options: {
         gruntLogHeader: false
       }
     },
     clean: {
       src: [
-      "webroot/css/**/*.css",
-      "webroot/js/**/*.js",
-      ".sass-cache/",
-      "tmp/debug_kit.sqlite"
+      'webroot/css/**/*.css',
+      'webroot/js/**/*.js',
+      '.sass-cache/',
+      'tmp/debug_kit.sqlite'
       ]
     },
     scsslint: {
       files: [
-      "assets/stylesheets/**/*.scss"
+      'assets/stylesheets/**/*.scss'
       ],
       options: {
         bundleExec: true,
-        config: ".scss-lint.yml",
-        reporterOutput: "scss-lint-report.xml",
+        config: '.scss-lint.yml',
+        reporterOutput: 'scss-lint-report.xml',
         colorizeOutput: true
       }
     },
     jshint: {
       options: {
-        reporter: require( "jshint-stylish" ),
+        reporter: require( 'jshint-stylish' ),
         globals: {
           jQuery: true,
           console: true
         }
       },
       src: [
-      "*.js",
-      "assets/js/**/*.js"
+      '*.js',
+      'assets/js/**/*.js'
       ]
     },
     jscs: {
       src: [
-      "*.js",
-      "assets/js/**/*.js"
+      '*.js',
+      'assets/js/**/*.js'
       ],
       options: {
-        preset: "jquery",		// Enforce jQuery code style guidelines (see: https://contribute.jquery.org/style-guide/js/)
-        //fix: true			// Auto fix code style errors
+        preset: 'jquery',		// Enforce jQuery code style guidelines (see: https://contribute.jquery.org/style-guide/js/)
+        //fix: true,			// Auto fix code style errors
+        validateQuoteMarks: '\''	// Enforce single quotes instead of double
       }
     },
     uglify: {
@@ -70,16 +71,16 @@ module.exports = function( grunt ) {
       },
       base: {
         files: {
-          "webroot/js/base.js": [
-          "bower_components/jquery/dist/jquery.js",
-          "bower_components/jquery-ui/jquery-ui.js"
+          'webroot/js/base.js': [
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/jquery-ui/jquery-ui.js'
           ]
         }
       },
       homepage: {
         files: {
-          "webroot/js/homepage.js": [
-          "assets/js/homepage.js"
+          'webroot/js/homepage.js': [
+          'assets/js/homepage.js'
           ]
         }
       }
