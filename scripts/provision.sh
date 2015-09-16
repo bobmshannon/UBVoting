@@ -40,6 +40,7 @@ yum -y install java
 # Firewall rules
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+service iptables save
 
 # Update MOTD
 awk ' BEGIN { print "Welcome to your UBVoting Development VM.\nAccess locally at http://localhost:8080/" } ' > /etc/motd 
