@@ -123,7 +123,7 @@ module.exports = function( grunt ) {
 		},
 		watch: {
 			styles: {
-				files: [ 'assets/stylesheets/**/**/*.scss' ],
+				files: [ 'assets/stylesheets/**/*.scss' ],
 				tasks: [ 'compass' ],
 				options: {
 					spawn: false
@@ -148,11 +148,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'compile', [
 	'compass'
 	] );
-
-	grunt.registerTask( 'watch', [
-	'watch'
-	] );
-
+	
 	grunt.registerTask( 'test', [
 	'compass', 'jshint', 'jscs', 'scsslint', 'htmllint'
 	] );
