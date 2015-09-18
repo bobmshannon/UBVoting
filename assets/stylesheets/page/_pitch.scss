@@ -1,0 +1,57 @@
+.page#pitch
+{
+	p
+	{
+		font-size: 14px;
+		margin-bottom: 25px;
+
+		&:last-child
+		{ 
+			margin: 0;
+		}
+
+		&.group-members 
+		{
+			text-align: center;
+		}
+	}
+
+	.list-group
+	{
+		margin: 0;
+	}
+
+	.list-group-item-text
+	{
+		list-style: disc;
+	}
+
+	h1.page-title
+	{
+		text-align: center;
+
+		span.grey
+		{
+			color: #434343;
+		}
+
+		span.blue
+		{
+			color: #0000ff;
+		}
+	}
+
+	#carousel 
+	{
+		.item 
+		{
+			text-align: center;
+		}
+
+		img 
+		{ 
+			@include inline-block; 
+		}
+	}
+}
+

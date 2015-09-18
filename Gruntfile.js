@@ -77,7 +77,8 @@ module.exports = function( grunt ) {
 				files: {
 					'webroot/js/base.js': [
 					'bower_components/jquery/dist/jquery.js',
-					'bower_components/jquery-ui/jquery-ui.js'
+					'bower_components/jquery-ui/jquery-ui.js',
+					'bower_components/bootstrap/dist/js/bootstrap.min.js'
 					]
 				}
 			},
@@ -99,7 +100,9 @@ module.exports = function( grunt ) {
 					'webroot/css/base.css': [
 					'bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css',
 					'bower_components/jquery-ui/themes/ui-lightness/theme.css',
-					'bower_components/components-font-awesome/css/font-awesome.css'
+					'bower_components/components-font-awesome/css/font-awesome.css',
+					'bower_components/bootstrap/dist/css/bootstrap.min.css',
+					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css'
 					]
 				}
 			}
@@ -148,7 +151,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'compile', [
 	'compass'
 	] );
-	
+
 	grunt.registerTask( 'test', [
 	'compass', 'jshint', 'jscs', 'scsslint', 'htmllint'
 	] );

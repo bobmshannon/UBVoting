@@ -16,7 +16,7 @@
 // ========================================================================== //
 @import 'susy';
 @import 'compass';
-@import 'compass/reset';
+//@import 'compass/reset';
 @import 'compass/css3';
 @import 'breakpoint';
 @import 'core/variables';
@@ -31,7 +31,8 @@
 @import 'module/footer';
 
 // ========================================================================== //
-//  0. PAGES
+//  2. PAGES
 // ========================================================================== //
 @import 'page/home';
+@import 'page/pitch';
 
