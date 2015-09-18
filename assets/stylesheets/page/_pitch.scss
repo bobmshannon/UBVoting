@@ -50,7 +50,8 @@
 
 		img 
 		{ 
-			@include inline-block; 
+			@include inline-block;
+			max-width: 800px;
 		}
 	}
 }
