@@ -59,9 +59,7 @@ if [ -f /vagrant/package.json ]; then
 	echo -e "\tRunning 'npm install'..."
 
 	rm -rf /vagrant/node_modules
-	mkdir -p /home/vagrant/node_modules
-	ln -s /home/vagrant/node_modules /vagrant/node_modules
-	cd /vagrant && npm install --silent > /dev/null
+	cd /vagrant && npm -dd install --silent > /dev/null
 fi
 
 if [ -f /vagrant/Gemfile ]; then
