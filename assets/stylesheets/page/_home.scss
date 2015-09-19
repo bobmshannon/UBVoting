@@ -1,2 +1,25 @@
-// Homepage specific styles go here
+.page#index
+{
+	h1.page-title
+	{
+		text-align: center;
 
+		span.grey
+		{
+						color: #434343;
+
+		}
+
+		span.blue
+		{
+			color: #0000ff;
+		}
+
+
+	}
+
+	p
+	{
+		text-align: center;
+	}
+}
