@@ -22,9 +22,14 @@ service nginx restart && chkconfig nginx on
 
 # Install NodeJS
 echo 'Installing NodeJS...'
-yum -y install nodejs
-yum -y install npm
-npm install --global npm@latest
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | NVM_DIR=/usr/local/nvm bash
+source /usr/local/nvm/nvm.sh
+nvm install stable
+nvm use stable
+echo ". /usr/local/nvm/nvm.sh" >> /home/vagrant/.bash_profile
+echo "nvm use stable > /dev/null" >> /home/vagrant/.bash_profile
+echo ". /usr/local/nvm/nvm.sh" >> /root/.bash_profile
+echo "nvm use stable > /dev/null" >> /root/.bash_profile
 
 # Install Grunt
 echo 'Installing Grunt...'
