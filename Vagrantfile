@@ -31,5 +31,6 @@ Vagrant.configure(2) do |config|
 		v.name = "ubvoting"
 		v.cpus = 2
 		v.memory = 2048
+		v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
 	end
 end
