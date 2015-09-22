@@ -57,9 +57,9 @@ fi
 
 if [ -f /vagrant/package.json ]; then
 	echo -e "\tRunning 'npm install'..."
-
+	npm -g install npm@latest
 	rm -rf /vagrant/node_modules
-	cd /vagrant && npm -dd install --silent > /dev/null
+	cd /vagrant && npm --no-bin-links -dd install --silent
 fi
 
 if [ -f /vagrant/Gemfile ]; then
