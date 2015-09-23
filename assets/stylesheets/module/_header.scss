@@ -11,9 +11,9 @@ header
 
 		a
 		{
-			@include replace-text(image-url('logo.png'));
+			@include retina-background(logo, no-repeat left 15px);
+			text-indent: -9999px;
 			display: block;
-			background-position: left 15px;
 			width: 160px;
 			height: 87px;
 		}
