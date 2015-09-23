@@ -1,5 +1,13 @@
 .page#pitch
 {
+	background-color: $white;
+
+	.logo
+	{
+		margin-top: 0;
+		padding-top: 20px;
+	}
+
 	p
 	{
 		font-size: 14px;

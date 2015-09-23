@@ -1,2 +1,30 @@
-// Header specific styles go here
+header
+{
+	@include box-shadow(0 1px 2px rgba(0, 0, 0, .06));
+	@include clearfix;
+	background: $white;
+	height: 87px;
 
+	.btn 
+	{
+		float: right;
+		margin: 22px 0;
+		font-weight: bold;
+		font-family: $primary-sans;
+	}
+
+	h1 
+	{
+		float: left;
+		margin: 0; padding: 0;
+
+		a
+		{
+			@include retina-background(logo, no-repeat left 15px);
+			text-indent: -9999px;
+			display: block;
+			width: 160px;
+			height: 87px;
+		}
+	}
+}
