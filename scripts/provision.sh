@@ -26,6 +26,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | 
 source /usr/local/nvm/nvm.sh
 nvm install stable
 nvm use stable
+npm -g install npm@latest
 echo ". /usr/local/nvm/nvm.sh" >> /home/vagrant/.bash_profile
 echo "nvm use stable > /dev/null" >> /home/vagrant/.bash_profile
 echo ". /usr/local/nvm/nvm.sh" >> /root/.bash_profile
@@ -57,7 +58,6 @@ fi
 
 if [ -f /vagrant/package.json ]; then
 	echo -e "\tRunning 'npm install'..."
-	npm -g install npm@latest
 	rm -rf /vagrant/node_modules
 	cd /vagrant && npm --no-bin-links -dd install --silent
 fi

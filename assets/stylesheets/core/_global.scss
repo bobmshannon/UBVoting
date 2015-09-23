@@ -6,10 +6,11 @@
 @include border-box-sizing;
 
 body, 
-html 
+html
 {
-	background: $white;
+	background: $concrete;
 	color: $black;
+	font-family: $primary-serif;
 }
 
 .wrapper 
@@ -17,9 +18,14 @@ html
 	padding: 0 2%;
 }
 
+.content {
+	padding: 20px 0;
+}
+
 .logo
 {
 	text-align: center;
+	font-family: $primary-sans;
 
 	.grey
 	{
