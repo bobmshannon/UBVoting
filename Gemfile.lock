@@ -42,6 +42,9 @@ DEPENDENCIES
   breakpoint (~> 2)
   compass (~> 1)
   sass (~> 3.4)
-  scss_lint
+  scss_lint (~> 0.41.0)
   susy (~> 2)
   travis-lint
+
+BUNDLED WITH
+   1.10.6
