@@ -29,6 +29,7 @@ rvm install ruby --latest
 sudo usermod -a -G rvm vagrant
 echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*" >> /home/vagrant/.bash_profile
 sudo su root
+yum -y install sqlite-devel
 
 # Install NodeJS
 echo 'Installing NodeJS...'
