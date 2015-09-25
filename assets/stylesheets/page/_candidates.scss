@@ -18,20 +18,9 @@
 			vertical-align: middle;
 		}
 
-		.wrapper {
-			.panel panel-default {
-
-				.panel-body {
-					@include background-image(image-url('coverphoto.png'));
-					@include background-size(cover);
-					display: table-row;
-					height: 100%;
-
-				}
-			}
-		}
-
 	}
+		
+
 	
 	p
 	{
@@ -49,6 +38,14 @@
 			padding-top: 12px;
 			padding-bottom: 12px;
 			margin: 0;
+		}
+
+		.panel-default 
+		{
+			@include background-image(image-url('coverphoto.png'));
+			@include background-size(cover);
+			display: table-row;
+			height: 100%;
 		}
 
 		.btn 
