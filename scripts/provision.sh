@@ -20,6 +20,16 @@ cd /vagrant && find . -exec touch {} \;
 sed -i 's/sendfile        on;/sendfile        off;/' /etc/nginx/nginx.conf    # Disable sendfile to prevent weird caching issues with shared vagrant folder
 service nginx restart && chkconfig nginx on
 
+# Install Ruby
+echo 'Installing Ruby...'
+su vagrant
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install ruby --latest
+sudo usermod -a -G rvm vagrant
+echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*" >> /home/vagrant/.bash_profile
+sudo su root
+
 # Install NodeJS
 echo 'Installing NodeJS...'
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | NVM_DIR=/usr/local/nvm bash
@@ -86,7 +96,7 @@ chown -R vagrant /home/vagrant
 # Provision Complete
 echo -e '\nFinished provisioning:\n'
 printf '\tNginx v%s' $(2>&1 nginx -v | cut -d'/' -f2)
-printf '\tGem v%s' $(gem -v)
+printf '\tRuby v%s' $(ruby --version)
 printf '\tNPM v%s' $(npm -v)
 printf '\tBower v%s\n' $(bower -v)
 printf '\tBundler v%s\n' $(bundler -v | cut -d' ' -f3)
