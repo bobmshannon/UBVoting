@@ -1,0 +1,20 @@
+.page#events
+{
+	section#events-calendar
+	{
+		background-color: $coral-red;
+		padding: 20px 0;
+
+		h1 
+		{ 
+			display: none;
+		}
+		
+		#calendar
+		{
+			@include border-radius(5px);
+			background-color: $white;
+			padding: 20px;
+		}
+	}
+}

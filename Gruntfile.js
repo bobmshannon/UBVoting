@@ -88,6 +88,15 @@ module.exports = function( grunt ) {
 					'assets/js/homepage.js'
 					]
 				}
+			},
+			events: {
+				files: {
+					'webroot/js/events.js': [
+					'bower_components/moment/moment.js',
+					'bower_components/fullcalendar/dist/fullcalendar.js',
+					'assets/js/events.js'
+					]
+				}
 			}
 		},
 		cssmin: {
@@ -102,7 +111,8 @@ module.exports = function( grunt ) {
 					'bower_components/jquery-ui/themes/ui-lightness/theme.css',
 					'bower_components/components-font-awesome/css/font-awesome.css',
 					'bower_components/bootstrap/dist/css/bootstrap.min.css',
-					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css'
+					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+					'bower_components/fullcalendar/dist/fullcalendar.css'
 					]
 				}
 			}
