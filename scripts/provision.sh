@@ -4,7 +4,7 @@ echo 'Provisioning UBVoting Development Machine...'
 
 # Update
 echo 'Updating packages...'
-#yum -y update
+yum -y update
 yum -y install epel-release
 
 # Install Ruby
