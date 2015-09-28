@@ -21,15 +21,15 @@ module.exports = function( grunt ) {
 		},
 		clean: {
 			src: [
-			'webroot/css/**/*.css',
-			'webroot/js/**/*.js',
+			'public/stylesheets/**/*.css',
+			'public/javascripts/**/*.js',
 			'.sass-cache/',
 			'tmp/debug_kit.sqlite'
 			]
 		},
 		scsslint: {
 			files: [
-			'assets/stylesheets/**/*.scss'
+			'app/assets/stylesheets/**/*.scss'
 			],
 			options: {
 				bundleExec: true,
@@ -48,13 +48,13 @@ module.exports = function( grunt ) {
 			},
 			src: [
 			'*.js',
-			'assets/js/**/*.js'
+			'app/assets/javascripts/**/*.js'
 			]
 		},
 		jscs: {
 			src: [
 			'*.js',
-			'assets/js/**/*.js'
+			'app/assets/javascripts/**/*.js'
 			],
 			options: {
 				preset: 'jquery',			// Enforce jQuery code style guidelines (see: https://contribute.jquery.org/style-guide/js/)
@@ -62,9 +62,6 @@ module.exports = function( grunt ) {
 				validateQuoteMarks: '\'',	// Enforce single quotes instead of double
 				validateIndentation: '\t'	// Enforce use of tab for indentation
 			}
-		},
-		htmllint: {
-			all: [ 'webroot/*.html' ]
 		},
 		uglify: {
 			options: {
@@ -75,7 +72,7 @@ module.exports = function( grunt ) {
 			},
 			base: {
 				files: {
-					'webroot/js/base.js': [
+					'public/javascripts/base.js': [
 					'bower_components/jquery/dist/jquery.js',
 					'bower_components/jquery-ui/jquery-ui.js',
 					'bower_components/bootstrap/dist/js/bootstrap.min.js'
@@ -84,8 +81,16 @@ module.exports = function( grunt ) {
 			},
 			homepage: {
 				files: {
-					'webroot/js/homepage.js': [
-					'assets/js/homepage.js'
+					'public/javascripts/homepage.js': [
+					'app/assets/javascripts/homepage.js'
+					]
+				}
+			},
+			events: {
+				files: {
+					'public/javascripts/events.js': [
+					'bower_components/moment/moment.js',
+					'bower_components/fullcalendar/dist/fullcalendar.js'
 					]
 				}
 			},
@@ -106,7 +111,7 @@ module.exports = function( grunt ) {
 			},
 			base: {
 				files: {
-					'webroot/css/base.css': [
+					'public/stylesheets/base.css': [
 					'bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css',
 					'bower_components/jquery-ui/themes/ui-lightness/theme.css',
 					'bower_components/components-font-awesome/css/font-awesome.css',
@@ -121,12 +126,12 @@ module.exports = function( grunt ) {
 			dev: {
 				options: {
 					require: [ 'susy', 'breakpoint' ],
-					sassDir: 'assets/stylesheets/',
-					cssDir: 'webroot/css/',
-					imagesDir: 'webroot/img/',
-					javascriptsDir: 'webroot/js/',
-					fontsDir: 'webroot/fonts/',
-					importPath: 'assets/stylesheets/',
+					sassDir: 'app/assets/stylesheets/',
+					cssDir: 'public/stylesheets/',
+					imagesDir: 'public/images/',
+					javascriptsDir: 'public/js/',
+					fontsDir: 'public/fonts/',
+					importPath: 'app/assets/stylesheets/',
 					outputStyle: 'expanded',
 					relativeAssets: true,
 					noLineComments: false,
@@ -136,7 +141,7 @@ module.exports = function( grunt ) {
 		},
 		watch: {
 			styles: {
-				files: [ 'assets/stylesheets/**/*.scss' ],
+				files: [ 'app/assets/stylesheets/**/*.scss' ],
 				tasks: [ 'compass' ],
 				options: {
 					spawn: false
@@ -154,8 +159,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'lint', [
 	'jshint',
 	'jscs',
-	'scsslint',
-	'htmllint'
+	'scsslint'
 	] );
 
 	grunt.registerTask( 'compile', [
@@ -163,6 +167,6 @@ module.exports = function( grunt ) {
 	] );
 
 	grunt.registerTask( 'test', [
-	'compass', 'jshint', 'jscs', 'scsslint', 'htmllint'
+	'compass', 'jshint', 'jscs', 'scsslint'
 	] );
 };

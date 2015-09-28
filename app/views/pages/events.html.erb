@@ -1,0 +1,16 @@
+<section id="events-calendar">
+    <div class="wrapper">
+        <div id="calendar">
+        </div>
+    </div>
+</section>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "events.js" %>
+<% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#calendar').fullCalendar();
+});
+</script>

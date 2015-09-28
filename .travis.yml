@@ -1,6 +1,6 @@
-language: node_js
-node_js:
-  - "0.10.36"
+language: ruby
+rvm:
+  - 2.2.1
 before_install: npm install -g grunt-cli
 install: npm install
-before_script: bundle install
+before_script: bundle install && grunt test

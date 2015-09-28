@@ -1,32 +1,30 @@
-.page#index
+.page#candidates
 {
 	display: table;
 
-	section#learn-more
+	section#candidates-container
 	{
 		@include background-image(image-url('usaflag.png'));
 		@include background-size(cover);
-		display: table-row;
 		height: 100%;
 
+		.wrapper
+		{
+			padding-top: 12px;
+		}
+		
 		.overlay 
 		{
 			@include box-shadow(inset 0 1px 5px $black);
 			background-color: rgba(20, 40, 64, .75);
 			border-top: 1px solid $light-gray;
-			display: table-cell;
 			vertical-align: middle;
 		}
-	}
-	
-	p
-	{
-		text-align: left;
-	}
 
-	.panel 
-	{
-		font-size: 14px;
+		.panel 
+		{
+			font-size: 14px;
+		}
 
 		.panel-heading
 		{
@@ -34,12 +32,15 @@
 			background-color: $light-gray;
 			padding-top: 12px;
 			padding-bottom: 12px;
-			margin: 0;
+			margin: 5px;
 		}
 
-		.btn 
+		.panel-body#facebook
 		{
-			margin: 5px 8px 0 0;
+			@include background-image(image-url('coverphoto.png'));
+			@include background-size(cover);
+			height: 100%;
 		}
 	}
+
 }
