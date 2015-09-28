@@ -93,15 +93,6 @@ module.exports = function( grunt ) {
 					'bower_components/fullcalendar/dist/fullcalendar.js'
 					]
 				}
-			},
-			events: {
-				files: {
-					'webroot/js/events.js': [
-					'bower_components/moment/moment.js',
-					'bower_components/fullcalendar/dist/fullcalendar.js',
-					'assets/js/events.js'
-					]
-				}
 			}
 		},
 		cssmin: {
