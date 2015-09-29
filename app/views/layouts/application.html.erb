@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UBVoting - <%= controller.controller_name %> - <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'base' %>
+  <%= stylesheet_link_tag 'style' %>
+  <%= javascript_include_tag 'base' %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="<%= controller.controller_name %>" id="<%= controller.action_name %>">
+    <header>
+        <div class="wrapper">
+            <h1><a href="/">UBVoting</a></h1>
+
+            <a class="btn btn-default" href="#"><i class="fa fa-info-circle"></i> About Us</a>
+        </div>
+    </header>
+
+	<%= yield %>
+
+	<%= yield :javascript_includes %>
+</body>
+</html>

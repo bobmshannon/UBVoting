@@ -1,0 +1,52 @@
+.pages#pitch
+{
+	background-color: $white;
+
+	.logo
+	{
+		margin-top: 0;
+		padding-top: 20px;
+	}
+
+	p
+	{
+		font-size: 14px;
+		margin-bottom: 25px;
+
+		&:last-child
+		{ 
+			margin: 0;
+		}
+
+		&.group-members 
+		{
+			text-align: center;
+			padding: 30px 0 0;
+		}
+	}
+
+	.list-group
+	{
+		margin: 0;
+	}
+
+	.list-group-item-text
+	{
+		list-style: disc;
+	}
+
+	#carousel 
+	{
+		.item 
+		{
+			text-align: center;
+		}
+
+		img 
+		{ 
+			@include inline-block;
+			max-width: 800px;
+		}
+	}
+}
+

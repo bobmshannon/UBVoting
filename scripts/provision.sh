@@ -7,18 +7,54 @@ echo 'Updating packages...'
 yum -y update
 yum -y install epel-release
 
-# Install Nginx Web Server
+# Install Ruby
+echo 'Installing Ruby...'
+yum -y remove ruby
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -L get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+rvm reload
+rvm install 2.2.1
+usermod -a -G rvm vagrant
+rvm use 2.2.1 --default
+
+# Install Rails
+echo 'Installing Rails...'
+gem install rails
+
+# Install Passenger
+echo 'Installing Passenger...'
+gem install passenger
+
+# Install Nginx
 echo 'Installing Nginx...'
 yum -y remove httpd
-yum -y install nginx
-if ! [ -L /usr/share/nginx/html ]; then
-  rm -rf /usr/share/nginx/html
-  ln -fs /vagrant/webroot /usr/share/nginx/html
-fi
-chmod 0777 /usr/share/nginx/html
+yum -y install libcurl-devel
+passenger-install-nginx-module --auto --auto-download --prefix=/etc/nginx
 cd /vagrant && find . -exec touch {} \; 
-sed -i 's/sendfile        on;/sendfile        off;/' /etc/nginx/nginx.conf    # Disable sendfile to prevent weird caching issues with shared vagrant folder
-service nginx restart && chkconfig nginx on
+rm -rf /etc/nginx/conf/nginx.conf
+cp /vagrant/scripts/nginx.conf /etc/nginx/conf/nginx.conf
+
+# Setup nginx initialization script
+cp /vagrant/scripts/nginx.init /etc/rc.d/init.d/nginx
+chmod +x /etc/init.d/nginx
+echo "service nginx start" >> /etc/rc.local
+service nginx restart
+
+# Install SQLite3
+echo 'Installing SQLite3...'
+yum -y install sqlite-devel
+
+# Install Ruby
+echo 'Installing Ruby...'
+su vagrant
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
+rvm install ruby --latest
+sudo usermod -a -G rvm vagrant
+echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*" >> /home/vagrant/.bash_profile
+sudo su root
+yum -y install sqlite-devel
 
 # Install NodeJS
 echo 'Installing NodeJS...'
@@ -51,11 +87,16 @@ service iptables save
 # Update MOTD
 awk ' BEGIN { print "Welcome to your UBVoting Development VM.\nAccess locally at http://localhost:8080/" } ' > /etc/motd 
 
-# Install project dependencies
-if [ `ls -1 /vagrant/{{package,composer,bower}.json,Gruntfile.js,Gemfile} 2> /dev/null | wc -l` -gt 0 ]; then
-	echo 'Installing project dependencies:'
-fi
+# Switch to vagrant user
+su vagrant
 
+# Update ruby default ruby version
+/bin/bash --login
+rvm install 2.2.1
+rvm --default use 2.2.1
+
+# Install project dependencies
+echo 'Installing project dependencies...'
 if [ -f /vagrant/package.json ]; then
 	echo -e "\tRunning 'npm install'..."
 	rm -rf /vagrant/node_modules
@@ -81,12 +122,12 @@ fi
 git config --global core.editor "nano"
 
 # Update vagrant directory permissions
-chown -R vagrant /home/vagrant
+sudo chown -R vagrant /home/vagrant
 
 # Provision Complete
 echo -e '\nFinished provisioning:\n'
 printf '\tNginx v%s' $(2>&1 nginx -v | cut -d'/' -f2)
-printf '\tGem v%s' $(gem -v)
+printf '\tRuby v%s' $(ruby --version)
 printf '\tNPM v%s' $(npm -v)
 printf '\tBower v%s\n' $(bower -v)
 printf '\tBundler v%s\n' $(bundler -v | cut -d' ' -f3)

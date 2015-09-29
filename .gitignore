@@ -3,3 +3,9 @@
 /webroot/css/**/*.css
 /webroot/js/**/*.js
 /.sass-cache/
+.DS_Store
+/tmp/**
+/log/**
+/public/stylesheets
+/public/javascripts
+/scss-lint-report.xml

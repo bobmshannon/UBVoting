@@ -1,0 +1,46 @@
+.pages#candidates
+{
+	display: table;
+
+	section#candidates-container
+	{
+		@include background-image(image-url('usaflag.png'));
+		@include background-size(cover);
+		height: 100%;
+
+		.wrapper
+		{
+			padding-top: 12px;
+		}
+		
+		.overlay 
+		{
+			@include box-shadow(inset 0 1px 5px $black);
+			background-color: rgba(20, 40, 64, .75);
+			border-top: 1px solid $light-gray;
+			vertical-align: middle;
+		}
+
+		.panel 
+		{
+			font-size: 14px;
+		}
+
+		.panel-heading
+		{
+			font-size: 18pt;
+			background-color: $light-gray;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			margin: 5px;
+		}
+
+		.panel-body#facebook
+		{
+			@include background-image(image-url('coverphoto.png'));
+			@include background-size(cover);
+			height: 100%;
+		}
+	}
+
+}
