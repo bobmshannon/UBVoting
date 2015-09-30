@@ -18,8 +18,10 @@ gem 'susy', '~>2'
 gem 'breakpoint', '~>2'
 # Code linters
 gem 'scss_lint'
-# Passenger
-gem 'passenger'
+
+# Twitter Data Mining
+gem 'twitter'
+gem 'tweetstream'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
