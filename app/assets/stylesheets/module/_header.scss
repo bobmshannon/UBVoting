@@ -8,9 +8,14 @@ header
 	.btn 
 	{
 		float: right;
-		margin: 22px 0;
+		margin: 22px 5px;
 		font-weight: bold;
 		font-family: $primary-sans;
+		
+		&:first-child
+		{
+			margin-right: 0;
+		}
 	}
 
 	h1 

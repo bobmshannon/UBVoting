@@ -45,17 +45,6 @@ service nginx restart
 echo 'Installing SQLite3...'
 yum -y install sqlite-devel
 
-# Install Ruby
-echo 'Installing Ruby...'
-su vagrant
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable
-rvm install ruby --latest
-sudo usermod -a -G rvm vagrant
-echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*" >> /home/vagrant/.bash_profile
-sudo su root
-yum -y install sqlite-devel
-
 # Install NodeJS
 echo 'Installing NodeJS...'
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | NVM_DIR=/usr/local/nvm bash

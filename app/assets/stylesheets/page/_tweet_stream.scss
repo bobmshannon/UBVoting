@@ -1,0 +1,64 @@
+// scss-lint:disable SelectorFormat, MergeableSelector, SelectorDepth
+.tweet_stream
+{
+	h1
+	{
+
+		i
+		{
+			color: $twitter;
+		}
+	}
+
+	p 
+	{
+		font-size: 14pt;
+	}
+
+	#tweets 
+	{
+		padding: 15px 0 20px 0;
+
+		li 
+		{
+			@include clearfix;
+			position: relative;
+			padding-left: 68px;
+		}
+
+		.profile-picture 
+		{
+			display: block;
+			float: none;
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			margin-top: -24px;
+		}
+
+		img
+		{
+			@include border-radius(50%);
+			display: block;
+			max-width: 48px;
+			max-height: 48px;
+		}
+
+		.tweet-details 
+		{
+			float: none;
+		}
+
+		.tweet-details h2,
+		.tweet-details p 
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		.tweet-details h2
+		{
+			font-size: 20pt;
+		}
+	}
+}
