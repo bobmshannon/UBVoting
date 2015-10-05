@@ -19,9 +19,9 @@ gem 'breakpoint', '~>2'
 # Code linters
 gem 'scss_lint'
 
-# Twitter Data Mining
-gem 'twitter'
-gem 'tweetstream'
+# Twitter
+#gem 'twitter'
+gem 'twitter', :git => "git@github.com:sferik/twitter.git", :branch => "streaming-updates"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
