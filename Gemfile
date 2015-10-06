@@ -9,8 +9,6 @@ gem 'sqlite3'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-#gem 'sdoc', '~> 0.4.0', group: :doc
 # SASS/SCSS dependencies
 gem 'compass', '~>1'
 gem 'sass', '~>3.4'
@@ -18,19 +16,10 @@ gem 'susy', '~>2'
 gem 'breakpoint', '~>2'
 # Code linters
 gem 'scss_lint'
-
+# Database
+gem 'mongoid'
 # Twitter
-#gem 'twitter'
-gem 'twitter', :git => "git@github.com:sferik/twitter.git", :branch => "streaming-updates"
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'twitter', :git => 'git@github.com:sferik/twitter.git', :branch => 'streaming-updates'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
