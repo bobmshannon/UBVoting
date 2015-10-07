@@ -1,0 +1,59 @@
+		<script>
+	jQuery(document).ready(function(){
+		jQuery("#vmap").vectorMap({
+    		map: 'usa_en',
+    		backgroundColor: null,
+		borderColor: '#818181',
+		borderOpacity: 0.25,	
+    		color: '#B31B1B',
+    		hoverColor: '#999999',
+		selectedColor: '#666666',
+   		enableZoom: true,
+    		showTooltip: true,
+		});
+	});
+</script>
+	<center> <div id="vmap" style="width: 800px; height: 500px;"></div> </center>
+<div class = "row">
+
+<div id = "col-md-2">
+	<div id = "Bernie"> 
+		<img title="Bernie Sanders" alt="Bernie Sanders" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Bernie_Sanders_1786280.jpg" style="max-width:439px;" width="135px" height="160px" class="">
+	</div>
+<div>
+
+<div id = "col-md-2">
+	<div id = "Donald">
+		<img title="Donald Trump" alt="Donald Trump" src="https://s2.graphiq.com/sites/default/files/980/media/images/t2/Donald_Trump_6522122.jpg" style="max-width:338px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+<div id = "col-md-2">
+	<div id = "Hilary">
+		<img title="Hillary Clinton" alt="Hillary Clinton" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Hillary_Clinton_1786283.jpg" style="max-width:338px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+<div class ="col-md-2">
+	<div id = "Jeb">
+		<img title="Jeb Bush" alt="Jeb Bush" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Jeb_Bush_1786288.jpg" style="max-width:338px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+<div class = "col-md-2">
+	<div id = "Rand">
+		<img title="Rand Paul" alt="Rand Paul" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Rand_Paul_5645560.jpg" style="max-width:338px;" width="135x" height="160px" class="">
+	</div>
+</div>
+
+<div class = "col-md-2">
+	<div id = "Chris">
+		<img title="Chris Christie" alt="Chris Christie" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Chris_Christie_1786282.jpg" style="max-width:388px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+</div>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "map.js" %>
+<% end %>

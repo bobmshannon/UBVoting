@@ -93,6 +93,15 @@ module.exports = function( grunt ) {
 					'bower_components/fullcalendar/dist/fullcalendar.js'
 					]
 				}
+			},
+
+			map: {
+				files: {
+					'public/javascripts/map.js': [
+					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
+					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
+					]
+				}
 			}
 		},
 		cssmin: {

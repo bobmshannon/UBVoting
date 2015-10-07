@@ -1,20 +1,3 @@
-GIT
-  remote: git@github.com:sferik/twitter.git
-  revision: 1930a3a0d245888e08018bc3444a4478fc9972e9
-  branch: streaming-updates
-  specs:
-    twitter (6.0.0)
-      addressable (~> 2.3)
-      buftok (~> 0.2.0)
-      equalizer (~> 0.0.9)
-      http (~> 0.9)
-      http-form_data (~> 1.0)
-      http_parser.rb (~> 0.6.0)
-      memoizable (~> 0.4.0)
-      multipart-post (~> 2.0)
-      naught (~> 1.0)
-      simple_oauth (~> 0.3.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -53,7 +36,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -61,7 +43,6 @@ GEM
       sass (~> 3.3)
       sassy-maps (< 1.0.0)
     bson (3.2.4)
-    buftok (0.2.0)
     builder (3.2.2)
     byebug (6.0.2)
     chunky_png (1.3.4)
@@ -85,27 +66,12 @@ GEM
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     daemons (1.2.3)
-    daemons-rails (1.2.1)
-      daemons
-      multi_json (~> 1.0)
     debug_inspector (0.0.2)
-    domain_name (0.5.24)
-      unf (>= 0.0.5, < 1.0.0)
-    equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    http (0.9.8)
-      addressable (~> 2.3)
-      http-cookie (~> 1.0)
-      http-form_data (~> 1.0.1)
-      http_parser.rb (~> 0.6.0)
-    http-cookie (1.0.2)
-      domain_name (~> 0.5)
-    http-form_data (1.0.1)
-    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -115,8 +81,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    memoizable (0.4.2)
-      thread_safe (~> 0.3, >= 0.3.1)
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.1)
@@ -128,8 +92,6 @@ GEM
       origin (~> 2.1)
       tzinfo (>= 0.3.37)
     multi_json (1.11.2)
-    multipart-post (2.0.0)
-    naught (1.1.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     origin (2.1.1)
@@ -171,7 +133,6 @@ GEM
     scss_lint (0.42.1)
       rainbow (~> 2.0)
       sass (~> 3.4.15)
-    simple_oauth (0.3.1)
     spring (1.4.0)
     sprockets (3.3.5)
       rack (> 1, < 3)
@@ -188,9 +149,6 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.1)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -204,7 +162,7 @@ DEPENDENCIES
   breakpoint (~> 2)
   byebug
   compass (~> 1)
-  daemons-rails
+  daemons
   jbuilder (~> 2.0)
   mongoid
   rails (= 4.2.4)
@@ -214,5 +172,4 @@ DEPENDENCIES
   sqlite3
   susy (~> 2)
   turbolinks
-  twitter!
   web-console (~> 2.0)

@@ -20,7 +20,7 @@ gem 'mongoid'
 # Twitter
 gem 'twitter', :git => 'git@github.com:sferik/twitter.git', :branch => 'streaming-updates'
 # Daemons
-gem 'daemons-rails'
+gem 'daemons'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
