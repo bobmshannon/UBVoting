@@ -84,6 +84,10 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    daemons (1.2.3)
+    daemons-rails (1.2.1)
+      daemons
+      multi_json (~> 1.0)
     debug_inspector (0.0.2)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
@@ -200,6 +204,7 @@ DEPENDENCIES
   breakpoint (~> 2)
   byebug
   compass (~> 1)
+  daemons-rails
   jbuilder (~> 2.0)
   mongoid
   rails (= 4.2.4)

@@ -7,13 +7,10 @@ class Tweet
   # Tweet text
   field :text, type: String
   # Tweet entities (hashtags, stock symbols, urls, user mentions)
-  field :entities, type: Hash
-  # Tweet media (image, video, etc.)
-  field :media, type: String
-  # Latitude coordinate of author
-  field :lat, type: String
-  # Longitude coordinate of author
-  field :lng, type: String
+  #field :user_mentions, type: Hash
+  #field :hashtags, type: Hash
+  # Coordinates of author
+  #field :coordinates, type: Array
   # Number of times tweet was favorited
   field :favorite_count, type: Integer
   # Number of times tweet was retweeted
