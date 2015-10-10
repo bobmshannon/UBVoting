@@ -1,0 +1,241 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic);
+/* line 106, ../../../usr/local/rvm/gems/ruby-1.9.3-p551/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
+/* line 21, ../../../usr/local/rvm/gems/ruby-1.9.3-p551/gems/susy-2.2.6/sass/susy/language/susy/_box-sizing.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 8, ../../assets/stylesheets/core/_global.scss */
+body,
+html {
+  background: #f2f2f2;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 18, ../../assets/stylesheets/core/_global.scss */
+.wrapper {
+  padding: 0 2%;
+}
+
+/* line 23, ../../assets/stylesheets/core/_global.scss */
+.content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* line 29, ../../assets/stylesheets/core/_global.scss */
+.logo {
+  text-align: center;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+/* line 34, ../../assets/stylesheets/core/_global.scss */
+.logo .grey {
+  color: #434343;
+}
+/* line 39, ../../assets/stylesheets/core/_global.scss */
+.logo .blue {
+  color: #0000ff;
+}
+
+/* line 45, ../../assets/stylesheets/core/_global.scss */
+.btn {
+  padding: 10px;
+}
+
+/**
+ * Wraps any styles in a retina media query.
+ */
+/**
+ * Wraps any styles in a retina media query.
+ */
+/**
+ * Option variable to define the spacing between images in the generated sprite
+ */
+/**
+ * A mixin to create retina sprites with hover & active states
+ *
+ * You have to register a pair of sprites using `{@link #retina-sprite-add}` and then you can use this mixin:
+ *
+ *     @include retina-sprite-add(icons, "icons/*.png", "icons-retina/*.png");
+ *
+ *     .my-icon {
+ *       @include retina-sprite(icon-name, icons);
+ *     }
+ *
+ * @param {String} $name
+ * @param {String} [$sprite-name]
+ * @param {Boolean} [$hover=false]
+ * @param {Boolean} [$active=false]
+ */
+/**
+ * @param {String} $name
+ * @param {String} $path
+ * @param {String} $path2x
+ */
+/**
+ * Wraps any styles in a retina media query.
+ */
+/**
+ * Mixin for retina backgrounds where you can't use a sprite.
+ *
+ * - Make sure you have a file@2x.png file additional to your file.png.
+ * - The mixin prepends $imgPath, which should be set globally at some point. Default is: "img/"
+ *
+ * Examples:
+ *     li {
+ *       @include retina-background(arrow, no-repeat 10px 15px)
+ *     }
+ *
+ *     a.external {
+ *       @include retina-background(external, no-repeat right)
+ *     }
+ *
+ * @param {String} $file Path to file relative to images folder defined in config.rb and without a file extension
+ * @param {Object} [$attr] Additional attributes like position or repetition. E.g. `no-repeat top right`
+ * @param {String} [$type] The file type.
+ */
+/* line 1, ../../assets/stylesheets/module/_header.scss */
+header {
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  *zoom: 1;
+  background: #fff;
+  height: 87px;
+}
+/* line 8, ../../assets/stylesheets/module/_header.scss */
+header .btn {
+  float: right;
+  margin: 22px 0;
+  font-weight: bold;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+/* line 16, ../../assets/stylesheets/module/_header.scss */
+header h1 {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+/* line 21, ../../assets/stylesheets/module/_header.scss */
+header h1 a {
+  background: no-repeat left 15px;
+  background-image: url('../img/logo.png?1443987252');
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+  text-indent: -9999px;
+  display: block;
+  width: 160px;
+  height: 87px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  /* line 21, ../../assets/stylesheets/module/_header.scss */
+  header h1 a {
+    background-image: url('../img/logo@2x.png?1443987252');
+    background-size: 160px 52px;
+  }
+}
+
+/* line 1, ../../assets/stylesheets/page/_home.scss */
+.page#index {
+  display: table;
+}
+/* line 5, ../../assets/stylesheets/page/_home.scss */
+.page#index section#learn-more {
+  background-image: url('../img/usaflag.png?1443987252');
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: table-row;
+  height: 100%;
+}
+/* line 12, ../../assets/stylesheets/page/_home.scss */
+.page#index section#learn-more .overlay {
+  -moz-box-shadow: inset 0 1px 5px #000;
+  -webkit-box-shadow: inset 0 1px 5px #000;
+  box-shadow: inset 0 1px 5px #000;
+  background-color: rgba(20, 40, 64, 0.75);
+  border-top: 1px solid #d2d2d2;
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 22, ../../assets/stylesheets/page/_home.scss */
+.page#index p {
+  text-align: left;
+}
+/* line 27, ../../assets/stylesheets/page/_home.scss */
+.page#index .panel {
+  font-size: 14px;
+}
+/* line 31, ../../assets/stylesheets/page/_home.scss */
+.page#index .panel .panel-heading {
+  font-size: 18pt;
+  background-color: #d2d2d2;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
+}
+/* line 40, ../../assets/stylesheets/page/_home.scss */
+.page#index .panel .btn {
+  margin: 5px 8px 0 0;
+}
+
+/* line 1, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch {
+  background-color: #fff;
+}
+/* line 5, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch .logo {
+  margin-top: 0;
+  padding-top: 20px;
+}
+/* line 11, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch p {
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+/* line 16, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch p:last-child {
+  margin: 0;
+}
+/* line 21, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch p.group-members {
+  text-align: center;
+}
+/* line 27, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch .list-group {
+  margin: 0;
+}
+/* line 32, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch .list-group-item-text {
+  list-style: disc;
+}
+/* line 39, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch #carousel .item {
+  text-align: center;
+}
+/* line 44, ../../assets/stylesheets/page/_pitch.scss */
+.page#pitch #carousel img {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  max-width: 800px;
+}

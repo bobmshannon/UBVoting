@@ -106,6 +106,21 @@
         fill: rgb(129, 129, 129);
     }
     
+    path#jqvmap1_mi
+    {
+        stroke: rgb(129, 129, 129);
+        stroke-width: 1px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-opacity: .25;
+        fill: rgb(0,52,107);
+    }
+    
+    path#jqvmap1_mi:hover
+    {
+        fill: rgb(129, 129, 129);
+    }
+    
     path#jqvmap1_mo
     {
         stroke: rgb(129, 129, 129);
@@ -151,6 +166,21 @@
         fill: rgb(129, 129, 129);
     }
 
+    path#jqvmap1_nc
+    {
+        stroke: rgb(129, 129, 129);
+        stroke-width: 1px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-opacity: .25;
+        fill: rgb(102,51,153);
+    }
+
+    path#jqvmap1_nc:hover
+    {
+        fill: rgb(129, 129, 129);
+    }
+    
     path#jqvmap1_nh
     {
         stroke: rgb(129, 129, 129);
@@ -166,6 +196,21 @@
         fill: rgb(129, 129, 129);
     }
     
+    path#jqvmap1_nm
+    {
+        stroke: rgb(129, 129, 129);
+        stroke-width: 1px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-opacity: .25;
+        fill: rgb(102,51,153);
+    }
+    
+    path#jqvmap1_nm:hover
+    {
+        fill: rgb(129, 129, 129);
+    }    
+
     path#jqvmap1_ny
     {
         stroke: rgb(129, 129, 129);
@@ -276,36 +321,5 @@
 
     path#jqvmap1_vt:hover{
         fill: rgb(129, 129, 129);
-    }
-
-    #Bernie{
-        float: left;
-        margin-left: 180px;
-    }
-
-    #Donald{
-        float: left;
-        margin-left: 30px;
-    }
-
-    #Hilary{
-        float: left;
-        margin-left: 30px;
-    }
-
-    #Jeb{
-        float: left;
-        margin-left: 15px;
-    }
-
-    #Rand{
-        float: left;
-        margin-left: -38px;
-    }
-
-    #Chris{
-        float: left;
-        margin-left: -90px;
-
     }
 }
