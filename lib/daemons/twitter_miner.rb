@@ -7,7 +7,7 @@ require File.expand_path('../../../config/environment', __FILE__)
 # tracked is 400. See https://dev.twitter.com/streaming/public.
 TOPICS = [
 			'#Trump2016', '#Hilary2016', '#Rand2016', '#Jeb2016', '#Christie2016', '#FeelTheBern',
-			'#Cruz2016', '#Biden2016', '#Fiorina2016', '#PresidentialElection'
+			'#Cruz2016', '#Biden2016', '#Fiorina2016', '#PresidentialElection', '#DemDebate'
 		]
 
 # Twitter API Authentication
