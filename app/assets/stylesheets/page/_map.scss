@@ -298,7 +298,8 @@
     {
         fill: rgb(129, 129, 129);
     }
-    path#jqvmap1_va{
+    path#jqvmap1_va
+    {
         stroke: rgb(129, 129, 129);
         stroke-width: 1px;
         stroke-linecap: round;
@@ -307,9 +308,11 @@
         fill: rgb(0,52,107);
     }
 
-    path#jqvmap1_va:hover{
+    path#jqvmap1_va:hover
+    {
         fill: rgb(129, 129, 129);
     }
+
     path#jqvmap1_vt{
         stroke: rgb(129, 129, 129);
         stroke-width: 1px;
@@ -319,7 +322,26 @@
         fill: rgb(0,52,107);
     }
 
-    path#jqvmap1_vt:hover{
+    path#jqvmap1_vt:hover
+    {
         fill: rgb(129, 129, 129);
+    }
+    
+    .col-md-2
+    {
+        text-align: center;
+
+    }
+
+    .col-md-2 img
+    {
+        width: 100%;
+    }
+
+    @include breakpoint(max-width 1920px){
+        .col-md-2 img{
+            width: 70%;
+            margin: 0;
+        }
     }
 }
