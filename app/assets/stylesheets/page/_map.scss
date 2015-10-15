@@ -338,6 +338,11 @@
         width: 100%;
     }
 
+    #footer
+    {
+        background-color: rgb(32,32,32);
+    }
+
     @include breakpoint(max-width 1920px){
         .col-md-2 img{
             width: 70%;
