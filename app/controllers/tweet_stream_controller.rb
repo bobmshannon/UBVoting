@@ -2,7 +2,7 @@ class TweetStreamController < ApplicationController
 	def list
 		@hash_tags = [
 			'#Trump2016', '#Hilary2016', '#Rand2016', '#Jeb2016', '#Christie2016', '#FeelTheBern',
-			'#Cruz2016', '#Biden2016', '#Fiorina2016', '#PresidentialElection'
+			'#Cruz2016', '#Biden2016', '#Fiorina2016', '#PresidentialElection', '#DemDebate'
 		]
 
 		@tweets = []
