@@ -20,3 +20,15 @@
         <% end %>
     </ul>
 </div>
+
+<script type="text/javascript">
+var dispatcher = new WebSocketRails('localhost:3001/websocket');
+var channel = dispatcher.subscribe('tweets');
+channel.bind('new_tweet', function(data) {
+    console.log('new tweet received: ' + data);
+});
+
+dispatcher.bind('connected', function(data) {
+  console.log(data);
+});
+</script>

@@ -41,6 +41,9 @@ chmod +x /etc/init.d/nginx
 echo "service nginx start" >> /etc/rc.local
 service nginx restart
 
+# Install Redis
+yum -y install redis
+
 # Install SQLite3
 echo 'Installing SQLite3...'
 yum -y install sqlite-devel
@@ -71,6 +74,7 @@ yum -y install java
 # Firewall rules
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3001 -j ACCEPT
 service iptables save
 
 # Update MOTD

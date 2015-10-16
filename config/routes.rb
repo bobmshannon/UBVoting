@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/candidates' => 'pages#candidates'
   get '/map' => 'pages#map'
   # Tweet Stream
-  get '/happening-now' => 'tweet_stream#list'
+  get '/happening-now' => 'tweet_map#list'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

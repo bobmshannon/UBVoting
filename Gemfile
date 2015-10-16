@@ -19,7 +19,9 @@ gem 'scss_lint'
 gem 'mongoid'
 # Twitter
 gem 'twitter', :git => 'git@github.com:sferik/twitter.git', :branch => 'streaming-updates'
-# Daemons
+# Websockets
+gem 'websocket-rails'
+# Daemons/background jobs
 gem 'daemons'
 
 group :development, :test do

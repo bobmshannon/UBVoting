@@ -24,13 +24,12 @@ streamclient = Twitter::Streaming::Client.new do |config|
 	config.access_token_secret = ACCESS_TOKEN_SECRET
 end
 
-# Environment to run under
-ENV["RAILS_ENV"] ||= "production"
-
 $running = true
 Signal.trap("TERM") do 
   $running = false
 end
+
+WebsocketRails[:tweets].trigger(:new_tweet, "streaming tweets...")
 
 while($running) do
   # Initiate twitter stream and track specified topics
@@ -51,6 +50,9 @@ while($running) do
 	  	#hashtags: hashtags,
 	  	#user_mentions: user_mentions
 	  )
+
+	  WebsocketRails[:tweets].trigger(:new_tweet, object.text)
+	  puts object.text
 	end
   end
 
