@@ -9,3 +9,5 @@
 /public/stylesheets
 /public/javascripts
 /scss-lint-report.xml
+/.vagrant/
+/.bundle/
