@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   
   def pitch
   end
+
+  def map
+  end
 end

@@ -1,6 +1,6 @@
 # UBVoting
 
-[![Build Status](https://magnum.travis-ci.com/bobmshannon/UBVoting.svg?token=qEZPqxG9wUaU2LNL3KZU&branch=master)](https://magnum.travis-ci.com/bobmshannon/UBVoting)
+[![Build Status](https://magnum.travis-ci.com/bobmshannon/UBVoting.svg?token=qEZPqxG9wUaU2LNL3KZU&branch=dev)](https://magnum.travis-ci.com/bobmshannon/UBVoting)
 [![Dependency Status](https://www.versioneye.com/user/projects/55f747db3ed89400170004f2/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55f747db3ed89400170004f2)
 
 Commits pushed to the <b>master</b> branch are automatically deployed to [https://ubvoting.com](https://ubvoting.com).

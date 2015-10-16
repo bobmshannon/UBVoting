@@ -22,6 +22,7 @@
     "fullcalendar": "~2.4.0",
     "jquery": "~2.1.4",
     "jquery-ui": "jquery.ui#1.11.4",
-    "fullcalendar": "~2.4.0"
+    "jqvmap": "https://github.com/manifestinteractive/jqvmap.git",
+    "websocket-rails-js": "git@github.com:websocket-rails/websocket-rails-js.git#~0.0.1"
   }
 }

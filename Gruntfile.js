@@ -75,7 +75,8 @@ module.exports = function( grunt ) {
 					'public/javascripts/base.js': [
 					'bower_components/jquery/dist/jquery.js',
 					'bower_components/jquery-ui/jquery-ui.js',
-					'bower_components/bootstrap/dist/js/bootstrap.min.js'
+					'bower_components/bootstrap/dist/js/bootstrap.min.js',
+					'bower_components/websocket-rails-js/websocket_rails.0.0.1.min.js'
 					]
 				}
 			},
@@ -91,6 +92,15 @@ module.exports = function( grunt ) {
 					'public/javascripts/events.js': [
 					'bower_components/moment/moment.js',
 					'bower_components/fullcalendar/dist/fullcalendar.js'
+					]
+				}
+			},
+
+			map: {
+				files: {
+					'public/javascripts/map.js': [
+					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
+					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
 					]
 				}
 			}
