@@ -78,7 +78,7 @@
     }
 
     // Initialize web socket
-    var dispatcher = new WebSocketRails('localhost:3001/websocket');
+    var dispatcher = new WebSocketRails('wss://ws.ubvoting.com/websocket');
     var channel = dispatcher.subscribe('tweets');
     channel.bind('new_tweet', function(data) {
         processTweet(data);

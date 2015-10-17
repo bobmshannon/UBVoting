@@ -10,26 +10,18 @@ TOPICS = [
 			'#Cruz2016', '#Biden2016', '#Fiorina2016', '#PresidentialElection', '#DemDebate'
 		]
 
-# Twitter API Authentication
-CONSUMER_KEY = 'hvWaAIoUXTseFppzXYqqp3dXm'
-CONSUMER_SECRET = 'mTRw5vCSlm23WHnRLEzyjQDoaOKjAKLNLk9H7I1DuTdDGe6jUJ'
-ACCESS_TOKEN = '1024940624-X5yzRS7ODH6K4ZfLKWAe1VNHhjzOzEc0FROMTx7'
-ACCESS_TOKEN_SECRET = 'GpXkul8flPI16egRoYkyqlKQJzW6R9K63Nc1xKtcjjRrh'
-
 # Twitter Streaming API Client
 streamclient = Twitter::Streaming::Client.new do |config|
-	config.consumer_key = CONSUMER_KEY
-	config.consumer_secret = CONSUMER_SECRET
-	config.access_token = ACCESS_TOKEN
-	config.access_token_secret = ACCESS_TOKEN_SECRET
+	config.consumer_key = ENV['consumer_key']
+	config.consumer_secret = ENV['consumer_secret']
+	config.access_token = ENV['access_token']
+	config.access_token_secret = ENV['access_token_secret']
 end
 
 $running = true
 Signal.trap("TERM") do 
   $running = false
 end
-
-WebsocketRails[:tweets].trigger(:new_tweet, "streaming tweets...")
 
 while($running) do
   # Initiate twitter stream and track specified topics
@@ -51,6 +43,7 @@ while($running) do
 	  	#user_mentions: user_mentions
 	  )
 
+	  # Send tweet to all clients listening on web socket channel
 	  WebsocketRails[:tweets].trigger(:new_tweet, object.to_h.to_json)
 	end
   end
