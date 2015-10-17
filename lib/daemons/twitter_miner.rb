@@ -51,8 +51,7 @@ while($running) do
 	  	#user_mentions: user_mentions
 	  )
 
-	  WebsocketRails[:tweets].trigger(:new_tweet, object.text)
-	  puts object.text
+	  WebsocketRails[:tweets].trigger(:new_tweet, object.to_h.to_json)
 	end
   end
 

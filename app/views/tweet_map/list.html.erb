@@ -1,34 +1,101 @@
 <div class="wrapper">
     <h1><i class="fa fa-twitter"></i> Happening Right Now</h1>
-    <p>
-        Displaying 100 randomly sampled tweets using the following hashtags:
-        <% for tag in @hash_tags %>
-            <a target="_blank" href="https://twitter.com/search?q=<%= tag %>" class="badge"><b><%= tag %> </b></a>
-        <% end %>
-    </p>
+
+    <div id="stream-controls">
+        <a id="pause" class="btn btn-default" href="javascript:void()"><span>Pause</span> &nbsp;<i class="fa fa-pause"></i>&nbsp;</a>
+    </div>
 
     <ul id="tweets" class="list-group">
-        <% for tweet in @tweets.shuffle %>
-            <li class="list-group-item">
-                <a class="profile-picture" target="_blank" href="https://twitter.com/<%= tweet.user.screen_name %>"><img src="<%= tweet.user.profile_image_url_https %>" /></a>
+        <li class="list-group-item tweet-template">
+            <a class="profile-picture" target="_blank" href=""><img src="" /></a>
 
-                <div class="tweet-details">
-                    <h2><a target="_blank" href="https://twitter.com/<%= tweet.user.screen_name %>">@<%= tweet.user.screen_name %></a></h2>
-                    <p><%= tweet.text %></p>
-                </div>
-            </li>
-        <% end %>
+            <div class="tweet-details">
+                <h2 class="handle"><a target="_blank" href=""></a></h2>
+                <p class="text"></p>
+            </div>
+        </li>
     </ul>
 </div>
 
 <script type="text/javascript">
-var dispatcher = new WebSocketRails('localhost:3001/websocket');
-var channel = dispatcher.subscribe('tweets');
-channel.bind('new_tweet', function(data) {
-    console.log('new tweet received: ' + data);
-});
+    /**
+     * Whether the stream is paused or not
+     * @type {Boolean}
+     */
+    paused = false;
 
-dispatcher.bind('connected', function(data) {
-  console.log(data);
-});
+    /**
+     * Generate tweet HTML markup
+     * 
+     * @param  {[type]} tweet [description]
+     * @return {[type]}       [description]
+     */
+    function htmlify(tweet) {
+        tweetHtml = $('.tweet-template').clone();
+        tweetHtml.find('.text').text(tweet.text);
+        tweetHtml.find('.handle a').text(tweet.user.screen_name).attr('href', 'https://twitter.com/' + tweet.user.screen_name);
+        tweetHtml.find('.profile-picture img').attr('src', tweet.user.profile_image_url_https);
+        return tweetHtml;
+        // handle, text, coordinates, profileImageUrl
+    }
+
+    /**
+     * Insert tweet into DOM
+     * 
+     * @param  {[type]} tweet [description]
+     * @return none
+     */
+    function insert(tweet) {
+        tweetHtml.prependTo('#tweets').fadeIn(2000).removeClass('tweet-template');
+    }
+
+    /**
+     * Process an incoming tweet from the web socket
+     * 
+     * @return none
+     */
+    function processTweet(tweet) {
+        if (!paused) {
+            tweet = $.parseJSON(tweet);
+            console.log(tweet);
+            tweet = htmlify(tweet);
+            insert(tweet);
+            tweet = null;
+        }
+    }
+
+    /**
+     * Start/stop tweet stream
+     * 
+     * @return none
+     */
+    function toggleStream() {
+        if(paused) {
+            paused = false;
+        } else {
+            paused = true;
+        }
+    }
+
+    // Initialize web socket
+    var dispatcher = new WebSocketRails('localhost:3001/websocket');
+    var channel = dispatcher.subscribe('tweets');
+    channel.bind('new_tweet', function(data) {
+        processTweet(data);
+    });
+
+    // DOM ready
+    $(document).ready(function() {
+        // Stream control buttons (pause, play)
+        $('#pause').on('click', function() {
+            // Enable/disable stream
+            toggleStream();
+
+            // Update button text and icon
+            var text = $(this).find('span').text();
+            $(this).find('span').text(text == 'Pause' ? 'Play' : 'Pause');
+            $(this).find('i').toggleClass('fa-pause fa-play');
+            $(this).blur();
+        });
+    });
 </script>

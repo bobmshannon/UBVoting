@@ -15,15 +15,30 @@
 		font-size: 14pt;
 	}
 
+	#stream-controls 
+	{
+		@include clearfix;
+		
+		.btn
+		{
+			float: right;
+		}
+	}
+
 	#tweets 
 	{
-		padding: 15px 0 20px;
+		margin: 15px 0 20px;
 
 		li 
 		{
 			@include clearfix;
 			position: relative;
 			padding-left: 68px;
+		}
+
+		.tweet-template
+		{
+			display: none;
 		}
 
 		.profile-picture 
