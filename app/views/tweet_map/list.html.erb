@@ -10,8 +10,14 @@
             <a class="profile-picture" target="_blank" href=""><img src="" /></a>
 
             <div class="tweet-details">
-                <h2 class="handle"><a target="_blank" href=""></a></h2>
+                <h2 class="handle"><a target="_blank" href=""></a> <span></span></h2>
                 <p class="text"></p>
+
+                <ul class="tweet-actions">
+                    <li class="reply"><a href=""><i class="fa fa-reply"></i></a></li>
+                    <li class="favorite"><a href=""><i class="fa fa-star"></i></a></li>
+                    <li class="retweet"><a href=""><i class="fa fa-retweet"></i></a></li>
+                </ul>
             </div>
         </li>
     </ul>
@@ -24,6 +30,10 @@
      */
     paused = false;
 
+    $.fn.greenify = function() {
+        this.css( "color", "green" );
+    };
+
     /**
      * Generate tweet HTML markup
      * 
@@ -33,8 +43,9 @@
     function htmlify(tweet) {
         tweetHtml = $('.tweet-template').clone();
         tweetHtml.find('.text').text(tweet.text);
-        tweetHtml.find('.handle a').text(tweet.user.screen_name).attr('href', 'https://twitter.com/' + tweet.user.screen_name);
-        tweetHtml.find('.profile-picture img').attr('src', tweet.user.profile_image_url_https);
+        tweetHtml.find('.handle a').text(tweet.user.name).attr('href', 'https://twitter.com/' + tweet.user.screen_name);
+        tweetHtml.find('.handle span').text('@' + tweet.user.screen_name);
+        tweetHtml.find('.profile-picture img').attr('src', tweet.user.profile_image_url_https.replace('_normal', ''));
         return tweetHtml;
         // handle, text, coordinates, profileImageUrl
     }

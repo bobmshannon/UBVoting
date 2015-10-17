@@ -33,7 +33,8 @@
 		{
 			@include clearfix;
 			position: relative;
-			padding-left: 68px;
+			padding-left: 96px;
+			padding-bottom: 5px;
 		}
 
 		.tweet-template
@@ -46,17 +47,16 @@
 			display: block;
 			float: none;
 			position: absolute;
-			top: 50%;
+			top: 12px;
 			left: 10px;
-			margin-top: -24px;
 		}
 
 		img
 		{
-			@include border-radius(50%);
+			@include border-radius(8px);
 			display: block;
-			max-width: 48px;
-			max-height: 48px;
+			width: 72px;
+			height: 72px;
 		}
 
 		.tweet-details 
@@ -74,6 +74,49 @@
 		.tweet-details h2
 		{
 			font-size: 20pt;
+
+			a
+			{
+				color: $black;
+			}
+
+			span
+			{
+			    color: rgba(0,0,0,0.50);
+			    position: relative;
+			    font-size: 16pt;
+			    top: -3px;
+			}
+		}
+
+		.tweet-details p
+		{
+			color: rgba(0, 0, 0, 0.70);
+		}
+
+		.tweet-actions 
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		.tweet-actions li 
+		{
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			font-size: 16px;
+		}
+
+		.tweet-actions li a
+		{
+			color: rgba(0, 0, 0, 0.2);
+			padding: 5px 15px 5px 0;
+
+			&:hover 
+			{
+				color: rgb(59, 171, 59);
+			}
 		}
 	}
 }
