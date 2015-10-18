@@ -2,7 +2,14 @@
     <h1><i class="fa fa-twitter"></i> Happening Right Now</h1>
 
     <div id="stream-controls">
-        <a id="pause" class="btn btn-default" href="javascript:void()"><span>Pause</span> &nbsp;<i class="fa fa-pause"></i>&nbsp;</a>
+        <div class="left btn-group" role="group">
+            <button type="button" id="list-view" class="btn btn-default"><i class="fa fa-th-list"></i> <span>List View</span></button>
+            <button type="button" id="map-view" class="btn btn-default"><i class="fa fa-map-marker"></i> <span>Map View</span></button>
+        </div>
+
+        <div class="right">
+            <button type="button" id="pause" class="btn btn-default"><span>Pause</span> &nbsp;<i class="fa fa-pause"></i>&nbsp;</a>
+        </div>
     </div>
 
     <ul id="tweets" class="list-group">
@@ -26,6 +33,7 @@
 <script type="text/javascript">
     /**
      * Whether the stream is paused or not
+     * 
      * @type {Boolean}
      */
     paused = false;
@@ -33,8 +41,8 @@
     /**
      * Generate tweet HTML markup
      * 
-     * @param  {[type]} tweet [description]
-     * @return {[type]}       [description]
+     * @param  {json} tweet JSON array containing tweet information
+     * @return {Jquery} DOM object with tweet information
      */
     function htmlify(tweet) {
         tweetHtml = $('.tweet-template').clone();
@@ -47,9 +55,9 @@
     }
 
     /**
-     * Insert tweet into DOM
+     * Insert tweet into page
      * 
-     * @param  {[type]} tweet [description]
+     * @param  {JQuery} tweet DOM object with tweet information
      * @return none
      */
     function insert(tweet) {
