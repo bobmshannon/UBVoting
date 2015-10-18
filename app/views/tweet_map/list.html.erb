@@ -17,7 +17,11 @@
             <a class="profile-picture" target="_blank" href=""><img src="" /></a>
 
             <div class="tweet-details">
-                <h2 class="handle"><a target="_blank" href=""></a> <span></span></h2>
+                <div class="clear">
+                    <h2 class="handle left"><a target="_blank" href=""></a> <span></span></h2>
+                    <p class="timestamp right"><i class="fa fa-clock-o"></i> <span title=""></span></time>
+                </div>
+
                 <p class="text"></p>
 
                 <ul class="tweet-actions">
@@ -50,8 +54,11 @@
         tweetHtml.find('.handle a').text(tweet.user.name).attr('href', 'https://twitter.com/' + tweet.user.screen_name);
         tweetHtml.find('.handle span').text('@' + tweet.user.screen_name);
         tweetHtml.find('.profile-picture img').attr('src', tweet.user.profile_image_url_https.replace('_normal', ''));
+
+        var time = new Date(parseInt(tweet.timestamp_ms)).toISOString();
+        tweetHtml.find('.timestamp span').attr('title', time);
+
         return tweetHtml;
-        // handle, text, coordinates, profileImageUrl
     }
 
     /**
@@ -61,7 +68,29 @@
      * @return none
      */
     function insert(tweet) {
+
         tweetHtml.prependTo('#tweets').fadeIn(2000).removeClass('tweet-template');
+        init(tweetHtml);
+    }
+
+    /**
+     * Initialize a tweet
+     * 
+     * @param  {JQuery} tweet DOM object with tweet information
+     * @return none
+     */
+    function init(tweet) {
+        tweet.find('.timestamp span').timeago();
+    }
+
+    /**
+     * Destroy a tweet
+     * 
+     * @param  {JQuery} tweet DOM object with tweet information
+     * @return none
+     */
+    function destroy(tweet) {
+        tweet.find('.timestamp').timeago('dispose');
     }
 
     /**
