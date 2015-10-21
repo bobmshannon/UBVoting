@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require File.expand_path('../../../config/environment', __FILE__)
+include Twitter::Autolink
 
 # Topics to track on Twitter (related to 2016 presidential election).
 # 
@@ -43,8 +44,12 @@ while($running) do
 	  	#user_mentions: user_mentions
 	  )
 
+      tweet = object.to_h
+      html = auto_link(tweet[:text])
+      tweet[:text_html] = html
+
 	  # Send tweet to all clients listening on web socket channel
-	  WebsocketRails[:tweets].trigger(:new_tweet, object.to_h.to_json)
+	  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
 	end
   end
 

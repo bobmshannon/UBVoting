@@ -50,7 +50,7 @@
      */
     function htmlify(tweet) {
         tweetHtml = $('.tweet-template').clone();
-        tweetHtml.find('.text').text(tweet.text);
+        tweetHtml.find('.text').append($.parseHTML(tweet.text_html));
         tweetHtml.find('.handle a').text(tweet.user.name).attr('href', 'https://twitter.com/' + tweet.user.screen_name);
         tweetHtml.find('.handle span').text('@' + tweet.user.screen_name);
         tweetHtml.find('.profile-picture img').attr('src', tweet.user.profile_image_url_https.replace('_normal', ''));
