@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:sferik/twitter.git
+  remote: git://github.com/sferik/twitter.git
   revision: 1930a3a0d245888e08018bc3444a4478fc9972e9
   branch: streaming-updates
   specs:
