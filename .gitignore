@@ -12,3 +12,6 @@
 /.vagrant/
 /.bundle/
 /README.md
+
+# Ignore application configuration
+/config/application.yml

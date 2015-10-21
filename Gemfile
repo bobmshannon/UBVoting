@@ -18,11 +18,14 @@ gem 'scss_lint'
 # Database
 gem 'mongoid'
 # Twitter
-gem 'twitter', :git => 'git@github.com:sferik/twitter.git', :branch => 'streaming-updates'
+gem 'twitter', :github => 'sferik/twitter', :branch => 'streaming-updates'
+gem 'twitter-text'
 # Websockets
 gem 'websocket-rails'
 # Daemons/background jobs
 gem 'daemons'
+# Environment variables
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
