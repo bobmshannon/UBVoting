@@ -18,7 +18,7 @@ gem 'scss_lint'
 # Database
 gem 'mongoid'
 # Twitter
-gem 'twitter', :github => 'sferik/twitter', :branch => 'streaming-updates'
+gem 'twitter', :git => 'https://github.com/sferik/twitter.git', :branch => 'streaming-updates'
 gem 'twitter-text'
 # Websockets
 gem 'websocket-rails'
