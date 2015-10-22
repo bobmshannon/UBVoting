@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'candidates/berniesanders'
+
   get 'pages/home'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -12,10 +14,14 @@ Rails.application.routes.draw do
   get '/pitch' => 'pages#pitch'
   get '/pitch.html' => 'pages#pitch'
   get '/events' => 'pages#events'
-  get '/candidates' => 'pages#candidates'
+
   get '/map' => 'pages#map'
   # Tweet Stream
   get '/happening-now' => 'tweet_map#list'
+
+  # Candidates
+  get '/candidates' => 'pages#candidates'
+  get '/candidates/bernieSanders'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
