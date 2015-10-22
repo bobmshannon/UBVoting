@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   # Candidates
   get '/candidates' => 'pages#candidates'
-  get '/candidates/bernieSanders'
+  get '/candidates/genericcandidate'
+  get '/candidates/berniesanders'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
