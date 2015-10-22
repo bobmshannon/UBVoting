@@ -117,6 +117,11 @@ git config --global core.editor "nano"
 # Update vagrant directory permissions
 sudo chown -R vagrant /home/vagrant
 
+# Fix permissions
+rvmsudo rvm get stable --auto-dotfiles
+rvm fix-permissions system
+rvm group add rvm vagrant
+
 # Provision Complete
 echo -e '\nFinished provisioning:\n'
 printf '\tNginx v%s' $(2>&1 nginx -v | cut -d'/' -f2)
