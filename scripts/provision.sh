@@ -3,9 +3,9 @@
 echo 'Provisioning UBVoting Development Machine...'
 
 # Update
-echo 'Updating packages...'
-yum -y update
-yum -y install epel-release
+#echo 'Updating packages...'
+#yum -y update
+#yum -y install epel-release
 
 # Install Ruby
 echo 'Installing Ruby...'
@@ -88,6 +88,11 @@ su vagrant
 rvm install 2.2.1
 rvm --default use 2.2.1
 
+# Fix permissions
+rvmsudo rvm get stable --auto-dotfiles
+rvm fix-permissions system
+rvm group add rvm vagrant
+
 # Install project dependencies
 echo 'Installing project dependencies...'
 if [ -f /vagrant/package.json ]; then
@@ -116,11 +121,6 @@ git config --global core.editor "nano"
 
 # Update vagrant directory permissions
 sudo chown -R vagrant /home/vagrant
-
-# Fix permissions
-rvmsudo rvm get stable --auto-dotfiles
-rvm fix-permissions system
-rvm group add rvm vagrant
 
 # Provision Complete
 echo -e '\nFinished provisioning:\n'
