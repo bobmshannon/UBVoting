@@ -3,9 +3,9 @@
 echo 'Provisioning UBVoting Development Machine...'
 
 # Update
-#echo 'Updating packages...'
-#yum -y update
-#yum -y install epel-release
+echo 'Updating packages...'
+yum -y update
+yum -y install epel-release
 
 # Install Ruby
 echo 'Installing Ruby...'
