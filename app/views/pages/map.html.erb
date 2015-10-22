@@ -12,8 +12,15 @@
     		showTooltip: true,
 		});
 	});
+	$(document).ready(function () {
+    $('.carousel').carousel({
+        interval: 3000
+    });
+
+    $('.carousel').carousel('cycle');
+});
 </script>
-	<center> <div id="vmap" style="width: 800px; height: 500px;"></div> </center>
+	<center> <div id="vmap" style="width: 700px; height: 450px;"></div> </center>
 <div id = "footer">
 	<div id = "candidatesCarousel" class = "carousel slide">
 		<ol class = "carousel-indicators">	
@@ -106,9 +113,6 @@
 		</div>	
 	</div>
 </div>
-<a class = "carousel-control" href = "#candidatesCarousel" data-slide = "prev">
-<span class = "icon-prev"> </span>
-</a>
 
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "map.js" %>
