@@ -14,11 +14,12 @@ Rails.application.routes.draw do
   get '/pitch' => 'pages#pitch'
   get '/pitch.html' => 'pages#pitch'
   get '/events' => 'pages#events'
-
   get '/map' => 'pages#map'
+
   # Tweet Stream
   get '/happening-now' => 'tweet_map#list'
-
+  get '/happening-now/map-view' => 'tweet_map#map'
+  
   # Candidates
   get '/candidates' => 'pages#candidates'
   get '/candidates/genericcandidate'
