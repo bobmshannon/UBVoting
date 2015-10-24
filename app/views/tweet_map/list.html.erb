@@ -43,6 +43,12 @@
     paused = false;
 
     /**
+     * Maximum number of tweets to be displayed in list view
+     * @const
+     */
+    MAX_NUM_TWEETS = 15;
+
+    /**
      * Generate tweet HTML markup
      * 
      * @param  {json} tweet JSON array containing tweet information
@@ -68,6 +74,10 @@
      * @return none
      */
     function insert(tweet) {
+        if ($('#tweets').children().length > MAX_NUM_TWEETS) {
+            var tweet = $('#tweets').children().last().prev();
+            destroy(tweet);
+        }
 
         tweetHtml.prependTo('#tweets').fadeIn(2000).removeClass('tweet-template');
         init(tweetHtml);
@@ -91,6 +101,7 @@
      */
     function destroy(tweet) {
         tweet.find('.timestamp').timeago('dispose');
+        tweet.remove();
     }
 
     /**
@@ -101,13 +112,11 @@
     function processTweet(tweet) {
         if (!paused) {
             tweet = $.parseJSON(tweet);
-            console.log(tweet);
+            //console.log(tweet);
 
-            if (tweet.geo) {
-                tweet = htmlify(tweet);
-                insert(tweet);
-                tweet = null;
-            }
+            tweet = htmlify(tweet);
+            insert(tweet);
+            tweet = null;
         }
     }
 
