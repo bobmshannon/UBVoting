@@ -102,9 +102,12 @@
         if (!paused) {
             tweet = $.parseJSON(tweet);
             console.log(tweet);
-            tweet = htmlify(tweet);
-            insert(tweet);
-            tweet = null;
+
+            if (tweet.geo) {
+                tweet = htmlify(tweet);
+                insert(tweet);
+                tweet = null;
+            }
         }
     }
 

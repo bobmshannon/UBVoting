@@ -96,12 +96,26 @@ module.exports = function( grunt ) {
 					]
 				}
 			},
-
 			map: {
 				files: {
 					'public/javascripts/map.js': [
 					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
 					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
+					]
+				}
+			},
+			gmaps: {
+				files: {
+					'public/javascripts/gmaps.js': [
+					'bower_components/gmaps/gmaps.js',
+					'bower_components/v3-utility-library/infobox/src/infobox.js'
+					]
+				}
+			},
+			tweetstream: {
+				files: {
+					'public/javascripts/tweet_stream.js': [
+					'app/assets/javascripts/tweet_stream.js'
 					]
 				}
 			}
