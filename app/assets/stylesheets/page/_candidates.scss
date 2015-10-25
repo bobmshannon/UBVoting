@@ -2,45 +2,70 @@
 {
 	display: table;
 
-	section#candidates-container
+	.wrapper
 	{
-		@include background-image(image-url('usaflag.png'));
-		@include background-size(cover);
-		height: 100%;
-
-		.wrapper
-		{
-			padding-top: 12px;
-		}
-		
-		.overlay 
-		{
-			@include box-shadow(inset 0 1px 5px $black);
-			background-color: rgba(20, 40, 64, .75);
-			border-top: 1px solid $light-gray;
-			vertical-align: middle;
-		}
-
-		.panel 
-		{
-			font-size: 14px;
-		}
-
-		.panel-heading
-		{
-			font-size: 18pt;
-			background-color: $light-gray;
-			padding-top: 12px;
-			padding-bottom: 12px;
-			margin: 5px;
-		}
-
-		.panel-body#facebook
-		{
-			@include background-image(image-url('coverphoto.png'));
-			@include background-size(cover);
-			height: 100%;
-		}
+		padding-top: 12px;
+	}
+	
+	.overlay 
+	{
+		@include box-shadow(inset 0 1px 5px $black);
+		background-color: rgba(20, 40, 64, .75);
+		border-top: 1px solid $light-gray;
+		vertical-align: middle;
 	}
 
+	.panel 
+	{
+		font-size: 14px;
+	}
+
+	.panel-heading
+	{
+		font-size: 18pt;
+		background-color: rgba(20, 40, 64, .5);
+		padding-top: 12px;
+		padding-bottom: 12px;
+		margin-top: 0;
+	}
+
+	.panel-cover
+	{
+		height: 700px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;	
+	}
+
+
+	.panel-cover#bernie
+	{
+		background-image: url('/images/candidates/coverBernie1.jpg');
+
+	}
+
+	.panel-cover#bernieinfo
+	{
+		background-image: url('/images/candidates/coverBernie2.jpg');
+	}
+
+	.transparentoverlay
+	{
+		background-color: rgba(0, 0, 0, .70);
+		height: 700px;
+		width: 100%;
+	}
+
+	.panel-cover-information
+	{
+		h1 
+		{
+			@include text-shadow(1px 1px 2px #000, 8px 5px #000);
+			color: rgba(255, 255, 255, 1);
+			margin-top: 0;
+			padding-top: 20px;
+			text-align: center;
+			font-size: 80px;			
+ 		}
+	}
 }

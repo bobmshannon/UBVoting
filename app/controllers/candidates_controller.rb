@@ -1,6 +1,9 @@
 class CandidatesController < ApplicationController
   def genericcandidate
-  	@candidateName = "This is a generic Candidate and will be removed once all the candidates are in place!"
+  	@candidateName = "Generic!"
+	@candidateCoverPhoto = "/images/candidates/coverBernie1.jpg"
+	@candidateCoverPhoto1 = "/images/candidates/coverBernie1.jpg"
+
 	@candidateBiography = "This is his biography!"
 	@speech1 = "https://www.youtube.com/embed/-oYIK6Bg6co"
   	@speech2 = "https://www.youtube.com/embed/-oYIK6Bg6co"
@@ -13,7 +16,7 @@ class CandidatesController < ApplicationController
 
   def berniesanders
   	@candidateName = "Bernie Sanders"
-  	@candidateBiography = "This is his biography!"
+  	@candidateBiography = "Bernie Sanders is a Democratic candidate for President of the United States. In 2006, he was elected to the U.S. Senate after 16 years as Vermont’s sole congressman in the House of Representatives. Bernie is now serving his second term in the U.S. Senate after winning re-election in 2012 with 71 percent of the vote."
 	@speech1 = "https://www.youtube.com/embed/hDRxbQlpqmo" 
 
   end

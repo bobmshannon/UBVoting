@@ -1,134 +1,30 @@
 <section id="candidates-container">
-    <div class="wrapper">
-        <div class="panel">
-            <h4 class="panel-heading"><i class="fa fa-black-tie"></i>
-                <%= @candidateName %> </h4>
-            <div class="panel-body" id="facebook">
-                <img src="img/candidates/profilepic.jpg" alt="This is XXX">
-            </div>
-        </div>
+          
+  <div class="panel-cover" id="bernie">
+    <div class="panel-cover-information">
+      <h1><%= @candidateName %> </h1>
     </div>
+  </div>
 
-    <div class="wrapper">
-        <div class="panel">
-            <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <h4 class="panel-heading"><i class = "fa fa-info"></i>
-                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                             Biography + Main Goals
-                             </a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="accordion-body collapse in">
-                      <div class="accordion-inner">
-                          <%= @candidateBiography %>                          
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <h4 class="panel-heading"><i class = "fa fa-youtube"></i>
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                            Speeches
-                             </a>  
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="accordion-body collapse">
-                      <div class="accordion-inner">
-
-                        <div class= "row">
-                         <div class="col-md-4">
-                            <iframe width="450" height="315" src=<%= @speech1 %> frameborder="0" allowfullscreen></iframe>
-                          </div>
-                         <div class="col-md-4">
-                            <iframe width="450" height="315" src=<%= @speech1 %> frameborder="0" allowfullscreen></iframe>
-                          </div>
-                         <div class="col-md-4">
-                            <iframe width="450" height="315" src=<%= @speech1 %> frameborder="0" allowfullscreen></iframe>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <h4 class="panel-heading"><i class = "fa fa-youtube"></i>
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                          Debates
-                         </a>  
-                        </h4>
-                    </div>
-                    <div id="collapseThree" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                        <div class= "row">
-                         <div class="col-md-4">
-                            <iframe width="450" height="315" src=<%= @debate1 %> frameborder="0" allowfullscreen></iframe>
-                          </div>
-                         <div class="col-md-4">
-                            <iframe width="450" height="315" src=<%= @debate2 %> frameborder="0" allowfullscreen></iframe>
-                          </div>
-                         <div class="col-md-4">
-                            <iframe width="450" height="315" src=<%= @debate3 %> frameborder="0" allowfullscreen></iframe>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <h4 class="panel-heading"><i class = "fa fa-twitter"></i>
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-                            Twitter
-                            </a>  
-                        </h4>
-                    </div>
-                    <div id="collapseFive" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                        Pull from twitter  
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <h4 class="panel-heading"><i class = "fa fa-news"></i>
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
-                            News
-                            </a>  
-                        </h4>
-                    </div>
-                    <div id="collapseSix" class="accordion-body collapse">
-                      pull from some news source
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-    <div class="wrapper">
-        <div class="panel">
-            <h4 class="panel-heading"><i class="fa fa-bar-chart"></i>
-                Statistics </h4>
-            <div class="panel-body">
-                <div class="cont  ainer-fluid">
-                    <div class="row"> 
-                        <div class="col-md-6"> 
-                            <img src="https://www.placehold.it/600x300" alt="This is XXX">
-                        </div>
-                        <div class="col-md-6">
-                             <img src="https://www.placehold.it/600x300" alt="This is XXX">
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="panel-cover" id="bernieinfo">
+    <div class="transparentoverlay">
+      <div class="panel-cover-information">
+        <h1><%= @candidateName %> on the ISSUES </h1>
+        <div class ="row">
+          <div class="col-md-4">
+            Lorem ipsom
+          </div>
+          <div class="col-md-4">
+            Lorem ipsom
+          </div>
+          <div class="col-md-4">
+            Lorem ipsom
+          </div>
         </div>
-    </div>  
-
-</section>
+      
+      </div>
+    </div>
+  </div>
 
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "candidates.js" %>
