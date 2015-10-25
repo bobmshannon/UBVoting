@@ -99,6 +99,7 @@ module.exports = function( grunt ) {
 			map: {
 				files: {
 					'public/javascripts/map.js': [
+					'app/assets/javascripts/map.js',
 					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
 					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
 					]
