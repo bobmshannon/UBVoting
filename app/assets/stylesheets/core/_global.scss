@@ -15,9 +15,21 @@ html
 	height: 100%;
 }
 
-a:focus
+a,
+a:active,
+a:focus,
+button,
+button:active,
+button:focus,
+.btn:focus
 {
 	outline: 0;
+	outline: none;
+
+	&:-moz-focus-inner 
+	{
+    	border: 0;
+	}
 }
 
 .wrapper 
