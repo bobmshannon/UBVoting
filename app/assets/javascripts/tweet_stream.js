@@ -1,3 +1,5 @@
+// jscs:disable
+
 /**
  * Whether the stream is paused or not
  *
@@ -121,15 +123,15 @@ $( document ).ready( function() {
 		},
 		error: function( error ) {
 
-			// handle the error
+			// Handle the error
 		},
 		not_supported: function() {
 
-			// geoip not supported
+			// Geoip not supported
 		},
 		always: function() {
 
-			// always do something
+			// Always do something
 		}
 	} );
 
