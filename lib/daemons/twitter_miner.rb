@@ -12,11 +12,12 @@ TOPICS = [
 		]
 
 # Twitter Streaming API Client
+# When done change back to original key/secrets
 streamclient = Twitter::Streaming::Client.new do |config|
-	config.consumer_key = ENV['consumer_key']
-	config.consumer_secret = ENV['consumer_secret']
-	config.access_token = ENV['access_token']
-	config.access_token_secret = ENV['access_token_secret']
+	config.consumer_key = "pe8rdOdgOy5zq4ak5yTYw50Im"
+	config.consumer_secret = "KqhIKA9QmkSEUSuLF7TYGHQ0zWUxIL4qzfruyJDfemPc1ODx4Q"
+	config.access_token = "3660084016-jhf8ez8JnbggZDhSYTBY2a4CoXYx5DNhuVjObbj"
+	config.access_token_secret = "OD4dMugA3PUJGcoNzxd4QAaZA8EvKY0OF8DVsum0ErUJ6"
 end
 
 $running = true
@@ -24,26 +25,56 @@ Signal.trap("TERM") do
   $running = false
 end
 
+limitHashmap = Hash.new 
+ 
+
+
 while($running) do
   # Initiate twitter stream and track specified topics
   streamclient.filter(track: TOPICS.join(',')) do |object|
     if object.is_a?(Twitter::Tweet)
 	  # Create a new tweet object and store it in the database
-	  tweet = Tweet.create(
-	    text: object.text,
-	  	id: object.id,
-	  	lang: object.lang,
-	  	source: object.source,
-	  	retweet_count: object.retweet_count,
-	  	favorite_count: object.favorite_count,
-	  	created_at: object.created_at,
-	  	url: object.uri,
-	  	#coordinates: coords,
-	  	#profile_image_url: restclient.status(object.id).user.profile_image_url
-	  	#hashtags: hashtags,
-	  	#user_mentions: user_mentions
-	  )
-
+		currentTime = Time.new
+		allowedTime = currentTime + 100
+		username = object.user.screen_name
+		
+		if ((limitHashmap.has_key? (username))== false)
+			limitHashmap[username] = allowedTime
+			tweet = Tweet.create(
+			    text: object.text,
+			  	id: object.id,
+			  	lang: object.lang,
+			  	source: object.source,
+			  	retweet_count: object.retweet_count,
+			  	favorite_count: object.favorite_count,
+			  	created_at: object.created_at,
+			  	url: object.uri,
+			  	screen_name: object.user.screen_name,
+			  	time: allowedTime,
+			  	#coordinates: coords,
+			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
+			  	#hashtags: hashtags,
+			  	#user_mentions: user_mentions
+			)		
+			
+		elsif (limitHashmap.has_key? (username) and limitHashmap[username] >currentTime)
+			tweet = Tweet.create(
+				text: object.text,
+			 	id: object.id,
+			  	lang: object.lang,
+			  	source: object.source,
+			  	retweet_count: object.retweet_count,
+			  	favorite_count: object.favorite_count,
+			  	created_at: object.created_at,
+			  	url: object.uri,
+			  	screen_name: object.user.screen_name,
+			  	time: allowedTime,
+			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
+			  	#hashtags: hashtags,
+			  	#user_mentions: user_mentions
+			  	)
+		end
+      
       tweet = object.to_h
       html = auto_link(tweet[:text])
       tweet[:text_html] = html
@@ -52,6 +83,5 @@ while($running) do
 	  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
 	end
   end
-
   sleep 10
 end

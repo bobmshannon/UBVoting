@@ -344,24 +344,31 @@
         opacity:0.5;
         filter:alpha(opacity=50);
     }
-
-    #candidatesCarousel{
-        top: 2.5%;
+        
+    #box{ 
+        height: 70%;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+}
     }
 
     #footer
     {
         background-color: #AAAAAA;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         width: 100%;
         height: 160px;
+        
     }
     
     .carousel, .carousel-inner {
-    height: 160px;
-    width: 100%;
+        height: 160px;
+        width: 100%;
     }
+    
 
     @include breakpoint(max-width 1920px){
         .col-md-2 img{
@@ -369,4 +376,3 @@
             margin: 0;
         }
     }
-}
