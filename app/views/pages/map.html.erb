@@ -1,4 +1,4 @@
-<!--		<script>
+		<script>
 	jQuery(document).ready(function(){
 		jQuery("#vmap").vectorMap({
     		map: 'usa_en',
@@ -11,18 +11,7 @@
 		});
 	});
 </script>
-	<center> <div id="vmap" style="width: 700px; height: 450px;"></div> </center> !-->
-<script>
-function initMap() {
-      var nebraska = new google.maps.LatLng(41.2324, -98.4160);
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: nebraska,
-        zoom: 4
-      });
-}
-</script>
-<div id = "map"></div>
+	<center> <div id="vmap" style="width: 700px; height: 450px;"></div> </center>
 <div id = "footer">
 	<div id = "candidatesCarousel" class = "carousel slide">
 		<ol class = "carousel-indicators">	
@@ -187,9 +176,7 @@ function initMap() {
 			</div>	
 	</div>
 </div>
-    <script src="https://maps.googleapis.com/maps/api/js?&callback=initMap"asyncdefer>
-</script>   
-    
+
 
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "map.js" %>
