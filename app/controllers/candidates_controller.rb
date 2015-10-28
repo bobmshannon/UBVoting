@@ -1,8 +1,28 @@
 class CandidatesController < ApplicationController
   def genericcandidate
   	@candidateName = "Generic!"
+  	@candidateTitle = "Generic does ___"
 	@candidateCoverPhoto = "/images/candidates/coverBernie1.jpg"
 	@candidateCoverPhoto1 = "/images/candidates/coverBernie1.jpg"
+
+	@issue1 = "issue"
+	@issue1details = "The issue more explained"
+	@issue2 = "issue"
+	@issue2details = "The issue more explained"
+	@issue3 = "issue"
+	@issue3details = "The issue more explained"
+	@issue4 = "issue"
+	@issue4details = "The issue more explained"
+	@issue5 = "issue"
+	@issue5details = "The issue more explained"
+	@issue6 = "issue"
+	@issue6details = "The issue more explained"
+	@issue7 = "issue"
+	@issue7details = "The issue more explained"
+	@issue8 = "issue"
+	@issue8details = "The issue more explained"
+	@issue9 = "issue"
+	@issue9details = "The issue more explained"
 
 	@candidateBiography = "This is his biography!"
 	@speech1 = "https://www.youtube.com/embed/-oYIK6Bg6co"
