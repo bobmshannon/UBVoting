@@ -29,20 +29,51 @@ while($running) do
   streamclient.filter(track: TOPICS.join(',')) do |object|
     if object.is_a?(Twitter::Tweet)
 	  # Create a new tweet object and store it in the database
-	  tweet = Tweet.create(
-	    text: object.text,
-	  	id: object.id,
-	  	lang: object.lang,
-	  	source: object.source,
-	  	retweet_count: object.retweet_count,
-	  	favorite_count: object.favorite_count,
-	  	created_at: object.created_at,
-	  	url: object.uri,
-	  	#coordinates: coords,
-	  	#profile_image_url: restclient.status(object.id).user.profile_image_url
-	  	#hashtags: hashtags,
-	  	#user_mentions: user_mentions
-	  )
+		currentTime = Time.new
+		allowedTime = currentTime + 100
+		username = object.user.screen_name
+		
+		if ((limitHashmap.has_key? (username))== false)
+			limitHashmap[username] = allowedTime
+			tweet_activity= TweetActivity.create(
+			  	screen_name: object.user.screen_name,
+			  	time: allowedTime,
+			)
+			 tweet = Tweet.create(
+			    text: object.text,
+			  	id: object.id,
+			  	lang: object.lang,
+			  	source: object.source,
+			  	retweet_count: object.retweet_count,
+			  	favorite_count: object.favorite_count,
+			  	created_at: object.created_at,
+			  	url: object.uri,
+			  	#coordinates: coords,
+			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
+			  	#hashtags: hashtags,
+			  	#user_mentions: user_mentions
+		  	)		
+
+		elsif (limitHashmap.has_key? (username) and limitHashmap[username] >currentTime)
+			tweet_activity = TweetActivity.create(
+			  	screen_name: object.user.screen_name,
+			  	time: allowedTime,
+			  	)
+			 tweet = Tweet.create(
+			    text: object.text,
+			  	id: object.id,
+			  	lang: object.lang,
+			  	source: object.source,
+			  	retweet_count: object.retweet_count,
+			  	favorite_count: object.favorite_count,
+			  	created_at: object.created_at,
+			  	url: object.uri,
+			  	#coordinates: coords,
+			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
+			  	#hashtags: hashtags,
+			  	#user_mentions: user_mentions
+			  )
+		end
 
       tweet = object.to_h
       html = auto_link(tweet[:text])
