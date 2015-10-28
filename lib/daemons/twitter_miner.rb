@@ -24,6 +24,8 @@ Signal.trap("TERM") do
   $running = false
 end
 
+limitHashmap = Hash.new
+
 while($running) do
   # Initiate twitter stream and track specified topics
   streamclient.filter(track: TOPICS.join(',')) do |object|
