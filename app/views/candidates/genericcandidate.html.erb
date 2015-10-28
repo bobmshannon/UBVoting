@@ -1,30 +1,172 @@
-<section id="candidates-container">
-          
-  <div class="panel-cover" id="bernie">
-    <div class="panel-cover-information">
-      <h1><%= @candidateName %> </h1>
-    </div>
-  </div>
+<body class = "candidates">
 
-  <div class="panel-cover" id="bernieinfo">
-    <div class="transparentoverlay">
-      <div class="panel-cover-information">
-        <h1><%= @candidateName %> on the ISSUES </h1>
-        <div class ="row">
-          <div class="col-md-4">
-            Lorem ipsom
-          </div>
-          <div class="col-md-4">
-            Lorem ipsom
-          </div>
-          <div class="col-md-4">
-            Lorem ipsom
-          </div>
-        </div>
-      
+  <section id="coverphoto">
+    <div class="bg-photo" style="background-image: url(<%=@candidateCoverPhoto%>)">
+    <div class="container">
+      <div class="center">
+        <h1><%=@candidateName %></h1>
+        <h3><%=@candidateTitle %></h3>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="on-the-issues">
+    <div class="container">
+      <div class="center">
+        <h2><%= @candidateName %> On the issues</h2>
+        <p>Maybe make a variable here for a short description of their issues (if I can find one on their site)!</p>
+        </div>
+
+        <div class="row">
+          <div class="issues">
+            <div class="col-md-4 col-sm-6">
+              <div class="issue-spacing">
+                <i class="fa fa-flag"></i>
+                <h2><%=@issue1%></h2>
+                <h3><%=@issue1details%></h3>
+              </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue2%></h2>
+              <h3><%=@issue2details%></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue3%></h2>
+              <h3><%=@issue3details%></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue4%></h2>
+              <h3><%=@issue4details%></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue5%></h2>
+              <h3><%=@issue5details %></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue6%></h2>
+              <h3><%=@issue6details %></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue7%></h2>
+              <h3><%=@issue7details %></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue8%></h2>
+              <h3><%=@issue8details %></h3>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="issue-spacing">
+              <i class="fa fa-flag"></i>
+              <h2><%=@issue9%></h2>
+              <h3><%=@issue9details %></h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="speeches-debates">
+    <div class="container">
+      <div class="center">
+        <h2> Recent Speeches</h2>
+        <p>Sourced from Youtube, all candidates received the same search query as to avoid personal bias "<%= @candidateName %> top speech"</p>
+        </div>
+
+        <div class="row">
+          <div class="speeches">
+            <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+           <div class="col-md-4 col-sm-6">
+              <div class="speech-spacing">
+                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>          
+
 
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "candidates.js" %>
