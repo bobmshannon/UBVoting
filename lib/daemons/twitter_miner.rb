@@ -41,8 +41,7 @@ while($running) do
 			  	screen_name: object.user.screen_name,
 			  	time: allowedTime,
 			)
-
-			tweet = Tweet.create(
+			 tweet = Tweet.create(
 			    text: object.text,
 			  	id: object.id,
 			  	lang: object.lang,
@@ -55,20 +54,14 @@ while($running) do
 			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
 			  	#hashtags: hashtags,
 			  	#user_mentions: user_mentions
-		  	)
-      		tweet = object.to_h
-      		html = auto_link(tweet[:text])
-      		tweet[:text_html] = html
+		  	)		
 
-	  		# Send tweet to all clients listening on web socket channel
-	 		 WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)		
-
-		elsif (limitHashmap.has_key? (username) and limitHashmap[username] > currentTime)
+		elsif (limitHashmap.has_key? (username) and limitHashmap[username] >currentTime)
 			tweet_activity = TweetActivity.create(
 			  	screen_name: object.user.screen_name,
 			  	time: allowedTime,
 			  	)
-			tweet = Tweet.create(
+			 tweet = Tweet.create(
 			    text: object.text,
 			  	id: object.id,
 			  	lang: object.lang,
@@ -82,15 +75,16 @@ while($running) do
 			  	#hashtags: hashtags,
 			  	#user_mentions: user_mentions
 			  )
-
-		      tweet = object.to_h
-		      html = auto_link(tweet[:text])
-		      tweet[:text_html] = html
-
-			  # Send tweet to all clients listening on web socket channel
-			  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
 		end
+
+      tweet = object.to_h
+      html = auto_link(tweet[:text])
+      tweet[:text_html] = html
+
+	  # Send tweet to all clients listening on web socket channel
+	  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
 	end
   end
+
   sleep 10
 end
