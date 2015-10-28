@@ -77,12 +77,12 @@ while($running) do
 			  )
 		end
 
-      tweet = object.to_h
-      html = auto_link(tweet[:text])
-      tweet[:text_html] = html
+	      tweet = object.to_h
+	      html = auto_link(tweet[:text])
+	      tweet[:text_html] = html
 
-	  # Send tweet to all clients listening on web socket channel
-	  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
+		  # Send tweet to all clients listening on web socket channel
+		  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
 	end
   end
 
