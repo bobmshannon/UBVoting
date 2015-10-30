@@ -68,13 +68,14 @@ end
 def is_rate_limited(screen_name)
     begin
         entry = TweetActivity.find_by(screen_name: screen_name)
+    rescue Mongoid::Errors::DocumentNotFound
+        return false
+    else
         if (entry[:time] + TWEET_THRESHOLD.to_i < Time.now.to_i)
             return false
         else
-            return true
+            return false
         end
-    rescue Mongoid::Errors::DocumentNotFound
-        return false
     end
 end
 
@@ -120,8 +121,12 @@ while($running) do
 	            record_activity(screen_name)
 
 	            # Broadcast tweet if user is not rate limited
-	            if ( !is_rate_limited(screen_name) )
+	            unless is_rate_limited(screen_name)
+	            	# Broadcast tweet if user is not rate limited
 	                broadcast_tweet(object)
+
+	                # Record a tweeter's activity (for rate limiting)
+	                record_activity(screen_name)
 	            end
 	        end
 	    end
