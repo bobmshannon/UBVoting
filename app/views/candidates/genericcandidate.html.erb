@@ -5,23 +5,23 @@
     <div class="container">
       <div class="center">
         <h1><%=@candidateName %></h1>
-        <h3><%=@candidateTitle %></h3>
+        <h2><%=@candidateTitle %></h2>
       </div>
     </div>
   </section>
 
-  <section id="on-the-issues">
+  <section class = "<%=@affiliation%>" id="on-the-issues">
     <div class="container">
       <div class="center">
-        <h2><%= @candidateName %> On the issues</h2>
-        <p>Maybe make a variable here for a short description of their issues (if I can find one on their site)!</p>
+        <h2><%= @candidateName %>'s top ISSUES</h2>
+        <p><%= @candidateIssueOverview %></p>
         </div>
 
         <div class="row">
           <div class="issues">
             <div class="col-md-4 col-sm-6">
               <div class="issue-spacing">
-                <i class="fa fa-flag"></i>
+                <i class="<%= @issue1Fa %>"></i>
                 <h2><%=@issue1%></h2>
                 <h3><%=@issue1details%></h3>
               </div>
@@ -29,7 +29,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue2Fa %>"></i>
               <h2><%=@issue2%></h2>
               <h3><%=@issue2details%></h3>
             </div>
@@ -37,7 +37,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue3Fa %>"></i>
               <h2><%=@issue3%></h2>
               <h3><%=@issue3details%></h3>
             </div>
@@ -45,7 +45,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue4Fa %>"></i>
               <h2><%=@issue4%></h2>
               <h3><%=@issue4details%></h3>
             </div>
@@ -53,7 +53,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue5Fa %>"></i>
               <h2><%=@issue5%></h2>
               <h3><%=@issue5details %></h3>
             </div>
@@ -61,7 +61,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue6Fa %>"></i>
               <h2><%=@issue6%></h2>
               <h3><%=@issue6details %></h3>
             </div>
@@ -69,7 +69,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue7Fa %>"></i>
               <h2><%=@issue7%></h2>
               <h3><%=@issue7details %></h3>
             </div>
@@ -77,7 +77,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue8Fa %>"></i>
               <h2><%=@issue8%></h2>
               <h3><%=@issue8details %></h3>
             </div>
@@ -85,7 +85,7 @@
 
           <div class="col-md-4 col-sm-6">
             <div class="issue-spacing">
-              <i class="fa fa-flag"></i>
+              <i class="<%= @issue9Fa %>"></i>
               <h2><%=@issue9%></h2>
               <h3><%=@issue9details %></h3>
             </div>
@@ -96,70 +96,69 @@
     </div>
   </section>
 
-  <section id="speeches-debates">
+  <section id="about">
     <div class="container">
       <div class="center">
-        <h2> Recent Speeches</h2>
-        <p>Sourced from Youtube, all candidates received the same search query as to avoid personal bias "<%= @candidateName %> top speech"</p>
-        </div>
+        <h2><%= @candidateName %>'s roots</h2>
+        <p> <%= @candidateQuickBio %>
 
-        <div class="row">
-          <div class="speeches">
+        <div class = "float-down">
+          <div class="row">
             <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
+              <h3>Upbringings</h3>
+              <ul>
+                <li><%=@candidateBorn%></li>
+                <li><%=@candidateFamily%></li>
+                <li><%=@candidateSchool%></li>
+              </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <h3>Accomplishments</h3>
+              <ul>
+                <li><%=@candidateAccomplishment1%> </li>
+                <li><%=@candidateAccomplishment2%> </li>
+                <li><%=@candidateAccomplishment3%> </li>
+              </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <h3>Strange facts</h3>
+              <ul>
+                <li><%=@candidateStrangeFact1%></li>
+                <li><%=@candidateStrangeFact2%> </li>
+                <li><%=@candidateStrangeFact3%> </li>
+              </ul>
+            </div>
           </div>
 
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
+          <div class = "center">
+            <p><%=@source%></p>
           </div>
 
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
           </div>
-
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-          </div>
-
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-          </div>
-
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-          </div>
-
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-          </div>
-
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-          </div>
-
-           <div class="col-md-4 col-sm-6">
-              <div class="speech-spacing">
-                <iframe width="380" height="200" src="<%= @speech1 %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-          </div>
-
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class= "<%=@notAffiliated%>" id="speeches-debates">
+    <div class="container">
+      <div class="center">
+        <h2>Why <%= @candidateName %>?</h2> 
+        <iframe width="750" height="350" src="<%= @candidateVideo %>" frameborder="0" allowfullscreen allowtransparency="true"> </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="footerphoto">
+    <div class="bg-photo" style="background-image: url(<%=@candidateCoverPhoto1%>)">
+    <div class="shade-photo">
+    <div class ="container">
+      <div class ="center">
+      <h1>So, the question remains</h1>
+      <h2>Who will UBVoting for?</h2>
+      </div>
       </div>
     </div>
   </section>
