@@ -1,6 +1,12 @@
 // jscs:disable
 
 /**
+ * Maximum number of tweets to be displayed in list view
+ * @const
+ */
+MAX_NUM_TWEETS = 10;
+
+/**
  * Whether the stream is paused or not
  *
  * @type {Boolean}
@@ -60,10 +66,13 @@ function tweetUrl(type, id) {
  * @param  {JQuery} tweet DOM object with tweet information
  * @return none
  */
-function insert( tweet ) {
-
-	tweetHtml.prependTo( '#tweets' ).fadeIn( 2000 ).removeClass( 'tweet-template' );
-	init( tweetHtml );
+function insert(tweet) {
+    if ($('#tweets').children().length > MAX_NUM_TWEETS) {
+        tweet = $('#tweets').children().last().prev();
+        destroy(tweet);
+    }
+    tweetHtml.prependTo('#tweets').fadeIn(2000).removeClass('tweet-template');
+    init(tweetHtml);
 }
 
 /**
@@ -84,6 +93,7 @@ function init( tweet ) {
  */
 function destroy( tweet ) {
 	tweet.find( '.timestamp' ).timeago( 'dispose' );
+	tweet.remove();
 }
 
 /**
