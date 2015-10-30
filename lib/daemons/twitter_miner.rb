@@ -12,7 +12,13 @@ TOPICS = [
 ]
 
 # Maximum number of tweets from a single user that will be broadcasted
-# over the web socket. Default unit is tweets per minute.
+# over the web socket. Default rate limit is set to
+# 1 tweet per X minutes below.
+# 
+# Examples:
+# 1.minutes --> 1 tweet per minute
+# 5.minutes --> 1 tweet per 5 minutes
+# 15.minutes --> 1 tweet per 15 minutes
 TWEET_THRESHOLD = 1.minutes
 
 # Stores a tweet object in the database.
