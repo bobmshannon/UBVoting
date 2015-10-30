@@ -119,6 +119,13 @@ module.exports = function( grunt ) {
 					'app/assets/javascripts/tweet_stream.js'
 					]
 				}
+			},
+			tweetmap: {
+				files: {
+					'public/javascripts/tweet_map.js': [
+					'app/assets/javascripts/tweet_map.js'
+					]
+				}
 			}
 		},
 		cssmin: {

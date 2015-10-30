@@ -23,7 +23,35 @@ function htmlify( tweet ) {
 	var time = new Date( parseInt( tweet.timestamp_ms ) ).toISOString();
 	tweetHtml.find( '.timestamp span' ).attr( 'title', time );
 
+	tweetHtml.find( '.reply a').attr('href', tweetUrl('reply', tweet.id_str));
+	tweetHtml.find( '.retweet a' ).attr('href', tweetUrl('retweet', tweet.id_str));
+	tweetHtml.find( '.favorite a').attr('href', tweetUrl('favorite', tweet.id_str));
+
 	return tweetHtml;
+}
+
+/**
+ * [intentUrl description]
+ * @param  {[type]} type [description]
+ * @return {[type]}      [description]
+ */
+function tweetUrl(type, id) {
+    switch (type) {
+        case 'reply':
+            url = 'https://twitter.com/intent/tweet?in_reply_to=';
+            break;
+        case 'retweet':
+            url = 'https://twitter.com/intent/retweet?tweet_id=';
+            break;
+        case 'favorite':
+            url = 'https://twitter.com/intent/favorite?tweet_id=';
+            break;
+        default:
+            url = 'https://twitter.com/statuses/';
+            break;
+    }
+
+    return url + id;
 }
 
 /**
@@ -68,11 +96,11 @@ function processTweet( tweet ) {
 		tweet = $.parseJSON( tweet );
 		console.log( tweet );
 
-		if ( tweet.geo ) {
+		//if ( tweet.geo ) {
 			tweet = htmlify( tweet );
 			insert( tweet );
 			tweet = null;
-		}
+		//}
 	}
 }
 
@@ -98,43 +126,6 @@ channel.bind( 'new_tweet', function( data ) {
 
 // DOM ready
 $( document ).ready( function() {
-
-	// Initialize google map
-	var map = new GMaps( {
-		el: '#gmap',
-		lat: 42.9047,
-		lng: -78.8494,
-		zoom: 8
-	} );
-
-	map.addMarker( {
-		lat: 42.9047,
-		lng: -78.8494,
-		title: 'Lima',
-		infoWindow: {
-			content: '<p>HTML Content</p>'
-		}
-	} );
-
-	// Get user location
-	GMaps.geolocate( {
-		success: function( position ) {
-			map.setCenter( position.coords.latitude, position.coords.longitude );
-		},
-		error: function( error ) {
-
-			// Handle the error
-		},
-		not_supported: function() {
-
-			// Geoip not supported
-		},
-		always: function() {
-
-			// Always do something
-		}
-	} );
-
 	// Stream control buttons (pause, play)
 	$( '#pause' ).on( 'click', function() {
 
