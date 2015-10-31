@@ -19,11 +19,10 @@ Rails.application.routes.draw do
   get '/happening-now/map-view' => 'tweet_map#map'
   
   # Candidates
-  get '/candidates' => 'pages#candidates'
-  get '/candidates/genericcandidate'
-  get '/candidates/berniesanders'
-  get '/candidates/donaldtrump'
-  get '/candidates/hilaryclinton'
+  get '/candidates/genericcandidate' => 'candidates#genericcandidate'
+  get '/candidates/berniesanders' => 'candidates#berniesanders'
+  get '/candidates/donaldtrump' => 'candidates#donaldtrump'
+  get '/candidates/hillaryclinton' => 'candidates#hillaryclinton'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

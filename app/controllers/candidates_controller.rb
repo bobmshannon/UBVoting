@@ -182,7 +182,7 @@ class CandidatesController < ApplicationController
 	@candidateVideo = "https://www.youtube.com/embed/kqAUbLBghYQ"
   end
 
-  def hilaryclinton
+  def hillaryclinton
    	@candidateName = "Hillary Clinton"
   	@candidateTitle = "2 times the secretary of state and NY state senator"
   	@affiliation = "democrat"
