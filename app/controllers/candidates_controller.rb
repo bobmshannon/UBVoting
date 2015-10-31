@@ -1,55 +1,63 @@
 class CandidatesController < ApplicationController
   def genericcandidate
-  	@candidateName = "Generic"
-  	@candidateTitle = "Generic does ___"
-  	@affiliation = "republican"
-  	@notAffiliated ="democrat"
+   	@candidateName = "Generic"
+  	@candidateTitle = "____"
+  	@affiliation = "democrat"
+  	@notAffiliated ="republican"
 	@candidateCoverPhoto = "/images/candidates/coverBernie1.jpg"
 	@candidateCoverPhoto1 = "/images/candidates/coverBernie2.jpg"
-	@candidateIssueOverview = "Paragraph describing their views"
-	@issue1 = "issue"
-	@issue1details = "The issue more explained"
-	@issue1Fa = "fa fa-flag"
-	@issue2 = "issue"
-	@issue2details = "The issue more explained"
-	@issue2Fa = "fa fa-flag"
-	@issue3 = "issue"
-	@issue3details = "The issue more explained"
-	@issue3Fa = "fa fa-flag"
-	@issue4 = "issue"
-	@issue4details = "The issue more explained"
-	@issue4Fa = "fa fa-flag"
-	@issue5 = "issue"
-	@issue5details = "The issue more explained"
-	@issue5Fa = "fa fa-flag"
-	@issue6 = "issue"
-	@issue6details = "The issue more explained"
-	@issue6Fa = "fa fa-flag"
-	@issue7 = "issue"
-	@issue7details = "The issue more explained"
-	@issue7Fa = "fa fa-flag"
-	@issue8 = "issue"
-	@issue8details = "The issue more explained"
+
+	@candidateIssueOverview = " "
+	@issue1 = " "
+	@issue1details = " "
+	@issue1Fa = "fa fa-money"
+
+	@issue2 = " "
+	@issue2details
+	@issue2Fa = "fa fa-graduation-cap"
+
+	@issue3 = " "
+	@issue3details = ""
+	@issue3Fa = "fa fa-exclamation-triangle"
+
+	@issue4 = " "
+	@issue4details = " "
+	@issue4Fa = "fa fa-users"
+
+	@issue5 = " "
+	@issue5details = " "
+	@issue5Fa = "fa fa-life-ring"
+
+	@issue6 = " "
+	@issue6details
+	@issue6Fa = "fa fa-cloud"
+
+	@issue7 = " "
+	@issue7details = " "
+	@issue7Fa = "fa fa-star-half-o"
+
+	@issue8 = " "
+	@issue8details
 	@issue8Fa = "fa fa-flag"
-	@issue9 = "issue"
-	@issue9details = "The issue more explained"
-	@issue9Fa = "fa fa-flag"
 
-	@candidateQuickBio = "Bernie Sanders is a Democratic candidate for President of the United States. In 2006, he was elected to the U.S. Senate after 16 years as Vermont’s sole congressman in the House of Representatives. Bernie is now serving his second term in the U.S. Senate after winning re-election in 2012 with 71 percent of the vote."
-	@candidateBorn = "Born in Brooklyn, New York"
-	@candidateSchool = "Bernie attended James Madison High School, Brooklyn College, and the University of Chicago"
-	@candidateFamily = "Parents did something"
-	@candidateStrangeFact1 = "Worked as a carpenter"
-	@candidateStrangeFact2 = "Was a documentary film maker"
-	@candidateStrangeFact3 = "While in college, he marched for civil rights"
-	@candidateAccomplishment1 = "He was elected as mayor of Burlington, the state’s largest city, by a mere 10 votes."
-	@candidateAccomplishment2 = "Under his administration, the city made major strides in affordable housing, progressive taxation, environmental protection, child care, women’s rights, youth programs and the arts."
-	@candidateAccomplishment3 = "Bernie has been called a “practical and successful legislator” and he was dubbed the “amendment king” in the House of Representatives for passing more amendments than any other member of Congress."
+	@issue9 = " "
+	@issue9details
+	@issue9Fa = "fa fa-female"
+
+	@candidateQuickBio = " "
+	@candidateBorn = ""
+	@candidateSchool = ""
+	@candidateFamily = ""
+	@candidateStrangeFact1 = ""
+	@candidateStrangeFact2 = ""
+	@candidateStrangeFact3 = ""
+	@candidateAccomplishment1 = ""
+	@candidateAccomplishment2 = ""
+	@candidateAccomplishment3 = ""
 	
-	@source = "Acquired from www.berniesanders.com"
+	@source = " "
 
-	@candidateVideo = "https://www.youtube.com/embed/qyee_sxJpXc"
-
+	@candidateVideo = " "
   end
 
   def berniesanders
@@ -123,7 +131,7 @@ class CandidatesController < ApplicationController
 
 	@candidateIssueOverview = "Make America great again!"
 	@issue1 = "Tax Reform"
-	@issue1details = "Too few Americans are working, too many jobs have been shipped overseas, and too many middle class families cannot make ends meet. This tax plan directly meets these challenges with four simple goals"
+	@issue1details = "Too few Americans are working, too many jobs have been shipped overseas, and too many middle class families cannot make ends meet."
 	@issue1Fa = "fa fa-balance-scale"
 
 	@issue2 = "Tax relief for middle class Americans"
@@ -131,7 +139,7 @@ class CandidatesController < ApplicationController
 	@issue2Fa = "fa fa-area-chart"
 
 	@issue3 = "Simplify the tax code"
-	@issue3details = "to reduce the headaches Americans face in preparing their taxes and let everyone keep more of their money."
+	@issue3details = "to reduce the headaches Americans face in preparing their taxes and let everyone keep more of their money.  By taking nearly 50% of current filers off the income tax rolls entirely and reducing the number of tax brackets from seven to four for everyone else."
 	@issue3Fa = "fa fa-cogs"
 
 	@issue4 = "Grow the American economy"
@@ -156,9 +164,9 @@ class CandidatesController < ApplicationController
 
 	@issue9 = "Mandatory return of all criminal aliens"
 	@issue9details = "All criminal aliens must be returned to their home countries, a process which can be aided by canceling any visas to foreign countries which will not accept their own criminals, and making it a separate and additional crime to commit an offense while here illegally."
-	@issue9Fa = "fa fa-female"
+	@issue9Fa = "fa fa-user-secret"
 
-@candidateQuickBio = "Donald J. Trump is the very definition of the American success story, continually setting the standards of excellence while expanding his interests in real estate, sports and entertainment. He is a graduate of the Wharton School of Finance. An accomplished author, Mr. Trump has authored over fifteen bestsellers, and his first book, The Art of the Deal, is considered a business classic and one of the most successful business books of all time."
+	@candidateQuickBio = "Donald J. Trump is the very definition of the American success story, continually setting the standards of excellence while expanding his interests in real estate, sports and entertainment. He is a graduate of the Wharton School of Finance. An accomplished author, Mr. Trump has authored over fifteen bestsellers, and his first book, The Art of the Deal, is considered a business classic and one of the most successful business books of all time."
 	@candidateBorn = "Born in Queens, New York"
 	@candidateSchool = "Donald attended the Wharton School of the University of Pennsylvania"
 	@candidateFamily = "Trump is the son of Fred Trump, who was the owner of the New York City's real esate firm Elizabeth Trump & Son"
@@ -174,6 +182,66 @@ class CandidatesController < ApplicationController
 	@candidateVideo = "https://www.youtube.com/embed/kqAUbLBghYQ"
   end
 
+  def hilaryclinton
+   	@candidateName = "Hillary Clinton"
+  	@candidateTitle = "2 times the secretary of state and NY state senator"
+  	@affiliation = "democrat"
+  	@notAffiliated ="republican"
+	@candidateCoverPhoto = "/images/candidates/coverHilary1.jpg"
+	@candidateCoverPhoto1 = "/images/candidates/coverHilary2.jpg"
+
+	@candidateIssueOverview = "Her mission is to renew the basic bargain of America: If you work hard and do your part, you and your family should be able to get ahead and stay ahead.  And when you get ahead, America will get ahead too.  The three main ingredients to grow incomes: Stronger Growth, Fairer Growth, Long-Term Growth"
+	@issue1 = "Campaign finace reform"
+	@issue1details = "Our democracy should work for everyone, not just the wealthy and well-connected.We have to end the flood of secret, unaccountable money that is distorting our elections."
+	@issue1Fa = "fa fa-bar-chart"
+
+	@issue2 = "Campus sexual assault"
+	@issue2details = "An estimated one in five women report being sexually assaulted while in college. Hillary will fight to bring an end to sexual assault on America’s campuses."
+	@issue2Fa = "fa fa-female"
+
+	@issue3 = "Climate change and energy"
+	@issue3details = "Climate change is an urgent challenge that threatens all of us. The United States is already taking steps to invest in our clean energy future, but we need to do more. We need to take bold action to combat climate change."
+	@issue3Fa = "fa fa-sun-o"
+
+	@issue4 = "College"
+	@issue4details = "Hillary has a vision for America in which education is attainable for all. The New College Compact will ensure that costs aren’t a barrier to college and that debt doesn’t hold Americans back."
+	@issue4Fa = "fa fa-graduation-cap"
+
+	@issue5 = "Criminal justice reform"
+	@issue5details = "Our criminal justice system is out of balance. Although the United States has less than 5 percent of the world’s population, we have almost 25 percent of the total prison population."
+	@issue5Fa = "fa fa-gavel"
+
+	@issue6 = "Disability rights"
+	@issue6details = " We must continue to expand opportunities for all Americans. We should acknowledge how the disabilities community has played such an important role in changing things for the better in our country."
+	@issue6Fa = "fa fa-wheelchair"
+
+	@issue7 = "Early childhood education"
+	@issue7details = "She believes getting off to a good start should be our children's birthright, part of the basic bargain that we have with each other as a nation. Every child should have the tools and the skills to thrive in tomorrow's economy, especially those kids from our most vulnerable and at-risk communities."
+	@issue7Fa = "fa fa-birthday-cake"
+
+	@issue8 = "Economy"
+	@issue8details = "Hillary believes the defining economic challenge of our time is raising incomes for hardworking Americans.  Too many families are working harder and harder, but still not getting ahead. Our country is standing again, but we’re not yet running the way we should be."
+	@issue8Fa = "fa fa-dollar"
+
+	@issue9 = "Gun viloence protection"
+	@issue9details = "While gun ownership is part of the fabric of many law-abiding communities, too many families in America have suffered from gun violence. About 33,000 Americans are killed by guns each year. That is unacceptable. It is a rebuke to this nation we love."
+	@issue9Fa = "fa fa-shield"
+
+	@candidateQuickBio = "Hillary Clinton has served as Secretary of State, Senator from New York, First Lady of the United States, First Lady of Arkansas, a practicing lawyer and law professor, activist, and volunteer, but the first things her friends and family will tell you is that she’s never forgotten where she came from or who she’s been fighting for throughout her life."
+	@candidateBorn = "Born in Park ridge, Chicago, Illinois"
+	@candidateSchool = "Hillary graduated from Wellesley College and then went to Yale Law School"
+	@candidateFamily = "Her dad, Hugh, was a World War II Navy veteran and a small business man with a drapery business that designed, printed, and sold his draperies. Hillary, her mom, and her two brothers helped out in the business whenever they could."
+	@candidateStrangeFact1 = "Hillary was the first First Lady to hold a postgraduate degree (Yale Law, 1973) and to run for and be elected Senator (NY, 2000)"
+	@candidateStrangeFact2 = "Shortly before she married Bill Clinton in 1975, Hillary tried to join the Marines."
+	@candidateStrangeFact3 = "Hillary Clinton wrote to NASA as a child inquiring how to become an astronaut. NASA replied that girls could not be astronauts."
+	@candidateAccomplishment1 = "Fought for children and families for 40 years and counting."
+	@candidateAccomplishment2 = "Helped provide millions of children with health care."
+	@candidateAccomplishment3 = "Helped get 9/11 first responders the health care they needed."
+	
+	@source = "www.hillaryclinton.com"
+
+	@candidateVideo = "https://www.youtube.com/embed/2HkCYLcDB5I"
+  end
 
 
 end

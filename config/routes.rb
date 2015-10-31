@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/candidates/genericcandidate'
   get '/candidates/berniesanders'
   get '/candidates/donaldtrump'
+  get '/candidates/hilaryclinton'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
