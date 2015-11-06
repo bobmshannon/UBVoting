@@ -105,7 +105,7 @@ def is_rate_limited(screen_name)
     end
 end
 
-# Do some filtering before a tweet is send over the websocket.
+# Do some filtering before a tweet is sent over the websocket.
 # 
 # Params:
 # +tweet+:: tweet object returned from Twitter API client
@@ -133,6 +133,8 @@ def broadcast_tweet(tweet)
     # Send tweet to all clients listening on "tweets" channel
     # and then trigger a "new_tweet" event on the client side.
     unless is_filtered(tweet)
+    	coords = Geocoder.coordinates(tweet[:place][:full_name])
+    	tweet[:coordinates] = coords
         WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
     end
 end
@@ -141,9 +143,6 @@ $running = true
 Signal.trap("TERM") do
     $running = false
 end
-
-# Fuzzy matching tweets with specified keywords 
-#$keywords = FuzzyMatch.new(TOPICS, must_match_at_least_one_word: true)
 
 while($running) do
     # Twitter Streaming API Client
