@@ -7,13 +7,33 @@ include Twitter::Autolink
 # As per Twitter API docs the maximum number of topics that can be
 # tracked is 400. See https://dev.twitter.com/streaming/public.
 TOPICS = [
-    '#Trump2016', '#Hilary2016', '#Rand2016', '#Jeb2016', '#Christie2016', '#FeelTheBern',
-    '#Cruz2016', '#Biden2016', '#Fiorina2016', '#PresidentialElection', '#DemDebate'
+    '#PresidentialElection',
+    '#DemDebate', 
+    '#GOPDebate',
+    '#2016',
+    'Martin O Malley', 
+    'Bernie Sanders', 
+    'Hillary Clinton', 
+    'Jeb Bush',
+    'Ben Carson',
+    'Chris Christie',
+    'Ted Cruz',
+    'Carly Fiorina',
+    'Jim Gilmore',
+    'Lindsey Graham',
+    'Mike Huckabee',
+    'Bobby Jindal',
+    'John Kasich',
+    'George Pataki',
+    'Rand Paul',
+    'Marco Rubio',
+    'Rick Santorum',
+    'Donald Trump'
 ]
 
 # Maximum number of tweets from a single user that will be broadcasted
 # over the web socket. Default rate limit is set to
-# 1 tweet per X minutes below.
+# 1 tweet per X minutes.
 # 
 # Examples:
 # 1.minutes --> 1 tweet per minute
@@ -85,6 +105,22 @@ def is_rate_limited(screen_name)
     end
 end
 
+# Do some filtering before a tweet is send over the websocket.
+# 
+# Params:
+# +tweet+:: tweet object returned from Twitter API client
+# 
+# Returns:
+# true if tweet matches any filter rules
+# false otherwise
+def is_filtered(tweet)
+    if tweet[:geo] or tweet[:coordinates] or tweet[:place]
+        return false
+    end
+    
+    return true
+end
+
 # Push a tweet over the web socket channel.
 #
 # Params:
@@ -96,13 +132,18 @@ def broadcast_tweet(tweet)
 
     # Send tweet to all clients listening on "tweets" channel
     # and then trigger a "new_tweet" event on the client side.
-    WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
+    unless is_filtered(tweet)
+        WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
+    end
 end
 
 $running = true
 Signal.trap("TERM") do
     $running = false
 end
+
+# Fuzzy matching tweets with specified keywords 
+#$keywords = FuzzyMatch.new(TOPICS, must_match_at_least_one_word: true)
 
 while($running) do
     # Twitter Streaming API Client
@@ -114,25 +155,29 @@ while($running) do
     end
 
     begin
-	    # Initialize twitter stream and track specified topics
-	    streamclient.filter(track: TOPICS.join(',')) do |object|
-	        if object.is_a?(Twitter::Tweet)
-	            # Get the tweeter's screen name
-	            screen_name = object.user.screen_name
+        # Twitter stream options
+        options = {
+            track: TOPICS.join(','),
+        }
+        # Initialize twitter stream and track specified topics
+        streamclient.filter(options) do |object|
+            if object.is_a?(Twitter::Tweet)
+                # Get the tweeter's screen name
+                screen_name = object.user.screen_name
 
-	            # Store tweet in database
-	            store_tweet(object)
+                # Store tweet in database
+                store_tweet(object)
 
-	            unless is_rate_limited(screen_name)
-	            	# Broadcast tweet if user is not rate limited
-	                broadcast_tweet(object)
+                unless is_rate_limited(screen_name)
+                    # Broadcast tweet if user is not rate limited
+                    broadcast_tweet(object)
 
-	                # Record a tweeter's activity (for rate limiting)
-	                record_activity(screen_name)
-	            end
-	        end
-	    end
-	rescue Twitter::Error
-		next
-	end
+                    # Record a tweeter's activity (for rate limiting)
+                    record_activity(screen_name)
+                end
+            end
+        end
+    rescue Twitter::Error
+        next
+    end
 end
