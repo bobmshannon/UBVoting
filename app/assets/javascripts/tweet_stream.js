@@ -26,13 +26,14 @@ function htmlify( tweet ) {
 	tweetHtml.find( 'a.profile-picture' ).attr( 'href', 'https://twitter.com/' + tweet.user.screen_name );
 	tweetHtml.find( '.handle span' ).text( '@' + tweet.user.screen_name );
 	tweetHtml.find( '.profile-picture img' ).attr( 'src', tweet.user.profile_image_url_https.replace( '_normal', '' ) );
-
 	var time = new Date( parseInt( tweet.timestamp_ms ) ).toISOString();
 	tweetHtml.find( '.timestamp span' ).attr( 'title', time );
 
 	tweetHtml.find( '.reply a').attr('href', tweetUrl('reply', tweet.id_str));
 	tweetHtml.find( '.retweet a' ).attr('href', tweetUrl('retweet', tweet.id_str));
 	tweetHtml.find( '.favorite a').attr('href', tweetUrl('favorite', tweet.id_str));
+
+	tweetHtml.find( '.tweet-location span').text(tweet.place.full_name);
 
 	return tweetHtml;
 }
