@@ -114,7 +114,8 @@ end
 # true if tweet matches any filter rules
 # false otherwise
 def is_filtered(tweet)
-    if tweet[:geo] or tweet[:coordinates] or tweet[:place]
+	# Check if tweet location data is available
+    if tweet[:place]
         return false
     end
     
