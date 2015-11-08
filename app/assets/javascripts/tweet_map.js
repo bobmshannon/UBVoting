@@ -37,7 +37,6 @@ DEFAULT_ZOOM = 4
  */
 var map;
 
-
 /**
  * Add a marker to the google map
  * @param {Marker} marker Marker object
@@ -59,19 +58,35 @@ function makeMarker(lat, lng, title, content) {
 		lng: lng,
 		title: title,
 		infoWindow: {
-			content: '<p>' + content + '</p>'
+			content: '<div>' + content + '</div>'
 		}		
-	}
+	} 
 
 	return marker;
 }
 
 /**
- * Open the info box associated with a specified marker
+ * Open the info window associated with a specified marker
+ * 
+ * @param  {Integer} index The index associated with the marker in the markers array
  * @return none
  */
-function openMarker() {
+function openMarker(index) {
+	if (map.markers.length > 0 && index >= 0 && index < map.markers.length) {
+		map.markers[index].infoWindow.open(map.map, map.markers[index]);
+	}
+}
 
+/**
+ * Open the info window associated with a specified marker
+ * 
+ * @param  {Integer} index The index associated with the marker in the markers array
+ * @return none
+ */
+function closeMarker(index) {
+	if (map.markers.length > 0 && index >= 0 && index < map.markers.length) {
+		map.markers[index].infoWindow.close();
+	}
 }
 
 /**
@@ -103,9 +118,14 @@ function getLocation() {
  */
 function processTweet( tweet ) {
 	tweet = $.parseJSON( tweet );
+
 	marker = makeMarker( tweet.coordinates[0], tweet.coordinates[1], 'tweet title', tweet.text_html );
+
 	addMarker( marker );
-	console.log( tweet);
+
+	openMarker(map.markers.length-1);
+
+	console.log( tweet );
 }
 
 $(document).ready(function() {
