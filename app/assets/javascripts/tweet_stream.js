@@ -111,11 +111,9 @@ function processTweet( tweet ) {
 		tweet = $.parseJSON( tweet );
 		console.log( tweet );
 
-		//if ( tweet.geo ) {
-			tweet = htmlify( tweet );
-			insert( tweet );
-			tweet = null;
-		//}
+		tweet = htmlify( tweet );
+		insert( tweet );
+		tweet = null;
 	}
 }
 

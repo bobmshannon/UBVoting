@@ -14,7 +14,7 @@ MAP_ID = '#gmap';
  * @constant
  * @default
  */
-DEFAULT_LAT = 42.9047;
+DEFAULT_LAT = 39.8282;
 
 /**
  * The default centermost longitude of the initial map state.
@@ -22,7 +22,7 @@ DEFAULT_LAT = 42.9047;
  * @constant
  * @default
  */
-DEFAULT_LNG = -78.8494;
+DEFAULT_LNG = -98.5795;
 
 /**
  * The default zoom level of the initial map state.
@@ -30,7 +30,7 @@ DEFAULT_LNG = -78.8494;
  * @constant
  * @default
  */
-DEFAULT_ZOOM = 8
+DEFAULT_ZOOM = 4
 
 /**
  * Map object
@@ -43,29 +43,23 @@ var map;
  * @param {Marker} marker Marker object
  */
 function addMarker(marker) {
-	map.addMarker( {
-		lat: 42.9047,
-		lng: -78.8494,
-		title: 'Lima',
-		infoWindow: {
-			content: '<p>HTML Content</p>'
-		}
-	} );
+	map.addMarker( marker );
 }
 
 /**
  * Make a google map marker object
- * 
- * @param  {JSON} data JSON array containing marker data
- * @return {Marker} Marker object
+ * @param  {Integer} lat    The latitude of the marker
+ * @param  {Integer} lng    The longitude of the marker    
+ * @param  {String} content HTML string to be put inside content box 
+ * @return {Marker}         marker object
  */
-function makeMarker(data) {
+function makeMarker(lat, lng, title, content) {
 	marker = {
-		lat: 42.9047,
-		lng: -78.8494,
-		title: 'Lima',
+		lat: lat,
+		lng: lng,
+		title: title,
 		infoWindow: {
-			content: '<p>HTML Content</p>'
+			content: '<p>' + content + '</p>'
 		}		
 	}
 
@@ -92,6 +86,18 @@ function getLocation() {
 			// Always do something
 		}
 	} );
+}
+
+/**
+ * Process an incoming tweet from the web socket
+ *
+ * @return none
+ */
+function processTweet( tweet ) {
+	tweet = $.parseJSON( tweet );
+	marker = makeMarker( tweet.coordinates[0], tweet.coordinates[1], 'tweet title', tweet.text_html );
+	addMarker( marker );
+	console.log( tweet);
 }
 
 $(document).ready(function() {
