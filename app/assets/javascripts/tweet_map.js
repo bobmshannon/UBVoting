@@ -67,6 +67,14 @@ function makeMarker(lat, lng, title, content) {
 }
 
 /**
+ * Open the info box associated with a specified marker
+ * @return none
+ */
+function openMarker() {
+
+}
+
+/**
  * Ask user for their current location, and if successful pan the 
  * google map accordingly.
  */
