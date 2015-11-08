@@ -24,7 +24,7 @@ function htmlify( tweet ) {
 	tweetHtml.find( '.text' ).append( $.parseHTML( tweet.text_html ) );
 	tweetHtml.find( '.text a').each(function() {
 		$(this).attr('target', '_blank');
-	})
+	});
 	tweetHtml.find( '.handle a' ).text( tweet.user.name ).attr( 'href', 'https://twitter.com/' + tweet.user.screen_name );
 	tweetHtml.find( 'a.profile-picture' ).attr( 'href', 'https://twitter.com/' + tweet.user.screen_name );
 	tweetHtml.find( '.handle span' ).text( '@' + tweet.user.screen_name );

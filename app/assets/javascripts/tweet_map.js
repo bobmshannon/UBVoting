@@ -30,7 +30,7 @@ DEFAULT_LNG = -98.5795;
  * @constant
  * @default
  */
-DEFAULT_ZOOM = 4
+DEFAULT_ZOOM = 4;
 
 /**
  * Map object
@@ -60,7 +60,7 @@ function makeMarker(lat, lng, title, content) {
 		infoWindow: {
 			content: '<div>' + content + '</div>'
 		}		
-	} 
+	};
 
 	return marker;
 }
