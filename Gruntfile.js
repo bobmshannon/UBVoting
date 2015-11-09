@@ -77,7 +77,8 @@ module.exports = function( grunt ) {
 					'bower_components/jquery-ui/jquery-ui.js',
 					'bower_components/bootstrap/dist/js/bootstrap.min.js',
 					'bower_components/websocket-rails-js/websocket_rails.0.0.1.min.js',
-					'bower_components/jquery-timeago/jquery.timeago.js'
+					'bower_components/moment/moment.js',
+					'bower_components/livestamp/livestamp.js'
 					]
 				}
 			},

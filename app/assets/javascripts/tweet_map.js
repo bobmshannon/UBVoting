@@ -129,12 +129,6 @@ function processTweet( tweet ) {
 
 		openMarker( map.markers.length-1 );
 
-		$('#gmap .tweet .timestamp span').each(function() {
-			if( $(this).is(':empty') ) {
-				$(this).timeago();
-			}
-		});
-
 		console.log( tweet );
 	}
 }

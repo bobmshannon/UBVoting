@@ -24,8 +24,8 @@
     "jquery-ui": "jquery.ui#1.11.4",
     "jqvmap": "https://github.com/manifestinteractive/jqvmap.git",
     "websocket-rails-js": "git@github.com:websocket-rails/websocket-rails-js.git#~0.0.1",
-    "jquery-timeago": "~1.4.3",
     "gmaps": "~0.4.21",
-    "v3-utility-library": "git@github.com:googlemaps/v3-utility-library.git"
+    "v3-utility-library": "git@github.com:googlemaps/v3-utility-library.git",
+    "livestamp": "~1.1.2"
   }
 }

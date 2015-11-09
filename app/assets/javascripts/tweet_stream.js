@@ -30,7 +30,7 @@ function htmlify( tweet ) {
 	tweetHtml.find( '.handle span' ).text( '@' + tweet.user.screen_name );
 	tweetHtml.find( '.profile-picture img' ).attr( 'src', tweet.user.profile_image_url_https.replace( '_normal', '' ) );
 	var time = new Date( parseInt( tweet.timestamp_ms ) ).toISOString();
-	tweetHtml.find( '.timestamp span' ).attr( 'title', time );
+	tweetHtml.find( '.timestamp span' ).attr( 'data-livestamp', time );
 
 	tweetHtml.find( '.reply a').attr('href', tweetUrl('reply', tweet.id_str));
 	tweetHtml.find( '.retweet a' ).attr('href', tweetUrl('retweet', tweet.id_str));
@@ -42,9 +42,10 @@ function htmlify( tweet ) {
 }
 
 /**
- * [intentUrl description]
- * @param  {[type]} type [description]
- * @return {[type]}      [description]
+ * Return a URL to initiate a specified action on a specified tweet
+ * 
+ * @param  {String} type The type of tweet action (favorite, retweet, or reply)
+ * @return {String}      The twitter.com URL corresponding to the specified action and tweet ID
  */
 function tweetUrl(type, id) {
     switch (type) {
@@ -87,7 +88,7 @@ function insert(tweet) {
  * @return none
  */
 function init( tweet ) {
-	tweet.find( '.timestamp span' ).timeago();
+	// Initialize stuff in here
 }
 
 /**
@@ -97,7 +98,7 @@ function init( tweet ) {
  * @return none
  */
 function destroy( tweet ) {
-	tweet.find( '.timestamp' ).timeago( 'dispose' );
+	tweet.find( '.timestamp' ).livestamp( 'destroy' );
 	tweet.remove();
 }
 
