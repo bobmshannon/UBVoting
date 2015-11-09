@@ -58,7 +58,8 @@ function makeMarker(lat, lng, title, content) {
 		lng: lng,
 		title: title,
 		infoWindow: {
-			content: '<div>' + content + '</div>'
+			content: content,
+			disableAutoPan: true
 		}		
 	};
 
@@ -117,15 +118,25 @@ function getLocation() {
  * @return none
  */
 function processTweet( tweet ) {
-	tweet = $.parseJSON( tweet );
+	if ( !paused ) {
+		tweet = $.parseJSON( tweet );
 
-	marker = makeMarker( tweet.coordinates[0], tweet.coordinates[1], 'tweet title', tweet.text_html );
+		tweetContent = htmlify(tweet).show().removeClass('tweet-template').addClass('tweet').prop('outerHTML');
 
-	addMarker( marker );
+		marker = makeMarker( tweet.coordinates[0], tweet.coordinates[1], 'tweet title', tweetContent );
 
-	openMarker(map.markers.length-1);
+		addMarker( marker );
 
-	console.log( tweet );
+		openMarker( map.markers.length-1 );
+
+		$('#gmap .tweet .timestamp span').each(function() {
+			if( $(this).is(':empty') ) {
+				$(this).timeago();
+			}
+		});
+
+		console.log( tweet );
+	}
 }
 
 $(document).ready(function() {
