@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body class = "candidates">
 
   <section id="coverphoto">
@@ -5,7 +6,9 @@
     <div class="container">
       <div class="center">
         <h1><%=@candidateName %></h1>
+        <div class = "float-up">
         <h2><%=@candidateTitle %></h2>
+        </div>
       </div>
     </div>
   </section>
@@ -133,7 +136,7 @@
           </div>
 
           <div class = "center">
-            <p>Sourced from <%=@source%></p>
+            <p><%=@source%></p>
           </div>
 
           </div>
