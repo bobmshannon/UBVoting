@@ -15,9 +15,10 @@ Rails.application.routes.draw do
   get '/map' => 'pages#map'
 
   # Tweet Stream
-  get '/happening-now' => 'tweet_map#list'
+  get '/happening-now' => 'tweet_map#map'
   get '/happening-now/map-view' => 'tweet_map#map'
-  
+  get '/happening-now/list-view' => 'tweet_map#list'
+
   # Candidates
   get '/candidates/genericcandidate' => 'candidates#genericcandidate'
   get '/candidates/berniesanders' => 'candidates#berniesanders'
