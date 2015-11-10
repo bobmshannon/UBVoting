@@ -76,7 +76,9 @@ module.exports = function( grunt ) {
 					'bower_components/jquery/dist/jquery.js',
 					'bower_components/jquery-ui/jquery-ui.js',
 					'bower_components/bootstrap/dist/js/bootstrap.min.js',
-					'bower_components/websocket-rails-js/websocket_rails.0.0.1.min.js'
+					'bower_components/websocket-rails-js/websocket_rails.0.0.1.min.js',
+					'bower_components/moment/moment.js',
+					'bower_components/livestamp/livestamp.js'
 					]
 				}
 			},
@@ -95,12 +97,34 @@ module.exports = function( grunt ) {
 					]
 				}
 			},
-
 			map: {
 				files: {
 					'public/javascripts/map.js': [
+					'app/assets/javascripts/map.js',
 					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
 					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
+					]
+				}
+			},
+			gmaps: {
+				files: {
+					'public/javascripts/gmaps.js': [
+					'bower_components/gmaps/gmaps.js',
+					'bower_components/v3-utility-library/infobox/src/infobox.js'
+					]
+				}
+			},
+			tweetstream: {
+				files: {
+					'public/javascripts/tweet_stream.js': [
+					'app/assets/javascripts/tweet_stream.js'
+					]
+				}
+			},
+			tweetmap: {
+				files: {
+					'public/javascripts/tweet_map.js': [
+					'app/assets/javascripts/tweet_map.js'
 					]
 				}
 			}

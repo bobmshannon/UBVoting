@@ -3,7 +3,8 @@
 {
 	h1
 	{
-
+		font-weight: normal;
+		
 		i
 		{
 			color: $twitter;
@@ -15,15 +16,29 @@
 		font-size: 14pt;
 	}
 
-	#tweets 
+	#stream-controls 
 	{
-		padding: 15px 0 20px;
+		@include clearfix;
+		margin: 20px 0;
+	}
 
-		li 
+	#tweets, 
+	#gmap
+	{
+		margin: 15px 0 20px;
+
+		li, 
+		.tweet
 		{
 			@include clearfix;
 			position: relative;
-			padding-left: 68px;
+			padding-left: 96px;
+			padding-bottom: 5px;
+		}
+
+		.tweet-template
+		{
+			display: none;
 		}
 
 		.profile-picture 
@@ -31,17 +46,16 @@
 			display: block;
 			float: none;
 			position: absolute;
-			top: 50%;
+			top: 12px;
 			left: 10px;
-			margin-top: -24px;
 		}
 
 		img
 		{
-			@include border-radius(50%);
+			@include border-radius(8px);
 			display: block;
-			max-width: 48px;
-			max-height: 48px;
+			width: 72px;
+			height: 72px;
 		}
 
 		.tweet-details 
@@ -59,6 +73,103 @@
 		.tweet-details h2
 		{
 			font-size: 20pt;
+		}
+
+		.tweet-details h2 a
+		{
+			color: $black;
+		}
+
+		.tweet-details h2 span
+		{
+			color: rgba(0, 0, 0, .50);
+			position: relative;
+			font-size: 16pt;
+			top: -3px;
+		}
+
+		.tweet-details p
+		{
+			color: rgba(0, 0, 0, .70);
+		}
+
+		.tweet-actions 
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		.tweet-actions li 
+		{
+			@include inline-block;
+			padding: 0;
+			margin: 0;
+			font-size: 18pt;
+		}
+
+		.tweet-actions li a
+		{
+			color: rgba(0, 0, 0, .2);
+			padding: 5px 15px 5px 0;
+
+			&:hover 
+			{
+				color: rgb(59, 171, 59);
+			}
+		}
+	}
+}
+
+.tweet_map#map
+{
+	#gmap
+	{
+		width: 100%;
+		height: 500px;
+
+		.tweet-details h2
+		{
+			font-size: 16pt;
+		}
+
+		.tweet-details h2 span
+		{
+			font-size: 14pt;
+			top: -2px;
+		}
+	}
+
+	#gmap-chat
+	{
+		overflow: hidden; 
+		position: relative;
+		padding: 0 150px 0 0;
+
+		input[type="text"]
+		{
+			@include border-radius(0);
+			float: left;
+			height: 50px;
+			line-height: 50px;
+			padding: 0 15px;
+			margin: 0;
+			font-size: 14pt;
+		}
+
+		button
+		{
+			@include border-radius(0);
+			float: right;
+			width: 165px;
+			font-size: 12pt;
+			font-weight: bold;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 50px;
+			line-height: 50px;
+			padding: 0;
+			margin: 0;
 		}
 	}
 }

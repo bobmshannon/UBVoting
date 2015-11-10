@@ -1,34 +1,44 @@
 <div class="wrapper">
     <h1><i class="fa fa-twitter"></i> Happening Right Now</h1>
-    <p>
-        Displaying 100 randomly sampled tweets using the following hashtags:
-        <% for tag in @hash_tags %>
-            <a target="_blank" href="https://twitter.com/search?q=<%= tag %>" class="badge"><b><%= tag %> </b></a>
-        <% end %>
-    </p>
+
+    <div id="stream-controls">
+        <div class="left btn-group" role="group">
+            <button type="button" id="list-view" class="btn btn-default"><i class="fa fa-th-list"></i> <span>List View</span></button>
+            <button type="button" id="map-view" class="btn btn-default"><i class="fa fa-map-marker"></i> <span>Map View</span></button>
+        </div>
+
+        <div class="right">
+            <button type="button" id="pause" class="btn btn-default"><span>Pause</span> &nbsp;<i class="fa fa-pause"></i>&nbsp;</a>
+        </div>
+    </div>
 
     <ul id="tweets" class="list-group">
-        <% for tweet in @tweets.shuffle %>
-            <li class="list-group-item">
-                <a class="profile-picture" target="_blank" href="https://twitter.com/<%= tweet.user.screen_name %>"><img src="<%= tweet.user.profile_image_url_https %>" /></a>
+        <li class="list-group-item tweet-template">
+            <a class="profile-picture" target="_blank" href=""><img src="" /></a>
 
-                <div class="tweet-details">
-                    <h2><a target="_blank" href="https://twitter.com/<%= tweet.user.screen_name %>">@<%= tweet.user.screen_name %></a></h2>
-                    <p><%= tweet.text %></p>
+            <div class="tweet-details">
+                <div class="clear">
+                    <h2 class="handle left"><a target="_blank" href=""></a> <span></span></h2>
+                    <p class="timestamp right"><i class="fa fa-clock-o"></i> <span></span></time>
                 </div>
-            </li>
-        <% end %>
+
+                <p class="text"></p>
+
+                <div class="clear">
+                    <ul class="tweet-actions left">
+                        <li class="reply"><a target="_blank" href=""><i class="fa fa-reply"></i></a></li>
+                        <li class="favorite"><a target="_blank" href=""><i class="fa fa-heart"></i></a></li>
+                        <li class="retweet"><a target="_blank" href=""><i class="fa fa-retweet"></i></a></li>
+                    </ul>
+
+                    <p class="tweet-location right"><i class="fa fa-map-marker"></i> <span>New York, NY</span></p>
+                </div>
+            </div>
+        </li>
     </ul>
 </div>
 
-<script type="text/javascript">
-var dispatcher = new WebSocketRails('localhost:3001/websocket');
-var channel = dispatcher.subscribe('tweets');
-channel.bind('new_tweet', function(data) {
-    console.log('new tweet received: ' + data);
-});
-
-dispatcher.bind('connected', function(data) {
-  console.log(data);
-});
-</script>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "//platform.twitter.com/widgets.js" %>
+  <%= javascript_include_tag "tweet_stream.js" %>
+<% end %>

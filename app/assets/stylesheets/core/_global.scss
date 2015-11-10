@@ -15,6 +15,22 @@ html
 	height: 100%;
 }
 
+a,
+a:active,
+a:focus,
+button,
+button:active,
+button:focus,
+.btn:focus
+{
+	outline: 0;
+
+	&:-moz-focus-inner 
+	{
+		border: 0;
+	}
+}
+
 .wrapper 
 {
 	padding: 0 2%;
@@ -40,6 +56,21 @@ html
 	{
 		color: #0000ff;
 	}
+}
+
+.left
+{
+	float: left;
+}
+
+.right
+{
+	float: right;
+}
+
+.clear
+{
+	overflow: hidden;
 }
 
 .btn
