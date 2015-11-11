@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   get '/candidates/donaldtrump' => 'candidates#donaldtrump'
   get '/candidates/hillaryclinton' => 'candidates#hillaryclinton'
   get '/candidates/bencarson' => 'candidates#bencarson'
-  # Adding this comment because I think that the server is a push behind.
+  get '/candidates/marcorubio' => 'candidates#marcorubio'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
