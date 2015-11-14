@@ -25,4 +25,8 @@ class Tweet
   field :source, type: String
   # URL to tweet on twitter.com
   field :url, type: String
+  #User's screen name
+  field :screen_name, type: String
+  #Allowed time to tweet for user
+  field :time, type: Integer 	
 end

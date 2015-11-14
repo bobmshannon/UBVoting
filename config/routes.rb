@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'candidates/berniesanders'
-
   get 'pages/home'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -17,13 +15,18 @@ Rails.application.routes.draw do
   get '/map' => 'pages#map'
 
   # Tweet Stream
-  get '/happening-now' => 'tweet_map#list'
+  get '/happening-now' => 'tweet_map#map'
   get '/happening-now/map-view' => 'tweet_map#map'
-  
+  get '/happening-now/list-view' => 'tweet_map#list'
+
   # Candidates
-  get '/candidates' => 'pages#candidates'
-  get '/candidates/genericcandidate'
-  get '/candidates/berniesanders'
+  get '/candidates/genericcandidate' => 'candidates#genericcandidate'
+  get '/candidates/berniesanders' => 'candidates#berniesanders'
+  get '/candidates/donaldtrump' => 'candidates#donaldtrump'
+  get '/candidates/hillaryclinton' => 'candidates#hillaryclinton'
+  get '/candidates/bencarson' => 'candidates#bencarson'
+  get '/candidates/marcorubio' => 'candidates#marcorubio'
+  get '/candidates/martinomalley' => 'candidates#martinomalley'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 2015-10-08 */
 ! function($) {
     var apiParams = {
@@ -635,3 +636,15 @@
         }
     }
 });
+=======
+( function( $ ) {
+$( document ).ready( function() {
+	$( '.carousel' ).carousel( {
+		interval: 3000
+	} );
+
+	$( '.carousel' ).carousel( 'cycle' );
+} );
+} ) ( jQuery );
+
+>>>>>>> 2d5ff5313d565771a0cff6fe1d7fb12e1f27dc20

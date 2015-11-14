@@ -22,11 +22,13 @@
 		margin: 20px 0;
 	}
 
-	#tweets 
+	#tweets, 
+	#gmap
 	{
 		margin: 15px 0 20px;
 
-		li 
+		li, 
+		.tweet
 		{
 			@include clearfix;
 			position: relative;
@@ -102,7 +104,7 @@
 			@include inline-block;
 			padding: 0;
 			margin: 0;
-			font-size: 16px;
+			font-size: 18pt;
 		}
 
 		.tweet-actions li a
@@ -124,6 +126,17 @@
 	{
 		width: 100%;
 		height: 500px;
+
+		.tweet-details h2
+		{
+			font-size: 16pt;
+		}
+
+		.tweet-details h2 span
+		{
+			font-size: 14pt;
+			top: -2px;
+		}
 	}
 
 	#gmap-chat
@@ -134,7 +147,7 @@
 
 		input[type="text"]
 		{
-			@include border-radius(0px);
+			@include border-radius(0);
 			float: left;
 			height: 50px;
 			line-height: 50px;
@@ -145,7 +158,7 @@
 
 		button
 		{
-			@include border-radius(0px);
+			@include border-radius(0);
 			float: right;
 			width: 165px;
 			font-size: 12pt;
