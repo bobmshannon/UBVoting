@@ -48,7 +48,8 @@ var map;
 /**
  * Markers container
  */
-var markers = []
+var markers = [];
+
 /**
  * Add a marker to the google map
  * @param {Marker} marker Marker object
