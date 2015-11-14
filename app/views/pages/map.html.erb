@@ -1,183 +1,191 @@
-		<script>
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from dev.ubvoting.com/map by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 07:59:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <title>UBVoting - pages - map</title>
+  <link rel="stylesheet" media="screen" href="stylesheets/base.css" />
+  <link rel="stylesheet" media="screen" href="stylesheets/style.css" />
+  <script src="javascripts/base.js"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Inry7jkhTgX0H3Pf4PFyApAfcbyLkEGK6dcG96sEPMcCcOH5exF18BT+xV/EkhBSjL8fYs2d5TfMstKo8PplbQ==" />
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body class="pages" id="map">
+    <header>
+        <div class="wrapper">
+            <h1><a href="index.html">UBVoting</a></h1>
+
+            <a class="btn btn-primary" href="happening-now.html"><i class="fa fa-commenting"></i> Happening Now</a>
+            <a class="btn btn-default" href="#"><i class="fa fa-info-circle"></i> About Us</a>
+        </div>
+    </header>
+
+			<script>
 	jQuery(document).ready(function(){
 		jQuery("#vmap").vectorMap({
     		map: 'usa_en',
     		backgroundColor: null,
-			borderColor: '#818181',
-			borderOpacity: 0.25,	
+		borderColor: '#818181',
+		borderOpacity: 0.25,	
     		color: '#B31B1B',
     		hoverColor: '#999999',
-			selectedColor: '#666666',
+		selectedColor: '#666666',
+   		enableZoom: true,
+    		showTooltip: true,
 		});
+
 	});
 </script>
-	<center> <div id="vmap" style="width: 700px; height: 450px;"></div> </center>
-<div id = "footer">
-	<div id = "candidatesCarousel" class = "carousel slide">
-		<ol class = "carousel-indicators">	
-			<li data-target = "#candidatesCarousel" data-slide-to = "0" class="active"> </li>
-			<li data-target = "#candidatesCarousel" data-slide-to = "1"> </li>
-			<li data-target = "#candidatesCarousel" data-slide-to = "2"> </li>
+	<center> <div id="vmap" style="width: 800px; height: 500px;"></div> </center>
+<!--<div class = "row">
 
-		</ol>
+<div id = "col-md-2">
+	<div id = "Bernie"> 
+		<img title="Bernie Sanders" alt="Bernie Sanders" src="../s.graphiq.com/sites/default/files/980/media/images/t2/Bernie_Sanders_1786280.jpg" style="max-width:439px;" width="135px" height="160px" class="">
+	</div>
+<div>
 
-		<div class = "carousel-inner">
-			<div class = "item active"
-				<div class = "row">
-					<div class = "col-md-2">
-						<div id = "Bernie"> 
-						<a href = "../candidates/berniesanders">
-							<img title="Bernie Sanders" alt="Bernie Sanders" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Bernie_Sanders_1786280.jpg" style="max-width:500px;" width="160px" height="160px" class="">
-						</a>
-						</div>
-					</div>
-
-					<div class = "col-md-2">
-						<div id = "Donald">
-						<a href = "../candidates/berniesanders">
-							<img title="Donald Trump" alt="Donald Trump" src="https://s2.graphiq.com/sites/default/files/980/media/images/t2/Donald_Trump_6522122.jpg" style="max-width:338px;" width="160px" height="160px" class="">
-						</a>
-						</div>
-					</div>
-
-					<div class = "col-md-2">
-						<div id = "Hilary">
-							<a href = "../candidates/berniesanders">
-							<img title="Hillary Clinton" alt="Hillary Clinton" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Hillary_Clinton_1786283.jpg" style="max-width:338px;" width="160px" height="160px" class="">
-							</a>
-						</div>
-					</div>
-
-					<div class ="col-md-2">
-						<div id = "Jeb">
-							<a href = "../candidates/berniesanders">
-							<img title="Jeb Bush" alt="Jeb Bush" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Jeb_Bush_1786288.jpg" style="max-width:338px;" width="160px" height="160px" class="">
-							</a>
-						</div>
-					</div>
-
-					<div class = "col-md-2">
-						<div id = "Rand">
-						<a href = "../candidates/berniesanders">
-							<img title="Rand Paul" alt="Rand Paul" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Rand_Paul_5645560.jpg" style="max-width:338px;" width="160px" height="160px" class="">
-							</a>
-						</div>
-					</div>
-
-					<div class = "col-md-2">
-						<div id = "Chris">
-						<a href = "../candidates/berniesanders">
-							<img title="Chris Christie" alt="Chris Christie" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Chris_Christie_1786282.jpg" style="max-width:388px;" width="160pxx" height="160px" class="">
-						</a>
-						</div>
-					</div>
-				</div>
-			
-
-			<div class = "item">
-					<div class = "row">
-
-					<div class = "col-md-2">	
-						<div id = "Ben">
-							<a href = "../candidates/berniesanders">
-							<img title="Ben Carson" alt="Ben Carson" src="https://s2.graphiq.com/sites/default/files/980/media/images/t2/Ben_Carson_6036997.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>
-						</div>
-					 </div>
-
-					<div class = "col-md-2">	
-						<div id = "Marco">
-							<a href = "../candidates/berniesanders">
-							<img title="Marco Rubio" alt="Marco Rubio" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Marco_Rubio_1786292.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-						</a>
-						</div>
-					 </div>
-
-					<div class = "col-md-2">	
-						<div id = "Mike">
-							<a href = "../candidates/berniesanders">
-							<img title="Mike Huckabee" alt="Mike Huckabee" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Mike_Huckabee_1786294.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>
-						</div>
-					 </div>
-
-					<div class = "col-md-2">	
-						<div id = "Carly">
-							<a href = "../candidates/berniesanders">
-							<img title="Carly Fiorina" alt="Carly Fiorina" src="https://s.graphiq.com/sites/default/files/980/media/images/t2/Carly_Fiorina_6036992.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-						</a>
-						</div>
-					 </div>
-
-					<div class = "col-md-2">	
-						<div id = "Ted">
-							<a href = "../candidates/berniesanders">
-							<img title="Ted Cruz" alt="Ted Cruz" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Ted_Cruz_1786303.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-						</a>
-						</div>
-					 </div>
-
-
-					<div class = "col-md-2">	
-						<div id = "Rick">
-							<a href = "../candidates/berniesanders">
-							<img title="Rick Santorum" alt="Rick Santorum" src="https://s3.graphiq.com/sites/default/files/980/media/images/t2/Rick_Santorum_1786299.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-						</a>
-						</div>
-					 </div>
-				</div>
-			</div>
-
-			<div class = "item">
-				<div class = "row">
-					<div class = "col-md-2">
-						<div id = "Lincoln">
-							<a href = "../candidates/berniesanders">
-								<img title= "Lincoln Chafee" alt = "Lincoln Chafee" src = "https://s2.graphiq.com/sites/default/files/980/media/images/t2/Lincoln_Chafee_6387900.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>	
-						</div>
-					</div>
-					<div class = "col-md-2">
-						<div id = "Martin">
-							<a href = "../candidates/berniesanders">
-								<img title= "Martin O'Malley" alt = "Martin O'Malley" src = "https://s2.graphiq.com/sites/default/files/980/media/images/t2/Martin_OMalley_1786293.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>	
-						</div>
-					</div>
-					<div class = "col-md-2">
-						<div id = "Jim">
-							<a href = "../candidates/berniesanders">
-								<img title= "Jim Gilmore" alt = "Jim Gilmore" src = "https://s2.graphiq.com/sites/default/files/980/media/images/t2/Jim_Gilmore_6638843.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>	
-						</div>
-					</div>
-					<div class = "col-md-2">
-						<div id = "Bobby">
-							<a href = "../candidates/berniesanders">
-								<img title= "Bobby Jindal" alt = "Bobby Jindal" src = "https://s.graphiq.com/sites/default/files/980/media/images/t2/Bobby_Jindal_1786297.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>	
-						</div>
-					</div>
-					<div class = "col-md-2">
-						<div id = "Jill">
-							<a href = "../candidates/berniesanders">
-								<img title= "Jill Stein" alt = "Jill Stein" src = "https://s3.graphiq.com/sites/default/files/980/media/images/t2/Jill_Stein_1786255.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>	
-						</div>
-					</div>
-					<div class = "col-md-2">
-						<div id = "John">
-							<a href = "../candidates/berniesanders">
-								<img title= "John Kasich" alt = "John Kasich" src = "https://s.graphiq.com/sites/default/files/980/media/images/t2/John_Kasich_1786289.jpg" style="max-width:388px;" width="160px" height="160px" class="">
-							</a>	
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
+<div id = "col-md-2">
+	<div id = "Donald">
+		<img title="Donald Trump" alt="Donald Trump" src="../s2.graphiq.com/sites/default/files/980/media/images/t2/Donald_Trump_6522122.jpg" style="max-width:338px;" width="135px" height="160px" class="">
 	</div>
 </div>
 
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag "map.js" %>
-<% end %>
+<div id = "col-md-2">
+	<div id = "Hilary">
+		<img title="Hillary Clinton" alt="Hillary Clinton" src="../s3.graphiq.com/sites/default/files/980/media/images/t2/Hillary_Clinton_1786283.jpg" style="max-width:338px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+<div class ="col-md-2">
+	<div id = "Jeb">
+		<img title="Jeb Bush" alt="Jeb Bush" src="../s.graphiq.com/sites/default/files/980/media/images/t2/Jeb_Bush_1786288.jpg" style="max-width:338px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+<div class = "col-md-2">
+	<div id = "Rand">
+		<img title="Rand Paul" alt="Rand Paul" src="../s.graphiq.com/sites/default/files/980/media/images/t2/Rand_Paul_5645560.jpg" style="max-width:338px;" width="135x" height="160px" class="">
+	</div>
+</div>
+
+<div class = "col-md-2">
+	<div id = "Chris">
+		<img title="Chris Christie" alt="Chris Christie" src="../s3.graphiq.com/sites/default/files/980/media/images/t2/Chris_Christie_1786282.jpg" style="max-width:388px;" width="135px" height="160px" class="">
+	</div>
+</div>
+
+</div> -->
+
+
+<div class='row' style='margin-top:20px;' id='pop_ca'>
+	<div class='col-md-1'>
+		
+	</div>
+	<div class='col-md-10' style='background-color:#ffffff; border: 1px solid #e8e8e8;'>
+		<div class='col-md-8' >
+			<div class='row'>
+				<h2>
+					California
+				</h2>
+				<p>
+					Motto - Eureka
+				</p>
+			</div>
+			<div class='row'>
+				<h3>
+					About
+				</h3>
+				<p>
+					California  is a state located on the West Coast of the United States. It is the most populous U.S. state,with 38 million people, and the third largest state by area (after Alaska and Texas). California is bordered by Oregon to the north, Nevada to the east, Arizona to the southeast, and the Mexican state of Baja California to the south. It contains the nation's second most populous census statistical area (Greater Los Angeles Area) and the fifth most populous (San Francisco Bay Area), and eight of the nation's 50 most populated cities (Los Angeles, San Diego, San Jose, San Francisco, Fresno, Sacramento, Long Beach, and Oakland). Sacramento has been the state capital since 1854.
+				</p>
+			</div>
+			<div class='row'>
+				<h3>
+					Governor
+				</h3>
+			</div>
+			<div class='row'>
+				<img width='160px' height='160px' src="img/jerry.jpg">
+			</div>
+			<div class='row'>
+				<h3>
+					Jerry Brown
+				</h3>
+			</div>
+		</div>
+		<div class='col-md-4'>
+			<div class='row' style='margin-top:10px;'>
+				<img height='170px' width:'270px' src="img/california.png" style='float:right;'>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class='col-md-1'>
+
+	</div>
+</div>
+
+<div class='row' style='margin-top:20px;' id='pop_ak'>
+	<div class='col-md-1'>
+		
+	</div>
+	<div class='col-md-10' style='background-color:#ffffff; border: 1px solid #e8e8e8;'>
+		<div class='col-md-8' >
+			<div class='row'>
+				<h2>
+					Alaska
+				</h2>
+				<p>
+					Motto - North to the Future
+				</p>
+			</div>
+			<div class='row'>
+				<h3>
+					About
+				</h3>
+				<p>
+					Alaska is a U.S. state situated in the northwest extremity of the North American continent. Bordering the state to the east are the Canadian territory of Yukon and the Canadian province of British Columbia; to the north is the Arctic Ocean; and to the west and south is the Pacific Ocean, with Russia (specifically, Chukotka Autonomous Okrug and Kamchatka Krai) farther west across the Bering Strait. Alaska is the largest state in the United States by area, the 4th least populous and the least densely populated of the 50 United States. Approximately half of Alaska's 735,132 residents live within the Anchorage metropolitan area. Alaska's economy is dominated by the oil, natural gas, and fishing industries, resources which it has in abundance. Tourism is also a significant part of the economy.
+				</p>
+			</div>
+			<div class='row'>
+				<h3>
+					Governor
+				</h3>
+			</div>
+			<div class='row'>
+				<img width='160px' height='160px' src="img/bill.jpg">
+			</div>
+			<div class='row'>
+				<h3>
+					Bill Walker
+				</h3>
+			</div>
+		</div>
+		<div class='col-md-4'>
+			<div class='row' style='margin-top:10px;'>
+				<img height='170px' width:'270px' src="img/alaska.png" style='float:right;'>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class='col-md-1'>
+
+	</div>
+</div>
+
+	<script src="javascripts/map.js"></script>
+	<script src='javascripts/pop.js'></script>
+</body>
+
+<!-- Mirrored from dev.ubvoting.com/map by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 07:59:58 GMT -->
+</html>
