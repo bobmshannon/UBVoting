@@ -33,16 +33,37 @@ DEFAULT_LNG = -98.5795;
 DEFAULT_ZOOM = 4;
 
 /**
+ * The maximum number of markers allowed on the map.
+ *
+ * @constant
+ * @default
+ */
+MAX_NUM_MARKERS = 25;
+
+/**
  * Map object
  */
 var map;
 
+/**
+ * Markers container
+ */
+var markers = []
 /**
  * Add a marker to the google map
  * @param {Marker} marker Marker object
  */
 function addMarker(marker) {
 	map.addMarker( marker );
+
+	// Add marker to markers container
+	last = map.markers.length - 1;
+	markers.push(map.markers[last]);
+
+	if(markers.length > MAX_NUM_MARKERS) {
+		// Remove oldest marker from the map and markers container
+		markers.shift().setMap(null);
+	}
 }
 
 /**
