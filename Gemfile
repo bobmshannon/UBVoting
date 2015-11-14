@@ -20,6 +20,8 @@ gem 'mongoid'
 # Twitter
 gem 'twitter', :git => 'https://github.com/sferik/twitter.git', :branch => 'streaming-updates'
 gem 'twitter-text'
+# Geocoding
+gem 'geocoder'
 # Websockets
 gem 'websocket-rails'
 # Daemons/background jobs

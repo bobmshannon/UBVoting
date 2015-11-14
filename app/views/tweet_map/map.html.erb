@@ -3,30 +3,56 @@
 
     <div id="stream-controls">
         <div class="left btn-group" role="group">
-            <button type="button" id="list-view" class="btn btn-default"><i class="fa fa-th-list"></i> <span>List View</span></button>
-            <button type="button" id="map-view" class="btn btn-default"><i class="fa fa-map-marker"></i> <span>Map View</span></button>
+            <a href="/happening-now/list-view" id="list-view" class="btn btn-default"><i class="fa fa-th-list"></i> <span>List View</span></a>
+            <a href="/happening-now/map-view" id="map-view" class="btn btn-default"><i class="fa fa-map-marker"></i> <span>Map View</span></a>
         </div>
 
         <div class="right">
             <button type="button" id="pause" class="btn btn-default"><span>Pause</span> &nbsp;<i class="fa fa-pause"></i>&nbsp;</a>
         </div>
     </div>
+
+  <div id="gmap">
+  </div>
+
+  <div id="gmap-chat">
+    <input placeholder="Howdy, stranger!" type="text" class="form-control" aria-describedby="map-message-submit" />
+    <button type="button" class="btn btn-danger" id="map-message-submit"><i class="fa fa-send"></i> &nbsp;Send Message</button>
+  </div>
 </div>
 
-<div id="gmap">
+<div class="tweet-template" style="display: none;">
+    <a class="profile-picture" target="_blank" href=""><img src="" /></a>
+
+    <div class="tweet-details">
+        <div class="clear">
+            <h2 class="handle left"><a target="_blank" href=""></a> <span></span></h2>
+            <p class="timestamp right"><i class="fa fa-clock-o"></i> <span></span></time>
+        </div>
+
+        <p class="text"></p>
+
+        <div class="clear">
+            <ul class="tweet-actions left">
+                <li class="reply"><a target="_blank" href=""><i class="fa fa-reply"></i></a></li>
+                <li class="favorite"><a target="_blank" href=""><i class="fa fa-heart"></i></a></li>
+                <li class="retweet"><a target="_blank" href=""><i class="fa fa-retweet"></i></a></li>
+            </ul>
+
+            <p class="tweet-location right"><i class="fa fa-map-marker"></i> <span>New York, NY</span></p>
+        </div>
+    </div>
 </div>
 
-<div id="gmap-chat">
-  <input placeholder="Howdy, stranger!" type="text" class="form-control" aria-describedby="map-message-submit" />
-  <button type="button" class="btn btn-danger" id="map-message-submit"><i class="fa fa-send"></i> &nbsp;Send Message</button>
-</div>
 
 <script type="text/javascript">
 paused = false;
 </script>
 
 <% content_for :javascript_includes do %>
+  <%= javascript_include_tag "//platform.twitter.com/widgets.js" %>
   <%= javascript_include_tag "//maps.google.com/maps/api/js?sensor=true" %>
   <%= javascript_include_tag "gmaps.js" %>
   <%= javascript_include_tag "tweet_stream.js" %>
+  <%= javascript_include_tag "tweet_map.js" %>
 <% end %>
