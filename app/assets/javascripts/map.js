@@ -1,10 +1,8 @@
-( function( $ ) {
-$( document ).ready( function() {
-	$( '.carousel' ).carousel( {
-		interval: 3000
-	} );
-
-	$( '.carousel' ).carousel( 'cycle' );
-} );
-} ) ( jQuery );
-
+$(document).ready(function(){
+	$('.presidential-candidates').slick({
+ 	dots:true, 
+	centerMode: true,
+  	centerPadding: '60px',
+      	slidesToShow:3,
+	})
+});

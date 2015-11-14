@@ -146,7 +146,6 @@ Signal.trap("TERM") do
 end
 
 while($running) do
-<<<<<<< HEAD
   # Initiate twitter stream and track specified topics
   streamclient.filter(track: TOPICS.join(',')) do |object|
     if object.is_a?(Twitter::Tweet)
@@ -208,7 +207,6 @@ while($running) do
 
   sleep 10
 end
-=======
     # Twitter Streaming API Client
     streamclient = Twitter::Streaming::Client.new do |config|
         config.consumer_key = ENV['consumer_key']
@@ -244,4 +242,3 @@ end
         next
     end
 end
->>>>>>> c6ae829f11ebd4fd47fe1a4d4fec5539bb1a5c7a

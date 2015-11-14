@@ -101,8 +101,7 @@ module.exports = function( grunt ) {
 				files: {
 					'public/javascripts/map.js': [
 					'app/assets/javascripts/map.js',
-					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
-					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
+					'bower_components/slick-1.5.7/slick/slick.js',
 					]
 				}
 			},
@@ -142,7 +141,9 @@ module.exports = function( grunt ) {
 					'bower_components/components-font-awesome/css/font-awesome.css',
 					'bower_components/bootstrap/dist/css/bootstrap.min.css',
 					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-					'bower_components/fullcalendar/dist/fullcalendar.css'
+					'bower_components/fullcalendar/dist/fullcalendar.css',
+					'bower_components/slick-1.5.7/slick/slick-theme.css',
+					'bower_components/slick-1.5.7/slick/slick.css'
 					]
 				}
 			}
