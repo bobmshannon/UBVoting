@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/candidates/hillaryclinton' => 'candidates#hillaryclinton'
   get '/candidates/bencarson' => 'candidates#bencarson'
   get '/candidates/marcorubio' => 'candidates#marcorubio'
+  get '/candidates/martinomalley' => 'candidates#martinomalley'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
