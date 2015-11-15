@@ -1,45 +1,134 @@
 .pages#home
 {
-	display: table;
-
-	section#learn-more
+	.cover-shade
 	{
-		@include background-image(image-url('usaflag.png'));
-		@include background-size(cover);
-		display: table-row;
-		height: 100%;
+		@include box-shadow(3px 3px 5px 1px #333);
+		color: #fff;
+		background-color: rgba(0, 0, 0, .3);
+		margin-top: 300px;
+		padding: 15px;
+		margin-left: auto;
+		margin-right: auto;
+		background-size: cover;
+		width: 800px;
 
-		.overlay 
-		{
-			@include box-shadow(inset 0 1px 5px $black);
-			background-color: rgba(20, 40, 64, .75);
-			border-top: 1px solid $light-gray;
-			display: table-cell;
-			vertical-align: middle;
-		}
-	}
-	
-	p
-	{
-		text-align: left;
 	}
 
-	.panel 
+	h1
 	{
-		font-size: 14px;
+		@include text-shadow(5px 2px $black);
+		font-size: 80px;
+	}
 
-		.panel-heading
-		{
-			font-size: 18pt;
-			background-color: $light-gray;
-			padding-top: 12px;
-			padding-bottom: 12px;
-			margin: 0;
-		}
+	h3
+	{
+		@include text-shadow(1.5px 1.5px $black);
+		font-size: 18px;
 
-		.btn 
-		{
-			margin: 5px 8px 0 0;
-		}
+	}
+
+	.float-down
+	{
+		margin-top: 40px;
+	}
+
+	.center
+	{
+		text-align: center;
+	}
+
+	#coverphoto
+	{
+		position: relative;
+	}
+
+	#coverphoto .bg-photo
+	{
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 1200px;
+		display: block;
+	}
+
+	#graph-section
+	{
+		padding: 25px;
+	}
+
+	img
+	{
+		@include box-shadow(3px 3px 5px 1px #cccccc);
+		float: left;
+		margin: 0 75px 0 0;
+	}
+
+	figcaption
+	{
+		font-size: 25px;
+		margin-right: 75px;
+		padding-top: 65px;
+	}
+
+	#reasons
+	{
+		background: #fff;
+	}
+
+	.small-container
+	{
+		@include border-radius(4px);
+		padding: 40px 30px;
+		background: #fff;
+		margin: 0 0 40px;
+	}
+
+	#slit-bg .slit-photo
+	{
+
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 50px;
+		display: block;
+	}
+
+	.shade-photo
+	{
+		background-color: rgba(0, 0, 0, .5);
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-size: cover;
+		width: 100%;
+		height: 50px;
+	}
+
+	.carousel-inner
+	{
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 1200px;
+		display: block;
+	}
+
+	.item
+	{
+		width: 100%;
+		background-size: cover;
 	}
 }
