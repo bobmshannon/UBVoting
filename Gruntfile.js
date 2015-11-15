@@ -142,7 +142,7 @@ module.exports = function( grunt ) {
 					'bower_components/bootstrap/dist/css/bootstrap.min.css',
 					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
 					'bower_components/fullcalendar/dist/fullcalendar.css',
-					'ower_components/slick-carousel/slick/slick-theme.css',
+					'bower_components/slick-carousel/slick/slick-theme.css',
 					'bower_components/slick-carousel/slick/slick.css'
 					]
 				}
