@@ -26,6 +26,7 @@
     "websocket-rails-js": "git@github.com:websocket-rails/websocket-rails-js.git#~0.0.1",
     "gmaps": "~0.4.21",
     "v3-utility-library": "git@github.com:googlemaps/v3-utility-library.git",
-    "livestamp": "~1.1.2"
+    "livestamp": "~1.1.2",
+    "slick-carousel": "~1.5.8"
   }
 }
