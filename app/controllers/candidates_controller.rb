@@ -366,4 +366,65 @@ class CandidatesController < ApplicationController
 	@candidateVideo = "https://www.youtube.com/embed/3_PfQOA7ZqM"
 	end
 
+	def martinomalley
+	   	@candidateName = "Martin O'Malley"
+	  	@candidateTitle = "Former Governer of Maryland"
+	  	@affiliation = "democrat"
+	  	@notAffiliated ="republican"
+		@candidateCoverPhoto = "/images/candidates/coverMalley1.jpg"
+		@candidateCoverPhoto1 = "/images/candidates/coverMalley2.jpg"
+
+		@candidateIssueOverview = " "
+		@issue1 = "Veterans And Military Families"
+		@issue1details = "Governor O’Malley believes America must uphold its sacred trust with our veterans. Our government and our fellow citizens, however, have not always lived up to this responsibility. Veterans have not escaped Washington’s dysfunction. "
+		@issue1Fa = "fa fa-shield"
+
+		@issue2 = "Trade Policy"
+		@issue2details = "As president, Governor O’Malley will support free trade agreements—but only those agreements that establish strong and enforceable rules for fair competition, creating opportunity for American workers while lifting standards in our partner nations. "
+		@issue2Fa = "fa fa-exchange"
+
+		@issue3 = "National Service"
+		@issue3details = "National service should be part of what it means to be an American citizen. Our country faces great challenges—from economic inequality to education to climate change—and we need the talents and efforts of every citizen to overcome them and make our nation stronger"
+		@issue3Fa = "fa fa-send"
+
+		@issue4 = "Homeland Security"
+		@issue4details = "Expanding Community Partnerships To Counter Violent Extremism.  Reinforcing Cybersecurity From The Bottom Up.  Strengthening the Public Safety Standards of Cities and States."
+		@issue4Fa = "fa fa-university"
+
+		@issue5 = "Financial Reform"
+		@issue5details = "We need to protect America’s economy. And we can only do it by implementing strong accountability and structural reforms and put an end to too-big-to-fail, too-big-to-manage, and too-big-to-jail financial firms."
+		@issue5Fa = "fa fa-dollar"
+
+		@issue6 = "Clean Energy Future"
+		@issue6details = "As a nation, we have made great strides toward becoming energy independent. Now is the time to accelerate that progress. The future of our country and our planet depend on it."
+		@issue6Fa = "fa fa-cloud"
+
+		@issue7 = "Addiction Treatment To Save Lives"
+		@issue7details = "Proven prevention and treatment strategies are underutilized. Funding for treatment programs is insufficient. Outdated stigmas make too many people reluctant to seek care, and make too many communities unwilling to provide it."
+		@issue7Fa = "fa fa-life-buoy"
+
+		@issue8 = "Campaign Finance Reform"
+		@issue8details = "Truly fixing our economy requires fixing our democracy. Today in America, big-money special interests have taken over our elections."
+		@issue8Fa = "fa fa-area-chart"
+
+		@issue9 = "Gun Reform"
+		@issue9details = "As a nation, it is time for sensible gun safety laws that save lives. That is why Governor O’Malley has set a national goal of cutting deaths from gun violence in half within 10 years."
+		@issue9Fa = "fa fa-bullseye"
+
+		@candidateQuickBio = "In 1999, O’Malley ran for Mayor of Baltimore. At the time, it was the most violent, abandoned, and addicted city in America. Widely considered an underdog candidate, O’Malley campaigned on the promise of reducing crime, improving schools, and rebuilding broken communities. He went on to earn 90 percent of the vote, and got right to work.  Over his seven years as Mayor, O’Malley’s policies helped the people of Baltimore achieve the greatest crime reduction of America’s largest cities. He also promoted important investments in the local economy—bringing fiscal stability to schools and cracking down on crime, which drew investments and people back to the city."
+		@candidateBorn = "Governor O'Malley was born in Washington, DC"
+		@candidateSchool = "O'Malley attended the The Catholic University of America and later earned his J.D. from the University of Maryland School of Law."
+		@candidateFamily = "The child of Barbara and Thomas Martin O'Malley.  Martin's father served as a bombardier in the U.S. Army Air Force in the Pacific theater during the Second World War."
+		@candidateStrangeFact1 = "Formed Irish folk-rock band, O'Malley's March, with Paul Levin"
+		@candidateStrangeFact2 = "Served as the National Field Director on the 'Gary Hart for President 1988' presidential campaign."
+		@candidateStrangeFact3 = "He says he tries to spend the morning in prayer and likes to read Ignatius Loyola, Thomas Merton, and C.S. Lewis during devotions."
+		@candidateAccomplishment1 = "Over his seven years as Mayor, O’Malley’s policies helped the people of Baltimore achieve the greatest crime reduction of America’s largest cities."
+		@candidateAccomplishment2 = "His program CitiStat won Harvard University’s Innovations in American Government Award, and TIME Magazine named O’Malley “one of America’s top five big city mayors.”"
+		@candidateAccomplishment3 = "Earned J.D. and admitted to the Maryland State Bar Association"
+		
+		@source = "https://martinomalley.com/"
+
+		@candidateVideo = "https://www.youtube.com/embed/VFpPh9QB2qg"
+	end
+
 end
