@@ -97,10 +97,10 @@ module.exports = function( grunt ) {
 					]
 				}
 			},
-			map: {
+			slider: {
 				files: {
-					'public/javascripts/map.js': [
-					'app/assets/javascripts/map.js',
+					'public/javascripts/slider.js': [
+					'app/assets/javascripts/slider.js',
 					'bower_components/slick-carousel/slick/slick.js',
 					]
 				}
