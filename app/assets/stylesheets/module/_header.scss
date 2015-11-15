@@ -20,11 +20,15 @@ header
 		}
 	}
 
+	.dropdown {
+		float: right;
+	}
+
 	.dropdown-menu
 	{
 		margin-top: 70px;
-		margin-right:45px;
-
+		top: 0;
+		left: 5px;
 	}
 
 
