@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	$('.presidential-candidates').slick({
- 	dots:true, 
+	dots: true,
 	centerMode: true,
   	centerPadding: '60px',
-      	slidesToShow:3,
-	})
+  	slidesToShow: 3,
+});
 });

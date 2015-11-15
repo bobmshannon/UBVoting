@@ -101,7 +101,7 @@ module.exports = function( grunt ) {
 				files: {
 					'public/javascripts/map.js': [
 					'app/assets/javascripts/map.js',
-					'bower_components/slick-1.5.7/slick/slick.js',
+					'bower_components/slick-carousel/slick/slick.js',
 					]
 				}
 			},
