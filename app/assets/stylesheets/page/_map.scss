@@ -331,28 +331,16 @@
     {
         text-align: center;
 
-    }
-   
-   .col-md-2 img{
-        border-radius: 50%;
-        border: 2px solid #AAAAAA;
-        opacity:1;
-        filter:alpha(opacity=100);
-    }
-
-    .col-md-2 img:hover{
-        opacity:0.5;
-        filter:alpha(opacity=50);
-    }
-        
+    }   
+     
     #box{ 
         height: 70%;
         width: 70%;
         margin-left: auto;
         margin-right: auto;
         margin-top: 5%;
-}
-    }
+	}
+    
 
     #footer
     {
@@ -364,9 +352,9 @@
         
     }
     
-    .carousel, .carousel-inner {
+    #slider{
         height: 160px;
-        width: 100%;
+        width: 90%;
     }
     
 
@@ -376,3 +364,4 @@
             margin: 0;
         }
     }
+
