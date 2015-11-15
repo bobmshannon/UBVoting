@@ -1,7 +1,8 @@
 header
 {
 	@include box-shadow(0 1px 2px rgba(0, 0, 0, .06));
-	@include clearfix;
+	@include legacy-pie-clearfix;
+
 	background: $white;
 	height: 87px;
 
@@ -9,6 +10,7 @@ header
 	{
 		float: right;
 		margin: 22px 5px;
+
 		font-weight: bold;
 		font-family: $primary-sans;
 		
@@ -17,6 +19,13 @@ header
 			margin-right: 0;
 		}
 	}
+
+	.dropdown-menu
+	{
+		margin-top: 75px;
+
+	}
+
 
 	h1 
 	{
