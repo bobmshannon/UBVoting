@@ -9,11 +9,15 @@
     {
         height: 90%;
         width:100%;
-        position: relative;
         top: 12%;
         background-image: url("/images/lincoln_statue.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
+    }
+    
+    #coverphotoshift
+    {
+        height: 10%;
     }
     
     #coverphoto .card 
@@ -57,8 +61,7 @@
     #resources
     {
         background-color: #5bc0de;
-        opacity: 0.95;
-        height: 75%;
+        height: 65%;
         width: 100%;
     }
     
@@ -74,23 +77,4 @@
         text-shadow: 2px 2px #000000;
     }
     
-    #carousel
-    {
-        background-color: crimson;
-        height: 30%;
-    }
-    
-    #slider
-    {
-        width: 90%;
-     }   
-    
-    .slick-slide:focus{
-        outline: none;
-    }
-    
-    .slick-slide img{
-        height: 200px;
-        width: 175px;
-    }
 }
