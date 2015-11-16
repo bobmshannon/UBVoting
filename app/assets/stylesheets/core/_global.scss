@@ -15,6 +15,22 @@ html
 	height: 100%;
 }
 
+body.sticky-header
+{
+	position: relative;
+
+	// To offset sticky header.
+	padding-top: $header-height;
+
+	header
+	{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+	}
+}
+
 a,
 a:active,
 a:focus,

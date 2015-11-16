@@ -4,7 +4,7 @@ header
 	@include legacy-pie-clearfix;
 
 	background: $white;
-	height: 87px;
+	height: $header-height;
 
 	.btn 
 	{
