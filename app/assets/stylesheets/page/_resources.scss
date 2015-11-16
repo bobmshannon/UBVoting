@@ -8,9 +8,41 @@
         background-repeat: no-repeat;
         background-size: 100%;
     }
-   
-    #spacing{
-    height: 10px;
+    
+    #coverphoto .card 
+    {   
+        background-color: salmon;
+        width: 20%;
+        height: 35%;
+        margin-left: 3%;
+    }
+    
+    #coverphoto .card1 
+    {   
+        background-color: salmon;
+        width: 20%;
+        height: 35%;
+        margin-top: 2%;
+        margin-left: 3%;
+    }
+    
+    #coverphoto .card-header
+    {
+        font-size: 150%;
+        text-align: center;
+    }
+    
+    #coverphoto .btn
+    {
+        padding: 5%;
+        margin-top: 2.5%;
+        margin-left: 25%;
+    }
+    
+    
+    #spacing
+    {
+        height: 10%;
     }
     
     #resources
