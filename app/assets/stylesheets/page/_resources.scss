@@ -1,5 +1,10 @@
 .pages#resources
 {
+    $box-shadow: 10px 10px 5px rgba(0,0,0,0.2);
+    $card-margin-wdith: 20%;
+    $card-margin-height: 35%;
+    $card-margin-left: 3%;
+
     #coverphoto
     {
         height: 90%;
@@ -12,18 +17,20 @@
     #coverphoto .card 
     {   
         background-color: salmon;
-        width: 20%;
-        height: 35%;
-        margin-left: 3%;
+        width: $card-margin-wdith;
+        height: $card-margin-height;
+        margin-left: $card-margin-left;
+        box-shadow: $box-shadow;
     }
     
     #coverphoto .card1 
     {   
         background-color: salmon;
-        width: 20%;
-        height: 35%;
+        width: $card-margin-wdith;
+        height: $card-margin-height;
         margin-top: 2%;
-        margin-left: 3%;
+        margin-left: $card-margin-left;
+        box-shadow: $box-shadow;
     }
     
     #coverphoto .card-header
