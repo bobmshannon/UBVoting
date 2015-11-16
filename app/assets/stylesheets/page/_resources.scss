@@ -77,4 +77,24 @@
         color: whitesmoke;
         text-shadow: 2px 2px #000000;
     }
+    
+    #carousel
+    {
+        background-color: crimson;
+        height: 30%;
+    }
+    
+    #slider
+    {
+        width: 90%;
+     }   
+    
+    .slick-slide:focus{
+        outline: none;
+    }
+    
+    .slick-slide img{
+        height: 200px;
+        width: 175px;
+    }
 }
