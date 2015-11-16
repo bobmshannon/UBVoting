@@ -56,8 +56,9 @@
 
 	.center
 	{
-		text-align: center;
-	}
+       text-align: center;
+	   margin-top: 5%;
+    }
 
 	.left
 	{
@@ -85,7 +86,15 @@
 		height: 80vh;
 		display: block;
 	}
-
+    
+    #on-the-issues{
+        position: relative;
+    }
+    
+    #about{
+        position: relative;
+    }
+    
 	.democrat
 	{
 		background: #5bc0de;
@@ -163,7 +172,7 @@
 
 	#footerphoto
 	{
-		position: relative;
+		
 
 	}
 
