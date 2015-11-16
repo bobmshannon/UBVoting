@@ -4,14 +4,19 @@
     {
         height: 90%;
         width:100%;
-        background-image: url("/images/United_States_Capitol_Building.jpg");
+        background-image: url("/images/lincoln_statue.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
+    }
+   
+    #spacing{
+    height: 10px;
     }
     
     #resources
     {
-        background-color: #FF4136;
+        background-color: #5bc0de;
+        opacity: 0.95;
         height: 75%;
         width: 100%;
     }
@@ -21,5 +26,16 @@
         height: 75%;
         width: 100%;
     }
-        
+    
+    #title-text{
+        width: 40%;  
+    }
+    
+    #title-text h1{
+        font-size: 72px;
+        font-family: sans-serif;
+        text-align: center;
+        color: whitesmoke;
+        text-shadow: 2px 2px #000000;
+    }
 }
