@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>UBVoting - <%= controller.controller_name %> - <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'base' %>
-  <%= stylesheet_link_tag 'style' %>
-  <%= javascript_include_tag 'base' %>
-  <%= csrf_meta_tags %>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body class="<%= controller.controller_name %> sticky-header" id="<%= controller.action_name %>">
-    <header>
-        <div class="wrapper">
-            <h1><a href="/">UBVoting</a></h1>
-            <a class="btn btn-default" href="/pitch"><i class="fa fa-info-circle"></i> About UBVoting</a>
-            <a class="btn btn-primary" href="/happening-now"><i class="fa fa-twitter"></i> Happening Now</a>
-             <a class="btn btn-default" href="/resources"><i class="fa fa-archive"></i> Resources</a>
-            <div class="container">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><i class = "fa fa-black-tie"> </i> Candidates
-                <span class="caret"></span> </button>
-                
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/candidates/bencarson">Ben Carson</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/candidates/hillaryclinton">Hilary Clinton</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/candidates/martinomalley">Martin O'Malley</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/candidates/marcorubio">Marco Rubio</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/candidates/berniesanders">Bernie Sanders</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">Donald Trump</a></li>
+	<head>
+		<title>UBVoting - <%= controller.controller_name %> - <%= controller.action_name %></title>
+		<%= stylesheet_link_tag 'base' %>
+		<%= stylesheet_link_tag 'style' %>
+		<%= javascript_include_tag 'base' %>
+		<%= csrf_meta_tags %>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body class="<%= controller.controller_name %> sticky-header" id="<%= controller.action_name %>">
+		<header>
+			<div class="wrapper">
+				<h1><a href="/">UBVoting</a></h1>
+				<a class="btn btn-default" href="/pitch"><i class="fa fa-info-circle"></i> About UBVoting</a>
+				<a class="btn btn-primary" href="/happening-now"><i class="fa fa-twitter"></i> Happening Now</a>
+				<a class="btn btn-default" href="/resources"><i class="fa fa-archive"></i> Resources</a>
 
-                  <li role="presentation" class="divider"></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-                </ul>
-              </div>
-          </div>
-        </div>
-
-    </header>
-
-	<%= yield %>
-
-	<%= yield :javascript_includes %>
-</body>
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+						<i class = "fa fa-black-tie"> </i> Candidates <span class="caret"></span> 
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/bencarson">
+								<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+								<span class="name">Ben Carson (R)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/hillaryclinton">
+								<img class="portrait democrat" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+								<span class="name">Hilary Clinton (D)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/martinomalley">
+								<img class="portrait democrat" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+								<span class="name">Martin O'Malley (D)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/marcorubio">
+								<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+								<span class="name">Marco Rubio (R)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/berniesanders">
+								<img class="portrait democrat" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+								<span class="name">Bernie Sanders (D)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+								<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+								<span class="name">Donald Trump (R)</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<%= yield %>
+		<%= yield :javascript_includes %>
+	</body>
 </html>

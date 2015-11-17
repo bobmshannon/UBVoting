@@ -6,6 +6,21 @@ header
 	background: $white;
 	height: $header-height;
 
+	&.headroom
+	{
+	    transition: transform 200ms linear;
+	}
+
+	&.headroom--pinned 
+	{
+	    transform: translateY(0%);
+	}
+
+	&.headroom--unpinned
+	{
+	    transform: translateY(-100%);
+	}
+
 	.btn 
 	{
 		float: right;
@@ -13,11 +28,6 @@ header
 
 		font-weight: bold;
 		font-family: $primary-sans;
-		
-		&:first-child
-		{
-			margin-right: 0;
-		}
 	}
 
 	.dropdown 
@@ -28,8 +38,55 @@ header
 	.dropdown-menu
 	{
 		margin-top: 70px;
+		padding-top: 0;
+		padding-bottom: 0;
 		top: 0;
 		left: 5px;
+
+		li
+		{
+			border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+		}
+
+		li a
+		{
+			@include clearfix;
+		    padding: 10px 20px;
+		    width: 300px;
+		    font-weight: bold !important;
+		    font-size: 13pt;
+
+		    img.portrait,
+		    .name
+		    {
+		    	@include inline-block;
+		    	margin: 0;
+		    	padding: 0;
+		    }
+
+			img.portrait
+			{
+				@include box-shadow(none);
+				width: 75px;
+				height: 75px;
+				margin: 0 15px 0 0;
+
+				&.republican
+				{
+					border: 3px solid #db1f29;
+				}
+
+				&.democrat
+				{
+					border: 3px solid #1490ed;
+				}
+			}
+
+			.name
+			{
+				line-height: 50px;
+			}
+		}
 	}
 
 

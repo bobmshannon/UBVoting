@@ -45,6 +45,14 @@
 		background-size: cover;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 
+		h1 
+		{
+			@include inline-block;
+			border-bottom: 3px solid rgba(0, 0, 0, 0.37);
+			padding-bottom: 10px;
+			margin-bottom: 20px;
+		}
+
 		h1 i 
 		{
 			color: #e2282f;
@@ -82,23 +90,23 @@
 		}
 	}
 
-	#graph-section
+	section#graph-section
 	{
 		padding: 25px;
-	}
 
-	img
-	{
-		@include box-shadow(3px 3px 5px 1px #cccccc);
-		float: left;
-		margin: 0 75px 0 0;
-	}
+		img
+		{
+			@include box-shadow(3px 3px 5px 1px #cccccc);
+			float: left;
+			margin: 0 75px 0 0;
+		}
 
-	figcaption
-	{
-		font-size: 25px;
-		margin-right: 75px;
-		padding-top: 65px;
+		figcaption
+		{
+			font-size: 25px;
+			margin-right: 75px;
+			padding-top: 65px;
+		}
 	}
 
 	#reasons
