@@ -2,25 +2,50 @@
 {
     $box-shadow: 10px 10px 5px rgba(0,0,0,0.2);
     $card-margin-wdith: 20%;
-    $card-margin-height: 35%;
-    $card-margin-left: 3%;
+    $card-margin-height: 30vh;
+    $card-margin-left: 20%;
+    $margin-top-cards: 2%;
 
     #coverphoto
     {
-        height: 90%;
+        height: 100vh;
         width:100%;
         top: 12%;
-        background-image: url("/images/lincoln_statue.jpg");
+        background-image: url("http://breakingenergy.com/wp-content/uploads/sites/2/2013/07/US-capital.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
     }
+    
+    .cover-shade
+	{
+		@include box-shadow(3px 3px 5px 1px #333);
+		color: #fff;
+		background-color: rgba(0, 0, 0, .3);
+		margin-top: 1%;
+        width: 20%;
+        height: 15vh;
+		padding: 15px;
+		margin-left: auto;
+		margin-right: auto;
+		background-size: cover;
+	
+
+	}
     
     #coverphotoshift
     {
         height: 10%;
     }
     
-    #coverphoto .card 
+    .left{
+        margin-top: $margin-top-cards;
+    }
+    
+    .right{
+        margin-right: 30%;
+        margin-top: $margin-top-cards;
+    }
+    #resources #card 
     {   
         background-color: salmon;
         width: $card-margin-wdith;
@@ -29,23 +54,21 @@
         box-shadow: $box-shadow;
     }
     
-    #coverphoto .card1 
+    #resources #card1 
     {   
         background-color: salmon;
         width: $card-margin-wdith;
         height: $card-margin-height;
-        margin-top: 2%;
-        margin-left: $card-margin-left;
         box-shadow: $box-shadow;
     }
     
-    #coverphoto .card-header
+    #resources .card-header
     {
         font-size: 150%;
         text-align: center;
     }
     
-    #coverphoto .btn
+    #resources .btn
     {
         padding: 5%;
         margin-top: 2.5%;
@@ -65,16 +88,5 @@
         width: 100%;
     }
     
-    #title-text{
-        width: 40%;  
-    }
-    
-    #title-text h1{
-        font-size: 72px;
-        font-family: sans-serif;
-        text-align: center;
-        color: whitesmoke;
-        text-shadow: 2px 2px #000000;
-    }
     
 }
