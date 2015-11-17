@@ -52,6 +52,18 @@ button:focus,
 	padding: 0 2%;
 }
 
+.valign-wrap
+{
+	display: table;
+	width: 100%;
+}
+
+.valign
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
 .content 
 {
 	padding-top: 20px;
