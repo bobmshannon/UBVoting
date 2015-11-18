@@ -2,5 +2,7 @@
 
 $(document).ready(function() {
 	// Initialize headroom.js effect on header
-	$('header').headroom();
+	$('header').headroom({
+		tolerance: 10
+	});
 });

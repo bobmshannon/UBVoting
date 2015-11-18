@@ -28,7 +28,8 @@
     "v3-utility-library": "git@github.com:googlemaps/v3-utility-library.git",
     "livestamp": "~1.1.2",
     "slick-carousel": "~1.5.8",
-    "headroom.js": "~0.7.0"
+    "headroom.js": "~0.7.0",
+    "chart.js": "~0.1.0"
   },
   "resolutions": {
     "jquery": "~2.1.4"
