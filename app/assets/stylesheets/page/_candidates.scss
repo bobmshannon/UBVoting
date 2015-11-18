@@ -56,8 +56,8 @@
 
 	.center
 	{
-       text-align: center;
-	   margin-top: 5%;
+		text-align: center;
+		margin-top: 5%;
     }
 
 	.left
@@ -68,10 +68,6 @@
 	.right
 	{
 		text-align: right;
-	}
-
-	#coverphoto
-	{
 	}
 
 	#coverphoto .bg-photo
@@ -86,13 +82,17 @@
 		display: block;
 	}
     
-    #on-the-issues{
-        position: relative;
+	#on-the-issues
+    {
+		position: relative;
     }
     
-    #about{
-        position: relative;
-    }
+	#about
+	{
+		position: relative;
+		background: #f7f7f7;
+		padding-bottom: 40px;
+	}
     
 	.democrat
 	{
@@ -131,20 +131,9 @@
 		margin-top: 15px;
 	}
 
-	#about
-	{
-		background: #f7f7f7;
-		padding-bottom: 40px;
-	}
-
 	.float-down
 	{
 		margin-top: 20px;
-	}
-
-	.float-right
-	{
-	
 	}
 
 	.float-up
@@ -152,8 +141,6 @@
 		margin-top: 5px;
 		margin-bottom: 5px;
 	}
-
-	
 
 	.speeches
 	{
@@ -166,12 +153,6 @@
 		float: left;
 		margin: 0;
 		text-align: center;
-
-	}
-
-	#footerphoto
-	{
-		
 
 	}
 

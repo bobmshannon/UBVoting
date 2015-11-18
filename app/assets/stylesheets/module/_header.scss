@@ -8,17 +8,17 @@ header
 
 	&.headroom
 	{
-	    transition: transform 200ms linear;
+		transition: transform 200ms linear;
 	}
 
 	&.headroom--pinned 
 	{
-	    transform: translateY(0%);
+		@include transform(translateY(0%));
 	}
 
 	&.headroom--unpinned
 	{
-	    transform: translateY(-100%);
+		@include transform(translateY(-100%));
 	}
 
 	.btn 
@@ -45,47 +45,47 @@ header
 
 		li
 		{
-			border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+			border-bottom: 1px solid rgba(0, 0, 0, .17);
 		}
 
-		li a
+		a
 		{
 			@include clearfix;
-		    padding: 10px 20px;
-		    width: 300px;
-		    font-weight: bold !important;
-		    font-size: 13pt;
+			padding: 10px 20px;
+			width: 300px;
+			font-weight: bold;
+			font-size: 13pt;
+		}
 
-		    img.portrait,
-		    .name
-		    {
-		    	@include inline-block;
-		    	margin: 0;
-		    	padding: 0;
-		    }
+		img.portrait,
+	    .name
+	    {
+			@include inline-block;
+			margin: 0;
+			padding: 0;
+	    }
 
-			img.portrait
+		img.portrait
+		{
+			@include box-shadow(none);
+			width: 75px;
+			height: 75px;
+			margin: 0 15px 0 0;
+
+			&.republican
 			{
-				@include box-shadow(none);
-				width: 75px;
-				height: 75px;
-				margin: 0 15px 0 0;
-
-				&.republican
-				{
-					border: 3px solid #db1f29;
-				}
-
-				&.democrat
-				{
-					border: 3px solid #1490ed;
-				}
+				border: 3px solid #db1f29;
 			}
 
-			.name
+			&.democrat
 			{
-				line-height: 50px;
+				border: 3px solid #1490ed;
 			}
+		}
+
+		.name
+		{
+			line-height: 50px;
 		}
 	}
 
