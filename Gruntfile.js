@@ -88,6 +88,7 @@ module.exports = function( grunt ) {
 			homepage: {
 				files: {
 					'public/javascripts/homepage.js': [
+					'bower_components/Chart.js/Chart.js',
 					'app/assets/javascripts/homepage.js'
 					]
 				}
