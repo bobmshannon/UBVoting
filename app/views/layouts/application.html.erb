@@ -56,7 +56,7 @@
 						</li>
 						<li role="presentation">
 							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
-								<img class="portrait republican" src="/images/candidates/donald-profile.png" alt="Donald Trump"/>
+								<img class="portrait republican" src="/images/candidates/donald-profile.jpg" alt="Donald Trump"/>
 								<span class="name">Donald Trump (R)</span>
 							</a>
 						</li>
@@ -65,6 +65,10 @@
 			</div>
 		</header>
 		<%= yield %>
-		<%= yield :javascript_includes %>
+		<%= yield :javascript_includes%>
+
+<% content_for :javascript_includes do %>
+    <%= javascript_include_tag "application.js" %>
+<% end %> 
 	</body>
 </html>
