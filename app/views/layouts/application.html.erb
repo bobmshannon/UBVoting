@@ -23,7 +23,7 @@
 					<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
 						<i class = "fa fa-black-tie"> </i> Candidates <span class="caret"></span> 
 					</button>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					<ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="menu1">
 						<li role="presentation">
 							<a role="menuitem" tabindex="-1" href="/candidates/bencarson">
 								<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
@@ -60,15 +60,35 @@
 								<span class="name">Donald Trump (R)</span>
 							</a>
 						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+								<img class="portrait republican" src="/images/candidates/jeb-profile.jpg" alt="Jeb Bush"/>
+								<span class="name">Jeb Bush (R)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+								<img class="portrait republican" src="/images/candidates/ted-profile.jpg" alt="Ted Cruz"/>
+								<span class="name">Ted Cruz (R)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+								<img class="portrait republican" src="/images/candidates/carly-profile.jpg" alt="Carly Fiorina"/>
+								<span class="name">Carly Fiorina (R)</span>
+							</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+								<img class="portrait republican" src="/images/candidates/jill-profile.png" alt="Jill Stein"/>
+								<span class="name">Jill Stein (R)</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</header>
 		<%= yield %>
-		<%= yield :javascript_includes%>
-
-<% content_for :javascript_includes do %>
-    <%= javascript_include_tag "application.js" %>
-<% end %> 
+		<%= yield :javascript_includes%> 
 	</body>
 </html>

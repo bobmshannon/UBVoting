@@ -34,6 +34,12 @@ header
 	{
 		float: right;
 	}
+	
+	.scrollable-menu {
+    	height: auto;
+    	max-height: 450px;
+    	overflow-x: hidden;
+	}
 
 	.dropdown-menu
 	{
