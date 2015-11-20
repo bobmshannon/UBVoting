@@ -12,7 +12,8 @@
 		@include background-image(image-url('uscapital.jpg'));
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 100vh;
+		border: 1px;
+		height: 72vh;
 		width: 100%;
 		top: 12%;
 	}
@@ -31,73 +32,87 @@
 		background-size: cover;
 	}
 	
-	.left
-	{
-		margin-top: $margin-top-cards;
-	    margin-left: $card-margin;
-    }
-	
-	.right
-	{
-		margin-right: $card-margin;
-		margin-top: $margin-top-cards;
-	}
-	
-	#resources #card 
-	{   
-		@include box-shadow($box-shadow);
-		background-color: $whitesmoke;
-		width: $card-margin-width;
-		height: $card-margin-height;
-	
-	}
-	
-	#resources #card1 
-	{   
-		@include box-shadow($box-shadow);
-		background-color: $whitesmoke;
-		width: $card-margin-width;
-		height: $card-margin-height;
-	}
-	
-	#resources .card-header
-	{
-		font-size: 150%;
-		text-align: center;
-	}
-	
-    h5.card-title{
-        color:  #FF0080;
-        margin-left: $card-margin;
-        position: relative;
-    }
+	#search-bar{
+		height: 100px;
+		width: 100%;
+		border: 3px solid #AAAAAA;
+    	background-color: #AFAFAF;
+		
+		.row{
+			width: 100%;
+			position: relative;
+			margin-top: 0.5%;
 
-    p.card-text{
-        margin-left: 3%;
-        width: 90%;
+			.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group	
+			{
+				height: 80px;
+				width: 100px;
+				margin-left: 0px;
+			}
 
-    }
-
-	#resources .btn
-	{
-		padding: 5%;
-		margin-top: 2.5%;
-		margin-left: $card-margin;
-        position: relative;
-        width: 130px;
+			.form-control
+			{
+				height: 80px;
+				margin-bottom: 1px;
+				margin-left: 3%;
+				text-align: center;
+				font-size: 50px;
+			}
+		}
 	}
+
 	
+	#resources{
+		background-color: #5bc0de;
+		height: 60vh;
+		width: 100%;
+
+		.left
+		{
+			margin-top: $margin-top-cards;
+		    margin-left: $card-margin;
+	    }	
+		
+		#card 
+		{   
+			@include box-shadow($box-shadow);
+			background-color: $whitesmoke;
+			width: $card-margin-width;
+			height: $card-margin-height;
+		}
+		
+		.card-header
+		{
+			font-size: 150%;
+			text-align: center;
+		}
+		
+	    h5.card-title{
+	        color:  #FF0080;
+	        margin-left: $card-margin;
+	        position: relative;
+	    }
+
+	    p.card-text{
+	        margin-left: 3%;
+	        width: 90%;
+
+	    }
+
+		.btn
+		{
+			padding: 5%;
+			margin-top: 2.5%;
+			margin-left: $card-margin;
+	        position: relative;
+	        width: 130px;
+		}
+	}
 	
 	#spacing
 	{
 		height: 1%;
 	}
 
-	#resources
-	{
-		background-color: #5bc0de;
-		margin-top: -6%;
-		height: 60vh;
-		width: 100%;
-	}
+
 }
