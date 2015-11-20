@@ -25,32 +25,49 @@ header
 	{
 		float: right;
 		margin: 22px 5px;
-
 		font-weight: bold;
 		font-family: $primary-sans;
 	}
 
 	.dropdown 
 	{
-		float: right;
+		width: 100%;
+
+		&.scrollable-menu
+		{
+			height: auto;
+			max-height: 450px;
+			overflow-x: hidden;
+		}
 	}
-	
-	.scrollable-menu {
-    	height: auto;
-    	max-height: 450px;
-    	overflow-x: hidden;
+
+	.dropdown .dropdown-menu 
+	{
+		@include transition(all .3s);
+		@include opacity(0);
+		max-height: 0;
+		display: block;
+	}
+
+	.dropdown.open .dropdown-menu
+	{
+		@include opacity(1);
+		max-height: 300px;	
 	}
 
 	.dropdown-menu
 	{
-		margin-top: 70px;
-		padding-top: 0;
-		padding-bottom: 0;
-		top: 0;
-		left: 5px;
+		@include clearfix;
+		@include border-bottom-radius(4px);
+		@include border-top-left-radius(0);
+		@include border-top-right-radius(0);
+		margin-top: 86px;
+		padding: 0;
 
 		li
 		{
+			float: left;
+			width: 25%;
 			border-bottom: 1px solid rgba(0, 0, 0, .17);
 		}
 
@@ -58,18 +75,17 @@ header
 		{
 			@include clearfix;
 			padding: 10px 20px;
-			width: 300px;
 			font-weight: bold;
 			font-size: 13pt;
 		}
 
 		img.portrait,
-	    .name
-	    {
+		.name
+		{
 			@include inline-block;
 			margin: 0;
 			padding: 0;
-	    }
+		}
 
 		img.portrait
 		{
