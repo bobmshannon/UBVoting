@@ -12,85 +12,167 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body class="<%= controller.controller_name %> sticky-header" id="<%= controller.action_name %>">
+		<nav id="mobile-menu">
+			<h3 class="link"><a href="/resources"><i class="fa fa-archive"></i> Resources</a></h3>
+			<h3 class="link"><a href="/happening-now"><i class="fa fa-twitter"></i> Happening Now</a></h3>
+			<h3 class="link"><a href="/pitch"><i class="fa fa-info-circle"></i> About UBVoting</a></h3>
+
+			<h3><i class="fa fa-black-tie"></i> 2016 Candidates</h3>
+			<ul class="candidates-list" role="menu">
+				<li>
+					<a role="menuitem" href="/candidates/bencarson">
+						<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+						<span class="name">Ben Carson (R)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/hillaryclinton">
+						<img class="portrait democrat" src="/images/candidates/hilary-profile.jpg" alt="Hilary Clinton" />
+						<span class="name">Hilary Clinton (D)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/martinomalley">
+						<img class="portrait democrat" src="/images/candidates/martin-profile.jpg" alt="Martin O Malley" />
+						<span class="name">Martin O'Malley (D)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/marcorubio">
+						<img class="portrait republican" src="/images/candidates/marco-profile.jpg" alt="Marco Rubio" />
+						<span class="name">Marco Rubio (R)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/berniesanders">
+						<img class="portrait democrat" src="/images/candidates/bernie-profile.jpg" alt="Bernie Sanders" />
+						<span class="name">Bernie Sanders (D)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+						<img class="portrait republican" src="/images/candidates/donald-profile.jpg" alt="Donald Trump"/>
+						<span class="name">Donald Trump (R)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+						<img class="portrait republican" src="/images/candidates/jeb-profile.jpg" alt="Jeb Bush"/>
+						<span class="name">Jeb Bush (R)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+						<img class="portrait republican" src="/images/candidates/ted-profile.jpg" alt="Ted Cruz"/>
+						<span class="name">Ted Cruz (R)</span>
+					</a>
+				</li>
+
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+						<img class="portrait republican" src="/images/candidates/carly-profile.jpg" alt="Carly Fiorina"/>
+						<span class="name">Carly Fiorina (R)</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
 		<header>
 			<div class="wrapper">
 				<h1><a href="/">UBVoting</a></h1>
-				<a class="btn btn-default" href="/pitch"><i class="fa fa-info-circle"></i> About UBVoting</a>
-				<a class="btn btn-primary" href="/happening-now"><i class="fa fa-twitter"></i> Happening Now</a>
-				<a class="btn btn-default" href="/resources"><i class="fa fa-archive"></i> Resources</a>
 
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-						<i class = "fa fa-black-tie"> </i> Candidates <span class="caret"></span> 
-					</button>
+				<button class="btn btn-default" id="mobile-menu-toggle"><i class="fa fa-bars"></i></button>
 
-					<ul class="dropdown-menu scrollable-menu" role="menu">
-						<li>
-							<a role="menuitem" href="/candidates/bencarson">
-								<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
-								<span class="name">Ben Carson (R)</span>
-							</a>
-						</li>
+				<nav id="menu">
+					<a class="btn btn-default" href="/pitch"><i class="fa fa-info-circle"></i> About UBVoting</a>
+					<a class="btn btn-primary" href="/happening-now"><i class="fa fa-twitter"></i> Happening Now</a>
+					<a class="btn btn-default" href="/resources"><i class="fa fa-archive"></i> Resources</a>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/hillaryclinton">
-								<img class="portrait democrat" src="/images/candidates/hilary-profile.jpg" alt="Hilary Clinton" />
-								<span class="name">Hilary Clinton (D)</span>
-							</a>
-						</li>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+							<i class = "fa fa-black-tie"> </i> 2016 Candidates <span class="caret"></span> 
+						</button>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/martinomalley">
-								<img class="portrait democrat" src="/images/candidates/martin-profile.jpg" alt="Martin O Malley" />
-								<span class="name">Martin O'Malley (D)</span>
-							</a>
-						</li>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a role="menuitem" href="/candidates/bencarson">
+									<img class="portrait republican" src="/images/candidates/carson-profile.png" alt="Ben Carson" />
+									<span class="name">Ben Carson (R)</span>
+								</a>
+							</li>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/marcorubio">
-								<img class="portrait republican" src="/images/candidates/marco-profile.jpg" alt="Marco Rubio" />
-								<span class="name">Marco Rubio (R)</span>
-							</a>
-						</li>
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/hillaryclinton">
+									<img class="portrait democrat" src="/images/candidates/hilary-profile.jpg" alt="Hilary Clinton" />
+									<span class="name">Hilary Clinton (D)</span>
+								</a>
+							</li>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/berniesanders">
-								<img class="portrait democrat" src="/images/candidates/bernie-profile.jpg" alt="Bernie Sanders" />
-								<span class="name">Bernie Sanders (D)</span>
-							</a>
-						</li>
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/martinomalley">
+									<img class="portrait democrat" src="/images/candidates/martin-profile.jpg" alt="Martin O Malley" />
+									<span class="name">Martin O'Malley (D)</span>
+								</a>
+							</li>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
-								<img class="portrait republican" src="/images/candidates/donald-profile.jpg" alt="Donald Trump"/>
-								<span class="name">Donald Trump (R)</span>
-							</a>
-						</li>
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
-								<img class="portrait republican" src="/images/candidates/jeb-profile.jpg" alt="Jeb Bush"/>
-								<span class="name">Jeb Bush (R)</span>
-							</a>
-						</li>
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/marcorubio">
+									<img class="portrait republican" src="/images/candidates/marco-profile.jpg" alt="Marco Rubio" />
+									<span class="name">Marco Rubio (R)</span>
+								</a>
+							</li>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
-								<img class="portrait republican" src="/images/candidates/ted-profile.jpg" alt="Ted Cruz"/>
-								<span class="name">Ted Cruz (R)</span>
-							</a>
-						</li>
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/berniesanders">
+									<img class="portrait democrat" src="/images/candidates/bernie-profile.jpg" alt="Bernie Sanders" />
+									<span class="name">Bernie Sanders (D)</span>
+								</a>
+							</li>
 
-						<li role="presentation">
-							<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
-								<img class="portrait republican" src="/images/candidates/carly-profile.jpg" alt="Carly Fiorina"/>
-								<span class="name">Carly Fiorina (R)</span>
-							</a>
-						</li>
-					</ul>
-				</div>
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+									<img class="portrait republican" src="/images/candidates/donald-profile.jpg" alt="Donald Trump"/>
+									<span class="name">Donald Trump (R)</span>
+								</a>
+							</li>
+
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+									<img class="portrait republican" src="/images/candidates/jeb-profile.jpg" alt="Jeb Bush"/>
+									<span class="name">Jeb Bush (R)</span>
+								</a>
+							</li>
+
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+									<img class="portrait republican" src="/images/candidates/ted-profile.jpg" alt="Ted Cruz"/>
+									<span class="name">Ted Cruz (R)</span>
+								</a>
+							</li>
+
+							<li role="presentation">
+								<a role="menuitem" tabindex="-1" href="/candidates/donaldtrump">
+									<img class="portrait republican" src="/images/candidates/carly-profile.jpg" alt="Carly Fiorina"/>
+									<span class="name">Carly Fiorina (R)</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
 			</div>
 		</header>
-		<%= yield %>
+
+		<main id="main">
+			<%= yield %>
+		</main>
+
 		<%= yield :javascript_includes%> 
 	</body>
 </html>

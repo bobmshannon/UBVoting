@@ -29,7 +29,8 @@
     "livestamp": "~1.1.2",
     "slick-carousel": "~1.5.8",
     "headroom.js": "~0.7.0",
-    "Chart.js": "~1.0.2"
+    "Chart.js": "~1.0.2",
+    "slideout.js": "0.1.9"
   },
   "resolutions": {
     "jquery": "~2.1.4"

@@ -6,13 +6,6 @@
 		font-size: 48pt;
 	}
 
-	h3
-	{
-		@include text-shadow(1.5px 1.5px $black);
-		font-size: 18pt;
-
-	}
-
 	.float-down
 	{
 		margin-top: 40px;

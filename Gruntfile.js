@@ -81,6 +81,7 @@ module.exports = function( grunt ) {
 					'bower_components/livestamp/livestamp.js',
 					'bower_components/headroom.js/dist/headroom.js',
 					'bower_components/headroom.js/dist/jQuery.headroom.js',
+					'bower_components/slideout.js/dist/slideout.js',
 					'app/assets/javascripts/base.js'
 					]
 				}
