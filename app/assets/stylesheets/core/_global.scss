@@ -153,7 +153,7 @@ nav#mobile-menu
 		padding: 15px 10px;
 		font-size: 16pt !important;
 		margin: 0;
-		background: #2a3542;
+		background: #d44b4b;
 		border-bottom: 1px solid rgba(0, 0, 0, .33);
 
 		a
@@ -169,11 +169,17 @@ nav#mobile-menu
 		&.link
 		{
 			padding: 0;
+			background: #2a3542;
 
 			a
 			{
 				display: block;
 				padding: 15px 10px;
+			}
+
+			a:hover
+			{
+				background: #3d4856;
 			}
 		}
 	}

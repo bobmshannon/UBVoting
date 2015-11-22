@@ -7,7 +7,8 @@ $( document ).ready( function() {
 	  'menu': document.getElementById('mobile-menu'),
 	  'padding': 275,
 	  'tolerance': 70,
-	  'side': 'right'
+	  'side': 'right',
+	  'touch': false
 	});
 
 	slideout.on('beforeopen', function() {
