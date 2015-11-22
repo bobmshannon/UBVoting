@@ -31,7 +31,7 @@ body.sticky-header
 		width: 100%;
 		position: fixed;
 		top: 0;
-		z-index: 9999;
+		z-index: 10000;
 	}
 }
 
@@ -239,8 +239,9 @@ nav#mobile-menu
 
 .slideout-panel 
 {
+	background: $concrete;
 	position: relative;
-	z-index: 1;
+	z-index: 9999;
 }
 
 .slideout-open,

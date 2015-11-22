@@ -13,12 +13,10 @@ $( document ).ready( function() {
 
 	slideout.on('beforeopen', function() {
 		$('header').toggleClass('transition-fx');
-		//$('.candidates-list').show();
 	});
 
 	slideout.on('beforeclose', function() {
 		$('header').toggleClass('transition-fx');
-		//$('.candidates-list').hide();
 	});
 
 	$('#mobile-menu-toggle').on('click', function() {
