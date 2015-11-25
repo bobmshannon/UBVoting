@@ -3,7 +3,8 @@
 {
 	h1
 	{
-
+		font-weight: normal;
+		
 		i
 		{
 			color: $twitter;
@@ -21,11 +22,13 @@
 		margin: 20px 0;
 	}
 
-	#tweets 
+	#tweets, 
+	#gmap
 	{
 		margin: 15px 0 20px;
 
-		li 
+		li, 
+		.tweet
 		{
 			@include clearfix;
 			position: relative;
@@ -101,7 +104,7 @@
 			@include inline-block;
 			padding: 0;
 			margin: 0;
-			font-size: 16px;
+			font-size: 18pt;
 		}
 
 		.tweet-actions li a
@@ -113,6 +116,60 @@
 			{
 				color: rgb(59, 171, 59);
 			}
+		}
+	}
+}
+
+.tweet_map#map
+{
+	#gmap
+	{
+		width: 100%;
+		height: 500px;
+
+		.tweet-details h2
+		{
+			font-size: 16pt;
+		}
+
+		.tweet-details h2 span
+		{
+			font-size: 14pt;
+			top: -2px;
+		}
+	}
+
+	#gmap-chat
+	{
+		overflow: hidden; 
+		position: relative;
+		padding: 0 150px 0 0;
+
+		input[type="text"]
+		{
+			@include border-radius(0);
+			float: left;
+			height: 50px;
+			line-height: 50px;
+			padding: 0 15px;
+			margin: 0;
+			font-size: 14pt;
+		}
+
+		button
+		{
+			@include border-radius(0);
+			float: right;
+			width: 165px;
+			font-size: 12pt;
+			font-weight: bold;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 50px;
+			line-height: 50px;
+			padding: 0;
+			margin: 0;
 		}
 	}
 }

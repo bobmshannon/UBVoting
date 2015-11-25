@@ -23,4 +23,8 @@ class TweetMapController < ApplicationController
 		#	end
 		#end
 	end
+
+	def map
+
+	end
 end

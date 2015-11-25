@@ -88,6 +88,11 @@ su vagrant
 rvm install 2.2.1
 rvm --default use 2.2.1
 
+# Fix permissions
+rvmsudo rvm get stable --auto-dotfiles
+rvm fix-permissions system
+rvm group add rvm vagrant
+
 # Install project dependencies
 echo 'Installing project dependencies...'
 if [ -f /vagrant/package.json ]; then
