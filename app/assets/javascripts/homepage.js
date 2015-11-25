@@ -14,8 +14,7 @@ $( document ).ready( function() {
 				pointStrokeColor: '#d1d1d1',
 				pointHighlightFill: '#1e1ac5',
 				pointHighlightStroke: 'rgba(220,220,220,1)',
-				data: [ 50.88, 50.35, 48.71, 41.92, 40.00, 40.74, 36.56, 41.48,
-				      32.39, 33.24, 42.19, 43.73, 38.15 ]
+				data: [ 50.88, 50.35, 48.71, 41.92, 40.00, 40.74, 36.56, 41.48, 32.39, 33.24, 42.19, 43.73, 38.15 ]
 	        },
 	        {
 				label: '25-44 Years Old',
@@ -26,6 +25,18 @@ $( document ).ready( function() {
 				pointHighlightFill: '#1e1ac5',
 				pointHighlightStroke: 'rgba(220,220,220,1)',
 				data: [ 58.09, 49.97, 54.32, 57.9, 49.45, 68.88, 66.52, 51.85, 62.48, 58.78, 52.16, 58.72, 49.6 ]
+	        }
+	        {
+				label: '45-64 Years Old',
+				fillColor: 'rgba(220,220,220,0.2)',
+				strokeColor: '#ff0000',
+				pointColor: '#fff',
+				pointStrokeColor: '#d1d1d1',
+				pointHighlightFill: '#1e1ac5',
+				pointHighlightStroke: 'rgba(220,220,220,1)',
+				data: [ 69.77, 64.29, 68.1, 69.75, 64.59, 76.04, 74.78, 65.03, 70.88, 68.81, 66.52, 69.36, 63.51 ]
+
+
 	        }
 	    ]
 	};
