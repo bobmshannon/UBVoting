@@ -10,22 +10,22 @@ $( document ).ready( function() {
 				label: '18-24 Years Old',
 				fillColor: 'rgba(220,220,220,0.2)',
 				strokeColor: '#ff0000',
-				pointColor: '#1e1ac5',
-				pointStrokeColor: '#fff',
-				pointHighlightFill: '#fff',
+				pointColor: '#fff',
+				pointStrokeColor: '#d1d1d1',
+				pointHighlightFill: '#1e1ac5',
 				pointHighlightStroke: 'rgba(220,220,220,1)',
 				data: [ 50.88, 50.35, 48.71, 41.92, 40.00, 40.74, 36.56, 41.48,
 				      32.39, 33.24, 42.19, 43.73, 38.15 ]
 	        },
 	        {
-				label: 'My Second dataset',
-				fillColor: 'rgba(151,187,205,0.2)',
-				strokeColor: 'rgba(151,187,205,1)',
-				pointColor: 'rgba(151,187,205,1)',
-				pointStrokeColor: '#fff',
-				pointHighlightFill: '#fff',
-				pointHighlightStroke: 'rgba(151,187,205,1)',
-				data: [ 28, 48, 40, 19, 86, 27, 90 ]
+				label: '25-44 Years Old',
+				fillColor: 'rgba(220,220,220,0.2)',
+				strokeColor: '#ff0000',
+				pointColor: '#fff',
+				pointStrokeColor: '#d1d1d1',
+				pointHighlightFill: '#1e1ac5',
+				pointHighlightStroke: 'rgba(220,220,220,1)',
+				data: [ 58.09, 49.97, 54.32, 57.9, 49.45, 68.88, 66.52, 51.85, 62.48, 58.78, 52.16, 58.72, 49.6 ]
 	        }
 	    ]
 	};
@@ -48,10 +48,10 @@ $( document ).ready( function() {
 		scaleShowVerticalLines: true,
 
 		//Boolean - Whether the line is curved between points
-		bezierCurve: true,
+		bezierCurve: false,
 
 		//Number - Tension of the bezier curve between points
-		bezierCurveTension: 0.4,
+		//bezierCurveTension: 0.4,
 
 		//Boolean - Whether to show a dot for each point
 		pointDot: true,
