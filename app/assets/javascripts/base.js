@@ -21,6 +21,7 @@ $( document ).ready( function() {
 
 	$('#mobile-menu-toggle').on('click', function() {
 		slideout.toggle();
+		$(this).children('i').toggleClass('fa-bars fa-times');
 		return false;
 	});
 
@@ -30,7 +31,6 @@ $( document ).ready( function() {
 		tolerance: 10,
 
 		onUnpin: function() {
-
 			// Close dropdown menu if open
 			$dropdown = $( '.dropdown' );
 			if ( $dropdown.hasClass( 'open' ) ) {
