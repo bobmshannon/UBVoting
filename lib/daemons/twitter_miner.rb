@@ -178,69 +178,6 @@ Signal.trap("TERM") do
 end
 
 while($running) do
-<<<<<<< HEAD
-  # Initiate twitter stream and track specified topics
-  streamclient.filter(track: TOPICS.join(',')) do |object|
-    if object.is_a?(Twitter::Tweet)
-	  # Create a new tweet object and store it in the database
-		currentTime = Time.new
-		allowedTime = currentTime + 100
-		username = object.user.screen_name
-		
-		if ((limitHashmap.has_key? (username))== false)
-			limitHashmap[username] = allowedTime
-			tweet_activity= TweetActivity.create(
-			  	screen_name: object.user.screen_name,
-			  	time: allowedTime,
-			)
-			 tweet = Tweet.create(
-			    text: object.text,
-			  	id: object.id,
-			  	lang: object.lang,
-			  	source: object.source,
-			  	retweet_count: object.retweet_count,
-			  	favorite_count: object.favorite_count,
-			  	created_at: object.created_at,
-			  	url: object.uri,
-			  	#coordinates: coords,
-			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
-			  	#hashtags: hashtags,
-			  	#user_mentions: user_mentions
-		  	)		
-
-		elsif (limitHashmap.has_key? (username) and limitHashmap[username] >currentTime)
-			tweet_activity = TweetActivity.create(
-			  	screen_name: object.user.screen_name,
-			  	time: allowedTime,
-			  	)
-			 tweet = Tweet.create(
-			    text: object.text,
-			  	id: object.id,
-			  	lang: object.lang,
-			  	source: object.source,
-			  	retweet_count: object.retweet_count,
-			  	favorite_count: object.favorite_count,
-			  	created_at: object.created_at,
-			  	url: object.uri,
-			  	#coordinates: coords,
-			  	#profile_image_url: restclient.status(object.id).user.profile_image_url
-			  	#hashtags: hashtags,
-			  	#user_mentions: user_mentions
-			  )
-		end
-
-	      tweet = object.to_h
-	      html = auto_link(tweet[:text])
-	      tweet[:text_html] = html
-
-		  # Send tweet to all clients listening on web socket channel
-		  WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
-	end
-  end
-
-  sleep 10
-end
-=======
     # Twitter Streaming API Client
     streamclient = Twitter::Streaming::Client.new do |config|
         config.consumer_key = ENV['consumer_key']
@@ -276,4 +213,3 @@ end
         next
     end
 end
->>>>>>> c6ae829f11ebd4fd47fe1a4d4fec5539bb1a5c7a
