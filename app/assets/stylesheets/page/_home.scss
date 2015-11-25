@@ -83,22 +83,14 @@
 		}
 	}
 
-	section#graph-section
+	section#voting-turnout
 	{
-		padding: 25px;
-
-		img
+		.graph
 		{
-			@include box-shadow(3px 3px 5px 1px #cccccc);
-			float: left;
-			margin: 0 75px 0 0;
-		}
-
-		figcaption
-		{
-			font-size: 25px;
-			margin-right: 75px;
-			padding-top: 65px;
+			/*@include border-radius(5px);
+			@include clearfix;
+			padding: 20px;
+			background: $white;*/
 		}
 	}
 
