@@ -50,8 +50,6 @@ $( document ).ready( function() {
 	};
 
 	var options = {
-		backgroundColor: '#fff',
-		
 		responsive: true,
 
 		multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>%',
