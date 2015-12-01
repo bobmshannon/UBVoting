@@ -31,7 +31,7 @@
 
 	#coverphoto
 	{
-		@include background-image(image-url('uscapital.jpg'));
+		@include background-image(image-url('polls.jpg'));
 		background-repeat: no-repeat;
 		background-size: cover;
 		border: 1px solid black;
@@ -75,7 +75,7 @@
 		#resources-icons{
 			height: 40vh;
 			position: relative;
-			top: 70px;
+			top: 5%;
 			
 			#poll-locator{
 				width: $resource-width;
