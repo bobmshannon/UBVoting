@@ -60,15 +60,27 @@
 	
 	#resources{
 		background-color: #e03838;
-		height: 60vh;
+		height: 70vh;
 		width: 100%;
+		$resource-width: 20%;
+
+		#election{
+			position: relative;
+			top: 50px;
+			text-align: center;
+			font-size: 50px;
+			color: whitesmoke;
+		}
 
 		#resources-icons{
-			$mono: monospace;
+			height: 40vh;
+			position: relative;
+			top: 70px;
+			
 			#poll-locator{
-				width: 25%;
+				width: $resource-width;
 				float: left;
-				left: 5%;
+				left: 15%;
 				top: 50px;
 				position: relative;
 				i{
@@ -80,9 +92,9 @@
 			}
 
 			#register-vote{
-				width: 25%;
+				width: $resource-width;
 				float: right;
-				right: 36.5%;
+				right: 39.5%;
 				top: 50px;
 				position: relative;
 				i{
@@ -95,9 +107,9 @@
 			}
 
 			#something{
-				width: 25%;
+				width: $resource-width;
 				float: left;
-				left: 46%;
+				left: 45%;
 				top: 50px;
 				position: relative;
 				i{
