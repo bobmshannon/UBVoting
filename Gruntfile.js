@@ -148,7 +148,9 @@ module.exports = function( grunt ) {
 					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
 					'bower_components/fullcalendar/dist/fullcalendar.css',
 					'bower_components/slick-carousel/slick/slick-theme.css',
-					'bower_components/slick-carousel/slick/slick.css'
+					'bower_components/slick-carousel/slick/slick.css',
+					'bower_components/hover/css/hover-min.css',
+					'bower_components/hover/css/hover.css'
 					]
 				}
 			}
