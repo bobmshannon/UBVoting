@@ -16,7 +16,9 @@
 				width: 110px;
 				position: relative;
 				left: 25%;
-			}				 
+				transition: all .2s ease-in-out; 
+			}
+	@mixin grow{transform: scale(1.1);}						 
 
 	@mixin	h2{
 				text-shadow: 1px 1px #85144b;
@@ -83,9 +85,15 @@
 				left: 15%;
 				top: 50px;
 				position: relative;
+				
 				i{
 					@include i;
-				}	
+				}
+				
+				i:hover{
+					@include grow;
+				}
+
 				h2{
 					@include h2;
 				}	
@@ -101,6 +109,10 @@
 					@include i;
 				}	
 				
+				i:hover{
+					@include grow;
+				}
+
 				h2{
 					@include h2;
 				}	
@@ -116,6 +128,10 @@
 					@include i;
 				}	
 				
+				i:hover{
+					@include grow;
+				}
+
 				h2{
 					@include h2;
 				}	
