@@ -254,7 +254,7 @@ class CandidatesController < ApplicationController
   	@candidateTitle = "Former neurosergeon, Dr Ben Carson"
   	@affiliation = "republican"
   	@notAffiliated ="democrat"
-	@candidateCoverPhoto = "/images/candidates/coverCarson1.png"
+	@candidateCoverPhoto = "/images/candidates/coverCarson1.jpg"
 	@candidateCoverPhoto1 = "/images/candidates/coverCarson2.jpg"
 
 	@candidateIssueOverview = "Ben Carson is ...."
