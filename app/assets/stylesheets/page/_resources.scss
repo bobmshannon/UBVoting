@@ -138,4 +138,35 @@
 			}
 		}
 	}
+	    #slider
+    {
+        height: 160px;
+        width: 100%;
+        width: 90%;
+     }   
+
+    .slick-prev.slick-arrow{
+        background-color: red;
+    }
+    
+    .slick-prev.slick-arrow:hover{
+         background-color: blue;
+    }
+
+    .slick-next.slick-arrow{
+        background-color: red;
+    }
+
+    .slick-next.slick-arrow:hover{
+         background-color: blue;
+    }
+    
+    .slick-slide:focus{
+        outline: none;
+    }
+    
+    .slick-slide img{
+        height: 200px;
+        width: 175px;
+    }
 }
