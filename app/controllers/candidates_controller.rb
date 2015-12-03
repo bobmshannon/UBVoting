@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
   def genericcandidate
    	@candidateName = "Generic"
+   	@lastname = "Generic"
   	@candidateTitle = "____"
   	@affiliation = "democrat"
   	@notAffiliated ="republican"
@@ -62,6 +63,7 @@ class CandidatesController < ApplicationController
 
   def berniesanders
    	@candidateName = "Bernie Sanders"
+   	@lastname = "Sanders"
   	@candidateTitle = "Running for the Democratic party- Fromer Sentator of Vermont"
   	@affiliation = "democrat"
   	@notAffiliated ="republican"
@@ -123,6 +125,7 @@ class CandidatesController < ApplicationController
 
   def donaldtrump
    	@candidateName = "Donald Trump"
+   	@lastname ="Trump"
   	@candidateTitle = "Running for the Repubplican party- Business Leader, Reality Television Star"
   	@affiliation = "republican"
   	@notAffiliated ="democrat"
@@ -184,6 +187,7 @@ class CandidatesController < ApplicationController
 
   def hillaryclinton
    	@candidateName = "Hillary Clinton"
+   	@lastname ="Clinton"
   	@candidateTitle = "Running for the democratic party- 2 times the secretary of state and NY state senator"
   	@affiliation = "democrat"
   	@notAffiliated ="republican"
@@ -246,10 +250,11 @@ class CandidatesController < ApplicationController
 
   def bencarson
    	@candidateName = "Ben Carson"
+   	@lastname = "Carson"
   	@candidateTitle = "Former neurosergeon, Dr Ben Carson"
   	@affiliation = "republican"
   	@notAffiliated ="democrat"
-	@candidateCoverPhoto = "/images/candidates/coverCarson1.png"
+	@candidateCoverPhoto = "/images/candidates/coverCarson1.jpg"
 	@candidateCoverPhoto1 = "/images/candidates/coverCarson2.jpg"
 
 	@candidateIssueOverview = "Ben Carson is ...."
@@ -307,6 +312,7 @@ class CandidatesController < ApplicationController
 
 	def marcorubio
    	@candidateName = "Marco Rubio"
+   	@lastname = "Rubio"
   	@candidateTitle = "Senator from Florida 2000-2008"
   	@affiliation = "republican"
   	@notAffiliated ="democrat"
@@ -368,6 +374,7 @@ class CandidatesController < ApplicationController
 
 	def martinomalley
 	   	@candidateName = "Martin O'Malley"
+	   	@lastname = "O'Malley"
 	  	@candidateTitle = "Former Governer of Maryland"
 	  	@affiliation = "democrat"
 	  	@notAffiliated ="republican"

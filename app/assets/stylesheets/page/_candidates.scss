@@ -16,25 +16,38 @@
 	.h5,
 	.h6
 	{
-		font-weight: 600; 
+		font-weight: 600;
 		color: #2d2d3d;
 	}
 
 	h1
 	{
-		font-size: 42px;
-		color: #fff;
+		font-weight: 700;
+		font-size: 50px;
+		color: whitesmoke;
 	}
 
-	h2
-	{
-		@include text-shadow(1px 1px $black);
+	h2{
 		font-size: 20px;
-		color: #fff;
-		margin-top: 5px;
-		margin-bottom: 10px;
+		color: #fff; 
+
 	}
 
+
+	#on-the-issues{
+		.container{
+			.center{
+				h2{
+					font-size: 35px;
+					font-weight: 700;
+					color: whitesmoke;
+					margin-top: 5px;
+					margin-bottom: 10px;
+				}
+			}
+		}	
+	}
+		
 	h3
 	{
 		font-size: 16px;
@@ -43,6 +56,17 @@
 		line-height: 24px;
 	}
 
+	.republican{
+		.issues{
+			h3{
+				font-size: 16px;
+				color: #001f3f;
+				font-weight: 400;
+				line-height: 24px;	
+			}
+		}
+	}
+	
 	h4
 	{
 		font-size: 16px;
@@ -87,17 +111,39 @@
 		position: relative;
     }
     
-	#about
+	#about.democrat
 	{
 		position: relative;
 		background: #f7f7f7;
 		padding-bottom: 40px;
+		
+		h2{
+			color:#5bc0de;
+			font-size: 35px;
+			font-weight: 700;
+		}
+		
+
 	}
+
+	#about.republican{
+		position: relative;
+		background: #f7f7f7;
+		padding-bottom: 40px;
+		
+		h2{
+			color: #e03838;
+			font-size: 35px;
+			font-weight: 700;
+		}
+	}
+	
     
 	.democrat
 	{
 		background: #5bc0de;
 		padding-bottom: 40px;
+		text-shadow: none;
 	}
 
 	.republican
@@ -154,6 +200,13 @@
 		margin: 0;
 		text-align: center;
 
+	}
+
+	#speeches-debates{
+		h2{
+			font-size: 25px;
+			font-weight: 700;
+		}
 	}
 
 	.shade-photo

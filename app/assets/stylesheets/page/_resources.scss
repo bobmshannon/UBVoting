@@ -1,28 +1,56 @@
 .pages#resources
 {
 	$box-shadow: 10px 10px 5px rgba(0, 0, 0, .2);
-	$card-margin-width: 20%;
-	$card-margin-height: 40vh;
-	$card-margin: 25%;
 	$margin-top-cards: 2%;
     $whitesmoke: #F5F5F5;
+    @mixin 	i{
+				border-radius: 100%;
+				background: #ffffff none repeat scroll 0 0;
+				border: 3px solid #ffffff;
+				color: #217695;
+				font-size: 48px;
+				height: 110px;
+				line-height: 110px;
+				margin: 3px 25px 3px 3px;
+				text-align: center;
+				width: 110px;
+				position: relative;
+				left: 25%;
+				transition: all .2s ease-in-out; 
+			}
+	@mixin grow{transform: scale(1.1);}						 
+
+	@mixin	h2{
+				text-shadow: 1px 1px #85144b;
+				color: #001f3f;
+			}
+
+	@mixin p{
+
+			}
+		   	
+
 
 	#coverphoto
 	{
-		@include background-image(image-url('uscapital.jpg'));
+		@include background-image(image-url('polls.jpg'));
 		background-repeat: no-repeat;
 		background-size: cover;
-		border: 1px;
-		height: 72vh;
+		border: 3px solid #AAAAAA;
+		height: 500px;
 		width: 100%;
-		top: 12%;
+
+		h1{
+			margin-top: 0.5%;
+		    color: white;
+		    font-family: trebuchet MS;
+		    font-size: -webkit-xxx-large;
+		}
 	}
 	
 	.cover-shade
 	{
-		@include box-shadow(3px 3px 5px 1px #333);
 		color: #fff;
-		background-color: rgba(0, 0, 0, .3);
 		margin-top: 1%;
 		width: 20%;
 		height: 15vh;
@@ -32,87 +60,82 @@
 		background-size: cover;
 	}
 	
-	#search-bar{
-		height: 100px;
-		width: 100%;
-		border: 3px solid #AAAAAA;
-    	background-color: #AFAFAF;
-		
-		.row{
-			width: 100%;
-			position: relative;
-			margin-top: 0.5%;
-
-			.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group	
-			{
-				height: 80px;
-				width: 100px;
-				margin-left: 0px;
-			}
-
-			.form-control
-			{
-				height: 80px;
-				margin-bottom: 1px;
-				margin-left: 3%;
-				text-align: center;
-				font-size: 50px;
-			}
-		}
-	}
-
-	
 	#resources{
-		background-color: #5bc0de;
-		height: 60vh;
+		background-color: #e03838;
+		height: 600px;
 		width: 100%;
+		$resource-width: 20%;
 
-		.left
-		{
-			margin-top: $margin-top-cards;
-		    margin-left: $card-margin;
-	    }	
-		
-		#card 
-		{   
-			@include box-shadow($box-shadow);
-			background-color: $whitesmoke;
-			width: $card-margin-width;
-			height: $card-margin-height;
-		}
-		
-		.card-header
-		{
-			font-size: 150%;
+		#election{
+			position: relative;
+			top: 50px;
 			text-align: center;
+			font-size: 50px;
+			color: whitesmoke;
 		}
-		
-	    h5.card-title{
-	        color:  #FF0080;
-	        margin-left: $card-margin;
-	        position: relative;
-	    }
 
-	    p.card-text{
-	        margin-left: 3%;
-	        width: 90%;
+		#resources-icons{
+			height: 40vh;
+			position: relative;
+			top: 5%;
+			
+			#poll-locator{
+				width: $resource-width;
+				float: left;
+				left: 15%;
+				top: 50px;
+				position: relative;
+				
+				i{
+					@include i;
+				}
+				
+				i:hover{
+					@include grow;
+				}
 
-	    }
+				h2{
+					@include h2;
+				}	
+			}
 
-		.btn
-		{
-			padding: 5%;
-			margin-top: 2.5%;
-			margin-left: $card-margin;
-	        position: relative;
-	        width: 130px;
+			#register-vote{
+				width: $resource-width;
+				float: right;
+				right: 39.5%;
+				top: 50px;
+				position: relative;
+				i{
+					@include i;
+				}	
+				
+				i:hover{
+					@include grow;
+				}
+
+				h2{
+					@include h2;
+				}	
+			}
+
+			#something{
+				width: $resource-width;
+				float: left;
+				left: 45%;
+				top: 50px;
+				position: relative;
+				i{
+					@include i;
+				}	
+				
+				i:hover{
+					@include grow;
+				}
+
+				h2{
+					@include h2;
+				}	
+			}
 		}
 	}
-	
-	#spacing
-	{
-		height: 1%;
-	}
-
-
 }
