@@ -36,8 +36,8 @@
 		@include background-image(image-url('polls.jpg'));
 		background-repeat: no-repeat;
 		background-size: cover;
-		border: 3px solid #AAAAAA;
-		height: 500px;
+		box-shadow: inset 0 0 5px #000;
+		height: 525px;
 		width: 100%;
 
 		h1{
