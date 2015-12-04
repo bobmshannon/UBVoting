@@ -543,19 +543,19 @@ class CandidatesController < ApplicationController
 		@issue9Fa = "fa fa-female"
 
 		@candidateQuickBio = "In the U.S. Senate, Ted has led the fight to repeal Obamacare, to stop President Obama’s illegal and unconstitutional executive amnesty, and to defend life, marriage, the First Amendment, the Second Amendment, and our entire Bill of Rights. And most important, he’s kept his promise to speak the truth and do what he said he’d do."
-		@candidateBorn = "Calgary, Alberta, Canada"
+		@candidateBorn = "Ted was born in Calgary, Alberta, Canada"
 		@candidateSchool = "Ted Cruz graduated from Princeton University in 1992, and then from Harvard Law School in 1995"
-		@candidateFamily = ""
-		@candidateStrangeFact1 = ""
-		@candidateStrangeFact2 = ""
-		@candidateStrangeFact3 = ""
-		@candidateAccomplishment1 = ""
-		@candidateAccomplishment2 = ""
-		@candidateAccomplishment3 = ""
+		@candidateFamily = "Ted's mother graduated from Rice University in 1950 with a degree in mathematics.  She later became a pioneer in the field of computing.  Ted's father after being tortured in Cuba, fled to the United States and later attended the University of Texas at Austin in 1957"
+		@candidateStrangeFact1 = "Cruz’s father was a Cuban immigrant who came to the U.S. with $100 sewn into his underwear."
+		@candidateStrangeFact2 = "Ted Cruz was born in Canada"
+		@candidateStrangeFact3 = "Cruz met his wife, who works for Goldman Sachs, while working on George W. Bush's presidential campaign in 2000"
+		@candidateAccomplishment1 = "As Solicitor General for the State of Texas and in private practice, Ted authored more than 80 U.S. Supreme Court briefs and argued 43 oral arguments"
+		@candidateAccomplishment2 = "Has won an unprecedented series of landmark national victories including defending U.S. sovereignty against the UN and the World Court in Medellin v. Texas"
+		@candidateAccomplishment3 = "In the U.S. Senate, Ted has led the fight to repeal Obamacare"
 		
-		@source = " "
+		@source = "www.tedcruz.org"
 
-		@candidateVideo = " "
+		@candidateVideo = "https://www.youtube.com/embed/YB_4Heb47d8"
 	end
 
 end
