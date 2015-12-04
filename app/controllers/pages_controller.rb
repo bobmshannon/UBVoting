@@ -7,5 +7,7 @@ class PagesController < ApplicationController
 
   def map
   end
-
+  
+  def resources
+  end
 end

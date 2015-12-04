@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/pitch.html' => 'pages#pitch'
   get '/events' => 'pages#events'
   get '/map' => 'pages#map'
-
+  get '/resources' => 'pages#resources'
   # Tweet Stream
   get '/happening-now' => 'tweet_map#map'
   get '/happening-now/map-view' => 'tweet_map#map'
@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   get '/candidates/donaldtrump' => 'candidates#donaldtrump'
   get '/candidates/hillaryclinton' => 'candidates#hillaryclinton'
   get '/candidates/bencarson' => 'candidates#bencarson'
-  # Adding this comment because I think that the server is a push behind.
+  get '/candidates/marcorubio' => 'candidates#marcorubio'
+  get '/candidates/martinomalley' => 'candidates#martinomalley'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

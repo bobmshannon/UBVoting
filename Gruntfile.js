@@ -78,13 +78,18 @@ module.exports = function( grunt ) {
 					'bower_components/bootstrap/dist/js/bootstrap.min.js',
 					'bower_components/websocket-rails-js/websocket_rails.0.0.1.min.js',
 					'bower_components/moment/moment.js',
-					'bower_components/livestamp/livestamp.js'
+					'bower_components/livestamp/livestamp.js',
+					'bower_components/headroom.js/dist/headroom.js',
+					'bower_components/headroom.js/dist/jQuery.headroom.js',
+					'bower_components/slideout.js/dist/slideout.js',
+					'app/assets/javascripts/base.js'
 					]
 				}
 			},
 			homepage: {
 				files: {
 					'public/javascripts/homepage.js': [
+					'bower_components/Chart.js/Chart.js',
 					'app/assets/javascripts/homepage.js'
 					]
 				}
@@ -101,8 +106,7 @@ module.exports = function( grunt ) {
 				files: {
 					'public/javascripts/map.js': [
 					'app/assets/javascripts/map.js',
-					'bower_components/jqvmap/jqvmap/jquery.vmap.js',
-					'bower_components/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
+					'bower_components/slick-carousel/slick/slick.js'
 					]
 				}
 			},
@@ -142,7 +146,11 @@ module.exports = function( grunt ) {
 					'bower_components/components-font-awesome/css/font-awesome.css',
 					'bower_components/bootstrap/dist/css/bootstrap.min.css',
 					'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-					'bower_components/fullcalendar/dist/fullcalendar.css'
+					'bower_components/fullcalendar/dist/fullcalendar.css',
+					'bower_components/slick-carousel/slick/slick-theme.css',
+					'bower_components/slick-carousel/slick/slick.css',
+					'bower_components/hover/css/hover-min.css',
+					'bower_components/hover/css/hover.css'
 					]
 				}
 			}

@@ -1,45 +1,223 @@
 .pages#home
 {
-	display: table;
-
-	section#learn-more
+	section h1
 	{
-		@include background-image(image-url('usaflag.png'));
-		@include background-size(cover);
-		display: table-row;
-		height: 100%;
+		@include text-shadow(0 2px 0 $black);
+		@include inline-block;
+		border-bottom: 3px solid rgba(0, 0, 0, .37);
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		font-size: 48pt;
+	}
 
-		.overlay 
+	.float-down
+	{
+		margin-top: 40px;
+	}
+
+	.center
+	{
+		text-align: center;
+	}
+
+	.button-bar
+	{
+		margin: 20px 0;
+
+		.btn
 		{
-			@include box-shadow(inset 0 1px 5px $black);
-			background-color: rgba(20, 40, 64, .75);
-			border-top: 1px solid $light-gray;
-			display: table-cell;
-			vertical-align: middle;
+			@include inline-block;
+			margin: 0 15px 0 0;
+			font-size: 14pt;
 		}
 	}
-	
-	p
-	{
-		text-align: left;
-	}
 
-	.panel 
+	section#coverphoto
 	{
-		font-size: 14px;
+		@include background-image(image-url('voting.jpg'));
+		//@include box-shadow(inset 0 0 5px 0 $black);
+		text-align: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 
-		.panel-heading
+		h1 
 		{
+			i
+			{
+				color: #e2282f;	
+			}
+
+			span
+			{
+				color: #0095ff;
+			}
+		}
+
+		p
+		{
+			color: #d5d5d5;
 			font-size: 18pt;
-			background-color: $light-gray;
-			padding-top: 12px;
-			padding-bottom: 12px;
-			margin: 0;
+
+			b
+			{
+				color: $white;
+			}
 		}
 
-		.btn 
+		.cover-shade
 		{
-			margin: 5px 8px 0 0;
+			//@include box-shadow(0 1px 2px 1px #000 inset);
+			//@include border-radius(5px);
+			//border: 2px solid rgba(0, 0, 0, .5);
+			color: #fff;
+			background-color: rgba(0, 0, 0, .6);
+			padding: 15px;
+			margin-left: auto;
+			margin-right: auto;
+			background-size: cover;
+			width: 100%;
+			height: 500px;
 		}
+	}
+
+	section#voting-turnout
+	{
+		@include box-shadow(inset 0 2px 5px 1px rgba(0, 0, 0, 0.3));
+		border-top: 3px solid rgba(0, 0, 0, 0.7);
+		background-color: #142840;
+
+		h1
+		{
+			color: $white;
+			font-size: 36pt;
+
+			i
+			{
+				color: #6ea4da;
+			}
+		}
+
+		.overlay
+		{
+			background-size: $grid-size $grid-size;    
+			background-image:repeating-linear-gradient(0deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size),repeating-linear-gradient(-90deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size);
+		}
+
+		.wrapper
+		{
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.graph
+		{
+			@include border-radius(5px);
+			background: $white;
+			padding: 20px;
+			margin: 15px 0;
+		}
+	}
+
+	#reasons
+	{
+		@include box-shadow(inset 0 0px 5px 5px rgba(0, 0, 0, 0.1));
+		background-color: #bb0f19;
+		border-top: 2px solid rgba(0, 0, 0, 0.4);
+		padding: 10px 0 40px 0;
+
+		h1
+		{
+			font-size: 36pt;
+			color: $white;
+		}
+
+		ul#reasons-list
+		{
+			@include container;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			li.reason
+			{
+				@include span(4 of 12);
+				@include border-radius(5px);
+				min-height: 400px;
+				background: $white;
+
+				&:last-child
+				{
+					@include span(4 of 12 last);
+				}
+			}
+
+			.reason-content
+			{
+				padding: 20px;
+			}
+
+			h2
+			{
+				font-size: 24pt;
+			}
+
+			p
+			{
+				font-size: 16pt;
+			}
+		}
+	}
+
+	.small-container
+	{
+		@include border-radius(4px);
+		padding: 40px 30px;
+		background: #fff;
+		margin: 0 0 40px;
+	}
+
+	#slit-bg .slit-photo
+	{
+
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 50px;
+		display: block;
+	}
+
+	.shade-photo
+	{
+		background-color: rgba(0, 0, 0, .5);
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-size: cover;
+		width: 100%;
+		height: 50px;
+	}
+
+	.carousel-inner
+	{
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 1200px;
+		display: block;
+	}
+
+	.item
+	{
+		width: 100%;
+		background-size: cover;
 	}
 }

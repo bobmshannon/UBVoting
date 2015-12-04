@@ -1,22 +1,75 @@
-<section id="learn-more">
+<section id="coverphoto">
+        <div class="cover-shade valign-wrap">
+            <div class="wrapper valign">
+                <h1><i class="fa fa-question-circle"></i> Are you between <span>18</span> and <span>25</span> years old?</h1>
+                <p>If so, then you are part of the future generation of the United States of America.</p>
+                <p>You have the ability <b>impact both current and future policies and legislation</b> by excercising your constitutional <b>right to vote</b>.</p>
+
+                <div class="button-bar">
+                    <a class="btn btn-default" href="#"><i class="fa fa-chevron-circle-right"></i> Learn More</a>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="reasons">
+    <div class="wrapper">
+        <h1><i class="fa fa-balance-scale"></i> Why Voting Matters</h1>
+
+        <ul id="reasons-list">
+            <li class="reason">
+                <div class="reason-content">
+                    <h2>Your vote counts more than you might think</h2>
+                    <p>Insert description for reason here. Would be OK to directly quote and cite the Census.gov report for this and the other reasons.</p>
+                    <!--<p>No! That is not right, your vote does actually count. It actually makes a difference in who gets elected president!</p>-->
+                </div>
+            </li>
+
+            <li class="reason">
+                <div class="reason-content">
+                    <h2>Voting is your constitutional right</h2>
+                    <p>Insert description for reason here. Would be OK to directly quote and cite the Census.gov report for this and the other reasons.</p>
+                    <!--
+                    <h2>But..But doesn't the electoral collage make the decision?</h2>
+                    <p>Yeah, the electoral collage is the final decision, as shown in the election in 2000. But you, yes YOU make the electoral collage's decision!</p>
+                    -->
+                </div>
+            </li>
+
+            <li class="reason">
+                <div class="reason-content">
+                    <h2>Reason #3</h2>
+
+                    <p>Insert description for reason here. Would be OK to directly quote and cite the Census.gov report for this and the other reasons.</p>
+                    <!--
+                    <h2>I don't know enough about the candidates!</h2>
+                    <p>Well my friend, that is where we come in! Explore the site, see what people are saying and learn about the candidates!</p>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="voting-turnout">
     <div class="overlay">
         <div class="wrapper">
-            <div class="panel panel-default">
-                <h4 class="panel-heading"><i class="fa fa-info-circle"></i> Phase 2 Sprint</h4>
-                    <div class="panel-body">
-                        <p>Click the buttons below to view a demo of each page.</p>
+            <h1><i class="fa fa-line-chart"></i> A Quick Look: Voting Turnout by Age</h1>
 
-                        <p>
-                            <a class="btn btn-danger" target="_blank" href="/pitch">Project Pitch &nbsp;<i class="fa fa-chevron-circle-right"></i></a>
-                            <a class="btn btn-primary" target="_blank" href="/happening-now"><i class="fa fa-twitter"></i> 2016 Twitter Stream (Map View)</a>
-                            <a class="btn btn-primary" target="_blank" href="/happening-now/list-view"><i class="fa fa-twitter"></i> 2016 Twitter Stream (List View)</a>
-                            <a class="btn btn-primary" target="_blank" href="/candidates/berniesanders"><i class="fa fa-user"></i> Bernie Sanders</a>
-                            <a class="btn btn-primary" target="_blank" href="/candidates/hillaryclinton"><i class="fa fa-user"></i> Hillary Clinton</a>
-                            <a class="btn btn-primary" target="_blank" href="/candidates/donaldtrump"><i class="fa fa-user"></i> Donald Trump</a>
-                            <a class="btn btn-primary" target="_blank" href="/candidates/berniesanders"><i class="fa fa-user"></i> Bernie Sanders</a>
-                        </p>
-                    </div>
+            <div class="graph">
+                <div><canvas id="turnout-by-age"></canvas></div>
             </div>
+            <!--http://www.census.gov/content/dam/Census/library/publications/2015/demo/p20-577.pdf-->
+            <!--https://www.census.gov/prod/2014pubs/p20-573.pdf-->
+            <!--<figure>
+                <img src="/images/chart.png" alt="A graph displaying the fact that 65% of the American people in the age range of 18-24 did not vote in the last election">
+                <figcaption>
+                With 65% of people in the age range of 18-24 not voting in the last election and nearly 70% of people in the ranges of 45-64+ voting.  We are effectively letting a different generation decide the future of our lives, and our future children!  This is a problem!
+                </figcaption>
+            </figure>-->
         </div>
     </div>
 </section>
+
+<% content_for :javascript_includes do %>
+    <%= javascript_include_tag "homepage.js" %>
+<% end %> 

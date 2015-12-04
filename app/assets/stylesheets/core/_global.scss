@@ -11,8 +11,28 @@ html
 	background: $concrete;
 	color: $black;
 	font-family: $primary-serif;
+}
+
+body
+{
 	width: 100%;
 	height: 100%;
+}
+
+body.sticky-header
+{
+	position: relative;
+
+	// To offset sticky header.
+	padding-top: $header-height;
+
+	header
+	{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 10000;
+	}
 }
 
 a,
@@ -23,7 +43,8 @@ button:active,
 button:focus,
 .btn:focus
 {
-	outline: 0;
+	outline: none !important;
+	outline: 0 !important;
 
 	&:-moz-focus-inner 
 	{
@@ -34,6 +55,18 @@ button:focus,
 .wrapper 
 {
 	padding: 0 2%;
+}
+
+.valign-wrap
+{
+	display: table;
+	width: 100%;
+}
+
+.valign
+{
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .content 
@@ -76,4 +109,149 @@ button:focus,
 .btn
 {
 	padding: 10px;
+}
+
+nav#mobile-menu
+{
+	display: none;
+	background: $white;
+
+	h3
+	{
+		@include text-shadow(none);
+		color: $white;
+		padding: 15px 10px;
+		font-size: 16pt !important;
+		margin: 0;
+		background: #d44b4b;
+		border-bottom: 1px solid rgba(0, 0, 0, .33);
+
+		a
+		{
+			color: $white;
+
+			&:hover
+			{
+				text-decoration: none;
+			}
+		}
+
+		&.link
+		{
+			padding: 0;
+			background: #2a3542;
+
+			a
+			{
+				display: block;
+				padding: 15px 10px;
+			}
+
+			a:hover
+			{
+				background: #3d4856;
+			}
+		}
+	}
+
+	ul.candidates-list
+	{
+		background: $white;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li
+		{
+			padding: 0;
+			margin: 0;
+		}
+
+		a
+		{
+			display: block;
+			padding: 10px;
+		    border-bottom: 1px solid rgba(0, 0, 0, .08);
+
+		    &:hover
+		    {
+		    	text-decoration: none;
+		    	background: #ededed;
+		    }
+		}
+
+		img
+		{
+			background: none;
+			display: inline-block;
+			width: 75px;
+			height: 75px;
+			padding: 0;
+		}
+
+		.name
+		{
+			padding-left: 15px;
+		    padding-left: 15px;
+		    font-weight: bold;
+		    color: black;
+		    font-size: 12pt;
+		}
+
+		.republican
+		{
+			border: 3px solid #db1f29;
+		}
+
+		.democrat
+		{
+			border: 3px solid #1490ed;
+		}
+	}
+}
+
+@include breakpoint(max-width 1049px)
+{
+	header button#mobile-menu-toggle
+	{
+		display: block;
+	}
+
+	nav#menu
+	{
+		display: none;
+	}
+}
+
+.slideout-menu 
+{
+	position: fixed;
+	left: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+	width: 275px;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	display: none;
+}
+
+.slideout-panel 
+{
+	background: $concrete;
+	position: relative;
+	z-index: 9999;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel 
+{
+	overflow: hidden;
+}
+
+.slideout-open .slideout-menu 
+{
+	display: block !important;
 }

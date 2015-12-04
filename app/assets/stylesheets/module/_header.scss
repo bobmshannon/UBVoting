@@ -1,9 +1,31 @@
 header
 {
 	@include box-shadow(0 1px 2px rgba(0, 0, 0, .06));
-	@include clearfix;
+	@include legacy-pie-clearfix;
+	@include transition(transform 300ms ease);
+
 	background: $white;
-	height: 87px;
+	height: $header-height;
+
+	&.transition-fx
+	{
+		@include transform(translate3d(-275px, 0px, 0px) !important);
+	}
+
+	&.headroom
+	{
+		transition: transform 200ms linear;
+	}
+
+	&.headroom--pinned 
+	{
+		@include transform(translateY(0%));
+	}
+
+	&.headroom--unpinned
+	{
+		@include transform(translateY(-100%));
+	}
 
 	.btn 
 	{
@@ -11,12 +33,90 @@ header
 		margin: 22px 5px;
 		font-weight: bold;
 		font-family: $primary-sans;
-		
-		&:first-child
+	}
+
+	.dropdown 
+	{
+		width: 100%;
+
+		&.scrollable-menu
 		{
-			margin-right: 0;
+			height: auto;
+			max-height: 450px;
+			overflow-x: hidden;
 		}
 	}
+
+	.dropdown .dropdown-menu 
+	{
+		@include transition(all .3s);
+		@include opacity(0);
+		max-height: 0;
+		display: block;
+	}
+
+	.dropdown.open .dropdown-menu
+	{
+		@include opacity(1);
+		max-height: 300px;	
+	}
+
+	.dropdown-menu
+	{
+		@include clearfix;
+		@include border-bottom-radius(4px);
+		@include border-top-left-radius(0);
+		@include border-top-right-radius(0);
+		margin-top: 86px;
+		padding: 0;
+
+		li
+		{
+			float: left;
+			width: 25%;
+			border-bottom: 1px solid rgba(0, 0, 0, .17);
+		}
+
+		a
+		{
+			@include clearfix;
+			padding: 10px 20px;
+			font-weight: bold;
+			font-size: 13pt;
+		}
+
+		img.portrait,
+		.name
+		{
+			@include inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		img.portrait
+		{
+			@include box-shadow(none);
+			width: 75px;
+			height: 75px;
+			margin: 0 15px 0 0;
+
+			&.republican
+			{
+				border: 3px solid #db1f29;
+			}
+
+			&.democrat
+			{
+				border: 3px solid #1490ed;
+			}
+		}
+
+		.name
+		{
+			line-height: 50px;
+		}
+	}
+
 
 	h1 
 	{
@@ -31,5 +131,15 @@ header
 			width: 160px;
 			height: 87px;
 		}
+	}
+
+	#mobile-menu-toggle
+	{
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    font-size: 18pt;
+	    padding: 0;
+	    display: none;
 	}
 }
