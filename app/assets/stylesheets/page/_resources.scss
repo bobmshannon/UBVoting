@@ -63,7 +63,6 @@
 		background-color: #bb0f19;
 		height: 600px;
 		width: 100%;
-		$resource-width: 20%;
 
 		#election{
 			position: relative;
@@ -74,66 +73,62 @@
 		}
 
 		#resources-icons{
+			top: 5%;
 			height: 40vh;
 			position: relative;
-			top: 5%;
+			$resource-width: 30%;
 			
-			#poll-locator{
-				width: $resource-width;
-				float: left;
-				left: 15%;
-				top: 50px;
-				position: relative;
-				
-				i{
-					@include i;
-				}
-				
-				i:hover{
-					@include grow;
-				}
+			.row{
+				margin-left: 10%;
+				margin-top: 5%;
 
-				h2{
-					@include h2;
-				}	
-			}
+				#poll-locator{
+					width: $resource-width;
+					
+					i{
+						@include i;
+					}
+					
+					i:hover{
+						@include grow;
+					}
 
-			#register-vote{
-				width: $resource-width;
-				float: right;
-				right: 39.5%;
-				top: 50px;
-				position: relative;
-				i{
-					@include i;
-				}	
-				
-				i:hover{
-					@include grow;
+					h2{
+						@include h2;
+					}	
 				}
 
-				h2{
-					@include h2;
-				}	
-			}
+				#register-vote{
+					width: $resource-width;
 
-			#something{
-				width: $resource-width;
-				float: left;
-				left: 45%;
-				top: 50px;
-				position: relative;
-				i{
-					@include i;
-				}	
-				
-				i:hover{
-					@include grow;
+					i{
+						@include i;
+					}	
+					
+					i:hover{
+						@include grow;
+					}
+
+					h2{
+						@include h2;
+					}	
 				}
 
-				h2{
-					@include h2;
-				}	
+				#something{
+					width: $resource-width;
+
+					i{
+						@include i;
+					}	
+					
+					i:hover{
+						@include grow;
+					}
+
+					h2{
+						@include h2;
+					}	
+				}
 			}
 		}
 	}
