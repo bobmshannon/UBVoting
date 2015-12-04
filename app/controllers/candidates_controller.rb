@@ -510,41 +510,41 @@ class CandidatesController < ApplicationController
 		@issue1details = "Defended against Obamacare’s contraception mandate.  Successfully defended the words “under God” in the Texas Pledge of Allegiance.  "
 		@issue1Fa = "fa fa-fort-awesome"
 
-		@issue2 = " "
-		@issue2details
-		@issue2Fa = "fa fa-graduation-cap"
+		@issue2 = "Second Amendment"
+		@issue2details = "Played a crucial role in preventing federal legislation to restrict the Second Amendment rights of Americans. Authored legislation to strengthen the Second Amendment rights of Americans by allowing interstate firearms sales."
+		@issue2Fa = "fa fa-shield"
 
-		@issue3 = " "
-		@issue3details = ""
-		@issue3Fa = "fa fa-exclamation-triangle"
+		@issue3 = "U.S. Sovereignty"
+		@issue3details = "Fought and won a landmark ruling for U.S. sovereignty at the U.S. Supreme Court against 90 foreign nations and the President to ensure the supremacy of U.S. legal system against encroachment by international treaties and rulings of the “World Court.”"
+		@issue3Fa = "fa fa-flag"
 
-		@issue4 = " "
-		@issue4details = " "
+		@issue4 = "Think of a title"
+		@issue4details = "Opposed the Obama Administration’s dangerous deal with Iran that would allow Iran to pursue nuclear weapons."
 		@issue4Fa = "fa fa-users"
 
-		@issue5 = " "
-		@issue5details = " "
+		@issue5 = "Think of a title"
+		@issue5details = "Spearheaded legislation passed unanimously by Congress and signed by the President to prevent known terrorists from entering the United States as ambassadors to the United Nations."
 		@issue5Fa = "fa fa-life-ring"
 
-		@issue6 = " "
-		@issue6details
+		@issue6 = "Think of a title"
+		@issue6details = "Successfully pressured the Obama Administration to lift its unprecedented FAA ban on flights to Israel after exposing the move as, in essence, an economic boycott of our strongest ally in the Middle East."
 		@issue6Fa = "fa fa-cloud"
 
-		@issue7 = " "
-		@issue7details = " "
+		@issue7 = "Think of a title"
+		@issue7details = "Led the charge on behalf of 13 states to successfully defend, before the U.S. Supreme Court, a federal law that bans one form of late-term abortion, the Partial Birth Abortion Act."
 		@issue7Fa = "fa fa-star-half-o"
 
-		@issue8 = " "
-		@issue8details
+		@issue8 = "Think of a title"
+		@issue8details = "Advocated for an investigation into abortion practices in the U.S. to prevent the atrocities witnessed in Kermit Gosnell’s facility from ever happening again."
 		@issue8Fa = "fa fa-flag"
 
 		@issue9 = " "
-		@issue9details
+		@issue9details = "Joined 18 states in successfully defending the New Hampshire parental-notification law before the U.S. Supreme Court."
 		@issue9Fa = "fa fa-female"
 
-		@candidateQuickBio = " "
-		@candidateBorn = ""
-		@candidateSchool = ""
+		@candidateQuickBio = "In the U.S. Senate, Ted has led the fight to repeal Obamacare, to stop President Obama’s illegal and unconstitutional executive amnesty, and to defend life, marriage, the First Amendment, the Second Amendment, and our entire Bill of Rights. And most important, he’s kept his promise to speak the truth and do what he said he’d do."
+		@candidateBorn = "Calgary, Alberta, Canada"
+		@candidateSchool = "Ted Cruz graduated from Princeton University in 1992, and then from Harvard Law School in 1995"
 		@candidateFamily = ""
 		@candidateStrangeFact1 = ""
 		@candidateStrangeFact2 = ""
