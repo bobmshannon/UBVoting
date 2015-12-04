@@ -62,65 +62,7 @@ class CandidatesController < ApplicationController
   end
 
   def berniesanders
-   	@candidateName = "Bernie Sanders"
-   	@lastname = "Sanders"
-  	@candidateTitle = "Running for the Democratic party- Fromer Sentator of Vermont"
-  	@affiliation = "democrat"
-  	@notAffiliated ="republican"
-	@candidateCoverPhoto = "/images/candidates/coverBernie1.jpg"
-	@candidateCoverPhoto1 = "/images/candidates/coverBernie2.jpg"
-
-	@candidateIssueOverview = "The American people must make a fundamental decision. Do we continue the 40-year decline of our middle class and the growing gap between the very rich and everyone else, or do we fight for a progressive economic agenda that creates jobs, raises wages, protects the environment and provides health care for all? Are we prepared to take on the enormous economic and political power of the billionaire class, or do we continue to slide into economic and political oligarchy? These are the most important questions of our time, and how we answer them will determine the future of our country."
-	@issue1 = "Income and Wealth Inequality"
-	@issue1details = "The issue of wealth and income inequality is the great moral issue of our time, it is the great economic issue of our time, and it is the great political issue of our time."
-	@issue1Fa = "fa fa-money"
-
-	@issue2 = "Make College Tuition Free and Debt Free"
-	@issue2details = "As President, Bernie Sanders will fight to make sure that every American who studies hard in school can go to college regardless of how much money their parents make and without going deeply into debt."
-	@issue2Fa = "fa fa-graduation-cap"
-
-	@issue3 = "Getting Big Money Out of Politics"
-	@issue3details = "Our democracy is under fierce attack. Billionaire families are now able to spend hundreds of millions of dollars to buy the candidates of their choice. These people own most of the economy. Now they want to own our government as well. "
-	@issue3Fa = "fa fa-exclamation-triangle"
-
-	@issue4 = "Creating Decent Paying Jobs"
-	@issue4details = "The real unemployment rate is much higher than the “official” figure typically reported in the newspapers.  We are in the midst of an ongoing unemployment crisis, and we must take bold action to address it."
-	@issue4Fa = "fa fa-users"
-
-	@issue5 = "A Living Wage"
-	@issue5details = "Millions of Americans are working for totally inadequate wages. We must ensure that no full-time worker lives in poverty. The current federal minimum wage is starvation pay and must become a living wage."
-	@issue5Fa = "fa fa-life-ring"
-
-	@issue6 = "Climate Change & Environment"
-	@issue6details = "The United States must lead the world in tackling climate change, if we are to make certain that this planet is habitable for our children and grandchildren. We must transform our energy system away from polluting fossil fuels, and towards energy efficiency and sustainability."
-	@issue6Fa = "fa fa-cloud"
-
-	@issue7 = "Racial Justice"
-	@issue7details = "We must pursue policies that transform this country into a nation that affirms the value of its people of color. That starts with addressing the four central types of violence waged against black and brown Americans: physical, political, legal and economic."
-	@issue7Fa = "fa fa-star-half-o"
-
-	@issue8 = "A Fair and Humane Immigration Policy"
-	@issue8details = "Despite the central role immigrants play in our economy and in our daily lives, undocumented workers are reviled by some for political gain and shunted into the shadows. It is time for this disgraceful situation to end."
-	@issue8Fa = "fa fa-flag"
-
-	@issue9 = "Fighting for Women’s Rights"
-	@issue9details = "We are not going back to the days when women had to risk their lives to end an unwanted pregnancy. The decision about abortion must remain a decision for the woman and her doctor to make, not the government."
-	@issue9Fa = "fa fa-female"
-
-@candidateQuickBio = "Bernie Sanders is a Democratic candidate for President of the United States. In 2006, he was elected to the U.S. Senate after 16 years as Vermont’s sole congressman in the House of Representatives. Bernie is now serving his second term in the U.S. Senate after winning re-election in 2012 with 71 percent of the vote."
-	@candidateBorn = "Born in Brooklyn, New York"
-	@candidateSchool = "Bernie attended James Madison High School, Brooklyn College, and the University of Chicago"
-	@candidateFamily = "Parents did something"
-	@candidateStrangeFact1 = "Worked as a carpenter"
-	@candidateStrangeFact2 = "Was a documentary film maker"
-	@candidateStrangeFact3 = "While in college, he marched for civil rights"
-	@candidateAccomplishment1 = "He was elected as mayor of Burlington, Vermont by a mere 10 votes."
-	@candidateAccomplishment2 = "Under his administration, the city made major strides in affordable housing, progressive taxation, environmental protection, child care, women’s rights, youth programs and the arts."
-	@candidateAccomplishment3 = "Bernie has been called a “practical and successful legislator” and he was dubbed the “amendment king” in the House of Representatives."
-	
-	@source = "Acquired from www.berniesanders.com"
-
-	@candidateVideo = "https://www.youtube.com/embed/qyee_sxJpXc"
+  	@candidate = Candidate.find_by(full_name: "Bernie Sanders")
   end
 
   def donaldtrump

@@ -30,8 +30,8 @@ gem 'daemons'
 gem 'figaro'
 
 # AlchemyAPI, For the natural language processing. http://www.alchemyapi.com/api
-gem 'alchemy_api'
-gem 'alchemy-api-rb'
+#gem 'alchemy_api'
+#gem 'alchemy-api-rb'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
