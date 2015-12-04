@@ -520,15 +520,15 @@ class CandidatesController < ApplicationController
 
 		@issue4 = "Think of a title"
 		@issue4details = "Opposed the Obama Administration’s dangerous deal with Iran that would allow Iran to pursue nuclear weapons."
-		@issue4Fa = "fa fa-users"
+		@issue4Fa = "fa fa-close"
 
 		@issue5 = "Think of a title"
 		@issue5details = "Spearheaded legislation passed unanimously by Congress and signed by the President to prevent known terrorists from entering the United States as ambassadors to the United Nations."
-		@issue5Fa = "fa fa-life-ring"
+		@issue5Fa = "fa fa-hand-stop-o"
 
 		@issue6 = "Think of a title"
 		@issue6details = "Successfully pressured the Obama Administration to lift its unprecedented FAA ban on flights to Israel after exposing the move as, in essence, an economic boycott of our strongest ally in the Middle East."
-		@issue6Fa = "fa fa-cloud"
+		@issue6Fa = "fa fa-legal"
 
 		@issue7 = "Think of a title"
 		@issue7details = "Led the charge on behalf of 13 states to successfully defend, before the U.S. Supreme Court, a federal law that bans one form of late-term abortion, the Partial Birth Abortion Act."
@@ -538,9 +538,9 @@ class CandidatesController < ApplicationController
 		@issue8details = "Advocated for an investigation into abortion practices in the U.S. to prevent the atrocities witnessed in Kermit Gosnell’s facility from ever happening again."
 		@issue8Fa = "fa fa-flag"
 
-		@issue9 = " "
+		@issue9 = "Think of a title"
 		@issue9details = "Joined 18 states in successfully defending the New Hampshire parental-notification law before the U.S. Supreme Court."
-		@issue9Fa = "fa fa-female"
+		@issue9Fa = "fa fa-group"
 
 		@candidateQuickBio = "In the U.S. Senate, Ted has led the fight to repeal Obamacare, to stop President Obama’s illegal and unconstitutional executive amnesty, and to defend life, marriage, the First Amendment, the Second Amendment, and our entire Bill of Rights. And most important, he’s kept his promise to speak the truth and do what he said he’d do."
 		@candidateBorn = "Ted was born in Calgary, Alberta, Canada"

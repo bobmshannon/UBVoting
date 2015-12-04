@@ -1,5 +1,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body class = "candidates">
 
   <section id="coverphoto">
     <div class="bg-photo" style="background-image: url(<%=@candidateCoverPhoto%>)">
@@ -18,7 +17,7 @@
   <section class = "<%=@affiliation%>" id="on-the-issues">
     <div class="container">
       <div class="center">
-        <h2><%= @lastname%>'s Top Issues</h2>
+        <h2><%= @candidateName %>'s top ISSUES</h2>
         <p><%= @candidateIssueOverview %></p>
         </div>
 
@@ -101,10 +100,10 @@
     </div>
   </section>
 
-  <section id="about" class ="<%=@affiliation%>">
+  <section id="about">
     <div class="container">
       <div class="center">
-        <h2><%= @lastname%>'s Roots</h2>
+        <h2><%= @candidateName %>'s roots</h2>
         <p> <%= @candidateQuickBio %>
 
         <div class = "float-down">
@@ -167,10 +166,6 @@
       </div>
     </div>
   </section>
-
-
-</body>          
-
 
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag "candidates.js" %>
