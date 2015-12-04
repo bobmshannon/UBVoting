@@ -168,6 +168,44 @@
 		}
 	}
 
+	@include breakpoint(max-width 900px)
+	{
+		#reasons ul#reasons-list li.reason
+		{
+			@include span(6 of 12);
+
+			margin-bottom: 15px;
+
+			&:nth-child(even),
+			&:last-child
+			{
+				@include span(6 of 12 last);
+			}
+
+			&:nth-child(3)
+			{
+				@include span(6 of 12);
+			}
+		}
+	}
+
+	@include breakpoint(max-width 500px)
+	{
+		#reasons ul#reasons-list li.reason,
+		#reasons ul#reasons-list li.reason:nth-child(even),
+		#reasons ul#reasons-list li.reason:last-child,
+		{
+			width: 100%;
+			float: none;
+			margin: 0 0 15px 0;
+		}
+
+		#reasons ul#reasons-list li.reason:last-child
+		{
+			margin-bottom: 0;
+		}
+	}
+
 	.small-container
 	{
 		@include border-radius(4px);
