@@ -146,7 +146,6 @@ GEM
       tzinfo (>= 0.3.37)
     monster_mash (0.3.0)
       typhoeus (>= 0.3.3)
-      typhoeus (>= 0.3.3)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     naught (1.1.0)
@@ -265,3 +264,6 @@ DEPENDENCIES
   twitter-text
   web-console (~> 2.0)
   websocket-rails
+
+BUNDLED WITH
+   1.10.6
