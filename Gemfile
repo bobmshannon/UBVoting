@@ -29,6 +29,9 @@ gem 'daemons'
 # Environment variables
 gem 'figaro'
 
+# AlchemyAPI, For the natural language processing. http://www.alchemyapi.com/api
+gem 'alchemy-api-rb', :require => 'alchemy_api'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
