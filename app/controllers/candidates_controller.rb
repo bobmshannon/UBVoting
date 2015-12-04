@@ -434,4 +434,128 @@ class CandidatesController < ApplicationController
 		@candidateVideo = "https://www.youtube.com/embed/VFpPh9QB2qg"
 	end
 
+	def carlyfiorina
+		@candidateName = "Carly Fiorina"
+	   	@lastname = "Fiorina"
+	  	@candidateTitle = "____"
+	  	@affiliation = "democrat"
+	  	@notAffiliated ="republican"
+		@candidateCoverPhoto = "/images/candidates/coverCarly1.jpg"
+		@candidateCoverPhoto1 = "/images/candidates/coverCarly2.jpg"
+
+		@candidateIssueOverview = " "
+		@issue1 = " "
+		@issue1details = " "
+		@issue1Fa = "fa fa-money"
+
+		@issue2 = " "
+		@issue2details
+		@issue2Fa = "fa fa-graduation-cap"
+
+		@issue3 = " "
+		@issue3details = ""
+		@issue3Fa = "fa fa-exclamation-triangle"
+
+		@issue4 = " "
+		@issue4details = " "
+		@issue4Fa = "fa fa-users"
+
+		@issue5 = " "
+		@issue5details = " "
+		@issue5Fa = "fa fa-life-ring"
+
+		@issue6 = " "
+		@issue6details
+		@issue6Fa = "fa fa-cloud"
+
+		@issue7 = " "
+		@issue7details = " "
+		@issue7Fa = "fa fa-star-half-o"
+
+		@issue8 = " "
+		@issue8details
+		@issue8Fa = "fa fa-flag"
+
+		@issue9 = " "
+		@issue9details
+		@issue9Fa = "fa fa-female"
+
+		@candidateQuickBio = " "
+		@candidateBorn = ""
+		@candidateSchool = ""
+		@candidateFamily = ""
+		@candidateStrangeFact1 = ""
+		@candidateStrangeFact2 = ""
+		@candidateStrangeFact3 = ""
+		@candidateAccomplishment1 = ""
+		@candidateAccomplishment2 = ""
+		@candidateAccomplishment3 = ""
+		
+		@source = " "
+
+		@candidateVideo = " "
+	end
+
+		def tedcruz
+		@candidateName = "Ted Cruz"
+	   	@lastname = "Cruz"
+	  	@candidateTitle = "Senator of Texas"
+	  	@affiliation = "republican"
+	  	@notAffiliated ="democrat"
+		@candidateCoverPhoto = "/images/candidates/coverCruz1.jpg"
+		@candidateCoverPhoto1 = "/images/candidates/coverCruz2.jpg"
+
+		@candidateIssueOverview = " "
+		@issue1 = "Religious Liberty"
+		@issue1details = "Defended against Obamacare’s contraception mandate.  Successfully defended the words “under God” in the Texas Pledge of Allegiance.  "
+		@issue1Fa = "fa fa-fort-awesome"
+
+		@issue2 = " "
+		@issue2details
+		@issue2Fa = "fa fa-graduation-cap"
+
+		@issue3 = " "
+		@issue3details = ""
+		@issue3Fa = "fa fa-exclamation-triangle"
+
+		@issue4 = " "
+		@issue4details = " "
+		@issue4Fa = "fa fa-users"
+
+		@issue5 = " "
+		@issue5details = " "
+		@issue5Fa = "fa fa-life-ring"
+
+		@issue6 = " "
+		@issue6details
+		@issue6Fa = "fa fa-cloud"
+
+		@issue7 = " "
+		@issue7details = " "
+		@issue7Fa = "fa fa-star-half-o"
+
+		@issue8 = " "
+		@issue8details
+		@issue8Fa = "fa fa-flag"
+
+		@issue9 = " "
+		@issue9details
+		@issue9Fa = "fa fa-female"
+
+		@candidateQuickBio = " "
+		@candidateBorn = ""
+		@candidateSchool = ""
+		@candidateFamily = ""
+		@candidateStrangeFact1 = ""
+		@candidateStrangeFact2 = ""
+		@candidateStrangeFact3 = ""
+		@candidateAccomplishment1 = ""
+		@candidateAccomplishment2 = ""
+		@candidateAccomplishment3 = ""
+		
+		@source = " "
+
+		@candidateVideo = " "
+	end
+
 end
