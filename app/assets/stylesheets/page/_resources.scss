@@ -78,48 +78,22 @@
 			position: relative;
 			$resource-width: 30%;
 			
-			.row{
-				margin-left: 10%;
+			.list{
+				@include container;
 				margin-top: 5%;
+				margin-left: 5%;
 
-				#poll-locator{
-					width: $resource-width;
+				#resource-topic{
+					@include span(3 of 12);
 					
+					&:last-child
+					{
+						@include span(3 of 12 last);
+					}
+
 					i{
 						@include i;
 					}
-					
-					i:hover{
-						@include grow;
-					}
-
-					h2{
-						@include h2;
-					}	
-				}
-
-				#register-vote{
-					width: $resource-width;
-
-					i{
-						@include i;
-					}	
-					
-					i:hover{
-						@include grow;
-					}
-
-					h2{
-						@include h2;
-					}	
-				}
-
-				#something{
-					width: $resource-width;
-
-					i{
-						@include i;
-					}	
 					
 					i:hover{
 						@include grow;
@@ -133,3 +107,5 @@
 		}
 	}
 }
+
+
