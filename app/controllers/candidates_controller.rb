@@ -8,65 +8,7 @@ class CandidatesController < ApplicationController
   end
 
   def hillaryclinton
-   	@candidateName = "Hillary Clinton"
-   	@lastname ="Clinton"
-  	@candidateTitle = "Running for the democratic party- 2 times the secretary of state and NY state senator"
-  	@affiliation = "democrat"
-  	@notAffiliated ="republican"
-	@candidateCoverPhoto = "/images/candidates/coverHilary1.jpg"
-	@candidateCoverPhoto1 = "/images/candidates/coverHilary2.jpg"
-
-	@candidateIssueOverview = "Her mission is to renew the basic bargain of America: If you work hard and do your part, you and your family should be able to get ahead and stay ahead.  And when you get ahead, America will get ahead too.  The three main ingredients to grow incomes: Stronger Growth, Fairer Growth, Long-Term Growth"
-	@issue1 = "Campaign finace reform"
-	@issue1details = "Our democracy should work for everyone, not just the wealthy and well-connected.We have to end the flood of secret, unaccountable money that is distorting our elections."
-	@issue1Fa = "fa fa-bar-chart"
-
-	@issue2 = "Campus sexual assault"
-	@issue2details = "An estimated one in five women report being sexually assaulted while in college. Hillary will fight to bring an end to sexual assault on America’s campuses."
-	@issue2Fa = "fa fa-female"
-
-	@issue3 = "Climate change and energy"
-	@issue3details = "Climate change is an urgent challenge that threatens all of us. The United States is already taking steps to invest in our clean energy future, but we need to do more. We need to take bold action to combat climate change."
-	@issue3Fa = "fa fa-sun-o"
-
-	@issue4 = "College"
-	@issue4details = "Hillary has a vision for America in which education is attainable for all. The New College Compact will ensure that costs aren’t a barrier to college and that debt doesn’t hold Americans back."
-	@issue4Fa = "fa fa-graduation-cap"
-
-	@issue5 = "Criminal justice reform"
-	@issue5details = "Our criminal justice system is out of balance. Although the United States has less than 5 percent of the world’s population, we have almost 25 percent of the total prison population."
-	@issue5Fa = "fa fa-gavel"
-
-	@issue6 = "Disability rights"
-	@issue6details = " We must continue to expand opportunities for all Americans. We should acknowledge how the disabilities community has played such an important role in changing things for the better in our country."
-	@issue6Fa = "fa fa-wheelchair"
-
-	@issue7 = "Early childhood education"
-	@issue7details = "She believes getting off to a good start should be our children's birthright, part of the basic bargain that we have with each other as a nation. Every child should have the tools and the skills to thrive in tomorrow's economy, especially those kids from our most vulnerable and at-risk communities."
-	@issue7Fa = "fa fa-birthday-cake"
-
-	@issue8 = "Economy"
-	@issue8details = "Hillary believes the defining economic challenge of our time is raising incomes for hardworking Americans.  Too many families are working harder and harder, but still not getting ahead. Our country is standing again, but we’re not yet running the way we should be."
-	@issue8Fa = "fa fa-dollar"
-
-	@issue9 = "Gun viloence protection"
-	@issue9details = "While gun ownership is part of the fabric of many law-abiding communities, too many families in America have suffered from gun violence. About 33,000 Americans are killed by guns each year. That is unacceptable. It is a rebuke to this nation we love."
-	@issue9Fa = "fa fa-shield"
-
-	@candidateQuickBio = "Hillary Clinton has served as Secretary of State, Senator from New York, First Lady of the United States, First Lady of Arkansas, a practicing lawyer and law professor, activist, and volunteer, but the first things her friends and family will tell you is that she’s never forgotten where she came from or who she’s been fighting for throughout her life."
-	@candidateBorn = "Born in Park ridge, Chicago, Illinois"
-	@candidateSchool = "Hillary graduated from Wellesley College and then went to Yale Law School"
-	@candidateFamily = "Her dad, Hugh, was a World War II Navy veteran and a small business man with a drapery business that designed, printed, and sold his draperies. Hillary, her mom, and her two brothers helped out in the business whenever they could."
-	@candidateStrangeFact1 = "Hillary was the first First Lady to hold a postgraduate degree (Yale Law, 1973) and to run for and be elected Senator (NY, 2000)"
-	@candidateStrangeFact2 = "Shortly before she married Bill Clinton in 1975, Hillary tried to join the Marines."
-	@candidateStrangeFact3 = "Hillary Clinton wrote to NASA as a child inquiring how to become an astronaut. NASA replied that girls could not be astronauts."
-	@candidateAccomplishment1 = "Fought for children and families for 40 years and counting."
-	@candidateAccomplishment2 = "Helped provide millions of children with health care."
-	@candidateAccomplishment3 = "Helped get 9/11 first responders the health care they needed."
-	
-	@source = "www.hillaryclinton.com"
-
-	@candidateVideo = "https://www.youtube.com/embed/2HkCYLcDB5I"
+  	@candidate = Candidate.find_by(full_name: "Hillary Clinton");
   end
 
 
