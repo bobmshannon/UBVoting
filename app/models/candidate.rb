@@ -19,4 +19,5 @@ class Candidate
   embeds_many :strange_facts
   embeds_many :accomplishments
   embeds_many :photos
+  embeds_many :states
 end
