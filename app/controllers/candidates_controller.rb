@@ -8,71 +8,12 @@ class CandidatesController < ApplicationController
   end
 
   def hillaryclinton
-  	@candidate = Candidate.find_by(full_name: "Hillary Clinton");
+  	@candidate = Candidate.find_by(full_name: "Hillary Clinton")
   end
 
-
   def bencarson
-   	@candidateName = "Ben Carson"
-   	@lastname = "Carson"
-  	@candidateTitle = "Former neurosergeon, Dr Ben Carson"
-  	@affiliation = "republican"
-  	@notAffiliated ="democrat"
-	@candidateCoverPhoto = "/images/candidates/coverCarson1.jpg"
-	@candidateCoverPhoto1 = "/images/candidates/coverCarson2.jpg"
-
-	@candidateIssueOverview = "Ben Carson is ...."
-	@issue1 = "Protecting Innocent Life"
-	@issue1details = "I am unabashedly and entirely pro-life. Human life begins at conception and innocent life must be protected. As a pediatric neurosurgeon, I took the Hippocratic Oath to “First, Do No Harm.”. Protecting innocent life is a duty consistent with that solemn oath."
-	@issue1Fa = "fa fa-support"
-
-	@issue2 = "Balanced budget amendment"
-	@issue2details = "We must ratify a Balanced Budget Amendment to the Constitution in order to restore fiscal responsibility to the federal government’s budget."
-	@issue2Fa = "fa fa-balance-scale"
-
-	@issue3 = "Education"
-	@issue3details = "In recent years, there has been a troubling trend of the U.S. Department of Education increasingly trying to dictate how children are educated in our primary and secondary schools. This must stop and Common Core must be overturned."
-	@issue3Fa = "fa fa-bus"
-
-	@issue4 = "Keep Gitmo(Guantanamo Bay) Open"
-	@issue4details = "Radical terrorists captured in countries all over the world must be detained safely while awaiting trial by military commission. Gitmo is, by far, the single best facility for this dangerous job."
-	@issue4Fa = "fa fa-user-secret"
-
-	@issue5 = "Health Care"
-	@issue5details = "ObamaCare is a looming disaster.  We didn’t need the monstrosity of the $1.2 trillion Affordable Care Act. Even after it is fully implemented for 10 years, 23 million people still won’t have any health insurance."
-	@issue5Fa = "fa fa-user-md"
-
-	@issue6 = "Keep Faith in Our Society"
-	@issue6details = " we need to reverse the recent trend of secular progressives using activist, federal judges to drive faith out of our society. Anyone who wishes to practice their faith, for example by praying privately, can and should be able to do so."
-	@issue6Fa = "fa fa-unsorted"
-
-	@issue7 = "Russia and Lessons Learned"
-	@issue7details = "Vladimir Putin’s Russia has become dangerously belligerent. It is actively destabilizing Ukraine, endangering Europe in the process and continuing to fuel destabilization in the Middle East. This newfound aggressiveness is a rising threat to the peace and security of the American people."
-	@issue7Fa = "fa fa-star-half-o"
-
-	@issue8 = "Protect the second amendment"
-	@issue8details = "The right of law-abiding citizens to own firearms is fundamental to our liberty. It was no accident that our Founding Fathers enshrined the right to own firearms as the 2nd element of the Bill of Rights, immediately after establishing our free speech rights."
-	@issue8Fa = "fa fa-shield"
-
-	@issue9 = "Stand by Israel, Our Bulwark Middle East Ally"
-	@issue9details = "Israel is our only democratic ally in the Middle East. She is surrounded by nations that threaten her very existence. We can never let her enemies believe that our deep commitment to Israel’s peace and security will waver.  We must always stand with Israel and her people."
-	@issue9Fa = "fa fa-user-plus"
-
-	@candidateQuickBio = "After graduation, Ben would work as an X-ray technician, a bank teller, a school bus driver, a supervisor for highway cleanup crews, and a crane operator in a steel factory, before being accepted into The University of Michigan School of Medicine. Ben and Candy were married, and after graduating medical school, Ben moved his family to Baltimore where he performed his residency training at the Johns Hopkins University Medical Center. Little did he know at the time, but Johns Hopkins and Baltimore, Maryland would become his home for most of his career, as Dr. Carson went on to direct pediatric neurosurgery at the Johns Hopkins Children’s Center for 29 years."
-	@candidateBorn = "Ben Carson was born in Detroit, Michigan"
-	@candidateSchool = "Attended Yale University for his Undergrad, later went to The University of Michigan School of Medicine and finally John Hopkins University"
-	@candidateFamily = "Ben grew up in a poor single parent house hold. His mother always pushed him to excel at what he wishes to do"
-	@candidateStrangeFact1 = "There was a movie made about Ben's life, the title is Gifted Hands "
-	@candidateStrangeFact2 = "He is a cancer survivor"
-	@candidateStrangeFact3 = "His mother only completed the third grade"
-	@candidateAccomplishment1 = "He performed the first successful separation of craniopagus (Siamese) twins joined at the back of the head"
-	@candidateAccomplishment2 = "he was awarded the Presidential Medal of Freedom by President Bush, the highest civilian honor in the United States"
-	@candidateAccomplishment3 = "In 2001, Dr. Carson was named by CNN and TIME Magazine as one of the nation’s 20 foremost physicians and scientists."
-	
-	@source = "www.bencarson.com"
-
-	@candidateVideo = "https://www.youtube.com/embed/1AOh0_iWif0"
-	end
+	@candidate = Candidate.find_by(full_name: "Ben Carson")
+  end
 
 	def marcorubio
    	@candidateName = "Marco Rubio"
