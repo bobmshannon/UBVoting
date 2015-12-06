@@ -25,9 +25,30 @@
 				color: #001f3f;
 			}
 
-	@mixin p{
-
+	@mixin break {
+		@include breakpoint(700px){		
+			.list{
+				@include container;
+				margin-top: 10%;
+				max-width: 85%;
+				@include breakpoint(700px){		
+					.resource-topic{
+						@include span(3 of 12);
+							float: left !important;
+		    				margin-left: 7% !important;
+						&:last-child{
+							@include span(3 of 12 last);
+						}
+					}
+						
+				}	
+				
+				i{	
+					@include i;
+				}
 			}
+		}
+	}
 		   	
 
 
@@ -61,49 +82,57 @@
 	
 	#resources{
 		background-color: #bb0f19;
-		height: 600px;
+		overflow: hidden;
 		width: 100%;
 
 		#election{
 			position: relative;
-			top: 50px;
+			top: 10px;
 			text-align: center;
-			font-size: 50px;
+			font-size: 37.5px;
 			color: whitesmoke;
+		}
+
+		@include breakpoint(700px){
+			#election{
+				font-size: 50px;
+			}
 		}
 
 		#resources-icons{
 			top: 5%;
-			height: 40vh;
 			position: relative;
 			$resource-width: 30%;
-			
-			.list{
-				@include container;
-				margin-top: 5%;
-				margin-left: 5%;
-
-				#resource-topic{
-					@include span(3 of 12);
+				.list{
+					max-width: 85%;
+					margin-top: 5%;
 					
-					&:last-child
-					{
-						@include span(3 of 12 last);
-					}
+					.resource-topic{
+						width: 100%;
+						margin-left: 7%;
 
-					i{
-						@include i;
 					}
-					
-					i:hover{
-						@include grow;
-					}
-
-					h2{
-						@include h2;
-					}	
 				}
-			}
+						i{
+							@include i;
+							left: 0%;
+						}
+						
+						i:hover{
+							@include grow;
+						}
+
+						h2{
+							@include h2;
+						}
+			
+				@include breakpoint(700px){		
+					@include break;
+				}
+			
+				@media screen and (min-width: 480px){
+					@include break;
+				}
 		}
 	}
 }
