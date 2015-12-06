@@ -131,7 +131,14 @@ module.exports = function( grunt ) {
 					'app/assets/javascripts/tweet_map.js'
 					]
 				}
-			}
+			},
+			candidates: {
+				files: {
+					'public/javascripts/candidates.js': [
+					'app/assets/javascripts/candidates.js'
+					]
+				}
+			},			
 		},
 		cssmin: {
 			options: {

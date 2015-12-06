@@ -1,2 +1,8 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(document).ready(function() {
+	if( $(window).width() > 999 ) {
+		headerHeight = $('header').height();
+		windowHeight = $(window).height();
+		$('#coverphoto').height(windowHeight - headerHeight);
+		$('#coverphoto .overlay').height(windowHeight - headerHeight);
+	}
+});

@@ -78,12 +78,6 @@
 		padding: 90px 0;
 	}
 
-	.center
-	{
-		text-align: center;
-		margin-top: 5%;
-    }
-
 	.left
 	{
 		text-align: left;
@@ -94,16 +88,110 @@
 		text-align: right;
 	}
 
-	#coverphoto .bg-photo
+	// Source: http://codepen.io/pcridesagain/pen/GweAj
+	.us-flag{
+		left: -250px;
+		top: 10%;
+		margin-left: 50%;
+		position: absolute;
+		display: block;
+		width: 500px;
+		height: 20px;
+		background: #cc0000;
+		box-shadow: 0 20px 0 #f3f3f3, 0 40px 0 #cc0000, 0 60px 0 #f3f3f3, 0 80px 0 #cc0000, 0 100px 0 #f3f3f3, 0 120px 0 #cc0000, 0 140px 0 #f3f3f3, 0 160px 0 #cc0000, 0 180px 0 #f3f3f3, 0 200px 0 #cc0000, 0 220px 0 #f3f3f3, 0 240px 0 #cc0000;
+	}
+
+	.us-flag:before{
+		content: "\0020";
+		background: #191b6d;
+		display: block;
+		width: 200px;
+		height: 140px;
+		position: absolute;
+	}
+	.us-flag:after{
+		content: "\2605";
+		font-size: 14px;
+		color: #f3f3f3;
+		text-style: none;
+		display: block;
+		width: 500px;
+		position: absolute;
+		margin: 5px;
+		text-shadow: 35px 0 0 #f3f3f3, 70px 0 0 #f3f3f3, 105px 0 0 #f3f3f3, 140px 0 0 #f3f3f3, 175px 0 0 #f3f3f3, 17px 14px 0 #f3f3f3, 52px 14px 0 #f3f3f3,   87px 14px 0 #f3f3f3,  122px 14px 0 #f3f3f3, 157px 14px 0 #f3f3f3, 0 28px 0 #f3f3f3, 35px 28px 0 #f3f3f3, 70px 28px 0 #f3f3f3, 105px 28px 0 #f3f3f3, 140px 28px 0 #f3f3f3, 175px 28px 0 #f3f3f3, 17px 42px 0 #f3f3f3, 52px 42px 0 #f3f3f3,   87px 42px 0 #f3f3f3,  122px 42px 0 #f3f3f3, 157px 42px 0 #f3f3f3, 0 56px 0 #f3f3f3, 35px 56px 0 #f3f3f3, 70px 56px 0 #f3f3f3, 105px 56px 0 #f3f3f3, 140px 56px 0 #f3f3f3, 175px 56px 0 #f3f3f3,    17px 70px 0 #f3f3f3, 52px 70px 0 #f3f3f3,   87px 70px 0 #f3f3f3,  122px 70px 0 #f3f3f3, 157px 70px 0 #f3f3f3, 0 84px 0 #f3f3f3, 35px 84px 0 #f3f3f3, 70px 84px 0 #f3f3f3, 105px 84px 0 #f3f3f3, 140px 84px 0 #f3f3f3, 175px 84px 0 #f3f3f3, 17px 98px 0 #f3f3f3, 52px 98px 0 #f3f3f3,   87px 98px 0 #f3f3f3,  122px 98px 0 #f3f3f3, 157px 98px 0 #f3f3f3, 0 112px 0 #f3f3f3, 35px 112px 0 #f3f3f3, 70px 112px 0 #f3f3f3, 105px 112px 0 #f3f3f3, 140px 112px 0 #f3f3f3, 175px 112px 0 #f3f3f3;
+	}
+
+	#coverphoto
 	{
-		padding-bottom: 75vh;
-		left: 0;
-		top: 0;
+		@include clearfix;
 		background-repeat: no-repeat;
 		background-size: cover;
-		//width: 100%;
-		height: 80vh;
-		display: block;
+		text-align: center;
+		min-height: 500px;
+	}
+
+	#cand-overview
+	{
+		@include inline-block;
+		background: rgba(13, 31, 95, 0.50);
+		border: 5px solid rgba(0, 0, 0, 0.2);
+		padding: 25px;
+		min-width: 290px;
+
+		h1,
+		h2
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		h2
+		{
+			margin: 5px 0;
+		}
+
+		.button-bar
+		{
+			.btn
+			{
+				margin: 5px;
+				font-weight: bold;
+			}
+		}
+
+		ul.social-bar
+		{
+			list-style-type: none;
+			margin: 15px 0 10px 0;
+
+			li
+			{
+				@include inline-block;
+				margin: 0 5px;
+			}
+
+			li a 
+			{
+				@include border-radius(5px);
+				display: block;
+			    background: $white;
+			    height: 30px;
+			    line-height: 30px;
+			    width: 30px;
+			    font-size: 16pt;
+			    color: #538af2;
+			}
+
+			li a:hover
+			{
+				color: #7ea7f5;
+			}
+
+			li a:focus
+		    {
+		    	@include box-shadow(inset 0 1px 4px rgba(0, 0, 0, 0.3));
+		    }
+		}
 	}
     
 	#on-the-issues
