@@ -1,177 +1,109 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body class = "candidates">
-
-  <section id="coverphoto">
-    <div class="bg-photo" style="background-image: url(<%=@candidateCoverPhoto%>)">
-    <div class="container">
-      <div class="center">
-        <div class ="float-right">
-            <h1><%=@candidateName %></h1>
-            <div class = "float-up">
-            <h2><%=@candidateTitle %></h2>
-          </div>
+<section id="coverphoto">
+        <div class="bg-photo" style="background-image: url(<%= @candidate.photos[0].url %>)">
+            <div class="container">
+                <div class="center">
+                    <div class="float-right">
+                        <h1><%= @candidate.full_name %></h1>
+                        <div class="float-up">
+                            <h2><%= @candidate.title %></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <section class = "<%=@affiliation%>" id="on-the-issues">
+<section class="<%= @candidate.party_affiliation.downcase %>" id="on-the-issues">
     <div class="container">
-      <div class="center">
-        <h2><%= @lastname %>'s Top Issues</h2>
-        <p><%= @candidateIssueOverview %></p>
+        <div class="center">
+            <h2><%= @candidate.last_name %>'s Top Issues</h2>
+            <p><%= @candidate.issues_overview %></p>
         </div>
 
         <div class="row">
-          <div class="issues">
-            <div class="col-md-4 col-sm-6">
-              <div class="issue-spacing">
-                <i class="<%= @issue1Fa %>"></i>
-                <h2><%=@issue1%></h2>
-                <h3><%=@issue1details%></h3>
-              </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue2Fa %>"></i>
-              <h2><%=@issue2%></h2>
-              <h3><%=@issue2details%></h3>
+            <div class="issues">
+                <% for issue in @candidate.issues %>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="issue-spacing">
+                            <i class="<%= issue.fa %>"></i>
+                            <h2><%= issue.title %></h2>
+                            <h3><%= issue.desc %></h3>
+                        </div>
+                    </div>
+                <% end %>
             </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue3Fa %>"></i>
-              <h2><%=@issue3%></h2>
-              <h3><%=@issue3details%></h3>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue4Fa %>"></i>
-              <h2><%=@issue4%></h2>
-              <h3><%=@issue4details%></h3>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue5Fa %>"></i>
-              <h2><%=@issue5%></h2>
-              <h3><%=@issue5details %></h3>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue6Fa %>"></i>
-              <h2><%=@issue6%></h2>
-              <h3><%=@issue6details %></h3>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue7Fa %>"></i>
-              <h2><%=@issue7%></h2>
-              <h3><%=@issue7details %></h3>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue8Fa %>"></i>
-              <h2><%=@issue8%></h2>
-              <h3><%=@issue8details %></h3>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6">
-            <div class="issue-spacing">
-              <i class="<%= @issue9Fa %>"></i>
-              <h2><%=@issue9%></h2>
-              <h3><%=@issue9details %></h3>
-            </div>
-          </div>
-
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section id="about" class ="<%=@affiliation%>">
+<section class="<%= @candidate.party_affiliation.downcase %>" id="about">
     <div class="container">
-      <div class="center">
-        <h2><%= @lastname %>'s Roots</h2>
-        <p> <%= @candidateQuickBio %>
+        <div class="center">
+            <h2><%= @candidate.last_name %>'s roots</h2>
+            <p><%= @candidate.bio %></p>
 
-        <div class = "float-down">
-          <div class="row">
-            <div class="col-md-4 col-sm-6">
-              <h3>Upbringings</h3>
-              <ul>
-                <li><%=@candidateBorn%></li>
-                <li><%=@candidateFamily%></li>
-                <li><%=@candidateSchool%></li>
-              </ul>
+            <div class="float-down">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <h3>Upbringings</h3>
+
+                        <ul>
+                            <li><%= @candidate.city_of_birth %></li>
+                            <li><%= @candidate.family_bio %></li>
+                            <li><%= @candidate.school %></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h3>Accomplishments</h3>
+
+                        <ul>
+                            <% for accomplishment in @candidate.accomplishments %>
+                                <li><%= accomplishment.text %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h3>Strange facts</h3>
+
+                        <ul>
+                            <% for fact in @candidate.strange_facts %>
+                                <li><%= fact.text %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <p><%= @candidate.site_url %></p>
+                </div>
             </div>
-
-            <div class="col-md-4 col-sm-6">
-              <h3>Accomplishments</h3>
-              <ul>
-                <li><%=@candidateAccomplishment1%> </li>
-                <li><%=@candidateAccomplishment2%> </li>
-                <li><%=@candidateAccomplishment3%> </li>
-              </ul>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <h3>Strange facts</h3>
-              <ul>
-                <li><%=@candidateStrangeFact1%></li>
-                <li><%=@candidateStrangeFact2%> </li>
-                <li><%=@candidateStrangeFact3%> </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class = "center">
-            <p><%=@source%></p>
-          </div>
-
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section class= "<%=@notAffiliated%>" id="speeches-debates">
+<section class="<%= @candidate.rival_party.downcase %>" id="speeches-debates">
     <div class="container">
-      <div class="center">
-        <h2>Why <%= @candidateName %>?</h2> 
-        <iframe width="750" height="350" src="<%= @candidateVideo %>" frameborder="0" allowfullscreen allowtransparency="true"> </iframe>
-      </div>
+        <div class="center">
+            <h2>Why <%= @candidate.full_name %>?</h2>
+            <iframe width="750" height="350" src="<%= @candidate.videos.last.embed_url %>" frameborder="0" allowfullscreen allowtransparency="true"> </iframe>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section id="footerphoto">
-    <div class="bg-photo" style="background-image: url(<%=@candidateCoverPhoto1%>)">
-    <div class="shade-photo">
-    <div class ="container">
-      <div class ="center">
-      <h1>So, the question remains</h1>
-      <h2>Who will UBVoting for?</h2>
-      </div>
-      </div>
+<section id="footerphoto">
+    <div class="bg-photo" style="background-image: url(<%= @candidate.photos[1].url %>)">
+        <div class="shade-photo">
+            <div class="container">
+                <div class="center">
+                    <h1>So, the question remains</h1>
+                    <h2>Who will UBVoting for?</h2>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
-
-
-</body>          
-
+</section>
 
 <% content_for :javascript_includes do %>
-  <%= javascript_include_tag "candidates.js" %>
+<%= javascript_include_tag "candidates.js" %>
 <% end %>
+
