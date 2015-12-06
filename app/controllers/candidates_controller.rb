@@ -85,66 +85,8 @@ class CandidatesController < ApplicationController
 		@candidateVideo = " "
 	end
 
-		def tedcruz
-		@candidateName = "Ted Cruz"
-	   	@lastname = "Cruz"
-	  	@candidateTitle = "Senator of Texas"
-	  	@affiliation = "republican"
-	  	@notAffiliated ="democrat"
-		@candidateCoverPhoto = "/images/candidates/coverCruz1.jpg"
-		@candidateCoverPhoto1 = "/images/candidates/coverCruz2.jpg"
-
-		@candidateIssueOverview = " "
-		@issue1 = "Religious Liberty"
-		@issue1details = "Defended against Obamacare’s contraception mandate.  Successfully defended the words “under God” in the Texas Pledge of Allegiance.  "
-		@issue1Fa = "fa fa-fort-awesome"
-
-		@issue2 = "Second Amendment"
-		@issue2details = "Played a crucial role in preventing federal legislation to restrict the Second Amendment rights of Americans. Authored legislation to strengthen the Second Amendment rights of Americans by allowing interstate firearms sales."
-		@issue2Fa = "fa fa-shield"
-
-		@issue3 = "U.S. Sovereignty"
-		@issue3details = "Fought and won a landmark ruling for U.S. sovereignty at the U.S. Supreme Court against 90 foreign nations and the President to ensure the supremacy of U.S. legal system against encroachment by international treaties and rulings of the “World Court.”"
-		@issue3Fa = "fa fa-flag"
-
-		@issue4 = "Think of a title"
-		@issue4details = "Opposed the Obama Administration’s dangerous deal with Iran that would allow Iran to pursue nuclear weapons."
-		@issue4Fa = "fa fa-close"
-
-		@issue5 = "Think of a title"
-		@issue5details = "Spearheaded legislation passed unanimously by Congress and signed by the President to prevent known terrorists from entering the United States as ambassadors to the United Nations."
-		@issue5Fa = "fa fa-hand-stop-o"
-
-		@issue6 = "Think of a title"
-		@issue6details = "Successfully pressured the Obama Administration to lift its unprecedented FAA ban on flights to Israel after exposing the move as, in essence, an economic boycott of our strongest ally in the Middle East."
-		@issue6Fa = "fa fa-legal"
-
-		@issue7 = "Think of a title"
-		@issue7details = "Led the charge on behalf of 13 states to successfully defend, before the U.S. Supreme Court, a federal law that bans one form of late-term abortion, the Partial Birth Abortion Act."
-		@issue7Fa = "fa fa-star-half-o"
-
-		@issue8 = "Think of a title"
-		@issue8details = "Advocated for an investigation into abortion practices in the U.S. to prevent the atrocities witnessed in Kermit Gosnell’s facility from ever happening again."
-		@issue8Fa = "fa fa-life-ring"
-
-		@issue9 = "Think of a title"
-		@issue9details = "Joined 18 states in successfully defending the New Hampshire parental-notification law before the U.S. Supreme Court."
-		@issue9Fa = "fa fa-cogs"
-
-		@candidateQuickBio = "In the U.S. Senate, Ted has led the fight to repeal Obamacare, to stop President Obama’s illegal and unconstitutional executive amnesty, and to defend life, marriage, the First Amendment, the Second Amendment, and our entire Bill of Rights. And most important, he’s kept his promise to speak the truth and do what he said he’d do."
-		@candidateBorn = "Ted was born in Calgary, Alberta, Canada"
-		@candidateSchool = "Ted Cruz graduated from Princeton University in 1992, and then from Harvard Law School in 1995"
-		@candidateFamily = "Ted's mother graduated from Rice University in 1950 with a degree in mathematics.  She later became a pioneer in the field of computing.  Ted's father after being tortured in Cuba, fled to the United States and later attended the University of Texas at Austin in 1957"
-		@candidateStrangeFact1 = "Cruz’s father was a Cuban immigrant who came to the U.S. with $100 sewn into his underwear."
-		@candidateStrangeFact2 = "Ted Cruz was born in Canada"
-		@candidateStrangeFact3 = "Cruz met his wife, who works for Goldman Sachs, while working on George W. Bush's presidential campaign in 2000"
-		@candidateAccomplishment1 = "As Solicitor General for the State of Texas and in private practice, Ted authored more than 80 U.S. Supreme Court briefs and argued 43 oral arguments"
-		@candidateAccomplishment2 = "Has won an unprecedented series of landmark national victories including defending U.S. sovereignty against the UN and the World Court in Medellin v. Texas"
-		@candidateAccomplishment3 = "In the U.S. Senate, Ted has led the fight to repeal Obamacare"
-		
-		@source = "www.tedcruz.org"
-
-		@candidateVideo = "https://www.youtube.com/embed/YB_4Heb47d8"
+	def tedcruz
+		@candidate = Candidate.find_by(full_name: "Ted Cruz")
 	end
 
   def jebbush

@@ -5,5 +5,4 @@ class State
 	field :positiveSentiment
 	field :negativeSentiment
 	embedded_in :candidate
-
 end
