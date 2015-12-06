@@ -21,8 +21,8 @@
 	@mixin grow{transform: scale(1.1);}						 
 
 	@mixin	h2{
-				text-shadow: 1px 1px #85144b;
 				color: #001f3f;
+				font-weight: 600;
 			}
 
 	@mixin break {
