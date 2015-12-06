@@ -26,12 +26,12 @@
 			}
 
 	@mixin break {
-		@include breakpoint(700px){		
+		@include breakpoint(600px){		
 			.list{
 				@include container;
-				margin-top: 10%;
+				margin-top: 5%;
 				max-width: 85%;
-				@include breakpoint(700px){		
+				@include breakpoint(600px){		
 					.resource-topic{
 						@include span(3 of 12);
 							float: left !important;
@@ -93,7 +93,7 @@
 			color: whitesmoke;
 		}
 
-		@include breakpoint(700px){
+		@include breakpoint(600px){
 			#election{
 				font-size: 50px;
 			}
@@ -108,8 +108,9 @@
 					margin-top: 5%;
 					
 					.resource-topic{
-						width: 100%;
-						margin-left: 7%;
+						width: 85%;
+						position: relative;
+						left: 5%;
 
 					}
 				}
@@ -126,7 +127,7 @@
 							@include h2;
 						}
 			
-				@include breakpoint(700px){		
+				@include breakpoint(600px){		
 					@include break;
 				}
 			
