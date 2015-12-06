@@ -14,6 +14,7 @@ class Candidate
   field :city_of_birth
   field :date_of_birth
   field :family_bio
+  embeds_many :hashtags
   embeds_many :issues
   embeds_many :videos
   embeds_many :strange_facts
