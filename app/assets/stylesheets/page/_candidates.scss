@@ -196,27 +196,15 @@
 			font-weight: 700;
 		}
 	}
-	
-    
-	.democrat
-	{
-		background: #5bc0de;
-		padding-bottom: 40px;
-		text-shadow: none;
-	}
-
-	.republican
-	{
-		background: #bb0f19;
-		padding-bottom: 40px;
-	}
 
 	#on-the-issues{
 		@include clearfix;
+		padding-bottom: 40px;
 
 		.section-heading
 		{
 			padding: 20px 0;
+			text-align: center;
 
 			h1
 			{
@@ -233,6 +221,26 @@
 				margin: 10px 0 0 0;
 				color: rgba(0,0,0,.75);
 			}
+		}
+
+		&.republican
+		{
+			background: #bb0f19;
+
+			.issue-icon i 
+			{
+				color: #e81e2b;
+			}				
+		}
+
+		&.democrat 
+		{
+			background: #5bc0de;
+
+			.issue-icon i 
+			{
+				color: #217695;
+			}	
 		}
 	}
 		
@@ -307,7 +315,6 @@
 
 		.issue-icon i 
 		{			
-			color: #217695;
 			font-size: 48px;
 		}
 	}
