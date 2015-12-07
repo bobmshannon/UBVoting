@@ -22,26 +22,25 @@
 </section>
 
 <section class="<%= @candidate.party_affiliation.downcase %>" id="on-the-issues">
-    <div class="container">
-        <div class="center">
-            <h2><%= @candidate.last_name %>'s Top Issues</h2>
+    <div class="wrapper">
+        <div class="section-heading">
+            <h1><%= @candidate.last_name %>'s Top Issues</h1>
             <p><%= @candidate.issues_overview %></p>
         </div>
 
-        <div class="row">
-            <div class="issues">
-                <% for issue in @candidate.issues %>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="issue-spacing">
-                            <i class="<%= issue.fa %>"></i>
-                            <h2><%= issue.title %></h2>
-                            <div id = "hiddenchild">
-                                    <h3><%= issue.desc %></h3>
-                            </div>
-                        </div>
+        <ul class="issues">
+            <% for issue in @candidate.issues %>
+                <li class="issue">
+                    <div class="issue-icon">
+                        <i class="<%= issue.fa %>"></i>
                     </div>
-                <% end %>
-            </div>
+
+                    <div class="issue-content">
+                        <h2><%= issue.title %></h2>
+                        <p id="hiddenchild"><%= issue.desc %></p>
+                    </div>
+                </li>
+            <% end %>
         </div>
     </div>
 </section>

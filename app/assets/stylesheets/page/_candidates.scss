@@ -33,21 +33,6 @@
 
 	}
 
-
-	#on-the-issues{
-		.container{
-			.center{
-				h2{
-					font-size: 35px;
-					font-weight: 700;
-					color: whitesmoke;
-					margin-top: 5px;
-					margin-bottom: 10px;
-				}
-			}
-		}	
-	}
-		
 	h3
 	{
 		font-size: 16px;
@@ -70,22 +55,6 @@
 	h4
 	{
 		font-size: 16px;
-	}
-
-
-	body > section
-	{
-		padding: 90px 0;
-	}
-
-	.left
-	{
-		text-align: left;
-	}
-
-	.right
-	{
-		text-align: right;
 	}
 
 	// Source: http://codepen.io/pcridesagain/pen/GweAj
@@ -201,11 +170,6 @@
 		}
 	}
     
-	#on-the-issues
-    {
-		position: relative;
-    }
-    
 	#about.democrat
 	{
 		position: relative;
@@ -247,49 +211,134 @@
 		padding-bottom: 40px;
 	}
 
-	.issues
+	#on-the-issues{
+		@include clearfix;
+
+		.section-heading
+		{
+			padding: 20px 0;
+
+			h1
+			{
+				@include inline-block;
+				font-size: 32pt;
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+				border-bottom: 3px solid rgba(0, 0, 0, 0.20);
+				padding-bottom: 10px;
+			}
+
+			p
+			{
+				font-size: 16pt;
+				margin: 10px 0 0 0;
+				color: rgba(0,0,0,.75);
+			}
+		}
+	}
+		
+	ul.issues
 	{
 		padding: 0;
+		margin: 0;
+		list-style-type: none;
 	}
 
-	.issue-spacing 
+	ul.issues li
 	{
-		i
+		@include border-radius(5px);
+		width: 49%;
+		min-height: 125px;
+		margin: 0 0 15px 0;
+	}
+
+	ul.issues li:nth-child(odd)
+	{
+		float: left;
+	}
+
+	ul.issues li:nth-child(even)
+	{
+		float: right;
+	}
+
+	.issue
+	{
+		@include clearfix;
+		@include transition(0.3s);
+		display: table;
+		height: 140px;
+		background: $white;
+		padding-right: 15px;
+
+		&:hover
 		{
-			@include border-radius(100%);
-			background: #ffffff none repeat scroll 0 0;
-			border: 3px solid #ffffff;
+			background: rgb(249, 249, 249);
+		}
+
+		.issue-content
+		{
+    		display: table-cell;
+    		vertical-align: middle;
+		}
+
+		.issue-content h2
+		{
+			color: black;
+			margin: 0;
+			padding: 0;
+			font-size: 18pt;
+		}
+
+		.issue-content p
+		{
+			margin: 0;
+			padding: 0;
+		    color: rgb(88, 87, 87);
+		    font-size: 13pt;
+		}
+
+		.issue-icon
+		{
+			display: table-cell;
+    		vertical-align: middle;
+    		text-align: center;
+    		width: 100px;
+		}
+
+		.issue-icon i 
+		{			
 			color: #217695;
-			float: left;
 			font-size: 48px;
-			height: 110px;
-			line-height: 110px;
-			margin: 3px 25px 3px 3px;
-			text-align: center;
-			width: 110px;
-			transition: all .2s ease-in-out;
-		}
-
-		i:hover
-		{
-			transform: scale(1.1);
-		}
-
-		.h2
-		{
-			margin-top: 15px;
 		}
 	}
 
-	.float-down
-	{
-		margin-top: 20px;
+	@include breakpoint(max-width 1249px) {
+		.issue 
+		{
+			height: 170px;
+		}
 	}
 
-	.float-up
-	{
-		margin-top: 5px;
-		margin-bottom: 5px;
+	@include breakpoint(max-width 999px) {
+		.issue 
+		{
+			height: 210px;
+		}
+	}
+
+	@include breakpoint(max-width 899px) {
+		.issue 
+		{
+			height: 260px;
+		}
+	}
+
+	@include breakpoint(max-width 799px) {
+		ul.issues li
+		{
+			width: 100%;
+			float: none !important;
+		}
 	}
 
 	.speeches
