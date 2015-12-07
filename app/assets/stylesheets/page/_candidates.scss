@@ -128,6 +128,13 @@
 		background-size: cover;
 		text-align: center;
 		min-height: 500px;
+
+		.overlay
+		{
+			background: rgba(0, 0, 0, 0.25);
+    		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.48);
+    		border-bottom: 1px solid rgba(0, 0, 0, 0.39);
+		}
 	}
 
 	#cand-overview
