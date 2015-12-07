@@ -1,6 +1,15 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $( document ).ready(function() {
+	$(window).on('load resize', function() {
+		if( $(window).width() > 999 ) {
+			headerHeight = $('header').height();
+			windowHeight = $(window).height();
+			$('#coverphoto').height(windowHeight - headerHeight);
+			$('#coverphoto .overlay').height(windowHeight - headerHeight);
+		}
+	});
+
 	hide(document.querySelectorAll('h3'));
 	var container = document.querySelectorAll('#hidden');
 	createUniqueIDs(container);
