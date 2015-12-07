@@ -2,23 +2,33 @@
 // All this logic will automatically be available in application.js.
 $( document ).ready(function() {
 	hide(document.querySelectorAll('h3'));
+	var container = document.querySelectorAll('#hidden');
+	createUniqueIDs(container);
 
     function hide(description) {
-      description = description.length ? description : [description];
       for (var i = 0; i < description.length; i++) {
         description[i].style.visibility = 'hidden';
       }
     };
 
     function show(description){
-    	description = description.length ? description: [description];
     	for (var i = 0; i < description.length; i++){
     		description[i].style.visibility = 'visible';
     	}
     };
 
     $('i').hover(function(){
+    	
+		
     	setTimeout(function(){show(document.querySelectorAll('h3'));}, 900);
+    	
     });
+
+
+   function createUniqueIDs(array){
+            for (var i =0; i< array.length; i++){
+            	array[i].setAttribute('id','hiddenchild'+i);
+            }
+        };
 
 } );
