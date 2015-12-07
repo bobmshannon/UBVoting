@@ -35,7 +35,9 @@
                         <div class="issue-spacing">
                             <i class="<%= issue.fa %>"></i>
                             <h2><%= issue.title %></h2>
-                            <h3><%= issue.desc %></h3>
+                            <div id = "hidden">
+                                    <h3><%= issue.desc %></h3>
+                            </div>
                         </div>
                     </div>
                 <% end %>

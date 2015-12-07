@@ -245,24 +245,33 @@
 		padding: 0;
 	}
 
-	.issue-spacing i
+	.issue-spacing 
 	{
-		@include border-radius(100%);
-		background: #ffffff none repeat scroll 0 0;
-		border: 3px solid #ffffff;
-		color: #217695;
-		float: left;
-		font-size: 48px;
-		height: 110px;
-		line-height: 110px;
-		margin: 3px 25px 3px 3px;
-		text-align: center;
-		width: 110px;
-	}
+		i
+		{
+			@include border-radius(100%);
+			background: #ffffff none repeat scroll 0 0;
+			border: 3px solid #ffffff;
+			color: #217695;
+			float: left;
+			font-size: 48px;
+			height: 110px;
+			line-height: 110px;
+			margin: 3px 25px 3px 3px;
+			text-align: center;
+			width: 110px;
+			transition: all .2s ease-in-out;
+		}
 
-	.issue-spacing .h2
-	{
-		margin-top: 15px;
+		i:hover
+		{
+			transform: scale(1.1);
+		}
+
+		.h2
+		{
+			margin-top: 15px;
+		}
 	}
 
 	.float-down
