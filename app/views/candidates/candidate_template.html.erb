@@ -2,7 +2,7 @@
         <div class="overlay valign-wrap">
             <div class="valign">
                 <div id="cand-overview">
-                    <h1><%= @candidate.full_name %></h1>
+                    <h1><%= @candidate.full_name %> (<%= @candidate.party_affiliation[0].upcase %>)</h1>
                     <h2><%= @candidate.title %></h2>
                     
                     <ul class="social-bar">
