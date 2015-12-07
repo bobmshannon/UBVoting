@@ -58,9 +58,9 @@
                         <h3>Upbringings</h3>
 
                         <ul>
-                            <li><%= @candidate.city_of_birth %></li>
+                            <li><%= @candidate.full_name %> was born in <%= @candidate.city_of_birth %>.</li>
                             <li><%= @candidate.family_bio %></li>
-                            <li><%= @candidate.school %></li>
+                            <li><%= @candidate.full_name %> graduated from <%= @candidate.school %></li>
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-6">
