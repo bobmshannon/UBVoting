@@ -227,7 +227,8 @@
 		{
 			background: #bb0f19;
 
-			.issue-icon i 
+			.issue-icon i,
+			.issue-content a.toggle
 			{
 				color: #e81e2b;
 			}				
@@ -237,7 +238,8 @@
 		{
 			background: #5bc0de;
 
-			.issue-icon i 
+			.issue-icon i,
+			.issue-content a.toggle 
 			{
 				color: #217695;
 			}	
@@ -303,6 +305,12 @@
 			padding: 0;
 		    color: rgb(88, 87, 87);
 		    font-size: 13pt;
+		    display: none;
+		}
+
+		.issue-content a.toggle
+		{
+			font-size: 12pt;
 		}
 
 		.issue-icon
