@@ -1,4 +1,4 @@
-class Candidate
+class Person 
 	def initialize(name, twitterHandle, tags)
 		class << self; 
 			attr_accessor :name, 

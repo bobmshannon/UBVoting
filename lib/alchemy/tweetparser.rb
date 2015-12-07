@@ -1,17 +1,30 @@
+#!/usr/bin/env ruby
+require File.expand_path('../../../config/environment', __FILE__)
+
+require './alchemyapi'
+require './person.rb'
+
 class TweetParser
-	require './alchemyapi'
-	require './candidate.rb'
+	def initialize()
+		begin
+			@text = "bernie sanders is some guy #feelthebern"
+			@text.downcase!
+			@gaveSentiment = false 
+			bernie = Candidate.find_by(first_name: "Bernie")
+			puts bernie.first_name
+			bern = Person.new("Bernie Sanders","@berniesanders",
+					     ["#feelthebern","#bernie2016"])
+			trump  = Person.new("Donald Trump","@donaldtrump",
+					       ["#makeamericagreatagain","#trump2016"])
+			clinton  = Person.new("Hillary Clinton","@hillaryclinton",
+						 ["#imwithher","#hillary2016"])
+			@candidates = [bern, trump, clinton]
 
-	@text = "bernie sanders is some guy"
-	@text.downcase!
-	@gaveSentiment = false 
+			findCandidate()
+		end
+	end
 
-	bern = Candidate.new("Bernie Sanders","@berniesanders",["#feelthebern","#bernie2016"])
-	trump  = Candidate.new("Donald Trump","@donaldtrump",
-			       ["#makeamericagreatagain","#trump2016"])
-	clinton  = Candidate.new("Hillary Clinton","@hillaryclinton",
-				 ["#imwithher","#hillary2016"])
-	@candidates = [bern, trump, clinton]
+
 
 	def findCandidate()
 		@candidates.each {
@@ -67,5 +80,4 @@ end
 			end
 		end
 	end
-	findCandidate
 end

@@ -12,6 +12,6 @@
 /.vagrant/
 /.bundle/
 /README.md
-
+/lib/alchemy/api_key.txt
 # Ignore application configuration
 /config/application.yml
