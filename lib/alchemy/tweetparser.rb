@@ -7,7 +7,7 @@ require './person.rb'
 class TweetParser
 	def initialize()
 		begin
-			@text = "Bernie sanders is the best! and donald trump is the worst"
+			@text = "Bernie sanders is good but not realistic.  Donald trump will sell america. Hillary clinton is satan in the flesh.  and this is just some string testing everything"
 			@text.downcase!
 			@gaveSentiment = false 
 			initializeCandidates()
@@ -72,14 +72,10 @@ class TweetParser
 		if (@gaveSentiment == false || 
 		    @gaveSentiment == false && chosenCandidate != "")
 			response = alchemyapi.entities('text', text, { 'sentiment'=>1 })
-			puts response['entities']
-			puts ' '
-			puts ' '
 			if response['status'] = 'OK'
 				for entity in response['entities']
+					#This will be in it's own function
 					if entity['type'] == 'Person'
-						puts entity['text']
-						puts entity['sentiment']['type']
 						if(entity['sentiment']['type'] == 'positive')
 							foundCandi = Candidate.find_by(full_name_lower: entity['text'])
 							foundCandi.states.find_by(name: "Alabama").positiveSentiment += 1
@@ -88,6 +84,7 @@ class TweetParser
 							puts " "
 
 						end
+
 						if(entity['sentiment']['type'] == 'negative')
 							foundCandi = Candidate.find_by(full_name_lower: entity['text'])
 							foundCandi.states.find_by(name: "Ohio").negativeSentiment += 1
