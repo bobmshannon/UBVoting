@@ -79,14 +79,14 @@ TWEET_THRESHOLD = 1.minutes
 # +tweet+:: tweet object returned from Twitter API client
 def store_tweet(tweet)
     Tweet.create(
-        text: tweet.text,
-        id: tweet.id,
-        lang: tweet.lang,
-        source: tweet.source,
-        retweet_count: tweet.retweet_count,
-        favorite_count: tweet.favorite_count,
-        created_at: tweet.created_at,
-        url: tweet.uri
+        text: tweet[:text],
+        id: tweet[:id],
+        lang: tweet[:lang],
+        source: tweet[:source],
+        retweet_count: tweet[:retweet_count],
+        favorite_count: tweet[:favorite_count],
+        created_at: tweet[:created_at],
+        coordinates: tweet[:coordinates].reverse
     )
 end
 
@@ -137,7 +137,8 @@ def is_rate_limited(screen_name)
     end
 end
 
-# Do some filtering before a tweet is sent over the websocket.
+# Do some filtering before a tweet is sent over the websocket or stored
+# in the database.
 # 
 # Params:
 # +tweet+:: tweet object returned from Twitter API client
@@ -146,7 +147,7 @@ end
 # true if tweet matches any filter rules
 # false otherwise
 def is_filtered(tweet)
-	# Check if tweet location data is available
+    # Check if tweet location data is available
     if tweet[:place]
         return false
     end
@@ -159,17 +160,23 @@ end
 # Params:
 # +tweet+:: tweet object returned from Twitter API client
 def broadcast_tweet(tweet)
-    tweet = tweet.to_h
     html = auto_link(tweet[:text])
     tweet[:text_html] = html
 
     # Send tweet to all clients listening on "tweets" channel
     # and then trigger a "new_tweet" event on the client side.
-    unless is_filtered(tweet)
-    	coords = Geocoder.coordinates(tweet[:place][:full_name])
-    	tweet[:coordinates] = coords
-        WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
+    WebsocketRails[:tweets].trigger(:new_tweet, tweet.to_json)
+end
+
+def add_location(tweet)
+    if tweet[:place]
+        coords = Geocoder.coordinates(tweet[:place][:full_name])
+        tweet[:coordinates] = coords
+    else
+        tweet[:coordinates] = nil
     end
+
+    return tweet
 end
 
 $running = true
@@ -194,15 +201,23 @@ while($running) do
         # Initialize twitter stream and track specified topics
         streamclient.filter(options) do |object|
             if object.is_a?(Twitter::Tweet)
-                # Get the tweeter's screen name
-                screen_name = object.user.screen_name
+                # Convert tweet to hash for easier manipulation
+                object = object.to_h
 
-                # Store tweet in database
-                store_tweet(object)
+                # Get the tweeter's screen name
+                screen_name = object[:user][:screen_name]
+
+                # Get location information (if available)
+                object = add_location(object)
 
                 unless is_rate_limited(screen_name)
-                    # Broadcast tweet if user is not rate limited
-                    broadcast_tweet(object)
+                        unless is_filtered(object)
+                            # Broadcast tweet if user is not rate limited
+                            broadcast_tweet(object)
+
+                            # Store tweet in database
+                            store_tweet(object)
+                        end
 
                     # Record a tweeter's activity (for rate limiting)
                     record_activity(screen_name)
