@@ -3,6 +3,8 @@ class Candidate
   field :first_name
   field :last_name
   field :full_name
+  field :full_name_lower
+  field :twitter_handle
   field :party_affiliation
   field :rival_party
   field :bio
