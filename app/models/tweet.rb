@@ -29,4 +29,5 @@ class Tweet
   field :screen_name, type: String
   #Allowed time to tweet for user
   field :time, type: Integer 	
+  field :place_name, type: String
 end
