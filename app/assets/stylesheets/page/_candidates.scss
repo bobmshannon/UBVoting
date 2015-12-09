@@ -204,6 +204,10 @@
 
 		}
 
+		#cand-info
+		{
+			padding: 20px 0;
+		}
 		#cand-info .info-section
 		{
 			@include border-radius(5px);
@@ -223,7 +227,6 @@
 
 		#cand-info .info-section ul
 		{
-			margin: 0;
 			padding: 0 20px;
 			list-style-type: square;
 			font-size: 13pt;

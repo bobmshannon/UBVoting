@@ -88,9 +88,9 @@
             </div>
         </div>
 
-        <div class="center">
+        <!--<div class="center">
             <p><a href="<%= @candidate.site_url %>"> <%= @candidate.site_url %></a></p>
-        </div>
+        </div>-->
     </div>
 </section>
 
@@ -98,7 +98,7 @@
     <div class="container">
         <div class="center">
             <h2>Why <%= @candidate.full_name %>?</h2>
-            <iframe width="750" height="350" src="<%= @candidate.videos.last.embed_url %>" frameborder="0" allowfullscreen allowtransparency="true"> </iframe>
+            <iframe width="auto" height="350" src="<%= @candidate.videos.last.embed_url %>" frameborder="0" allowfullscreen allowtransparency="true"> </iframe>
         </div>
     </div>
 </section>
@@ -110,6 +110,10 @@
                 <div class="center">
                     <h1>So, the question remains</h1>
                     <h2>Who will UBVoting for?</h2>
+
+                    <div style="position:relative;">
+                        <b class="us-flag"></b>
+                    </div>
                 </div>
             </div>
         </div>
