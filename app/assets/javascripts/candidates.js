@@ -10,7 +10,7 @@ $( document ).ready(function() {
 		}
 	});
 
-    $('.issue h2 a').each(function() {
+    /*$('.issue h2 a').each(function() {
         $(this).on('click', function() {
             $(this).parent().parent().children('.issue-content p').toggle();
             $(this).parent().parent().children('.issue-content h2 i').toggleClass('fa-chevron-circle-up fa-chevron-circle-down');
@@ -20,8 +20,9 @@ $( document ).ready(function() {
                 text == "learn more" ? "show less" : "learn more");
             return false;
         });
-    });
+    });*/
 
+    /*
 	hide(document.querySelectorAll('h3'));
 	var container = document.querySelectorAll('#hidden');
 	createUniqueIDs(container);
@@ -51,5 +52,6 @@ $( document ).ready(function() {
             	array[i].setAttribute('id','hiddenchild'+i);
             }
         };
+    */
 
 } );

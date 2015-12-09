@@ -46,46 +46,50 @@
 </section>
 
 <section class="<%= @candidate.party_affiliation.downcase %>" id="about">
-    <div class="container">
-        <div class="center">
-            <h2><%= @candidate.last_name %>'s roots</h2>
-            <p><%= @candidate.bio %></p>
+    <div class="wrapper">
+        <h1><%= @candidate.last_name %>'s Biography</h1>
+        <p><%= @candidate.bio %></p>
 
-            <div class="float-down">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <h3>Upbringings</h3>
+        <div id="cand-info" class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="info-section">
+                    <h2>Upbringings</h2>
 
-                        <ul>
-                            <li><%= @candidate.full_name %> was born in <%= @candidate.city_of_birth %>.</li>
-                            <li><%= @candidate.family_bio %></li>
-                            <li><%= @candidate.full_name %> graduated from <%= @candidate.school %></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <h3>Accomplishments</h3>
-
-                        <ul>
-                            <% for accomplishment in @candidate.accomplishments %>
-                                <li><%= accomplishment.text %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <h3>Strange facts</h3>
-
-                        <ul>
-                            <% for fact in @candidate.strange_facts %>
-                                <li><%= fact.text %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="center">
-                    <p><a href="<%= @candidate.site_url %>"> <%= @candidate.site_url %></a></p>
+                    <ul>
+                        <li><%= @candidate.full_name %> was born in <%= @candidate.city_of_birth %>.</li>
+                        <li><%= @candidate.family_bio %></li>
+                        <li><%= @candidate.full_name %> graduated from <%= @candidate.school %></li>
+                    </ul>
                 </div>
             </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="info-section">
+                    <h2>Accomplishments</h2>
+
+                    <ul>
+                        <% for accomplishment in @candidate.accomplishments %>
+                            <li><%= accomplishment.text %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="info-section">
+                    <h2>Strange facts</h2>
+
+                    <ul>
+                        <% for fact in @candidate.strange_facts %>
+                            <li><%= fact.text %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="center">
+            <p><a href="<%= @candidate.site_url %>"> <%= @candidate.site_url %></a></p>
         </div>
     </div>
 </section>
