@@ -30,7 +30,8 @@
     "slick-carousel": "~1.5.8",
     "headroom.js": "~0.7.0",
     "Chart.js": "~1.0.2",
-    "slideout.js": "0.1.9"
+    "slideout.js": "0.1.9",
+    "youtubeBackground": "youtube-background-video#~1.0.4"
   },
   "resolutions": {
     "jquery": "~2.1.4"
