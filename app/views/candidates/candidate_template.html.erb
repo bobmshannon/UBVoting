@@ -96,15 +96,6 @@
     </div>
 </section>
 
-<section class="<%= @candidate.rival_party.downcase %>" id="speeches-debates">
-    <div class="container">
-        <div class="center">
-            <h2>Why <%= @candidate.full_name %>?</h2>
-            <iframe width="auto" height="350" src="<%= @candidate.videos.last.embed_url %>" frameborder="0" allowfullscreen allowtransparency="true"> </iframe>
-        </div>
-    </div>
-</section>
-
 <section id="footerphoto">
     <div class="bg-photo" style="background-image: url(<%= @candidate.photos[1].url %>)">
         <div class="shade-photo">
@@ -113,7 +104,7 @@
                     <h1>Learn more about how and where to vote today</h1>
 
                     <div style="position:relative;height: 330px;">
-                        <b class="us-flag"></b>
+                        <!--<b class="us-flag"></b>-->
                     </div>
 
                     <p class="button-bar"><a href="/resources" class="btn btn-default">Learn More Now <i class="fa fa-chevron-circle-right"></i></a>
@@ -129,34 +120,39 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('.video-background').YTPlayer({
-        fitToBackground: true,
-        videoId: '<%= @candidate.videos.last.youtube_id %>',
-        pauseOnScroll: false,
-        mute: false,
-        repeat: false,
-        callback: function() {
-            var player = $('.video-background').data('ytPlayer').player;
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
-            player.addEventListener('onStateChange', function(event){
-                // Video done playing
-                if (event.data === 0) {          
-                    $('.image-background').toggleClass('image-background-hidden');
-                }
-            });
-        },
-        playerVars: {
-            modestbranding: 0,
-            autoplay: 1,
-            controls: 0,
-            showinfo: 0,
-            wmode: 'transparent',
-            branding: 0,
-            rel: 0,
-            autohide: 0,
-            origin: window.location.origin
-        }
-    });
-    
+    if(!isMobile) {
+        $('.video-background').YTPlayer({
+            fitToBackground: true,
+            videoId: '<%= @candidate.videos.last.youtube_id %>',
+            pauseOnScroll: false,
+            mute: false,
+            repeat: false,
+            callback: function() {
+                var player = $('.video-background').data('ytPlayer').player;
+
+                player.addEventListener('onStateChange', function(event){
+                    // Video done playing
+                    if (event.data === 0) {          
+                        $('.image-background').toggleClass('image-background-hidden');
+                    }
+                });
+            },
+            playerVars: {
+                modestbranding: 0,
+                autoplay: 1,
+                controls: 0,
+                showinfo: 0,
+                wmode: 'transparent',
+                branding: 0,
+                rel: 0,
+                autohide: 0,
+                origin: window.location.origin
+            }
+        });  
+    } else {
+        $('.image-background').toggleClass('image-background-hidden');
+    }    
 });
 </script>

@@ -107,7 +107,6 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		text-align: center;
-		min-height: 500px;
 
 		.overlay
 		{
@@ -120,6 +119,7 @@
 		.image-background
 		{
 			background-size: cover;
+			background-position: center center;
 
 			&.image-background-hidden
 			{
@@ -398,32 +398,26 @@
 		}
 	}
 
-	@include breakpoint(max-width 1249px) {
-		.issue 
-		{
-			height: 170px;
-		}
-	}
-
 	@include breakpoint(max-width 999px) {
 		.issue 
 		{
-			height: 210px;
-		}
-	}
+			width: 48% !important;
 
-	@include breakpoint(max-width 899px) {
-		.issue 
-		{
-			height: 260px;
+			&:nth-child(odd) 
+			{
+				margin-right: 4%;
+			}
 		}
 	}
 
 	@include breakpoint(max-width 799px) {
 		ul.issues li
 		{
-			width: 100%;
+			width: 100% !important;
+			height: auto !important;
 			float: none !important;
+			padding-top: 20px;
+			padding-bottom: 20px;
 		}
 	}
 
@@ -468,10 +462,9 @@
 		top: 0;
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-position: center center;
 		width: 100%;
 		height: 700px;
 		display: block;
 	}
-
-
 }

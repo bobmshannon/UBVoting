@@ -2,12 +2,25 @@
 // All this logic will automatically be available in application.js.
 $( document ).ready(function() {
 	$(window).on('load resize', function() {
-		if( $(window).width() > 999 ) {
-			headerHeight = $('header').height();
-			windowHeight = $(window).height();
-			$('.auto-height').height(windowHeight - headerHeight);
-		}
+        // Set height of specified containers to 100% of viewport
+		headerHeight = $('header').height();
+		windowHeight = $(window).height();
+		$('.auto-height').height(windowHeight - headerHeight);
+
+        // Set height of all issues to equal values
+        var max = 0;
+
+        $('.issue-content').each(function() {
+            height = $(this).height();
+            if(height > max) {
+                max = height;
+            }
+        })
+
+        $('.issue').height(max + 20); 
 	});
+
+
 
     /*$('.issue h2 a').each(function() {
         $(this).on('click', function() {
