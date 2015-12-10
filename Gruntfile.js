@@ -139,7 +139,7 @@ module.exports = function( grunt ) {
 					'app/assets/javascripts/candidates.js'
 					]
 				}
-			},			
+			}
 		},
 		cssmin: {
 			options: {

@@ -35,10 +35,11 @@
 	{
 		font-weight: 700;
 		font-size: 50px;
-		color: whitesmoke;
+		color: #f5f5f5;
 	}
 
-	h2{
+	h2
+	{
 		font-size: 20px;
 		color: #fff; 
 
@@ -52,9 +53,12 @@
 		line-height: 24px;
 	}
 
-	.republican{
-		.issues{
-			h3{
+	.republican
+	{
+		.issues
+		{
+			h3
+			{
 				font-size: 16px;
 				color: #001f3f;
 				font-weight: 400;
@@ -68,8 +72,10 @@
 		font-size: 16px;
 	}
 
-	// Source: http://codepen.io/pcridesagain/pen/GweAj
-	.us-flag{
+	// US Flag Source: http://codepen.io/pcridesagain/pen/GweAj
+	.us-flag
+	{
+		@include box-shadow(0 20px 0 #f3f3f3, 0 40px 0 #cc0000, 0 60px 0 #f3f3f3, 0 80px 0 #cc0000, 0 100px 0 #f3f3f3, 0 120px 0 #cc0000, 0 140px 0 #f3f3f3, 0 160px 0 #cc0000, 0 180px 0 #f3f3f3, 0 200px 0 #cc0000, 0 220px 0 #f3f3f3, 0 240px 0 #cc0000);
 		left: -250px;
 		top: 10%;
 		margin-left: 50%;
@@ -78,27 +84,29 @@
 		width: 500px;
 		height: 20px;
 		background: #cc0000;
-		box-shadow: 0 20px 0 #f3f3f3, 0 40px 0 #cc0000, 0 60px 0 #f3f3f3, 0 80px 0 #cc0000, 0 100px 0 #f3f3f3, 0 120px 0 #cc0000, 0 140px 0 #f3f3f3, 0 160px 0 #cc0000, 0 180px 0 #f3f3f3, 0 200px 0 #cc0000, 0 220px 0 #f3f3f3, 0 240px 0 #cc0000;
 	}
 
-	.us-flag:before{
-		content: "\0020";
+	.us-flag:before
+	{
+		content: '\0020';
 		background: #191b6d;
 		display: block;
 		width: 200px;
 		height: 140px;
 		position: absolute;
 	}
-	.us-flag:after{
-		content: "\2605";
+
+	.us-flag:after
+	{
+		@include text-shadow(35px 0 0 #f3f3f3, 70px 0 0 #f3f3f3, 105px 0 0 #f3f3f3, 140px 0 0 #f3f3f3, 175px 0 0 #f3f3f3, 17px 14px 0 #f3f3f3, 52px 14px 0 #f3f3f3, 87px 14px 0 #f3f3f3, 122px 14px 0 #f3f3f3, 157px 14px 0 #f3f3f3, 0 28px 0 #f3f3f3, 35px 28px 0 #f3f3f3, 70px 28px 0 #f3f3f3, 105px 28px 0 #f3f3f3, 140px 28px 0 #f3f3f3, 175px 28px 0 #f3f3f3, 17px 42px 0 #f3f3f3, 52px 42px 0 #f3f3f3, 87px 42px 0 #f3f3f3, 122px 42px 0 #f3f3f3, 157px 42px 0 #f3f3f3, 0 56px 0 #f3f3f3, 35px 56px 0 #f3f3f3, 70px 56px 0 #f3f3f3, 105px 56px 0 #f3f3f3, 140px 56px 0 #f3f3f3, 175px 56px 0 #f3f3f3, 17px 70px 0 #f3f3f3, 52px 70px 0 #f3f3f3, 87px 70px 0 #f3f3f3, 122px 70px 0 #f3f3f3, 157px 70px 0 #f3f3f3, 0 84px 0 #f3f3f3, 35px 84px 0 #f3f3f3, 70px 84px 0 #f3f3f3, 105px 84px 0 #f3f3f3, 140px 84px 0 #f3f3f3, 175px 84px 0 #f3f3f3, 17px 98px 0 #f3f3f3, 52px 98px 0 #f3f3f3, 87px 98px 0 #f3f3f3, 122px 98px 0 #f3f3f3, 157px 98px 0 #f3f3f3, 0 112px 0 #f3f3f3, 35px 112px 0 #f3f3f3, 70px 112px 0 #f3f3f3, 105px 112px 0 #f3f3f3, 140px 112px 0 #f3f3f3, 175px 112px 0 #f3f3f3);
+		font-style: none;
+		content: '\2605';
 		font-size: 14px;
 		color: #f3f3f3;
-		text-style: none;
 		display: block;
 		width: 500px;
 		position: absolute;
 		margin: 5px;
-		text-shadow: 35px 0 0 #f3f3f3, 70px 0 0 #f3f3f3, 105px 0 0 #f3f3f3, 140px 0 0 #f3f3f3, 175px 0 0 #f3f3f3, 17px 14px 0 #f3f3f3, 52px 14px 0 #f3f3f3,   87px 14px 0 #f3f3f3,  122px 14px 0 #f3f3f3, 157px 14px 0 #f3f3f3, 0 28px 0 #f3f3f3, 35px 28px 0 #f3f3f3, 70px 28px 0 #f3f3f3, 105px 28px 0 #f3f3f3, 140px 28px 0 #f3f3f3, 175px 28px 0 #f3f3f3, 17px 42px 0 #f3f3f3, 52px 42px 0 #f3f3f3,   87px 42px 0 #f3f3f3,  122px 42px 0 #f3f3f3, 157px 42px 0 #f3f3f3, 0 56px 0 #f3f3f3, 35px 56px 0 #f3f3f3, 70px 56px 0 #f3f3f3, 105px 56px 0 #f3f3f3, 140px 56px 0 #f3f3f3, 175px 56px 0 #f3f3f3,    17px 70px 0 #f3f3f3, 52px 70px 0 #f3f3f3,   87px 70px 0 #f3f3f3,  122px 70px 0 #f3f3f3, 157px 70px 0 #f3f3f3, 0 84px 0 #f3f3f3, 35px 84px 0 #f3f3f3, 70px 84px 0 #f3f3f3, 105px 84px 0 #f3f3f3, 140px 84px 0 #f3f3f3, 175px 84px 0 #f3f3f3, 17px 98px 0 #f3f3f3, 52px 98px 0 #f3f3f3,   87px 98px 0 #f3f3f3,  122px 98px 0 #f3f3f3, 157px 98px 0 #f3f3f3, 0 112px 0 #f3f3f3, 35px 112px 0 #f3f3f3, 70px 112px 0 #f3f3f3, 105px 112px 0 #f3f3f3, 140px 112px 0 #f3f3f3, 175px 112px 0 #f3f3f3;
 	}
 
 	#coverphoto
@@ -110,11 +118,10 @@
 
 		.overlay
 		{
-			background: rgba(0, 0, 0, 0.25);
-    		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.48);
-    		border-bottom: 1px solid rgba(0, 0, 0, 0.39);
+			@include box-shadow(inset 0 1px 10px rgba(0, 0, 0, .48));
+			background: rgba(0, 0, 0, .25);
+			border-bottom: 1px solid rgba(0, 0, 0, .39);
 		}
-
 
 		.image-background
 		{
@@ -128,7 +135,8 @@
 		}
 	}
 
-	.ytplayer-container{
+	.ytplayer-container
+	{
 		position: absolute;
 		top: 0;
 		z-index: -1;
@@ -137,8 +145,8 @@
 	#cand-overview
 	{
 		@include inline-block;
-		background: rgba(13, 31, 95, 0.50);
-		border: 5px solid rgba(0, 0, 0, 0.2);
+		background: rgba(13, 31, 95, .50);
+		border: 5px solid rgba(0, 0, 0, .2);
 		padding: 25px;
 		min-width: 290px;
 
@@ -163,7 +171,7 @@
 		ul.social-bar
 		{
 			list-style-type: none;
-			margin: 15px 0 10px 0;
+			margin: 15px 0 10px;
 
 			li
 			{
@@ -171,68 +179,59 @@
 				margin: 0 5px;
 			}
 
-			li a 
+			a 
 			{
 				@include border-radius(5px);
 				display: block;
-			    background: $white;
-			    height: 30px;
-			    line-height: 30px;
-			    width: 30px;
-			    font-size: 16pt;
-			    color: #538af2;
+				background: $white;
+				height: 30px;
+				line-height: 30px;
+				width: 30px;
+				font-size: 16pt;
+				color: #538af2;
 			}
 
-			li a:hover
+			a:hover
 			{
 				color: #7ea7f5;
 			}
 
-			li a:focus
-		    {
-		    	@include box-shadow(inset 0 1px 4px rgba(0, 0, 0, 0.3));
-		    }
+			a:focus
+			{
+				@include box-shadow(inset 0 1px 4px rgba(0, 0, 0, .3));
+			}
 		}
 	}
-    
-    section#about
-    {
+	
+	section#about
+	{
 		@include filter-gradient(#1f1e1e, #353433, vertical); // IE6-9
 		@include background-image(linear-gradient(top, #4c4a4a 0%, #353433 43%));
 		background-color: #1f1e1e; // Old browsers
-		border-top: 3px solid rgba(0, 0, 0, 0.75);
-		border-bottom: 3px solid rgba(0, 0, 0, 0.75);
+		border-top: 3px solid rgba(0, 0, 0, .75);
+		border-bottom: 3px solid rgba(0, 0, 0, .75);
 
 		h1
 		{
 			@include inline-block;
+			@include text-shadow(0 1px 0 $black);
 			font-size: 32pt;
-			text-shadow: 0 1px 0 $black;
-			border-bottom: 3px solid rgba(0, 0, 0, 0.20);
+			border-bottom: 3px solid rgba(0, 0, 0, .20);
 			padding-bottom: 10px;
 		}
 
 		p
 		{
 			font-size: 16pt;
-			margin: 10px 0 0 0;
+			margin: 10px 0 0;
 			color: rgb(179, 178, 178);
-		}
-
-		&.democrat
-		{
-
-		}
-
-		&.republican
-		{
-
 		}
 
 		#cand-info
 		{
 			padding: 20px 0;
 		}
+
 		#cand-info .info-section
 		{
 			@include border-radius(5px);
@@ -241,34 +240,35 @@
 			margin-bottom: 10px;
 		}
 
-		#cand-info .info-section h2
+		#cand-info h2
 		{
 			color: $black;
 			font-size: 20pt;
-			margin: 0 0 10px 0;
-			padding: 0 0 8px 0;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.07)
+			margin: 0 0 10px;
+			padding: 0 0 8px;
+			border-bottom: 1px solid rgba(0, 0, 0, .07);
 		}
 
-		#cand-info .info-section ul
+		#cand-info ul
 		{
 			padding: 0 20px;
 			list-style-type: square;
 			font-size: 13pt;
 		}
 
-		#cand-info .info-section ul li
+		#cand-info li
 		{
-			margin: 0 0 10px 0;
+			margin: 0 0 10px;
 
 			&:last-child
 			{
 				margin: 0;
 			}
 		}
-    }
+	}
 
-	#on-the-issues{
+	#on-the-issues
+	{
 		@include clearfix;
 		padding-bottom: 40px;
 
@@ -280,17 +280,17 @@
 			h1
 			{
 				@include inline-block;
+				@include text-shadow(0 1px 0 rgba(0, 0, 0, .4));
 				font-size: 32pt;
-				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-				border-bottom: 3px solid rgba(0, 0, 0, 0.20);
+				border-bottom: 3px solid rgba(0, 0, 0, .20);
 				padding-bottom: 10px;
 			}
 
 			p
 			{
 				font-size: 16pt;
-				margin: 10px 0 0 0;
-				color: rgba(0,0,0,.75);
+				margin: 10px 0 0;
+				color: rgba(0, 0, 0, .75);
 			}
 		}
 
@@ -329,7 +329,7 @@
 		@include border-radius(5px);
 		width: 49%;
 		min-height: 125px;
-		margin: 0 0 15px 0;
+		margin: 0 0 15px;
 	}
 
 	ul.issues li:nth-child(odd)
@@ -345,7 +345,7 @@
 	.issue
 	{
 		@include clearfix;
-		@include transition(0.3s);
+		@include transition(.3s);
 		display: table;
 		height: 140px;
 		background: $white;
@@ -358,13 +358,13 @@
 
 		.issue-content
 		{
-    		display: table-cell;
-    		vertical-align: middle;
+			display: table-cell;
+			vertical-align: middle;
 		}
 
 		.issue-content h2
 		{
-			color: black;
+			color: $black;
 			margin: 0;
 			padding: 0;
 			font-size: 18pt;
@@ -374,9 +374,9 @@
 		{
 			margin: 0;
 			padding: 0;
-		    color: rgb(88, 87, 87);
-		    font-size: 13pt;
-		    //display: none;
+			color: rgb(88, 87, 87);
+			font-size: 13pt;
+			//display: none;
 		}
 
 		.issue-content a.toggle
@@ -387,9 +387,9 @@
 		.issue-icon
 		{
 			display: table-cell;
-    		vertical-align: middle;
-    		text-align: center;
-    		width: 100px;
+			vertical-align: middle;
+			text-align: center;
+			width: 100px;
 		}
 
 		.issue-icon i 
@@ -398,7 +398,8 @@
 		}
 	}
 
-	@include breakpoint(max-width 999px) {
+	@include breakpoint(max-width 999px) 
+	{
 		.issue 
 		{
 			width: 48% !important;
@@ -410,7 +411,8 @@
 		}
 	}
 
-	@include breakpoint(max-width 799px) {
+	@include breakpoint(max-width 799px) 
+	{
 		ul.issues li
 		{
 			width: 100% !important;
@@ -419,39 +421,6 @@
 			padding-top: 20px;
 			padding-bottom: 20px;
 		}
-	}
-
-	.speeches
-	{
-		padding: 0;
-	}
-
-	.speech-spacing
-	{
-		color: #217695;
-		float: left;
-		margin: 0;
-		text-align: center;
-
-	}
-
-	#speeches-debates{
-		h2{
-			font-size: 25px;
-			font-weight: 700;
-		}
-	}
-
-	.shade-photo
-	{
-		background-color: rgba(0, 0, 0, .5);
-		margin: 0;
-		padding: 0;
-		left: 0;
-		top: 0;
-		background-size: cover;
-		width: 100%;
-		height: 700px;
 	}
 
 	#footerphoto .bg-photo

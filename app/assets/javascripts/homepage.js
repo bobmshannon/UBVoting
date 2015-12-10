@@ -1,13 +1,14 @@
 /* Homepage specific JS goes here */
 $( document ).ready( function() {
-	if( $(window).width() > 999 ) {
-		headerHeight = $('header').height();
-		windowHeight = $(window).height();
-		$('#coverphoto').height(windowHeight - headerHeight);
-		$('#coverphoto .cover-shade').height(windowHeight - headerHeight);
+	if ( $( window ).width() > 999 ) {
+		headerHeight = $( 'header' ).height();
+		windowHeight = $( window ).height();
+		$( '#coverphoto' ).height( windowHeight - headerHeight );
+		$( '#coverphoto .cover-shade' ).height( windowHeight - headerHeight );
 	}
 
 	// Initialize graph showing voting turnout by age
+	// jscs:disable
 	var ctx = $( 'canvas#turnout-by-age' ).get( 0 ).getContext( '2d' );
 
 	var data = {
@@ -107,8 +108,9 @@ $( document ).ready( function() {
 
 		//String - A legend template
 
-		legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+		legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].strokeColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
 	};
-
+	
+	// jscs:enable
 	var myLineChart = new Chart( ctx ).Line( data, options );
 } );

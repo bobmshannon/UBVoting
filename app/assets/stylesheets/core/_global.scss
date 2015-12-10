@@ -171,19 +171,19 @@ nav#mobile-menu
 		{
 			display: block;
 			padding: 10px;
-		    border-bottom: 1px solid rgba(0, 0, 0, .08);
+			border-bottom: 1px solid rgba(0, 0, 0, .08);
 
-		    &:hover
-		    {
-		    	text-decoration: none;
-		    	background: #ededed;
-		    }
+			&:hover
+			{
+				text-decoration: none;
+				background: #ededed;
+			}
 		}
 
 		img
 		{
+			@include inline-block;
 			background: none;
-			display: inline-block;
 			width: 75px;
 			height: 75px;
 			padding: 0;
@@ -192,10 +192,10 @@ nav#mobile-menu
 		.name
 		{
 			padding-left: 15px;
-		    padding-left: 15px;
-		    font-weight: bold;
-		    color: black;
-		    font-size: 12pt;
+			padding-left: 15px;
+			font-weight: bold;
+			color: $black;
+			font-size: 12pt;
 		}
 
 		.republican
