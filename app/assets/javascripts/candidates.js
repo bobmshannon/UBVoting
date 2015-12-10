@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 $( document ).ready(function() {
 	hide(document.querySelectorAll('h3'));
-	var container = document.querySelectorAll('#hidden');
+	var container = document.querySelectorAll('#hiddenchild');
 	createUniqueIDs(container);
 
     function hide(description) {
@@ -18,12 +18,8 @@ $( document ).ready(function() {
     };
 
     $('i').hover(function(){
-    	
-		
-    	setTimeout(function(){show(document.querySelectorAll('h3'));}, 900);
-    	
+    	setTimeout(function(){show(document.querySelectorAll('h3'));}, 100);
     });
-
 
    function createUniqueIDs(array){
             for (var i =0; i< array.length; i++){
