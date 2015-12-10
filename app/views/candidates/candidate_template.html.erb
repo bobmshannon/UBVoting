@@ -1,24 +1,24 @@
-<section id="coverphoto" style="background-image: url(<%= @candidate.photos[0].url %>)">
-        <div class="overlay valign-wrap">
-            <div class="valign">
-                <div id="cand-overview">
-                    <h1><%= @candidate.full_name %> (<%= @candidate.party_affiliation[0].upcase %>)</h1>
-                    <h2><%= @candidate.title %></h2>
-                    
-                    <ul class="social-bar">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-globe"></i></a></li>
-                    </ul>
+<section id="coverphoto" class="auto-height video-background">
+    <div class="overlay valign-wrap auto-height">
+        <div class="valign">
+            <div id="cand-overview">
+                <h1><%= @candidate.full_name %> (<%= @candidate.party_affiliation[0].upcase %>)</h1>
+                <h2><%= @candidate.title %></h2>
+                
+                <ul class="social-bar">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-globe"></i></a></li>
+                </ul>
 
-                    <div class="button-bar">
-                        <a href="#on-the-issues" class="btn btn-default"><i class="fa fa-bullhorn"></i> On The Issues</a>
-                        <a href="#about" class="btn btn-default"><i class="fa fa-book"></i> About <%= @candidate.last_name %></a>
-                    </div>
+                <div class="button-bar">
+                    <a href="#on-the-issues" class="btn btn-default"><i class="fa fa-bullhorn"></i> On The Issues</a>
+                    <a href="#about" class="btn btn-default"><i class="fa fa-book"></i> About <%= @candidate.last_name %></a>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <section class="<%= @candidate.party_affiliation.downcase %>" id="on-the-issues">
@@ -108,12 +108,13 @@
         <div class="shade-photo">
             <div class="container">
                 <div class="center">
-                    <h1>So, the question remains</h1>
-                    <h2>Who will UBVoting for?</h2>
+                    <h1>Learn more about how and where to vote today</h1>
 
-                    <div style="position:relative;">
+                    <div style="position:relative;height: 330px;">
                         <b class="us-flag"></b>
                     </div>
+
+                    <p class="button-bar"><a href="/resources" class="btn btn-default">Learn More Now <i class="fa fa-chevron-circle-right"></i></a>
                 </div>
             </div>
         </div>
@@ -123,3 +124,26 @@
 <% content_for :javascript_includes do %>
 <%= javascript_include_tag "candidates.js" %>
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.video-background').YTPlayer({
+        //fitToBackground: true,
+        videoId: '<%= @candidate.videos.last.youtube_id %>',
+        pauseOnScroll: false,
+        mute: false,
+        repeat: false,
+        playerVars: {
+            modestbranding: 0,
+            autoplay: 1,
+            controls: 0,
+            showinfo: 0,
+            wmode: 'transparent',
+            branding: 0,
+            rel: 0,
+            autohide: 0,
+            origin: window.location.origin
+        }
+    });
+});
+</script>

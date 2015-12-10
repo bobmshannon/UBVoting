@@ -9,6 +9,17 @@
 		line-height: 22px;
 	}
 
+	.button-bar
+	{
+		text-align: center;
+
+		.btn
+		{
+			margin: 5px;
+			font-weight: bold;
+		}
+	}
+
 	.h1,
 	.h2,
 	.h3,
@@ -104,6 +115,19 @@
     		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.48);
     		border-bottom: 1px solid rgba(0, 0, 0, 0.39);
 		}
+
+		.cand-overview-wrap
+		{
+			background-repeat: none;
+			background-size: cover;
+			display: none;
+		}
+	}
+
+	.ytplayer-container{
+		position: absolute;
+		top: 0;
+		z-index: -1;
 	}
 
 	#cand-overview
@@ -113,6 +137,12 @@
 		border: 5px solid rgba(0, 0, 0, 0.2);
 		padding: 25px;
 		min-width: 290px;
+
+		&.video-background
+		{
+			position: relative;
+			background: transparent;
+		}
 
 		h1,
 		h2
@@ -124,15 +154,6 @@
 		h2
 		{
 			margin: 5px 0;
-		}
-
-		.button-bar
-		{
-			.btn
-			{
-				margin: 5px;
-				font-weight: bold;
-			}
 		}
 
 		ul.social-bar
@@ -173,7 +194,7 @@
     section#about
     {
 		@include filter-gradient(#1f1e1e, #353433, vertical); // IE6-9
-		@include background-image(linear-gradient(top, #1f1e1e 0%,#353433 43%));
+		@include background-image(linear-gradient(top, #4c4a4a 0%, #353433 43%));
 		background-color: #1f1e1e; // Old browsers
 		border-top: 3px solid rgba(0, 0, 0, 0.75);
 		border-bottom: 3px solid rgba(0, 0, 0, 0.75);
