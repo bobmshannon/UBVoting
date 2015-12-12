@@ -210,8 +210,8 @@ while($running) do
                 # Get location information (if available)
                 object = add_location(object)
 
-                unless is_rate_limited(screen_name)
-                        unless is_filtered(object)
+                unless is_filtered(object)
+                        unless is_rate_limited(screen_name)
                             # Broadcast tweet if user is not rate limited
                             broadcast_tweet(object)
 
