@@ -22,19 +22,26 @@
 		margin-top: 10px;
 	}
 
-	@mixin break {
-		@include breakpoint(600px){		
-			#list{
+	@mixin break
+	{
+		@include breakpoint(600px)
+		{		
+			#list
+			{
 				@include container;
-    			list-style-type: none;
-				@include breakpoint(600px){		
-					.resource-topic{
+				list-style-type: none;
+
+				@include breakpoint(600px)
+				{
+					.resource-topic
+					{
 						@include span(3 of 12);
-		    		}
+					}
 						
 				}
 				
-				i{	
+				i
+				{	
 					@include i;
 				}
 			}
@@ -108,53 +115,65 @@
 			}
 		}
 		
-		#list{
+		#list
+		{
 			list-style-type: none;
 		}
 
-		#resources-icons{
+		#resources-icons
+		{
 			padding-bottom: 30px;
 			$resource-width: 30%;
-					.resource-topic{
-						left: 5%;
-						position: relative;
-						margin: 45px;
-						background-color: #fff;
-    					border-radius: 5%;
-					}
-				}
 
-		a {
- 			color:#001f3f;
+			.resource-topic
+			{
+				@include border-radius(5%);
+				left: 5%;
+				position: relative;
+				margin: 45px;
+				background-color: #fff;
+			}
 		}
 
-		a:hover{
-			color: #0074D9;
+		a
+		{
+			color: #001f3f;
+		}
+
+		a:hover
+		{
+			color: #0074d9;
 		}
 				
-		p{
+		p
+		{
 			margin: 0 0 10px;
-    		padding: 15px;
-    		vertical-align: middle;
+			padding: 15px;
+			vertical-align: middle;
 		}
 				
-		i{
+		i
+		{
 			@include i;
 		}
 						
-		i:hover{
+		i:hover
+		{
 			@include grow;
 		}
 
-		h2{
+		h2
+		{
 			@include h2;
 		}
 			
-		@include breakpoint(600px){		
+		@include breakpoint(600px)
+		{		
 			@include break;
 		}			
 				
-		@media screen and (min-width: 480px){
+		@media screen and (min-width: 480px)
+		{
 			@include break;
 		}
 	}
