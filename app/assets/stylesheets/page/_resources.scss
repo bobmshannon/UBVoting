@@ -124,13 +124,15 @@
 		{
 			padding-bottom: 30px;
 			$resource-width: 30%;
-			.resource-topic{
+
+			.resource-topic
+			{
+				@include border-radius(5%);
 				left: 5%;
 				position: relative;
 				margin: 45px;
 				background-color: #fff;
-    			border-radius: 5%;
-    			height: 350px;
+				height: 350px;
 			}
 		}
 		
@@ -177,5 +179,3 @@
 		}
 	}
 }
-
-
