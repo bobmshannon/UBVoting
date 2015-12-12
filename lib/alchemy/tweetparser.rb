@@ -5,15 +5,22 @@ require './alchemyapi'
 require './person.rb'
 
 class TweetParser
-	def initialize()
+	def initialize(aTweet)
 		begin
-			@text = "Bernie sanders is good but not realistic.  Donald trump will sell america. Hillary clinton is satan in the flesh.  and this is just some string testing everything"
-			@text.downcase!
-			@gaveSentiment = false 
-			initializeCandidates()
-			@candidates = [@sanders, @trump, @clinton, @rubio, 
-		  @omalley,@cruz, @bush, @carson]
-			findCandidate()
+			if(aTweet.text != NIL && aTweet.location[:state] != NIL)
+				@tweet = aTweet
+				@state = @tweet.location[:state]
+				@user = @tweet.screen_name
+				puts @tweet.text
+				puts @state
+				@text = @tweet.text
+				@text.downcase!
+				@gaveSentiment = false 
+				initializeCandidates()
+				@candidates = [@sanders, @trump, @clinton, @rubio, 
+		   @omalley,@cruz, @bush, @carson]
+				findCandidate()
+			end
 		end
 	end
 
@@ -43,8 +50,7 @@ class TweetParser
 	def findCandidate()
 		@candidates.each {
 			|cand|
-			cand.name = cand.name.downcase!
-			if (@text[cand.name] || @text[cand.twitterHandle])
+			if (@text[cand.name] || @text[cand.name.downcase]|| @text[cand.twitterHandle])
 				puts cand.name
 				assumeSentiment(cand)
 			end
@@ -56,9 +62,10 @@ class TweetParser
 		cand.tags[0].each {
 			|tag|
 			if(@text[tag])
-				@gaveSentiment = true 
 				cand.positiveSentiment += 1
 				puts "Gave #{cand.name} +#{cand.positiveSentiment}" 
+				@gaveSentiment = true 
+
 				return 1
 			end
 
@@ -78,9 +85,9 @@ class TweetParser
 					if entity['type'] == 'Person'
 						if(entity['sentiment']['type'] == 'positive')
 							foundCandi = Candidate.find_by(full_name_lower: entity['text'])
-							foundCandi.states.find_by(name: "Alabama").positiveSentiment += 1
+							foundCandi.states.find_by(name: @state).positiveSentiment += 1
 							puts "Found #{foundCandi.full_name}"
-							puts "Pos Sentim #{foundCandi.states[0].positiveSentiment}"
+							puts "Pos Sentim #{foundCandi.states.find_by(name:@state).positiveSentiment}"
 							puts " "
 
 						end
