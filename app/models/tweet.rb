@@ -3,6 +3,8 @@ class Tweet
   include Geocoder::Model::Mongoid
   # Unique ID for the tweet
   field :id, type: String
+  # User name of tweet author
+  field :screen_name, type: String
   # Time and date when the tweet was sent
   field :created_at, type: String
   # Tweet text

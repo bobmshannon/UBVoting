@@ -46,7 +46,7 @@ button:focus,
 	outline: none !important;
 	outline: 0 !important;
 
-	&:-moz-focus-inner 
+	&::-moz-focus-inner 
 	{
 		border: 0;
 	}
