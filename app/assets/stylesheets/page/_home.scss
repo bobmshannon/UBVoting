@@ -82,8 +82,8 @@
 
 	section#voting-turnout
 	{
-		@include box-shadow(inset 0 2px 5px 1px rgba(0, 0, 0, 0.3));
-		border-top: 3px solid rgba(0, 0, 0, 0.7);
+		@include box-shadow(inset 0 2px 5px 1px rgba(0, 0, 0, .3));
+		border-top: 3px solid rgba(0, 0, 0, .7);
 		background-color: #142840;
 
 		h1
@@ -100,7 +100,7 @@
 		.overlay
 		{
 			background-size: $grid-size $grid-size;    
-			background-image:repeating-linear-gradient(0deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size),repeating-linear-gradient(-90deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size);
+			background-image: repeating-linear-gradient(0deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size), repeating-linear-gradient(-90deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size);
 		}
 
 		.wrapper
@@ -120,10 +120,10 @@
 
 	#reasons
 	{
-		@include box-shadow(inset 0 0px 5px 5px rgba(0, 0, 0, 0.1));
+		@include box-shadow(inset 0 0 5px 5px rgba(0, 0, 0, .1));
 		background-color: #bb0f19;
-		border-top: 2px solid rgba(0, 0, 0, 0.4);
-		padding: 10px 0 40px 0;
+		border-top: 2px solid rgba(0, 0, 0, .4);
+		padding: 10px 0 40px;
 
 		h1
 		{
@@ -144,11 +144,11 @@
 				@include border-radius(5px);
 				min-height: 400px;
 				background: $white;
+			}
 
-				&:last-child
-				{
-					@include span(4 of 12 last);
-				}
+			li:last-child
+			{
+				@include span(4 of 12 last);
 			}
 
 			.reason-content
@@ -165,6 +165,44 @@
 			{
 				font-size: 16pt;
 			}
+		}
+	}
+
+	@include breakpoint(max-width 900px)
+	{
+		#reasons ul#reasons-list li.reason
+		{
+			@include span(6 of 12);
+
+			margin-bottom: 15px;
+
+			&:nth-child(even),
+			&:last-child
+			{
+				@include span(6 of 12 last);
+			}
+
+			&:nth-child(3)
+			{
+				@include span(6 of 12);
+			}
+		}
+	}
+
+	@include breakpoint(max-width 500px)
+	{
+		#reasons ul#reasons-list li.reason,
+		#reasons ul#reasons-list li.reason:nth-child(even),
+		#reasons ul#reasons-list li.reason:last-child,
+		{
+			width: 100%;
+			float: none;
+			margin: 0 0 15px;
+		}
+
+		#reasons ul#reasons-list li.reason:last-child
+		{
+			margin-bottom: 0;
 		}
 	}
 

@@ -131,6 +131,14 @@ module.exports = function( grunt ) {
 					'app/assets/javascripts/tweet_map.js'
 					]
 				}
+			},
+			candidates: {
+				files: {
+					'public/javascripts/candidates.js': [
+					'bower_components/youtubeBackground/src/jquery.youtubebackground.js',
+					'app/assets/javascripts/candidates.js'
+					]
+				}
 			}
 		},
 		cssmin: {
@@ -150,7 +158,8 @@ module.exports = function( grunt ) {
 					'bower_components/slick-carousel/slick/slick-theme.css',
 					'bower_components/slick-carousel/slick/slick.css',
 					'bower_components/hover/css/hover-min.css',
-					'bower_components/hover/css/hover.css'
+					'bower_components/hover/css/hover.css',
+					'bower_components/youtubeBackground/src/jquery.youtubebackground.js'
 					]
 				}
 			}

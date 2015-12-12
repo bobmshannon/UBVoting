@@ -1,0 +1,158 @@
+<section id="coverphoto" class="auto-height video-background">
+    <div class="image-background image-background-hidden" style="background-image: url(<%= @candidate.photos[0].url %>)">
+        <div class="overlay valign-wrap auto-height">
+            <div class="valign">
+                <div id="cand-overview">
+                    <h1><%= @candidate.full_name %> (<%= @candidate.party_affiliation[0].upcase %>)</h1>
+                    <h2><%= @candidate.title %></h2>
+                    
+                    <ul class="social-bar">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-globe"></i></a></li>
+                    </ul>
+
+                    <div class="button-bar">
+                        <a href="#on-the-issues" class="btn btn-default"><i class="fa fa-bullhorn"></i> On The Issues</a>
+                        <a href="#about" class="btn btn-default"><i class="fa fa-book"></i> About <%= @candidate.last_name %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="<%= @candidate.party_affiliation.downcase %>" id="on-the-issues">
+    <div class="wrapper">
+        <div class="section-heading">
+            <h1><%= @candidate.last_name %>'s Top Issues</h1>
+            <p><%= @candidate.issues_overview %></p>
+        </div>
+
+        <ul class="issues">
+            <% for issue in @candidate.issues %>
+                <li class="issue">
+                    <div class="issue-icon">
+                        <i class="<%= issue.fa %>"></i>
+                    </div>
+
+                    <div class="issue-content">
+                        <h2><%= issue.title %> <a class="toggle" href="#">learn more</a></h2>
+                        <p id="hiddenchild"><%= issue.desc %></p>
+                    </div>
+                </li>
+            <% end %>
+        </div>
+    </div>
+</section>
+
+<section class="<%= @candidate.party_affiliation.downcase %>" id="about">
+    <div class="wrapper">
+        <h1><%= @candidate.last_name %>'s Biography</h1>
+        <p><%= @candidate.bio %></p>
+
+        <div id="cand-info" class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="info-section">
+                    <h2>Upbringings</h2>
+
+                    <ul>
+                        <li><%= @candidate.full_name %> was born in <%= @candidate.city_of_birth %>.</li>
+                        <li><%= @candidate.family_bio %></li>
+                        <li><%= @candidate.full_name %> graduated from <%= @candidate.school %></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="info-section">
+                    <h2>Accomplishments</h2>
+
+                    <ul>
+                        <% for accomplishment in @candidate.accomplishments %>
+                            <li><%= accomplishment.text %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="info-section">
+                    <h2>Strange facts</h2>
+
+                    <ul>
+                        <% for fact in @candidate.strange_facts %>
+                            <li><%= fact.text %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="center">
+            <p><a href="<%= @candidate.site_url %>"> <%= @candidate.site_url %></a></p>
+        </div>-->
+    </div>
+</section>
+
+<section id="footerphoto">
+    <div class="bg-photo" style="background-image: url(<%= @candidate.photos[1].url %>)">
+        <div class="shade-photo">
+            <div class="container">
+                <div class="center">
+                    <h1>Learn more about how and where to vote today</h1>
+
+                    <div style="position:relative;height: 330px;">
+                        <!--<b class="us-flag"></b>-->
+                    </div>
+
+                    <p class="button-bar"><a href="/resources" class="btn btn-default">Learn More Now <i class="fa fa-chevron-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% content_for :javascript_includes do %>
+<%= javascript_include_tag "candidates.js" %>
+<% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+    if(!isMobile) {
+        $('.video-background').YTPlayer({
+            fitToBackground: true,
+            videoId: '<%= @candidate.videos.last.youtube_id %>',
+            pauseOnScroll: false,
+            mute: false,
+            repeat: false,
+            callback: function() {
+                var player = $('.video-background').data('ytPlayer').player;
+
+                player.addEventListener('onStateChange', function(event){
+                    // Video done playing
+                    if (event.data === 0) {          
+                        $('.image-background').toggleClass('image-background-hidden');
+                    }
+                });
+            },
+            playerVars: {
+                modestbranding: 0,
+                autoplay: 1,
+                controls: 0,
+                showinfo: 0,
+                wmode: 'transparent',
+                branding: 0,
+                rel: 0,
+                autohide: 0,
+                origin: window.location.origin
+            }
+        });  
+    } else {
+        $('.image-background').toggleClass('image-background-hidden');
+    }    
+});
+</script>

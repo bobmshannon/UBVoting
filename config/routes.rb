@@ -20,13 +20,16 @@ Rails.application.routes.draw do
   get '/happening-now/list-view' => 'tweet_map#list'
 
   # Candidates
-  get '/candidates/genericcandidate' => 'candidates#genericcandidate'
-  get '/candidates/berniesanders' => 'candidates#berniesanders'
-  get '/candidates/donaldtrump' => 'candidates#donaldtrump'
-  get '/candidates/hillaryclinton' => 'candidates#hillaryclinton'
-  get '/candidates/bencarson' => 'candidates#bencarson'
-  get '/candidates/marcorubio' => 'candidates#marcorubio'
-  get '/candidates/martinomalley' => 'candidates#martinomalley'
+  get '/candidates/bernie-sanders' => 'candidates#berniesanders'
+  get '/candidates/donald-trump' => 'candidates#donaldtrump'
+  get '/candidates/hillary-clinton' => 'candidates#hillaryclinton'
+  get '/candidates/ben-carson' => 'candidates#bencarson'
+  get '/candidates/marco-rubio' => 'candidates#marcorubio'
+  get '/candidates/martin-omalley' => 'candidates#martinomalley'
+  get '/candidates/carly-fiorina' => 'candidates#carlyfiorina'
+  get '/candidates/ted-cruz' => 'candidates#tedcruz'
+  get '/candidates/jeb-bush' => 'candidates#jebbush'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

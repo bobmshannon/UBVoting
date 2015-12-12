@@ -18,8 +18,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "components-font-awesome": "~4.4.0",
-    "fullcalendar": "~2.4.0",
+    "components-font-awesome": "~4.5.0",
+    "fullcalendar": "~2.5.0",
     "jquery": "~2.1.4",
     "jquery-ui": "jquery.ui#1.11.4",
     "jqvmap": "https://github.com/manifestinteractive/jqvmap.git",
@@ -30,7 +30,8 @@
     "slick-carousel": "~1.5.8",
     "headroom.js": "~0.7.0",
     "Chart.js": "~1.0.2",
-    "slideout.js": "0.1.9"
+    "slideout.js": "~0.1.11",
+    "youtubeBackground": "youtube-background-video#~1.0.4"
   },
   "resolutions": {
     "jquery": "~2.1.4"

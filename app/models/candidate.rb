@@ -1,0 +1,26 @@
+class Candidate
+  include Mongoid::Document
+  field :first_name
+  field :last_name
+  field :full_name
+  field :full_name_lower
+  field :twitter_handle
+  field :party_affiliation
+  field :rival_party
+  field :bio
+  field :site_url
+  field :born
+  field :title
+  field :issues_overview
+  field :school
+  field :city_of_birth
+  field :date_of_birth
+  field :family_bio
+  embeds_many :hashtags
+  embeds_many :issues
+  embeds_many :videos
+  embeds_many :strange_facts
+  embeds_many :accomplishments
+  embeds_many :photos
+  embeds_many :states
+end

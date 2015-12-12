@@ -9,7 +9,7 @@ header
 
 	&.transition-fx
 	{
-		@include transform(translate3d(-275px, 0px, 0px) !important);
+		@include transform(translate3d(-275px, 0, 0) !important);
 	}
 
 	&.headroom
@@ -135,11 +135,11 @@ header
 
 	#mobile-menu-toggle
 	{
-	    width: 40px;
-	    height: 40px;
-	    line-height: 40px;
-	    font-size: 18pt;
-	    padding: 0;
-	    display: none;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 18pt;
+		padding: 0;
+		display: none;
 	}
 }
