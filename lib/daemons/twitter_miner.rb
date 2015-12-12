@@ -80,6 +80,7 @@ TWEET_THRESHOLD = 1.minutes
 def store_tweet(tweet)
     Tweet.create(
         text: tweet[:text],
+        user_name: tweet[:user][:screen_name],
         id: tweet[:id],
         lang: tweet[:lang],
         source: tweet[:source],
