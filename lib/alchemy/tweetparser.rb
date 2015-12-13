@@ -8,24 +8,23 @@ class TweetParser
 	def initialize(aTweet)
 		begin
 			if(aTweet.text != NIL && aTweet.location[:state] != NIL)
+				@chosenCandidate
+				@candidates
 				@tweet = aTweet
 				@state = @tweet.location[:state]
 				@user = @tweet.screen_name
-				puts @tweet.text
-				puts @state
 				@text = @tweet.text
 				@text.downcase!
-				@gaveSentiment = false 
-				initializeCandidates()
-				@candidates = [@sanders, @trump, @clinton, @rubio, 
-		   @omalley,@cruz, @bush, @carson]
-				findCandidate()
+				puts @text
+				if(@state != NIL)
+					initializeCandidates()
+					findCandidate()
+				end
 			end
 		end
 	end
 
-	#Save some calls to the database
-	#Should be much faster as it's only the data I immediatley need
+	#Initialize some candidates so they are saved locally and I can hopefully save some calls to the DB
 	def initializeCandidates()
 		@sanders = Person.new("Bernie Sanders","@berniesanders",
 				      ["#feelthebern","#bernie2016"])
@@ -43,10 +42,13 @@ class TweetParser
 				    ["#","#"])
 		@carson  = Person.new("Ben carson","@realbencarson",
 				      ["#imwithben","#carson2016"])
+		@candidates = [@sanders, @trump, @clinton, @rubio,
+		 @omalley,@cruz, @bush, @carson]
 	end
 
-
-
+	#Trys to find the candidate in a "brute force" easy way 
+	#Looking for the candidates name or twitterhandle, save some calls to alchemy
+	#If a candidate is found it will pass him to assumeSentiment
 	def findCandidate()
 		@candidates.each {
 			|cand|
@@ -55,61 +57,76 @@ class TweetParser
 				assumeSentiment(cand)
 			end
 		}
-
 	end
 
+	#Gets passed the found candidate and will try to find hashtags
+	#if hashtags are found, it will increment the candidates sentiment and gracefully exit the process
 	def assumeSentiment(cand)
 		cand.tags[0].each {
 			|tag|
 			if(@text[tag])
-				cand.positiveSentiment += 1
-				puts "Gave #{cand.name} +#{cand.positiveSentiment}" 
-				@gaveSentiment = true 
-
+				@chosenCandidate = Candidate.find_by(full_name: cand.name)
+				@chosenCandidate.states.find_by(name: @state).positiveSentiment += 1
 				return 1
 			end
 
 		}
 		#No luck gotta pass to Alchemy :(
-		passToAlchemy(@text)
+		determineEntities(@text)
 	end
 
-	def passToAlchemy(text)
+	#Parses out the entities in the text
+	#if it's a person than it will pass the entity to determineCandidate
+	#Once the candidate is found it determines the sentiment
+	def determineEntities(text)
 		alchemyapi = AlchemyAPI.new()
-		if (@gaveSentiment == false || 
-		    @gaveSentiment == false && chosenCandidate != "")
-			response = alchemyapi.entities('text', text, { 'sentiment'=>1 })
-			if response['status'] = 'OK'
-				for entity in response['entities']
-					#This will be in it's own function
-					if entity['type'] == 'Person'
-						if(entity['sentiment']['type'] == 'positive')
-							foundCandi = Candidate.find_by(full_name_lower: entity['text'])
-							foundCandi.states.find_by(name: @state).positiveSentiment += 1
-							puts "Found #{foundCandi.full_name}"
-							puts "Pos Sentim #{foundCandi.states.find_by(name:@state).positiveSentiment}"
-							puts " "
-
-						end
-
-						if(entity['sentiment']['type'] == 'negative')
-							foundCandi = Candidate.find_by(full_name_lower: entity['text'])
-							foundCandi.states.find_by(name: "Ohio").negativeSentiment += 1
-							puts "Found #{foundCandi.full_name}"
-							puts "Neg Sentim #{foundCandi.states.find_by(name: "Ohio").negativeSentiment}"
-							puts " "
-						end
-
-
-					end
-					if entity['type'] == 'Hashtag'
-						puts entity['text']
-					end
-					if entity['type'] == 'TwitterHandle'
-						puts entity['text']
+		response = alchemyapi.entities('text', text, { 'sentiment'=>1 })
+		if response['status'] = 'OK'
+			for entity in response['entities']
+				if entity['type'] == 'Person'
+					determineCandidate(entity)
+					if(@chosenCandidate != NIL)
+						determineSentiment(entity)
 					end
 				end
+				if entity['type'] == 'Hashtag'
+					puts entity['text']
+				end
+				if entity['type'] == 'TwitterHandle'
+					puts entity['text']
+				end
 			end
+		end
+	end
+
+	#sets the chosenCandidate if they are found in the text of the entity
+	def determineCandidate(entity)
+		@chosenCandidate = Candidate.find_by(full_name_lower: entity['text'])
+	end
+
+
+	#Just figures out if the text is positive or negative towards the candidate
+	#Sets the sentiment accordinly
+	def determineSentiment(entity)
+		if(entity['sentiment']['type'] == 'positive')
+			setSentiment(entity,'positive')
+		end
+
+		if(entity['sentiment']['type'] == 'negative')
+			setSentiment(entity,'negative')
+		end
+	end 
+
+	def setSentiment(entity,sentiment)
+		if(sentiment == 'positive')
+			@chosenCandidate.states.find_by(name: @state).positiveSentiment += 1
+			puts "Found #{@chosenCandidate.full_name}"
+			puts "Pos Sentim #{@chosenCandidate.states.find_by(name:@state).positiveSentiment}"
+		end
+		if(sentiment == 'negative')
+			@chosenCandidate.states.find_by(name: @state).negativeSentiment += 1
+			puts "Found #{@chosenCandidate.full_name}"
+			puts "negative Sentim #{@chosenCandidate.states.find_by(name:@state).negativeSentiment}"
 		end
 	end
 end
