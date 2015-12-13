@@ -86,7 +86,7 @@ class TweetParser
 				if entity['type'] == 'Person'
 					determineCandidate(entity)
 					if(@chosenCandidate != NIL)
-						determineSentiment(entity)
+						determineSentimentPolarity(entity)
 					end
 				end
 				if entity['type'] == 'Hashtag'
@@ -107,7 +107,7 @@ class TweetParser
 
 	#Just figures out if the text is positive or negative towards the candidate
 	#Sets the sentiment accordinly
-	def determineSentiment(entity)
+	def determineSentimentPolarity(entity)
 		if(entity['sentiment']['type'] == 'positive')
 			setSentiment(entity,'positive')
 		end
