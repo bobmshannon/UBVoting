@@ -203,6 +203,44 @@
 			}
 		}
 	}
+
+	section#twitter-graph
+	{
+		@include box-shadow(inset 0 2px 5px 1px rgba(0, 0, 0, .3));
+		border-top: 3px solid rgba(0, 0, 0, .7);
+		background-color: #142840;
+
+		h1
+		{
+			color: $white;
+			font-size: 36pt;
+
+			i
+			{
+				color: #6ea4da;
+			}
+		}
+
+		.overlay
+		{
+			background-size: $grid-size $grid-size;    
+			background-image: repeating-linear-gradient(0deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size), repeating-linear-gradient(-90deg, $grid-color, $grid-color 1px, transparent 1px, transparent $grid-size);
+		}
+
+		.wrapper
+		{
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.graph
+		{
+			@include border-radius(5px);
+			background: $white;
+			padding: 20px;
+			margin: 15px 0;
+		}
+	}
 	
 	section#about
 	{
