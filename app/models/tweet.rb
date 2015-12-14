@@ -31,8 +31,6 @@ class Tweet
         :address => geo.address,
         :city => geo.city,
         :state => geo.state,
-        :state_code => geo.state_code,
-        :postal_code => geo.postal_code,
         :country => geo.country,
         :country_code => geo.country_code,
         :lat => geo.latitude,
