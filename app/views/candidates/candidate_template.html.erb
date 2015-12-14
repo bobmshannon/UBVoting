@@ -53,7 +53,7 @@
             <h1><i class="fa fa-twitter"></i>The Twitter Feels</h1>
 
             <div class="graph">
-                <div><canvas id="twitter-poll-results"></canvas></div>
+                <div><canvas id="twitter-poll-results"width></canvas></div>
             </div>
 
         </div>
@@ -126,6 +126,19 @@
         </div>
     </div>
 </section>
+
+<!--
+<script>
+    var c = <%=@candidate%>;
+    alert(c);
+</script>
+
+<script id="candidateObject" type="application/json">
+{
+ //   cand = <%= @candidate.to_json %>;
+ //   alert(cand);
+}
+-->
 
 <% content_for :javascript_includes do %>
 <%= javascript_include_tag "candidates.js" %>

@@ -26,6 +26,8 @@ $( document ).ready( function() {
 		The graph!
 	*/
 	var ctx = $('canvas#twitter-poll-results').get( 0 ).getContext( '2d' );
+    //var candidate = JSON.parse($('#candidateObject').html());
+    //alert(candidate);
 
 	var data = {
 		    labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -50,6 +52,7 @@ $( document ).ready( function() {
 	};
 
 	var options = {
+		responsive : true,
 	    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
 	    scaleBeginAtZero : true,
 
