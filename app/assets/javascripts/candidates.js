@@ -21,13 +21,29 @@ $( document ).ready( function() {
 		$( '.issue' ).height( max + 20 );
 	} );
 
+	/**
+	 * Normalizes positive and negative sentiment
+	 * values into a single [x,y] pair where x is
+	 * % positive and y is % negative.
+	 *
+	 * @examples 
+	 * 	getDataPoint(0, 0) ---> 0% positive, 0% negative ---> [0,0]
+	 * 	getDataPoint(5, 5) ---> 50% positive, 50% negative ---> [50,50]
+	 * 	getDatapoint(2, 3) ---> 40% positive, 60% negative ---> [40,60]
+	 * 	getDataPoint(1, 9) ---> 10% positive, 90% negative ---> [10,90]
+	 */
+	function getDataPoint(pos, neg) {
+		if(pos == 0 && neg == 0) {
+			return [0, 0];
+		}
+		return [100 * ((pos) / (pos + neg)), 100 * ((neg) / (pos + neg))];
+	}
 
 	/*
 		The graph!
 	*/
 	var cand =  $('#get-candidate').data('url');
 	var states = cand.states;
-	var rand = (Math.random()*1000)
 	var ctx = $('canvas#twitter-poll-results').get( 0 ).getContext( '2d' );
 
 	var data = {
@@ -36,29 +52,43 @@ $( document ).ready( function() {
 		    states[32].name,states[21].name],
 		    datasets: [
 		        {
-		            label: "Positive Sentiment",
+		            label: "Positive Sentiment (%)",
 					fillColor: "rgba(136,193,0,0.75)",
 		            strokeColor: "rgba(136,193,0,0.85)",
 		            highlightFill: "rgba(136,193,0,0.90)",
 		            highlightStroke: "rgba(136,193,0,1)",
-		            data: [states[4].positiveSentiment+rand*Math.random(), states[42].positiveSentiment+rand*Math.random(), 
-		            states[8].positiveSentiment+rand*Math.random(), states[31].positiveSentiment+rand*Math.random(), 
-		            states[12].positiveSentiment+rand*Math.random(), states[37].positiveSentiment+rand*Math.random(), 
-		            states[34].positiveSentiment+rand*Math.random(), states[9].positiveSentiment+rand*Math.random(), 
-		            states[32].positiveSentiment+rand*Math.random(), states[21].positiveSentiment+rand*Math.random()]
+		            data: [
+			            getDataPoint(states[4].positiveSentiment, states[4].negativeSentiment)[0],
+			            getDataPoint(states[42].positiveSentiment, states[42].negativeSentiment)[0],
+			            getDataPoint(states[8].positiveSentiment, states[8].negativeSentiment)[0],
+			            getDataPoint(states[31].positiveSentiment, states[31].negativeSentiment)[0],
+			            getDataPoint(states[12].positiveSentiment, states[12].negativeSentiment)[0],
+			            getDataPoint(states[37].positiveSentiment, states[37].negativeSentiment)[0],
+			            getDataPoint(states[34].positiveSentiment, states[34].negativeSentiment)[0],
+			            getDataPoint(states[9].positiveSentiment, states[9].negativeSentiment)[0],
+			            getDataPoint(states[32].positiveSentiment, states[32].negativeSentiment)[0],
+			            getDataPoint(states[21].positiveSentiment, states[21].negativeSentiment)[0]
+		            ]
 		        },
 		        {
 
-		            label: "Negative Sentiment",
+		            label: "Negative Sentiment (%)",
 		            fillColor: "rgba(255,0,60,0.75)",
 		            strokeColor: "rgba(255,0,60,0.85)",
 		            highlightFill: "rgba(255,0,60,0.90)",
 		            highlightStroke: "rgba(255,0,60,1)",
-		            data: [states[4].negativeSentiment+rand*Math.random(), states[42].negativeSentiment+rand*Math.random(), 
-		            states[8].negativeSentiment+rand*Math.random(), states[31].negativeSentiment+rand*Math.random(), 
-		            states[12].negativeSentiment+rand*Math.random(), states[37].negativeSentiment+rand*Math.random(), 
-		            states[34].negativeSentiment+rand*Math.random(), states[9].negativeSentiment+rand*Math.random(), 
-		            states[32].negativeSentiment+rand*Math.random(), states[21].negativeSentiment+rand*Math.random()]
+		            data: [
+			            getDataPoint(states[4].positiveSentiment, states[4].negativeSentiment)[1],
+			            getDataPoint(states[42].positiveSentiment, states[42].negativeSentiment)[1],
+			            getDataPoint(states[8].positiveSentiment, states[8].negativeSentiment)[1],
+			            getDataPoint(states[31].positiveSentiment, states[31].negativeSentiment)[1],
+			            getDataPoint(states[12].positiveSentiment, states[12].negativeSentiment)[1],
+			            getDataPoint(states[37].positiveSentiment, states[37].negativeSentiment)[1],
+			            getDataPoint(states[34].positiveSentiment, states[34].negativeSentiment)[1],
+			            getDataPoint(states[9].positiveSentiment, states[9].negativeSentiment)[1],
+			            getDataPoint(states[32].positiveSentiment, states[32].negativeSentiment)[1],
+			            getDataPoint(states[21].positiveSentiment, states[21].negativeSentiment)[1]
+		            ]
 		        }
 		    ]
 	};
