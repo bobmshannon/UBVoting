@@ -136,6 +136,7 @@ module.exports = function( grunt ) {
 				files: {
 					'public/javascripts/candidates.js': [
 					'bower_components/youtubeBackground/src/jquery.youtubebackground.js',
+					'bower_components/Chart.js/Chart.js',
 					'app/assets/javascripts/candidates.js'
 					]
 				}

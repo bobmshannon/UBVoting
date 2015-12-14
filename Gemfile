@@ -23,6 +23,7 @@ gem 'twitter-text'
 # Geocoding
 gem 'geocoder'
 # Websockets
+gem 'faye-websocket', '0.10.0'
 gem 'websocket-rails'
 # Daemons/background jobs
 gem 'daemons'
