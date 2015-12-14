@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require File.expand_path('../../../config/environment', __FILE__)
+require_relative '../alchemy/tweetparser.rb'
 include Twitter::Autolink
 
 # Topics to track on Twitter (related to 2016 presidential election).
@@ -78,9 +79,9 @@ TWEET_THRESHOLD = 1.minutes
 # Params:
 # +tweet+:: tweet object returned from Twitter API client
 def store_tweet(tweet)
-    Tweet.create(
+    tweet = Tweet.create(
         text: tweet[:text],
-        user_name: tweet[:user][:screen_name],
+        screen_name: tweet[:user][:screen_name],
         id: tweet[:id],
         lang: tweet[:lang],
         source: tweet[:source],
@@ -89,6 +90,8 @@ def store_tweet(tweet)
         created_at: tweet[:created_at],
         coordinates: tweet[:coordinates].reverse
     )
+
+    return tweet
 end
 
 # Update the specified activity entry in the database, or create
@@ -217,11 +220,14 @@ while($running) do
                             broadcast_tweet(object)
 
                             # Store tweet in database
-                            store_tweet(object)
+                            object = store_tweet(object)
                         end
 
                     # Record a tweeter's activity (for rate limiting)
                     record_activity(screen_name)
+
+                    # Parse tweet and perform sentiment analysis via Alchemy API
+                    TweetParser.new(object)
                 end
             end
         end
