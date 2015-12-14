@@ -127,18 +127,9 @@
     </div>
 </section>
 
-<!--
-<script>
-    var c = <%=@candidate%>;
-    alert(c);
-</script>
+<div id="get-candidate" data-url="<%= @candidate.to_json %>">
+</div>
 
-<script id="candidateObject" type="application/json">
-{
- //   cand = <%= @candidate.to_json %>;
- //   alert(cand);
-}
--->
 
 <% content_for :javascript_includes do %>
 <%= javascript_include_tag "candidates.js" %>
