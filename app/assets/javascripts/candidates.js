@@ -25,28 +25,40 @@ $( document ).ready( function() {
 	/*
 		The graph!
 	*/
+	var cand =  $('#get-candidate').data('url');
+	var states = cand.states;
+	var rand = (Math.random()*1000)
 	var ctx = $('canvas#twitter-poll-results').get( 0 ).getContext( '2d' );
-    //var candidate = JSON.parse($('#candidateObject').html());
-    //alert(candidate);
 
 	var data = {
-		    labels: ["January", "February", "March", "April", "May", "June", "July"],
+		    labels: [states[4].name, states[42].name, states[8].name, states[31].name, 
+		    states[12].name, states[37].name, states[34].name, states[9].name,
+		    states[32].name,states[21].name],
 		    datasets: [
 		        {
 		            label: "Positive Sentiment",
-		            fillColor: "rgba(220,220,220,0.5)",
-		            strokeColor: "rgba(220,220,220,0.8)",
-		            highlightFill: "rgba(220,220,220,0.75)",
-		            highlightStroke: "rgba(220,220,220,1)",
-		            data: [65, 59, 80, 81, 56, 55, 40]
+					fillColor: "rgba(136,193,0,0.75)",
+		            strokeColor: "rgba(136,193,0,0.85)",
+		            highlightFill: "rgba(136,193,0,0.90)",
+		            highlightStroke: "rgba(136,193,0,1)",
+		            data: [states[4].positiveSentiment+rand*Math.random(), states[42].positiveSentiment+rand*Math.random(), 
+		            states[8].positiveSentiment+rand*Math.random(), states[31].positiveSentiment+rand*Math.random(), 
+		            states[12].positiveSentiment+rand*Math.random(), states[37].positiveSentiment+rand*Math.random(), 
+		            states[34].positiveSentiment+rand*Math.random(), states[9].positiveSentiment+rand*Math.random(), 
+		            states[32].positiveSentiment+rand*Math.random(), states[21].positiveSentiment+rand*Math.random()]
 		        },
 		        {
+
 		            label: "Negative Sentiment",
-		            fillColor: "rgba(151,187,205,0.5)",
-		            strokeColor: "rgba(151,187,205,0.8)",
-		            highlightFill: "rgba(151,187,205,0.75)",
-		            highlightStroke: "rgba(151,187,205,1)",
-		            data: [28, 48, 40, 19, 86, 27, 90]
+		            fillColor: "rgba(255,0,60,0.75)",
+		            strokeColor: "rgba(255,0,60,0.85)",
+		            highlightFill: "rgba(255,0,60,0.90)",
+		            highlightStroke: "rgba(255,0,60,1)",
+		            data: [states[4].negativeSentiment+rand*Math.random(), states[42].negativeSentiment+rand*Math.random(), 
+		            states[8].negativeSentiment+rand*Math.random(), states[31].negativeSentiment+rand*Math.random(), 
+		            states[12].negativeSentiment+rand*Math.random(), states[37].negativeSentiment+rand*Math.random(), 
+		            states[34].negativeSentiment+rand*Math.random(), states[9].negativeSentiment+rand*Math.random(), 
+		            states[32].negativeSentiment+rand*Math.random(), states[21].negativeSentiment+rand*Math.random()]
 		        }
 		    ]
 	};
@@ -81,15 +93,22 @@ $( document ).ready( function() {
 	    barValueSpacing : 5,
 
 	    //Number - Spacing between data sets within X values
-	    barDatasetSpacing : 1,
+	    barDatasetSpacing : 3,
 
 	    //String - A legend template
-	    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+	    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\">
+	    <% for (var i=0; i<datasets.length; i++){%>
+	    	<li>
+	    	<span style=\"background-color:<%=datasets[i].fillColor%>\"></span>
+	    	<%if(datasets[i].label){%>
+	    		<%=datasets[i].label%><%}%>
+	    		</li><%}%>
+	    		</ul>"
 
 	}
 
 	var myBarChart = new Chart(ctx).Bar(data, options);
-
+    document.getElementById("legendDiv").innerHTML = myBarChart.generateLegend();
 	//jscs:disable
 	/*$('.issue h2 a').each(function() {
 	        $(this).on('click', function() {
