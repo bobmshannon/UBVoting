@@ -29,6 +29,8 @@ gem 'websocket-rails'
 gem 'daemons'
 # Environment variables
 gem 'figaro'
+# Browser detection
+gem 'browser'
 
 # AlchemyAPI, For the natural language processing. http://www.alchemyapi.com/api
 #gem 'alchemy_api'
