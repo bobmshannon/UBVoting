@@ -18,9 +18,9 @@
 
 	#tweet-alert
 	{
-		@include transition(all 0.5s ease);
+		@include transition(all .5s ease);
 		margin-top: 20px;
-		
+
 		#waiting,
 		#new-tweet,
 		#paused
