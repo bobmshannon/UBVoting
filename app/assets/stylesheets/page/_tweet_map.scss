@@ -16,6 +16,25 @@
 		font-size: 14pt;
 	}
 
+	#tweet-alert
+	{
+		@include transition(all 0.5s ease);
+		margin-top: 20px;
+		
+		#waiting,
+		#new-tweet,
+		#paused
+		{
+			display: none;
+			margin: 0;
+		}
+
+		.show
+		{
+			display: block !important;
+		}
+	}
+
 	#stream-controls 
 	{
 		@include clearfix;
