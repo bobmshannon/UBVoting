@@ -145,8 +145,11 @@
 
 	#cand-title
 	{
-		height: 155px;
+		height: 140px;
 		min-width: 290px;
+		width: 98%;
+		margin-left: 1%;
+		border-radius: 15px;
 		background-color: rgba(0,0,0,0.3);
 
 		&.video-background
