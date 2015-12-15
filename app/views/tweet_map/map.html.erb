@@ -47,6 +47,10 @@
 
 <script type="text/javascript">
 paused = false;
+
+$('#map-message-submit').on('click', function() {
+  $('#gmap-chat input[type=text]').val('Doh! This feature hasn\'t been implemented yet.');
+});
 </script>
 
 <% content_for :javascript_includes do %>
