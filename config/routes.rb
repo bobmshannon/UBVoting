@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/map' => 'pages#map'
   get '/resources' => 'pages#resources'
   # Tweet Stream
-  get '/happening-now' => 'tweet_map#map'
+  get '/happening-now' => 'tweet_map#default'
   get '/happening-now/map-view' => 'tweet_map#map'
   get '/happening-now/list-view' => 'tweet_map#list'
 

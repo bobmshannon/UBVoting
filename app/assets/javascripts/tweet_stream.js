@@ -79,6 +79,7 @@ function insert(tweet) {
     }
     tweetHtml.prependTo('#tweets').fadeIn(2000).removeClass('tweet-template');
     init(tweetHtml);
+    return;
 }
 
 /**
@@ -89,6 +90,7 @@ function insert(tweet) {
  */
 function init( tweet ) {
 	// Initialize stuff in here
+	return;
 }
 
 /**
@@ -102,6 +104,34 @@ function destroy( tweet ) {
 	tweet.remove();
 }
 
+function alert_user( state ) {
+	console.log('state change');
+	switch ( state ) {
+		case 'waiting':
+			$('#tweet-alert').removeClass('alert-success alert-warning').addClass('alert-info');
+			$('#tweet-alert p').removeClass('show');
+			$('#tweet-alert p#waiting').toggleClass('show');
+			break;
+		case 'new_tweet':
+			$('#tweet-alert').removeClass('alert-info alert-warning').addClass('alert-success');
+			$('#tweet-alert p').removeClass('show');
+			$('#tweet-alert p#new-tweet').toggleClass('show');
+            setTimeout(function() {
+                alert_user('waiting');
+                console.log('delay');
+            }, 2500);
+			break;
+		case 'paused':
+			$('#tweet-alert').removeClass('alert-success alert-info').addClass('alert-warning');
+			$('#tweet-alert p').removeClass('show');
+			$('#tweet-alert p#paused').toggleClass('show');
+			break;
+		default:
+			alert_user('waiting');
+			break;
+	}
+}
+
 /**
  * Process an incoming tweet from the web socket
  *
@@ -109,9 +139,9 @@ function destroy( tweet ) {
  */
 function processTweet( tweet ) {
 	if ( !paused ) {
+		alert_user('new_tweet');
 		tweet = $.parseJSON( tweet );
 		console.log( tweet );
-
 		tweet = htmlify( tweet );
 		insert( tweet );
 		tweet = null;
@@ -126,8 +156,10 @@ function processTweet( tweet ) {
 function toggleStream() {
 	if ( paused ) {
 		paused = false;
+		alert_user('waiting');
 	} else {
 		paused = true;
+		alert_user('paused');
 	}
 }
 

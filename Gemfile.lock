@@ -60,6 +60,7 @@ GEM
     breakpoint (2.5.0)
       sass (~> 3.3)
       sassy-maps (< 1.0.0)
+    browser (1.0.1)
     bson (4.0.0)
     buftok (0.2.0)
     builder (3.2.2)
@@ -95,7 +96,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
-    faye-websocket (0.10.2)
+    faye-websocket (0.10.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.10)
@@ -232,9 +233,11 @@ PLATFORMS
 
 DEPENDENCIES
   breakpoint (~> 2)
+  browser
   byebug
   compass (~> 1)
   daemons
+  faye-websocket (= 0.10.0)
   figaro
   geocoder
   jbuilder (~> 2.0)
@@ -250,3 +253,6 @@ DEPENDENCIES
   twitter-text
   web-console (~> 2.0)
   websocket-rails
+
+BUNDLED WITH
+   1.10.6

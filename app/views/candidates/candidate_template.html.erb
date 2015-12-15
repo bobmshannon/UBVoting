@@ -1,3 +1,5 @@
+<%= content_for :title, "Candidate Profile - " + @candidate.full_name %>
+
 <section id="coverphoto" class="auto-height video-background">
     <div class="image-background image-background-hidden" style="background-image: url(<%= @candidate.photos[0].url %>)">
         <div class="overlay valign-wrap auto-height">
@@ -53,7 +55,8 @@
             <h1><i class="fa fa-twitter"></i>The Twitter Feels</h1>
 
             <div class="graph">
-                <div><canvas id="twitter-poll-results"></canvas></div>
+                <div><canvas id="twitter-poll-results"width></canvas></div>
+                    <div id="legendDiv"></div>
             </div>
 
         </div>
@@ -126,6 +129,9 @@
         </div>
     </div>
 </section>
+
+<div id="get-candidate" data-url="<%= @candidate.to_json %>">
+</div>
 
 <% content_for :javascript_includes do %>
 <%= javascript_include_tag "candidates.js" %>

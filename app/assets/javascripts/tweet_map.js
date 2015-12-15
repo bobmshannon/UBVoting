@@ -141,6 +141,8 @@ function getLocation() {
  */
 function processTweet( tweet ) {
 	if ( !paused ) {
+		alert_user('new_tweet');
+		
 		tweet = $.parseJSON( tweet );
 
 		tweetContent = htmlify(tweet).show().removeClass('tweet-template').addClass('tweet').prop('outerHTML');

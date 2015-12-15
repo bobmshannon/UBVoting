@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 require File.expand_path('../../../config/environment', __FILE__)
 
-require './alchemyapi'
-require './person.rb'
+require_relative 'alchemyapi'
+require_relative 'person.rb'
 
 class TweetParser
 	def initialize(aTweet)
@@ -129,6 +129,7 @@ class TweetParser
 		if(@chosenCandidate != NIL)
 			if(sentiment == 'positive')
 				@chosenCandidate.states.find_by(name: @state).positiveSentiment += 1
+				@chosenCandidate.save
 				puts ' '
 				puts '+++++++'
 				puts "Positive sentiment towards #{@chosenCandidate.full_name} + #{@chosenCandidate.states.find_by(name:@state).positiveSentiment} from #{@state}"
@@ -139,8 +140,9 @@ class TweetParser
 
 			if(sentiment == 'negative')
 				@chosenCandidate.states.find_by(name: @state).negativeSentiment += 1
+				@chosenCandidate.save
 				puts ' '
-				puts '+++++++'
+				puts '+++++++' 
 				puts "Negative sentiment towards #{@chosenCandidate.full_name} - #{@chosenCandidate.states.find_by(name:@state).negativeSentiment} from #{@state} "
 				puts '+++++++'
 				puts ' '

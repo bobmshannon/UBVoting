@@ -13,7 +13,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-
+require File.expand_path('../../../config/environment', __FILE__)
 require 'rubygems'
 require 'net/http'
 require 'uri'
@@ -90,34 +90,15 @@ class AlchemyAPI
 	
 	
 	def initialize()
-	
-		begin
-			key = File.read('api_key.txt')
-			key.strip!
-
-			if key.empty?
-				#The key file should't be blank
-				puts 'The api_key.txt file appears to be blank, please copy/paste your API key in the file: api_key.txt'
-				puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'			
-				Process.exit(1)
-			end
+			key = ENV['alchemy_api_key']
 			
 			if key.length != 40
 				#Keys should be exactly 40 characters long
-				puts 'It appears that the key in api_key.txt is invalid. Please make sure the file only includes the API key, and it is the correct one.'
+				puts 'It appears that the key in ENV[\'alchemy_api_key\'] is invalid. Please make sure the environment only includes the API key, and it is the correct one.'
 				Process.exit(1)
 			end
 
 			@apiKey = key
-		rescue => err
-			#The file doesn't exist, so show the message and create the file.
-			puts 'API Key not found! Please copy/paste your API key into the file: api_key.txt'
-			puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'
-		
-			#create a blank file to hold the key
-			File.open("api_key.txt", "w") {}
-			Process.exit(1)
-		end
 	end
 
 
