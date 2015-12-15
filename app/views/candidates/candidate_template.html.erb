@@ -1,23 +1,15 @@
 <section id="coverphoto" class="auto-height video-background">
     <div class="image-background image-background-hidden" style="background-image: url(<%= @candidate.photos[0].url %>)">
         <div class="overlay valign-wrap auto-height">
-            <div class="valign">
-                <div id="cand-overview">
+                <div id="cand-title">
                     <h1><%= @candidate.full_name %> (<%= @candidate.party_affiliation[0].upcase %>)</h1>
                     <h2><%= @candidate.title %></h2>
-                    
                     <ul class="social-bar">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-globe"></i></a></li>
-                    </ul>
-
-                    <div class="button-bar">
-                        <a href="#on-the-issues" class="btn btn-default"><i class="fa fa-bullhorn"></i> On The Issues</a>
-                        <a href="#about" class="btn btn-default"><i class="fa fa-book"></i> About <%= @candidate.last_name %></a>
-                    </div>
-                </div>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-globe"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>

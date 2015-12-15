@@ -143,13 +143,11 @@
 		z-index: -1;
 	}
 
-	#cand-overview
+	#cand-title
 	{
-		@include inline-block;
-		background: rgba(13, 31, 95, .50);
-		border: 5px solid rgba(0, 0, 0, .2);
-		padding: 25px;
+		height: 155px;
 		min-width: 290px;
+		background-color: rgba(0,0,0,0.3);
 
 		&.video-background
 		{
