@@ -117,6 +117,24 @@
 				color: rgb(59, 171, 59);
 			}
 		}
+
+		@include breakpoint(max-width 768px)
+		{
+			.tweet-details .timestamp.right,
+			.tweet-details .handle.left
+			{
+				float: none;
+			}
+		}
+
+		@include breakpoint(max-width 399px) 
+		{
+			.tweet-details .tweet-actions.left,
+			.tweet-details .tweet-location.right,
+			{
+				float: none;
+			}
+		}
 	}
 }
 
