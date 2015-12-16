@@ -105,7 +105,6 @@ function destroy( tweet ) {
 }
 
 function alert_user( state ) {
-	console.log('state change');
 	switch ( state ) {
 		case 'waiting':
 			$('#tweet-alert').removeClass('alert-success alert-warning').addClass('alert-info');
@@ -118,7 +117,6 @@ function alert_user( state ) {
 			$('#tweet-alert p#new-tweet').toggleClass('show');
             setTimeout(function() {
                 alert_user('waiting');
-                console.log('delay');
             }, 2500);
 			break;
 		case 'paused':
