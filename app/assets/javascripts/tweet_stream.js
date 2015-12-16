@@ -7,11 +7,27 @@
 MAX_NUM_TWEETS = 10;
 
 /**
+ * Maximum number of tweets to display per unit of time as
+ * defined below
+ * @const
+ * @examples
+ *    5000ms ---> 1 tweet every 5 seconds
+ *    3000ms ---> 1 tweet every 3 seconds
+ *    1000ms ---> 1 tweet every second
+ */
+THROTTLE_RATE = 2000;
+
+/**
  * Whether the stream is paused or not
  *
  * @type {Boolean}
  */
 paused = false;
+
+/**
+ * Whether stream is currently throttled or not
+ */
+throttled = false;
 
 /**
  * Generate tweet HTML markup
@@ -136,13 +152,16 @@ function alert_user( state ) {
  * @return none
  */
 function processTweet( tweet ) {
-	if ( !paused ) {
+	if ( !paused && !throttled ) {
 		alert_user('new_tweet');
 		tweet = $.parseJSON( tweet );
 		console.log( tweet );
 		tweet = htmlify( tweet );
 		insert( tweet );
 		tweet = null;
+
+		throttled = true;
+		setTimeout(function(){ throttled = false; }, THROTTLE_RATE);
 	}
 }
 

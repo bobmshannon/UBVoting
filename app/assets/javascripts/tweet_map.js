@@ -140,7 +140,7 @@ function getLocation() {
  * @return none
  */
 function processTweet( tweet ) {
-	if ( !paused ) {
+	if ( !paused && !throttled ) {
 		alert_user('new_tweet');
 		
 		tweet = $.parseJSON( tweet );
@@ -154,6 +154,9 @@ function processTweet( tweet ) {
 		openMarker( map.markers.length-1 );
 
 		console.log( tweet );
+
+		throttled = true;
+		setTimeout(function(){ throttled = false; }, THROTTLE_RATE);
 	}
 }
 
