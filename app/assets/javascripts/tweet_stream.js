@@ -132,7 +132,9 @@ function alert_user( state ) {
 			$('#tweet-alert p').removeClass('show');
 			$('#tweet-alert p#new-tweet').toggleClass('show');
             setTimeout(function() {
-                alert_user('waiting');
+            	if ( !paused ) {
+                	alert_user('waiting');
+            	}
             }, 2500);
 			break;
 		case 'paused':
