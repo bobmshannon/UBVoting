@@ -15,7 +15,7 @@ MAX_NUM_TWEETS = 10;
  *    3000ms ---> 1 tweet every 3 seconds
  *    1000ms ---> 1 tweet every second
  */
-THROTTLE_RATE = 2000;
+THROTTLE_RATE = 4000;
 
 /**
  * Whether the stream is paused or not

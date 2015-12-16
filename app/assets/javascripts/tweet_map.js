@@ -81,7 +81,7 @@ function makeMarker(lat, lng, title, content) {
 		title: title,
 		infoWindow: {
 			content: content,
-			disableAutoPan: true
+			disableAutoPan: false
 		}		
 	};
 
@@ -109,6 +109,17 @@ function openMarker(index) {
 function closeMarker(index) {
 	if (map.markers.length > 0 && index >= 0 && index < map.markers.length) {
 		map.markers[index].infoWindow.close();
+	}
+}
+
+/**
+ * Close all open info windows on the  map
+ * 
+ * @return none
+ */
+function closeAllMarkers() {
+	for(i = 0; i < map.markers.length; i++) {
+		closeMarker(i);
 	}
 }
 
@@ -150,6 +161,8 @@ function processTweet( tweet ) {
 		marker = makeMarker( tweet.coordinates[0], tweet.coordinates[1], 'tweet title', tweetContent );
 
 		addMarker( marker );
+
+		closeAllMarkers();
 
 		openMarker( map.markers.length-1 );
 
