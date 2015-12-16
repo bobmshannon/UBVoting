@@ -60,6 +60,7 @@ GEM
     breakpoint (2.5.0)
       sass (~> 3.3)
       sassy-maps (< 1.0.0)
+    browser (1.0.1)
     bson (4.0.0)
     buftok (0.2.0)
     builder (3.2.2)
@@ -232,6 +233,7 @@ PLATFORMS
 
 DEPENDENCIES
   breakpoint (~> 2)
+  browser
   byebug
   compass (~> 1)
   daemons

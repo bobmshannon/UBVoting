@@ -1,3 +1,5 @@
+<%= content_for :title, "Candidate Profile - " + @candidate.full_name %>
+
 <section id="coverphoto" class="auto-height video-background">
     <div class="image-background image-background-hidden" style="background-image: url(<%= @candidate.photos[0].url %>)">
         <div class="overlay valign-wrap auto-height">

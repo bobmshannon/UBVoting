@@ -1,5 +1,15 @@
+<%= content_for :title, "Happening Now - Map View" %>
+
 <div class="wrapper">
     <h1><i class="fa fa-twitter"></i> Happening Right Now</h1>
+
+    <div class="alert alert-info show" id="tweet-alert">
+        <p class="show" id="waiting"><i class="fa fa-circle-o-notch fa-spin"></i> Streaming tweets related to the 2016 presidential election from Twitter...</p>
+
+        <p id="new-tweet"><i class="fa fa-check-circle"></i> New tweet received!</p>
+
+        <p id="paused"><i class="fa fa-pause-circle"></i> Tweet stream paused.</p>
+    </div>
 
     <div id="stream-controls">
         <div class="left btn-group" role="group">
@@ -47,6 +57,10 @@
 
 <script type="text/javascript">
 paused = false;
+
+$('#map-message-submit').on('click', function() {
+  $('#gmap-chat input[type=text]').val('Doh! This feature hasn\'t been implemented yet.');
+});
 </script>
 
 <% content_for :javascript_includes do %>

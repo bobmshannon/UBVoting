@@ -227,7 +227,7 @@ while($running) do
                     record_activity(screen_name)
 
                     # Parse tweet and perform sentiment analysis via Alchemy API
-                    TweetParser.new(object)
+                    #TweetParser.new(object)
                 end
             end
         end

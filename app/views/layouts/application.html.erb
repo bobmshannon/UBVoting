@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>UBVoting - <%= controller.controller_name %> - <%= controller.action_name %></title>
+		<title>UBVoting - <%= yield :title %></title>
 		<%= stylesheet_link_tag 'base' %>
 		<%= stylesheet_link_tag 'style' %>
 		<%= javascript_include_tag 'base' %>
@@ -56,7 +56,7 @@
 
 				<li role="presentation">
 					<a role="menuitem" tabindex="-1" href="/candidates/donald-trump">
-						<img class="portrait republican" src="/images/candidates/donald-profile.jpg" alt="Donald Trump"/>
+						<img class="portrait republican" src="/images/candidates/donald-profile.png" alt="Donald Trump"/>
 						<span class="name">Donald Trump (R)</span>
 					</a>
 				</li>
@@ -138,7 +138,7 @@
 
 							<li role="presentation">
 								<a role="menuitem" tabindex="-1" href="/candidates/donald-trump">
-									<img class="portrait republican" src="/images/candidates/donald-profile.jpg" alt="Donald Trump"/>
+									<img class="portrait republican" src="/images/candidates/donald-profile.png" alt="Donald Trump"/>
 									<span class="name">Donald Trump (R)</span>
 								</a>
 							</li>

@@ -81,7 +81,7 @@ function makeMarker(lat, lng, title, content) {
 		title: title,
 		infoWindow: {
 			content: content,
-			disableAutoPan: true
+			disableAutoPan: false
 		}		
 	};
 
@@ -113,6 +113,17 @@ function closeMarker(index) {
 }
 
 /**
+ * Close all open info windows on the  map
+ * 
+ * @return none
+ */
+function closeAllMarkers() {
+	for(i = 0; i < map.markers.length; i++) {
+		closeMarker(i);
+	}
+}
+
+/**
  * Ask user for their current location, and if successful pan the 
  * google map accordingly.
  */
@@ -140,7 +151,9 @@ function getLocation() {
  * @return none
  */
 function processTweet( tweet ) {
-	if ( !paused ) {
+	if ( !paused && !throttled ) {
+		alert_user('new_tweet');
+		
 		tweet = $.parseJSON( tweet );
 
 		tweetContent = htmlify(tweet).show().removeClass('tweet-template').addClass('tweet').prop('outerHTML');
@@ -149,9 +162,14 @@ function processTweet( tweet ) {
 
 		addMarker( marker );
 
+		closeAllMarkers();
+
 		openMarker( map.markers.length-1 );
 
 		console.log( tweet );
+
+		throttled = true;
+		setTimeout(function(){ throttled = false; }, THROTTLE_RATE);
 	}
 }
 

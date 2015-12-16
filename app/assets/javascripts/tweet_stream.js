@@ -7,11 +7,27 @@
 MAX_NUM_TWEETS = 10;
 
 /**
+ * Maximum number of tweets to display per unit of time as
+ * defined below
+ * @const
+ * @examples
+ *    5000ms ---> 1 tweet every 5 seconds
+ *    3000ms ---> 1 tweet every 3 seconds
+ *    1000ms ---> 1 tweet every second
+ */
+THROTTLE_RATE = 4000;
+
+/**
  * Whether the stream is paused or not
  *
  * @type {Boolean}
  */
 paused = false;
+
+/**
+ * Whether stream is currently throttled or not
+ */
+throttled = false;
 
 /**
  * Generate tweet HTML markup
@@ -79,6 +95,7 @@ function insert(tweet) {
     }
     tweetHtml.prependTo('#tweets').fadeIn(2000).removeClass('tweet-template');
     init(tweetHtml);
+    return;
 }
 
 /**
@@ -89,6 +106,7 @@ function insert(tweet) {
  */
 function init( tweet ) {
 	// Initialize stuff in here
+	return;
 }
 
 /**
@@ -102,19 +120,50 @@ function destroy( tweet ) {
 	tweet.remove();
 }
 
+function alert_user( state ) {
+	switch ( state ) {
+		case 'waiting':
+			$('#tweet-alert').removeClass('alert-success alert-warning').addClass('alert-info');
+			$('#tweet-alert p').removeClass('show');
+			$('#tweet-alert p#waiting').toggleClass('show');
+			break;
+		case 'new_tweet':
+			$('#tweet-alert').removeClass('alert-info alert-warning').addClass('alert-success');
+			$('#tweet-alert p').removeClass('show');
+			$('#tweet-alert p#new-tweet').toggleClass('show');
+            setTimeout(function() {
+            	if ( !paused ) {
+                	alert_user('waiting');
+            	}
+            }, 2500);
+			break;
+		case 'paused':
+			$('#tweet-alert').removeClass('alert-success alert-info').addClass('alert-warning');
+			$('#tweet-alert p').removeClass('show');
+			$('#tweet-alert p#paused').toggleClass('show');
+			break;
+		default:
+			alert_user('waiting');
+			break;
+	}
+}
+
 /**
  * Process an incoming tweet from the web socket
  *
  * @return none
  */
 function processTweet( tweet ) {
-	if ( !paused ) {
+	if ( !paused && !throttled ) {
+		alert_user('new_tweet');
 		tweet = $.parseJSON( tweet );
 		console.log( tweet );
-
 		tweet = htmlify( tweet );
 		insert( tweet );
 		tweet = null;
+
+		throttled = true;
+		setTimeout(function(){ throttled = false; }, THROTTLE_RATE);
 	}
 }
 
@@ -126,8 +175,10 @@ function processTweet( tweet ) {
 function toggleStream() {
 	if ( paused ) {
 		paused = false;
+		alert_user('waiting');
 	} else {
 		paused = true;
+		alert_user('paused');
 	}
 }
 
