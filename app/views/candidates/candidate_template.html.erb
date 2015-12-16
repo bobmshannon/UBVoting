@@ -15,10 +15,10 @@
             </div>
             <div data-spy="affix" id="dot-nav">
                 <ul>
-                    <li class="awesome-tooltip active" title="Issues"><a href="#on-the-issues"></a></li>
-                    <li class="awesome-tooltip" title="Twitter Feels"><a href="#twitter-graph"></a></li>
-                    <li class="awesome-tooltip" title="Party Affiliation"><a href="<%= @candidate.party_affiliation.downcase %>"></a></li>
-                     <li class="awesome-tooltip" title="Biography"><a href="#contact"></a></li>
+                    <li class="awesome-tooltip" title="Issues"><a href="#on-the-issues"></li>
+                    <li class="awesome-tooltip" title="Twitter Feels"><a href="#twitter-graph"></li>
+                    <li class="awesome-tooltip" title="About"><a href="#about"></li>
+                     <li class="awesome-tooltip" title="Biography"><a href="#footerphoto"></li>
                 </ul>
             </div>
         </div>
@@ -172,6 +172,7 @@ $(document).ready(function() {
         });  
     } else {
         $('.image-background').toggleClass('image-background-hidden');
-    }    
+    }
+
 });
 </script>
