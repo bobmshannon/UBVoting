@@ -7,13 +7,13 @@ require_relative 'person.rb'
 class TweetParser
 	def initialize(aTweet)
 		begin
-			if(aTweet.text != NIL && aTweet.location[:state] != NIL)
+			if(aTweet[:text] != NIL && aTweet.location[:state] != NIL)
 				@chosenCandidate
 				@candidates
 				@tweet = aTweet
 				@state = @tweet.location[:state]
-				@user = @tweet.screen_name
-				@text = @tweet.text 
+				@user = @tweet[:screen_name]
+				@text = @tweet[:text]
 				@text.downcase!
 				puts ' '
 				puts '/\/\/\/\/\NEW TWEET/\/\/\/\/ '
@@ -87,7 +87,7 @@ class TweetParser
 		puts 'Entered Alchemy!!'
 		alchemyapi = AlchemyAPI.new()
 		response = alchemyapi.entities('text', text, { 'sentiment'=>1 })
-		if response['status'] = 'OK'
+		if response['status'] == 'OK'
 			for entity in response['entities']
 				if entity['type'] == 'Person'
 					if( setChosenCandidate(entity)== true)
