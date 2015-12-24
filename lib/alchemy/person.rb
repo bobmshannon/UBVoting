@@ -1,16 +1,18 @@
 class Person 
-	def initialize(name, twitterHandle, tags)
+	def initialize(name, firstName, lastName, twitterHandle, tags)
 		class << self; 
 			attr_accessor :name, 
+				:firstName,
+				:lastName,
 				:twitterHandle, 
 				:tags, 
 				:positiveSentiment, 
 				:negativeSentiment 
 		end
 		@name = name
+		@firstName = firstName
+		@lastName = lastName
 		@twitterHandle = twitterHandle
 		@tags = [tags]
-		@positiveSentiment = 0
-		@negativeSentiment = 0
 	end
 end

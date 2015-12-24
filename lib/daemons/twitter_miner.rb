@@ -183,6 +183,17 @@ def add_location(tweet)
     return tweet
 end
 
+# Perform sentiment analysis of tweet via AlchemyAPI. Updates
+# fields in database accordingly.
+# 
+# Params:
+# +tweet+:: tweet object returned from Twitter API client
+def analyze_sentiment(tweet)
+    Thread.new {
+        TweetParser.new(tweet)
+    }
+end
+
 $running = true
 Signal.trap("TERM") do
     $running = false
@@ -227,7 +238,7 @@ while($running) do
                     record_activity(screen_name)
 
                     # Parse tweet and perform sentiment analysis via Alchemy API
-                    #TweetParser.new(object)
+                    analyze_sentiment(object)
                 end
             end
         end
