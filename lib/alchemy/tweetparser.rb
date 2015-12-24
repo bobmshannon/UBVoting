@@ -49,7 +49,7 @@ class TweetParser
 		@candidates = [@sanders, @trump, @clinton, @rubio,@omalley,@cruz, @bush, @carson]
 	end
 
-	#Trys to find the candidate in a "brute force" easy way 
+	#Tries to find the candidate in a "brute force" easy way 
 	#Looking for the candidates name,twitterhandle or hashtags, save some calls to alchemy
 	#If a candidate is found it will pass check for hashtags relating to that candidate
 	def findCandidate()
@@ -101,6 +101,8 @@ class TweetParser
 					#	puts entity['text']
 				end
 			end
+		else 
+			return false 
 		end
 	end
 
