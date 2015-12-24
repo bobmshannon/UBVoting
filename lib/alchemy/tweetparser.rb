@@ -17,7 +17,7 @@ class TweetParser
 				@text.downcase!
 				puts ' '
 				puts '/\/\/\/\/\NEW TWEET/\/\/\/\/ '
-				puts 'from #{@state}'
+				puts "from #{@state}"
 				puts '++++++++'
 				puts @text
 				puts '++++++++'
@@ -32,20 +32,23 @@ class TweetParser
 
 	#Initialize some candidates so they are saved locally and I can hopefully save some calls to the DB
 	def initializeCandidates()
-		@sanders = Person.new("Bernie Sanders","@berniesanders",["#feelthebern","#bernie2016",
-							   "#berniesanders2016","#sanders2016"])
-		@trump  = Person.new("Donald Trump","@donaldtrump",["#makeamericagreatagain","#trump2016",
-						      "#donaldtrump2016","#donald2016"])
-		@clinton  = Person.new("Hillary Clinton","@hillaryclinton",["#imwithher","#hillary2016",
-							      "#hillaryclinton2016","#clinton2016"])
-		@rubio = Person.new("Marco Rubio","@marcorubio",["#teamrubio","#rubio2016",
-						   "#marco2016","#marcorubio2016"])
-		@omalley  = Person.new("Martin O'Malley","@martinomalley",['#martinomalley2016','#martin2016',
-							     '#omalley2016','#mom2016'])
-		@cruz  = Person.new("Ted Cruz","@tedcruz",['#tedcruz2016','#ted2016','#cruz2016','#cruzcrew'])
-		@bush  = Person.new("Jeb Bush","@jebbush",['#jebbush2016','#jeb2016','#bush2016','#jebcanfixit'])
-		@carson  = Person.new("Ben Carson","@realbencarson",['#bencarson2016','#ben2016',
-						       '#carson2016','#imwithben'])
+		@sanders = Person.new("Bernie Sanders","@berniesanders", "Bernie", "Sanders",
+				      ["#feelthebern","#bernie2016","#berniesanders2016","#sanders2016"])
+		@trump  = Person.new("Donald Trump","@donaldtrump","Donald", "Trump",
+				     ["#makeamericagreatagain","#trump2016","#donaldtrump2016","#donald2016"])
+		@clinton  = Person.new("Hillary Clinton","@hillaryclinton","Hillary", "Clinton",
+				       ["#imwithher","#hillary2016","#hillaryclinton2016","#clinton2016"])
+		@rubio = Person.new("Marco Rubio","@marcorubio","Marco", "Rubio",
+				    ["#teamrubio","#rubio2016","#marco2016","#marcorubio2016"])
+		@omalley  = Person.new("Martin O'Malley","@martinomalley","Martin", "O'Malley",
+				       ['#martinomalley2016','#martin2016','#omalley2016','#mom2016'])
+		@cruz  = Person.new("Ted Cruz","@tedcruz", "Ted", "Cruz",
+				    ['#tedcruz2016','#ted2016','#cruz2016','#cruzcrew'])
+		@bush  = Person.new("Jeb Bush","@jebbush", "Jeb", "Bush",
+				    ['#jebbush2016','#jeb2016','#bush2016','#jebcanfixit'])
+		@carson  = Person.new("Ben Carson","@realbencarson", "Ben", "Carson",
+				      ['#bencarson2016','#ben2016','#carson2016','#imwithben'])
+
 		@candidates = [@sanders, @trump, @clinton, @rubio,@omalley,@cruz, @bush, @carson]
 	end
 
@@ -55,13 +58,43 @@ class TweetParser
 	def findCandidate()
 		@candidates.each {
 			|cand|
-			if (@text[cand.name] || @text[cand.name.downcase] || @text[cand.twitterHandle] || @text['#'] )
-				checkCandidateTags(cand)
-			end
+			#if (checkForCandidateNames(cand) or checkForTwitterHandle(cand) or @text['#'])
+			checkForCandidateNames(cand)
+			checkForTwitterHandle(cand)  
+			checkCandidateTags(cand)
+			#end
 		}
+
 		#No luck on assuming candidate/sentiment gotta pass to Alchemy :( 
-		if(@chosenCandidate == NIL)
+		#if(@chosenCandidate == NIL)
 			determineEntities(@text)
+		#end
+	end
+
+	def checkForCandidateNames(cand) 
+		if (@text[cand.name] or @text[cand.name.downcase])
+			@chosenCandidate = Candidate.find_by(full_name: cand.name)
+			return true
+
+		elsif (@text[cand.firstName] or @text[cand.firstName.downcase])
+			@chosenCandidate = Candidate.find_by(full_name: cand.name)
+			return true
+
+		elsif (@text[cand.lastName] or @text[cand.lastName.downcase]) 
+			@chosenCandidate = Candidate.find_by(full_name: cand.name)
+			return true
+
+		else 
+			return false
+		end
+	end	
+
+	def checkForTwitterHandle(cand)
+		if (@text[cand.twitterHandle] or @text[cand.twitterHandle.downcase])
+			@chosenCandidate = Candidate.find_by(full_name: cand.name)
+			return true
+		else
+			return false
 		end
 	end
 
@@ -71,6 +104,7 @@ class TweetParser
 			if(@text[tag])
 				@chosenCandidate = Candidate.find_by(full_name: cand.name)
 				setSentiment('positive')
+				@chosenCandidate = NIL
 				return true
 			end
 		}
