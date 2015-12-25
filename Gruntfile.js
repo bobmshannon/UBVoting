@@ -142,6 +142,23 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
+		compass: {
+			dev: {
+				options: {
+					require: [ 'susy', 'breakpoint' ],
+					sassDir: 'app/assets/stylesheets/',
+					cssDir: 'public/stylesheets/',
+					imagesDir: 'public/images/',
+					javascriptsDir: 'public/js/',
+					fontsDir: 'public/fonts/',
+					importPath: 'app/assets/stylesheets/',
+					outputStyle: 'expanded',
+					relativeAssets: true,
+					noLineComments: false,
+					raw: 'preferred_syntax = :sass\n'
+				}
+			}
+		},
 		cssmin: {
 			options: {
 				banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */',
@@ -160,25 +177,9 @@ module.exports = function( grunt ) {
 					'bower_components/slick-carousel/slick/slick.css',
 					'bower_components/hover/css/hover-min.css',
 					'bower_components/hover/css/hover.css',
-					'bower_components/youtubeBackground/src/jquery.youtubebackground.js'
+					'bower_components/youtubeBackground/src/jquery.youtubebackground.js',
+					'public/stylesheets/style.css'
 					]
-				}
-			}
-		},
-		compass: {
-			dev: {
-				options: {
-					require: [ 'susy', 'breakpoint' ],
-					sassDir: 'app/assets/stylesheets/',
-					cssDir: 'public/stylesheets/',
-					imagesDir: 'public/images/',
-					javascriptsDir: 'public/js/',
-					fontsDir: 'public/fonts/',
-					importPath: 'app/assets/stylesheets/',
-					outputStyle: 'expanded',
-					relativeAssets: true,
-					noLineComments: false,
-					raw: 'preferred_syntax = :sass\n'
 				}
 			}
 		},
