@@ -3,6 +3,7 @@
 	<head>
 		<title>UBVoting - <%= yield :title %></title>
 		<%= stylesheet_link_tag 'base' %>
+		<%= javascript_include_tag 'base' %>
 		<%= csrf_meta_tags %>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -171,7 +172,6 @@
 			<%= yield %>
 		</main>
 
-		<%= javascript_include_tag 'base' %>
 		<%= yield :javascript_includes%> 
 	</body>
 </html>
