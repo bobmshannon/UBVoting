@@ -3,18 +3,29 @@
 // 
 // Summary:
 // 
-// 	0. CORE
-// 		Compass, Susy, Breakpoint, and general layout styles.
-//	1. VENDOR PROVIDED
+//	0. VENDOR PROVIDED
 //		3rd party vendor provided mixins.
-// 	2. MODULE
+//	1. RETINA SPRITE MAPS
+// 	2. CORE
+// 		Compass, Susy, Breakpoint, and general layout styles.
+// 	3. MODULE
 //		Re-usable element styles.
-//	3. PAGE
+//	4. PAGE
 //		Page specific styles.
 // ========================================================================== //
 
 // ========================================================================== //
-//  0. CORE
+//  0. VENDOR PROVIDED
+// ========================================================================== //
+@import 'vendor/retina';
+
+// ========================================================================== //
+//  1. RETINA SPRITE MAPS
+// ========================================================================== //
+@include retina-sprite-add(icons, 'candidates/portraits/*.png', 'candidates/portraits-retina/*.png');
+
+// ========================================================================== //
+//  2. CORE
 // ========================================================================== //
 @import 'susy';
 @import 'compass';
@@ -25,20 +36,16 @@
 @import 'core/fonts';
 @import 'core/mixins';
 @import 'core/global';
+@import 'core/sprites';
 
 // ========================================================================== //
-//  1. VENDOR PROVIDED
-// ========================================================================== //
-@import 'vendor/retina';
-
-// ========================================================================== //
-//  2. MODULES
+//  3. MODULES
 // ========================================================================== //
 @import 'module/header';
 @import 'module/footer';
 
 // ========================================================================== //
-//  3. PAGES
+//  4. PAGES
 // ========================================================================== //
 @import 'page/home';
 @import 'page/pitch';

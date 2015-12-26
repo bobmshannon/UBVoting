@@ -31,7 +31,8 @@
     "headroom.js": "~0.7.0",
     "Chart.js": "~1.0.2",
     "slideout.js": "~0.1.11",
-    "youtubeBackground": "youtube-background-video#~1.0.4"
+    "youtubeBackground": "youtube-background-video#~1.0.4",
+    "Retina-Sprites-for-Compass": "https://github.com/pivotaltracker/Retina-Sprites-for-Compass.git"
   },
   "resolutions": {
     "jquery": "~2.1.4"
