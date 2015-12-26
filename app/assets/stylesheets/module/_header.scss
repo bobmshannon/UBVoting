@@ -85,32 +85,6 @@ header
 			font-size: 13pt;
 		}
 
-		img.portrait,
-		.name
-		{
-			@include inline-block;
-			margin: 0;
-			padding: 0;
-		}
-
-		img.portrait
-		{
-			@include box-shadow(none);
-			width: 75px;
-			height: 75px;
-			margin: 0 15px 0 0;
-
-			&.republican
-			{
-				border: 3px solid #db1f29;
-			}
-
-			&.democrat
-			{
-				border: 3px solid #1490ed;
-			}
-		}
-
 		.name
 		{
 			line-height: 50px;
@@ -141,5 +115,28 @@ header
 		font-size: 18pt;
 		padding: 0;
 		display: none;
+	}
+}
+
+nav
+{
+	.portrait
+	{
+		@include box-shadow(none);
+		@include inline-block;
+		width: 75px;
+		height: 75px;
+		margin: 0 15px 0 0;
+		vertical-align: middle;
+	}
+
+	.republican
+	{
+		border: 3px solid #db1f29;
+	}
+
+	.democrat
+	{
+		border: 3px solid #1490ed;
 	}
 }
