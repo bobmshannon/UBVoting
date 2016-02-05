@@ -231,14 +231,14 @@ while($running) do
                             broadcast_tweet(object)
 
                             # Store tweet in database
-                            object = store_tweet(object)
+                            #object = store_tweet(object)
                         end
 
                     # Record a tweeter's activity (for rate limiting)
                     record_activity(screen_name)
 
                     # Parse tweet and perform sentiment analysis via Alchemy API
-                    analyze_sentiment(object)
+                    #analyze_sentiment(object)
                 end
             end
         end
