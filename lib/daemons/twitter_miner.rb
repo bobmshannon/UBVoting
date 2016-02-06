@@ -226,16 +226,16 @@ while($running) do
                 object = add_location(object)
 
                 unless is_filtered(object)
-                        unless is_rate_limited(screen_name)
+                        #unless is_rate_limited(screen_name)
                             # Broadcast tweet if user is not rate limited
                             broadcast_tweet(object)
 
                             # Store tweet in database
                             #object = store_tweet(object)
-                        end
+                        #end
 
                     # Record a tweeter's activity (for rate limiting)
-                    record_activity(screen_name)
+                    #record_activity(screen_name)
 
                     # Parse tweet and perform sentiment analysis via Alchemy API
                     #analyze_sentiment(object)
